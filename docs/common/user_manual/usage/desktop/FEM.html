@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.5. FEM: Finite Element Method &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>FEM: Finite Element Method &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -41,8 +41,6 @@
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.6. RV: Random Variables" href="RV.html" />
-    <link rel="prev" title="3.4.5. Site Response Analysis" href="earthquake/usageS3hark.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -95,18 +93,10 @@
             
             
               <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../ack.html">1. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">2. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="usage.html">3. User Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="UQ.html">3.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GI.html">3.2. GI: General Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SIM.html">3.3. SIM: Structural Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="earthquake/earthquakeEvents.html">3.4. EVT: Earthquake Events</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">3.6. RV: Random Variables</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">3. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
@@ -116,8 +106,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic City, NJ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/anchorage/index.html">3. Anchorage, AK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/memphis/index.html">4. Memphis, TN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/anchorage/anchorage.html">4. Anchorage, AK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">5. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -130,6 +121,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -175,9 +167,7 @@
     
       <li><a href="../../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
-        
-      <li><span class="section-number">3.5. </span>FEM: Finite Element Method</li>
+      <li>FEM: Finite Element Method</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -197,7 +187,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fem-finite-element-method">
-<span id="lblfem"></span><h1><span class="section-number">3.5. </span>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this headline">¶</a></h1>
+<span id="lblfem"></span><h1>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this headline">¶</a></h1>
 <p>The <strong>FEM</strong> tab will present users with a selection of FEM
 applications that will take a building model generated by the BIM
 application and the EVENT from the event application and perform a
@@ -206,10 +196,10 @@ deterministic simulation of structural response. The default application is the 
 files and use OpenSees to simulate the response, and return it in an EDP file.</p>
 <div class="align-center figure" id="id1">
 <span id="figfem"></span><img alt="../../../../_images/OpenSeesFEM.png" src="../../../../_images/OpenSeesFEM.png" />
-<p class="caption"><span class="caption-number">Fig. 3.5.1 </span><span class="caption-text">Options for OpenSees.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Options for OpenSees.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>For the <strong>OpenSees</strong> application the user is required to specify the
-options to be used in the transient analysis. As shown in <a class="reference internal" href="#figfem"><span class="std std-numref">Fig. 3.5.1</span></a>,
+options to be used in the transient analysis. As shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figFEM</span></code>,
 this includes the choice of:</p>
 <blockquote>
 <div><ol class="arabic">
@@ -225,7 +215,7 @@ this includes the choice of:</p>
 </ol>
 <div class="align-center figure" id="id2">
 <img alt="../../../../_images/OpenSeesFEM-Modal.png" src="../../../../_images/OpenSeesFEM-Modal.png" />
-<p class="caption"><span class="caption-number">Fig. 3.5.2 </span><span class="caption-text">Modal Damping Options for OpenSees</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Modal Damping Options for OpenSees</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>

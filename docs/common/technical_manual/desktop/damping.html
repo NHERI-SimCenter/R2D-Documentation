@@ -106,8 +106,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../testbeds/atlantic_city/index.html">2. Atlantic City, NJ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../testbeds/anchorage/index.html">3. Anchorage, AK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../testbeds/memphis/index.html">4. Memphis, TN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testbeds/anchorage/anchorage.html">4. Anchorage, AK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testbeds/lake_charles/index.html">5. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -120,6 +121,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -191,10 +193,9 @@
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-0" title="Permalink to this equation">¶</a></span>\[M \ddot{U}(t) + C \dot{U}(t)  + Fs(U(t)) = P(t)\]</div>
 <p>where <span class="math notranslate nohighlight">\(U(t), \dot{U}(t), \ddot{U}(t)\)</span> are the vectors of displacements, velocities, and accelerations for the degrees of freedom, <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(C\)</span> are the mass and damping matrices, respectively, and the vector <span class="math notranslate nohighlight">\(Fs(U)\)</span> represents the nonlinear relation between resisting forces and deformations, which includes both material and geometric nonlinearities, and <span class="math notranslate nohighlight">\(P(t)\)</span> the time-varying applied load due to the event of interest.</p>
 <p>Energy is dissipated by the structure as it deforms, which is why it to come to rest when the force is removed. The <span class="math notranslate nohighlight">\(Fs(U(t))\)</span> term captures the <strong>hysteretic</strong> energy dissipated through the nonlinear behavior of the structural members. The <span class="math notranslate nohighlight">\(C \dot{U}(t)\)</span> term, the <strong>viscous</strong> damping term, attempts to capture energy dissipated through other  mechanisms present in the structure, e.g. thermal effects from repeated elastic straining of structural materials, repeated straining of nonstructural elements—partition walls, mechanical equipment, fire proofing, and so on—friction at steel connections, opening and closing of microcracks in concrete, friction between the structure itself and nonstructural elements, and other mechanisms, some of which are even difficult to identify. Damping for such is often quantified in terms of <strong>modal</strong> damping ratios, and are typically of the order of 1% (steel buildings) to 5% (concrete buildings). These the values have been obtained from field testing and system identification, albeit they have mostly been obtained from buildings undergoing low levels of vibration.</p>
-<p>It is the formulation of the <span class="math notranslate nohighlight">\(C\)</span> matrix that is of interest here. There are two damping options presented to the user when during inputs to the <span class="xref std std-ref">FEM</span>: 1) Rayleigh Damping Options and 2) Modal Damping options. This is a brief overview of the theory behind both.</p>
-<ol class="arabic simple">
-<li><p>Rayleigh Damping</p></li>
-</ol>
+<p>It is the formulation of the <span class="math notranslate nohighlight">\(C\)</span> matrix that is of interest here. There are two damping options presented to the user as inputs to the <a class="reference internal" href="../../user_manual/usage/desktop/FEM.html#lblfem"><span class="std std-ref">FEM</span></a> panel: 1) Rayleigh Damping Options and 2) Modal Damping options. This is a brief overview of the theory behind both.</p>
+<div class="section" id="rayleigh-damping">
+<h2>Rayleigh Damping<a class="headerlink" href="#rayleigh-damping" title="Permalink to this headline">¶</a></h2>
 <p>A classical damping matrix can be assembled as a linear combination of the mass and stiffness matrices:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-1">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-1" title="Permalink to this equation">¶</a></span>\[C = a_0 M + a_1 K\]</div>
@@ -202,48 +203,48 @@
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-2">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-2" title="Permalink to this equation">¶</a></span>\[\zeta_n = \frac{a_0}{2}\frac{1}{\omega_n} + \frac{a_1}{2}\omega_n\]</div>
 <p>The coefficients <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span> are typically determined by specifying the damping ratios at one or two modes <span class="math notranslate nohighlight">\(\zeta_1\)</span> and <span class="math notranslate nohighlight">\(\zeta_2\)</span>. There are a number of options:</p>
-<p><strong>Mass Proportional Damping</strong> <span class="math notranslate nohighlight">\(C = a_0 M\)</span></p>
+<ol class="arabic">
+<li><p><strong>Mass Proportional Damping</strong>, <span class="math notranslate nohighlight">\(C = a_0 M\)</span></p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-3">
-<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-3" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\zeta_n = \frac{a_0}{2}\frac{1}{\omega_n}\\a_0 = 2 \zeta_n \omega_n`\end{aligned}\end{align} \]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-3" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\zeta_n = \frac{a_0}{2}\frac{1}{\omega_n}\\a_0 = 2 \zeta_n \omega_n\end{aligned}\end{align} \]</div>
 <p>In mass proportional damping, the damping matrix is inversely proportional to the natural frequency. The coefficient is chosen to represent the period at a single mode, modes with a higher frequency will have less damping, and modes with a smaller frequency will have more damping.</p>
-<p><strong>Stiffness Proportional Damping</strong> <span class="math notranslate nohighlight">\(C = a_1 K\)</span></p>
+</li>
+<li><p><strong>Stiffness Proportional Damping</strong>, <span class="math notranslate nohighlight">\(C = a_1 K\)</span></p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-4">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-4" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\zeta_n = \frac{a_1}{2}\omega_n\\a_1 = \frac{2 * \zeta_n}{\omega_n}\end{aligned}\end{align} \]</div>
 <p>In stiffness proportional damping, the damping is proportional to the natural frequency, increasing linearly as the natural frequency increases. The coefficient is again chosen to represent the period at a single mode, modes with a higher frequency will have more damping, and modes with a smaller frequency will have less damping.</p>
-<p><strong>Traditional Rayleigh Damping</strong> <span class="math notranslate nohighlight">\(C = a_0 M + a_1 K\)</span></p>
+</li>
+<li><p><strong>Traditional Rayleigh Damping</strong>, <span class="math notranslate nohighlight">\(C = a_0 M + a_1 K\)</span></p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-5">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-5" title="Permalink to this equation">¶</a></span>\[\zeta_n = \frac{a_0}{2}\frac{1}{\omega_n} + \frac{a_1}{2}\omega_n\]</div>
-<p>Two coefficients are determined by the user specifying the damping at two different modes given by <span class="math notranslate nohighlight">\(\omega_i\)</span> and <span class="math notranslate nohighlight">\(omega_j\)</span></p>
+<p>Two coefficients are determined by the user specifying the damping at two different modes given by <span class="math notranslate nohighlight">\(\omega_i\)</span> and <span class="math notranslate nohighlight">\(\omega_j\)</span> <a class="reference internal" href="#rayleigh45" id="id1"><span>[Rayleigh45]</span></a>:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-6">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-6" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{1}{2} \begin{bmatrix}
-            1/\omega_i &amp; \omega_i \\
-            1/\omega_j &amp; \omega_j \\
-            \end{bmatrix}
-            \begin{bmatrix}
-            a_0 \\
-            a_1
-            \end{bmatrix}
-            =
-            \begin{bmatrix}
-            \zeta_i \\
-            \zeta_j
-            \end{bmatrix}\end{split}\]</div>
+         1/\omega_i &amp; \omega_i \\
+      1/\omega_j &amp; \omega_j \\
+      \end{bmatrix}
+      \begin{bmatrix}
+      a_0 \\
+      a_1
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+      \zeta_i \\
+      \zeta_j
+      \end{bmatrix}\end{split}\]</div>
 <p>as the damping at these two modes is usually specified to be the same, i.e. <span class="math notranslate nohighlight">\(\zeta_i = \zeta_j = \zeta\)</span>, this matrix equation can  be solved for <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span></p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-7">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-7" title="Permalink to this equation">¶</a></span>\[a_0 = \zeta \frac{2 \omega_i \omega_j}{w_i + w_j} ; a_1 = \zeta \frac{2}{w_i + w_j}\]</div>
+</li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In the tool the user has the option of specifying which of the stiffness matrices (the current linearized stiffness matrix or the initial tangent stiffness matrix). Opinion in the literature is divided, the default is set to the initial stiffness as the possible inclusion of negative damping (should the descending branch of yield curve be reached), the possibility of including zero damping (should elastic perfectly plastic materials yield), and the very fact that the damping is tied to the hysteretic behavior given why it is included in the first place, makes little physical sense.</p>
 <p>Different approaches are of course possible, e.g. where user explicitly models damping. These must be specified by the user in the optional analysis script they provide.</p>
 </div>
-<dl class="citation">
-<dt class="label" id="citation"><span class="brackets">CITATION</span></dt>
-<dd><p>Rayleigh L. Theory of Sound, 1. Dover: New York, NY, 1945.</p>
-</dd>
-</dl>
-<ol class="arabic simple">
-<li><p>Modal Damping</p></li>
-</ol>
+</div>
+<div class="section" id="modal-damping">
+<h2>Modal Damping<a class="headerlink" href="#modal-damping" title="Permalink to this headline">¶</a></h2>
 <p>In modal damping the eigenvectors <span class="math notranslate nohighlight">\(\Phi\)</span> of the <span class="math notranslate nohighlight">\(N\)</span> degree-of-freedom system are used to create the <span class="math notranslate nohighlight">\(C\)</span> matrix.</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-8">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-8" title="Permalink to this equation">¶</a></span>\[C = M \left ( \sum_{m=1}^{N} \frac{2 \zeta_m \omega_m}{M_m} \phi_m \phi_m^TC \dot{U} \right ) M\]</div>
@@ -256,6 +257,12 @@
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-10">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-10" title="Permalink to this equation">¶</a></span>\[C = M \left ( \sum_{m=1}^{n} \frac{2 \zeta_m \omega_m}{M_m} \phi_m \phi_m^TC \dot{U} \right ) M + a_1 K_0\]</div>
 <p>where <span class="math notranslate nohighlight">\(a_1 = \frac{2 * \zeta_{nT}}{\omega_{n}}\)</span></p>
+</div>
+<dl class="citation">
+<dt class="label" id="rayleigh45"><span class="brackets"><a class="fn-backref" href="#id1">Rayleigh45</a></span></dt>
+<dd><p>Rayleigh L. Theory of Sound, 1. Dover: New York, NY, 1945.</p>
+</dd>
+</dl>
 </div>
 </div>
 

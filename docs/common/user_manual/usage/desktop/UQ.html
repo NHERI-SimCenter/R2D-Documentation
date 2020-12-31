@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.1. UQ: Uncertainty Quantification &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>3.9. UQ: Uncertainty Quantification &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -41,8 +41,8 @@
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.1.1.1. Forward Propagation Methods" href="DakotaSampling.html" />
-    <link rel="prev" title="3. User Guide" href="usage.html" />
+    <link rel="next" title="3.9.1.1. Forward Propagation Methods" href="DakotaSampling.html" />
+    <link rel="prev" title="3.8. DL: Damage and Loss" href="RDT/DL.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -99,18 +99,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ack.html">1. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">2. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="usage.html">3. User Guide</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. UQ: Uncertainty Quantification</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#dakota-uq-engine">3.1.1. Dakota UQ Engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">3.1.1.1. Forward Propagation Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RDT/VIZ.html">3.1. VIZ: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RDT/GI.html">3.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RDT/HAZ.html">3.3. HAZ: Hazards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RDT/ASD.html">3.4. ASD: Asset Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RDT/HTA.html">3.5. HTA: Hazard to Asset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RDT/MOD.html">3.6. MOD: Asset Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RDT/ANA.html">3.7. ANA: Asset Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RDT/DL.html">3.8. DL: Damage and Loss</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.9. UQ: Uncertainty Quantification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dakota-uq-engine">3.9.1. Dakota UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">3.9.1.1. Forward Propagation Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ucsd-uq-engine">3.9.3. UCSD UQ Engine</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-uq-engine">3.9.4. Custom UQ Engine</a><ul class="simple">
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="GI.html">3.2. GI: General Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SIM.html">3.3. SIM: Structural Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="earthquake/earthquakeEvents.html">3.4. EVT: Earthquake Events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FEM.html">3.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">3.6. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">3.10. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RDT/RES.html">3.11. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
@@ -122,8 +133,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic City, NJ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/anchorage/index.html">3. Anchorage, AK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/memphis/index.html">4. Memphis, TN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/anchorage/anchorage.html">4. Anchorage, AK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">5. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -136,6 +148,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -183,7 +196,7 @@
         
           <li><a href="usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">3.1. </span>UQ: Uncertainty Quantification</li>
+      <li><span class="section-number">3.9. </span>UQ: Uncertainty Quantification</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,20 +216,33 @@
            <div itemprop="articleBody">
             
   <div class="section" id="uq-uncertainty-quantification">
-<h1><span class="section-number">3.1. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
-<p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel where the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations. Presently the <strong>UQ Engine</strong> option is limited to the Dakota engine.</p>
+<h1><span class="section-number">3.9. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
+<p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel where the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations. Presently the <strong>UQ Engine</strong> option supports Dakota and SimCenterUQ engine.</p>
 <div class="section" id="dakota-uq-engine">
-<h2><span class="section-number">3.1.1. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
-<p>This UQ engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. <strong>Dakota</strong> provides the user with a large number of different methods. For this reason we have divided the methods into categories though a pull-down menu, as shown in <a class="reference internal" href="#figdakota"><span class="std std-numref">Fig. 3.1.1</span></a>. Once the category has been selected, a number of different methods are made available to the user.</p>
+<h2><span class="section-number">3.9.1. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
+<p>This UQ engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. <strong>Dakota</strong> provides the user with a large number of different methods. For this reason we have divided the methods into categories though a pull-down menu, as shown in <a class="reference internal" href="#figdakota"><span class="std std-numref">Fig. 3.9.1</span></a>. Once the category has been selected, a number of different methods are made available to the user.</p>
 <div class="align-center figure" id="id1">
 <span id="figdakota"></span><img alt="../../../../_images/dakotaUQ.png" src="../../../../_images/dakotaUQ.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.1 </span><span class="caption-text">Dakota engine and category selection.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.9.1 </span><span class="caption-text">Dakota engine and category selection.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following categories are available:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="DakotaSampling.html">3.1.1.1. Forward Propagation Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DakotaSampling.html">3.9.1.1. Forward Propagation Methods</a></li>
 </ul>
+</div>
+</div>
+<div class="section" id="ucsd-uq-engine">
+<h2><span class="section-number">3.9.3. </span>UCSD UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this headline">¶</a></h2>
+<p>This is a module developed at UCSD. This module currently offers support for Bayesian calibration using the Transitional Markov chain Monte Carlo (TMCMC) algorithm, which is also known as the Sequential Monte Carlo algorithm:</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="custom-uq-engine">
+<h2><span class="section-number">3.9.4. </span>Custom UQ Engine<a class="headerlink" href="#custom-uq-engine" title="Permalink to this headline">¶</a></h2>
+<p>This option allows the user to plug different UQ engines into the quoFEM workflow such that different uncertainty quantification
+methods and tools can be easily applied within the SimCenter framework.</p>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 </div>
