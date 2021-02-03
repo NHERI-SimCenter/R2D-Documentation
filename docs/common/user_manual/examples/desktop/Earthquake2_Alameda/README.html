@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.2. Earthquake - Alameda &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>Earthquake - Alameda &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -44,8 +44,6 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.3. Earthquake - Anchorage" href="../Earthquake3_Anchorage/README.html" />
-    <link rel="prev" title="4.1. Basic Earthquake" href="../Earthquake1_Basic/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -110,26 +108,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../Earthquake1_Basic/README.html">4.1. Basic Earthquake</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. Earthquake - Alameda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Earthquake3_Anchorage/README.html">4.3. Earthquake - Anchorage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Earthquake4_Alameda_SW4/README.html">4.4. Earthquake - Alameda (SW4)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Earthquake5_Custom_OSPy/README.html">4.5. Earthquake - Custom - OpenSeesPy</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Testbeds</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">2. Atlantic City, NJ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/lake_charles/index.html">4. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -191,9 +175,7 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
-        
-      <li><span class="section-number">4.2. </span>Earthquake - Alameda</li>
+      <li>Earthquake - Alameda</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -213,56 +195,66 @@
            <div itemprop="articleBody">
             
   <div class="section" id="earthquake-alameda">
-<h1><span class="section-number">4.2. </span>Earthquake - Alameda<a class="headerlink" href="#earthquake-alameda" title="Permalink to this headline">¶</a></h1>
+<h1>Earthquake - Alameda<a class="headerlink" href="#earthquake-alameda" title="Permalink to this headline">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Download files</p></td>
+<td><p><a href="#id1"><span class="problematic" id="id2">:github:`Github &lt;Examples/Earthquake2_Alameda/&gt;`</span></a></p></td>
+</tr>
+</tbody>
+</table>
 <ol class="arabic">
-<li><p><strong>GI</strong></p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-GI.png"><img alt="../../../../../_images/r2dt-0002-GI.png" src="../../../../../_images/r2dt-0002-GI.png" style="width: 400px;" /></a>
+<li><p><strong>VIZ</strong> This example shows simulation for pseudo earthquake scenarios in Bay Area. The damage and loss of a sample of buildings in the Alameda County due to the soil liquefaction are estimated.  The results presented herein are only for demonstrating the use of R2DTool and do not serve as an accurate representation of the real losses.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-VIZ.png"><img alt="../../../../../_images/r2dt-0002-VIZ.png" src="../../../../../_images/r2dt-0002-VIZ.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>HAZ</strong></p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-HAZ.png"><img alt="../../../../../_images/r2dt-0002-HAZ.png" src="../../../../../_images/r2dt-0002-HAZ.png" style="width: 400px;" /></a>
+<li><p><strong>GI</strong> Next, the general information panel is used to broadly characterize the problem at hand. In this example, the imperial force and length units are used, and we’re interested in the engineering demand parameters, damage measures, and the resulting decision variable (e.g., expected replacement cost).</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-GI.png"><img alt="../../../../../_images/r2dt-0002-GI.png" src="../../../../../_images/r2dt-0002-GI.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>ASD</strong></p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-ASD.png"><img alt="../../../../../_images/r2dt-0002-ASD.png" src="../../../../../_images/r2dt-0002-ASD.png" style="width: 400px;" /></a>
+<li><p><strong>HAZ</strong> Now in the hazard panel, the <strong>User Specified Ground Motions</strong> option is selected which allows for the use of pre-generated earthquake scenarios. The following figure shows the relevant example files which are now entered in this pane. The peak ground acceleration, peak ground deformation (in both the horizontal and vertical directions) are used as intensity measure to quantify the potential earthquake effects.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-HAZ.png"><img alt="../../../../../_images/r2dt-0002-HAZ.png" src="../../../../../_images/r2dt-0002-HAZ.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>HTA</strong></p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-HTA.png"><img alt="../../../../../_images/r2dt-0002-HTA.png" src="../../../../../_images/r2dt-0002-HTA.png" style="width: 400px;" /></a>
+<li><p><strong>ASD</strong> In the asset definition panel, the path to the <code class="docutils literal notranslate"><span class="pre">all_bldgs.csv</span></code> file is specified. Once this file is loaded, the user can select which particular assets will be included in the analysis by entering a valid range in the form and clicking <strong>Select</strong>. For this example, the range <strong>1-20</strong> is used to include all buildings. The <code class="docutils literal notranslate"><span class="pre">input_params.csv</span></code> includes parameters for the damage and loss assessment (i.e., number of stories, year of built, occupancy class, structure type, plan area, replacement cost, population, and soil type).</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-ASD.png"><img alt="../../../../../_images/r2dt-0002-ASD.png" src="../../../../../_images/r2dt-0002-ASD.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>MOD</strong></p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="common/user_manual/examples/desktop/Earthquake2_Alameda/figures/r2dt-0002-MOD.png"><img alt="common/user_manual/examples/desktop/Earthquake2_Alameda/figures/r2dt-0002-MOD.png" src="common/user_manual/examples/desktop/Earthquake2_Alameda/figures/r2dt-0002-MOD.png" style="width: 400px;" /></a>
+<li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbour</strong> method and the <strong>SimCenterEvent</strong> application, which are configured as show in the following figure with <strong>1000</strong> samples in <strong>4</strong> neighborhoods.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-HTA.png"><img alt="../../../../../_images/r2dt-0002-HTA.png" src="../../../../../_images/r2dt-0002-HTA.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>ANA</strong></p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-ANA.png"><img alt="../../../../../_images/r2dt-0002-ANA.png" src="../../../../../_images/r2dt-0002-ANA.png" style="width: 400px;" /></a>
+<li><p><strong>MOD</strong> In the building modeling panel, simply leave the first dropdown box set to <strong>None</strong>.</p></li>
+<li><p><strong>ANA</strong> In the analysis panel, <strong>IMasEDP</strong> is selected from the primary dropdown.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-ANA.png"><img alt="../../../../../_images/r2dt-0002-ANA.png" src="../../../../../_images/r2dt-0002-ANA.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>DL</strong></p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="common/user_manual/examples/desktop/Earthquake2_Alameda/figures/r2dt-0002-DL.png"><img alt="common/user_manual/examples/desktop/Earthquake2_Alameda/figures/r2dt-0002-DL.png" src="common/user_manual/examples/desktop/Earthquake2_Alameda/figures/r2dt-0002-DL.png" style="width: 400px;" /></a>
+<li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun</strong> backend. The <strong>HAZUS MH EQ IM</strong> damage and loss method is selected and configured as shown in the following figure:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-DL.png"><img alt="../../../../../_images/r2dt-0002-DL.png" src="../../../../../_images/r2dt-0002-DL.png" style="width: 600px;" /></a>
 </div>
 </li>
 <li><p><strong>UQ</strong></p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-UQ.png"><img alt="../../../../../_images/r2dt-0002-UQ.png" src="../../../../../_images/r2dt-0002-UQ.png" style="width: 400px;" /></a>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-UQ.png"><img alt="../../../../../_images/r2dt-0002-UQ.png" src="../../../../../_images/r2dt-0002-UQ.png" style="width: 600px;" /></a>
 </div>
 </li>
 <li><p><strong>RV</strong></p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="common/user_manual/examples/desktop/Earthquake2_Alameda/figures/r2dt-0002-RV.png"><img alt="common/user_manual/examples/desktop/Earthquake2_Alameda/figures/r2dt-0002-RV.png" src="common/user_manual/examples/desktop/Earthquake2_Alameda/figures/r2dt-0002-RV.png" style="width: 400px;" /></a>
-</div>
+<p>The random variable panel will be left empty for this example.</p>
 </li>
-<li><p><strong>RES</strong></p>
-<div class="figure align-default">
-<a class="reference internal image-reference" href="common/user_manual/examples/desktop/Earthquake2_Alameda/figures/r2dt-0002-RES.png"><img alt="common/user_manual/examples/desktop/Earthquake2_Alameda/figures/r2dt-0002-RES.png" src="common/user_manual/examples/desktop/Earthquake2_Alameda/figures/r2dt-0002-RES.png" style="width: 400px;" /></a>
+<li><p><strong>RES</strong> The analysis outputs for the selected 20 buildings are show in the figure below. The buildings may experience severe damage states (Damage State 3 or 4 per HAZUS). The repair costs range from 3% to 7% of the total replacement costs, and the repair time range from 9 to more than 20 days.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-RES.png"><img alt="../../../../../_images/r2dt-0002-RES.png" src="../../../../../_images/r2dt-0002-RES.png" style="width: 600px;" /></a>
 </div>
 </li>
 </ol>
