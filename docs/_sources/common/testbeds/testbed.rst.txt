@@ -1,0 +1,15 @@
+.. _lbl-testbeds-manual:
+
+
+hello again
+
+.. toctree-filt::
+   :caption: Testbeds
+   :maxdepth: 1
+   :numbered: 3
+
+   sf_bay_area/index
+   atlantic_city/index
+   memphis/index
+   anchorage/index
+   lake_charles/index
