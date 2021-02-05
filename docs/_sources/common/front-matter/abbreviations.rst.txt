@@ -6,14 +6,26 @@ Abbreviations
 
 The following abbreviations may be found throughout this document:
 
+:ANA: Analysis            
+:ASD: Asset Description
 :BIM: Building Information Model
-:DL: Damage and Loss
+:DL:  Damage and Loss
 :EDP: Engineering Demand Parameter
-:GM: Ground Motion (of earthquake hazard)
-:IM: Intensity Measure (of hazard event)
+:GI:  General Informatiion      
+:GM:  Ground Motion (of earthquake hazard)
+:HAZ: Hazard
+:HTA: Hazard to Asset
+:IM:  Intensity Measure (of hazard event)
+:MOD: Modeling
+:RV:  Random Variable            
 :SAM: Structural Analysis Model (i. e. finite element model)
 :SIM: Simulation
-:UQ: Uncertainty Quantification
+:UQ:  Uncertainty Quantification
+
+
+
+
+      
 
 
 

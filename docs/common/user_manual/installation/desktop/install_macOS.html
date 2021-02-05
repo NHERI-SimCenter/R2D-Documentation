@@ -104,10 +104,11 @@
             
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -212,17 +213,17 @@
 <span id="lblinstallmac"></span><h1><span class="section-number">1.2. </span>Install on macOS 10<a class="headerlink" href="#install-on-macos-10" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-python-3-8">
 <h2><span class="section-number">1.2.1. </span>Install Python 3.8<a class="headerlink" href="#install-python-3-8" title="Permalink to this headline">¶</a></h2>
-<p>The Mac comes with Python pre-installed, but the default Python is the outdated version 2.7. As of January 1st, 2020 no new bug reports, fixes, or changes will be made to Python 2, and Python 2 is officially no longer supported. SimCenter tools require Python 3.
+<p>The Mac comes with Python pre-installed, but the default Python is the outdated version 2.7. As of January 1st, 2020 no new bug reports, fixes, or changes will be made to Python 2, and Python 2 is officially no longer supported. SimCenter tools require Python 3.8.
 If you have not yet installed Python, we recommend installing Python 3.8 from <a class="reference external" href="https://www.python.org/downloads/mac-osx">Python.org</a> , using the
-<strong>macOS 64-bit installer</strong>. The installer will place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH.</p>
+<strong>macOS 64-bit installer</strong>. The installer will place a python3 executable in your <strong>PATH</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The latest version of Python is 3.9. We recommend using the penultimate version to avoid issues with packages that might not have adopted yet to the latest version.</p>
+<p>The latest version of Python is 3.9.1. Certain modules required by SimCenter applications fail in the pip install process detailed below. This is typical of python releases, e.g. it was not until 3.8.6 that all modules needed compiled on both Mac and Windows.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
-<li><p>We use the python.org installation over others, due to it’s simplicity of install.</p></li>
+<li><p>We use the python.org installation over others, due to it’s simplicity of installation.</p></li>
 <li><p>The current Python installer leaves two script files in the Python directory at the end of the installation. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code>.</p></li>
 </ol>
 <div class="align-center figure" id="id5">
@@ -240,7 +241,7 @@ If you have not yet installed Python, we recommend installing Python 3.8 from <a
 </div>
 <p>Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.</p>
 <p>If you plan to use OpenSeesPy to run finite element analyses, you should also install that package at this point. (If you are not sure, we recommend you to install it.) You can install OpenSeesPy using the terminal window and the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install openseespy --upgrade
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install openseespymac --upgrade
 </pre></div>
 </div>
 <div class="admonition note">
@@ -285,7 +286,7 @@ If you have not yet installed Python, we recommend installing Python 3.8 from <a
 <p>Now test if the application starts properly. Navigate to the location where you placed the application and open it. You should see the user interface shown in <a class="reference internal" href="#figui-r2d"><span class="std std-numref">Fig. 1.2.7</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Since the SimCenter is not recognized as an Apple vendor, our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the R2D app application for the first time.</p>
+<p>Since the SimCenter app is codesigned and nororized, but it is not downloaded from the app store. As a consequence, depending on your security settings, when you start it for the first time macOS may bring up a dialog box indicating it is unsfae. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open. our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the R2D app application for the first time.</p>
 </div>
 <div class="align-center figure" id="id11">
 <span id="figui-r2d"></span><img alt="../../../../_images/PBE.png" src="../../../../_images/PBE.png" />
