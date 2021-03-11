@@ -223,11 +223,44 @@
 <p>The <strong>UQ application</strong> is used to sample <em>random variables</em> (RV) specified in any of the workflow steps (Event, Modeling, EDP, Simulation) for the purpose of uncertainty quantification, then to run commands written in the <strong>driver file</strong> which call on the backend applications to execute the R2D Workflow.
 It first populates values for the RVs, sampled from specified probability distributions, in the corresponding files (EVENT.json, SAM.json, EDP.json, SIM.json) for each simulation before executing the workflow.
 If no RVs are specified, then the UQ application directly runs commands in the driver file without random sampling.</p>
-<div class="align-center figure" id="figcontext">
+<div class="align-center figure">
 <img alt="../../../../../_images/backendapps_UQ.png" src="../../../../../_images/backendapps_UQ.png" />
 </div>
 <p>The following options for UQ applications vary in the software package used to perform uncertainty quantification.</p>
-member 'R2DTool' not found in {'standardUQ': {'bknd-000*': None}, 'createSAM': {'bknd-0019': None, 'bknd-0020': None, 'bknd-0021': None, 'bknd-0022': None}, 'createBIM': {'bknd-0001': None}, 'createEVENT': {'bknd-0005': None}, 'createEDP': {'bknd-0024': None, 'bknd-0025': None, 'bknd-0030': None, 'bknd-0028': None}, 'performSIMULATION': {'bknd-0031': None, 'bknd-0032': None, 'bknd-0033': None, 'bknd-0034': None, 'bknd-0035': None}, 'performDL': {'bknd-0044': None}, 'performRegionalMapping': {'bknd-0045': None}, 'quoFEM': {'include-item': {'%c:prepro*': None}}, 'WE-UQ': {'include-item': {'bknd-0024': None, 'bknd-0025': None, 'bknd-0030': None, 'bknd-0028': None, 'bknd-0019': None, 'bknd-0020': None, 'bknd-0021': None, 'bknd-0022': None, 'bknd-0005': None, 'bknd-000*': None, 'bknd-0031': None, 'bknd-0032': None, 'bknd-0033': None, 'bknd-0034': None, 'bknd-0035': None}}, 'EE-UQ': {'include-item': {'bknd-0024': None, 'bknd-0025': None, 'bknd-0030': None, 'bknd-0028': None, 'bknd-0019': None, 'bknd-0020': None, 'bknd-0021': None, 'bknd-0022': None, 'bknd-0005': None, 'bknd-000*': None, 'bknd-0031': None, 'bknd-0032': None, 'bknd-0033': None, 'bknd-0034': None, 'bknd-0035': None, 'bknd-0006': None}}, 'PBE': {'include-item': {'bknd-0024': None, 'bknd-0025': None, 'bknd-0030': None, 'bknd-0028': None, 'bknd-0019': None, 'bknd-0020': None, 'bknd-0021': None, 'bknd-0022': None, 'bknd-0005': None, 'bknd-000*': None, 'bknd-0031': None, 'bknd-0032': None, 'bknd-0033': None, 'bknd-0034': None, 'bknd-0035': None, 'bknd-0044': None, 'bknd-0006': None}}, 'R2D': {'include-item': {'bknd-0001': None, 'bknd-0024': None, 'bknd-0025': None, 'bknd-0030': None, 'bknd-0028': None, 'bknd-0019': None, 'bknd-0020': None, 'bknd-0021': None, 'bknd-0022': None, 'bknd-0005': None, 'bknd-000*': None, 'bknd-0044': None, 'bknd-0031': None, 'bknd-0032': None, 'bknd-0033': None, 'bknd-0034': None, 'bknd-0035': None, 'bknd-0045': None, 'bknd-0006': None}}}</div>
+
+
+
+<hr>
+<div class="twbs">
+  <div class="gallery accordion" id="gallery">
+  </div>
+</div>
+
+
+<script>
+function openCardTab(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script> 
+
+</div>
 
 
            </div>
