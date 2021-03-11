@@ -44,7 +44,7 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="4.1. Basic Earthquake" href="Earthquake1_Basic/README.html" />
+    <link rel="next" title="4.1. E4 - OpenSeesPy FEM" href="E4OpenSeesPyFEM/README.html" />
     <link rel="prev" title="3.2. Issues While Running" href="../../troubleshooting/desktop/troubleshootingRunning.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -116,11 +116,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Earthquake1_Basic/README.html">4.1. Basic Earthquake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Earthquake2_Alameda/README.html">4.2. Earthquake - Alameda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Earthquake3_Anchorage/README.html">4.3. Earthquake - Anchorage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Earthquake4_Alameda_SW4/README.html">4.4. Earthquake - Alameda (SW4)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Earthquake5_Custom_OSPy/README.html">4.5. Earthquake - Custom - OpenSeesPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E4OpenSeesPyFEM/README.html">4.1. E4 - OpenSeesPy FEM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E5GroundShakingAndLiquefaction/README.html">4.2. E5 - Ground Shaking and Liquefaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E2MDOFBuildingResponse/README.html">4.3. E2 - MDOF Building Response</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
@@ -217,14 +215,14 @@
 
   <div class="gallery" id="gallery">
   
-<div class="card shadow-sm mb-3  r2dt-0001 Basic-Earthquake gallery-item" >
+<div class="card shadow-sm mb-3  r2dt-0001 E4---OpenSeesPy-FEM gallery-item" >
   <div class="row g-0">
     <div class="card-header">
         <p>
-          <a href="./Earthquake1_Basic/README.html"> 
+          <a href="./E4OpenSeesPyFEM/README.html"> 
             <h5 class="gx-3">
               <!-- <code>r2dt-0001</code> -->
-              Basic Earthquake
+              E4 - OpenSeesPy FEM
             </h5>
           </a>
         </p>
@@ -234,8 +232,9 @@
     <!-- <div class="col-md-5"> -->
     <div class="col">
       <div class="card-body">
-          <!-- <h5 class="card-title">Basic Earthquake</h5> -->
-        <p class="card-text">A basic earthquake example.</p>
+          <!-- <h5 class="card-title">E4 - OpenSeesPy FEM</h5> -->
+        <p class="card-text">This example highlights the use of R2D for advanced response estimation leveraging information provided through a building inventory. A template script is provided that creates a building-specific cantilever and performs the response-history analysis to obtain EDPs and the hazard is generated using empirical ground motion records from the PEER NGA West2 database.
+</p>
       </div>
     </div>
         
@@ -247,14 +246,14 @@
 </div>
 
   
-<div class="card shadow-sm mb-3  r2dt-0002 Earthquake---Alameda gallery-item" >
+<div class="card shadow-sm mb-3  r2dt-0002 E5---Ground-Shaking-and-Liquef gallery-item" >
   <div class="row g-0">
     <div class="card-header">
         <p>
-          <a href="./Earthquake2_Alameda/README.html"> 
+          <a href="./E5GroundShakingAndLiquefaction/README.html"> 
             <h5 class="gx-3">
               <!-- <code>r2dt-0002</code> -->
-              Earthquake - Alameda
+              E5 - Ground Shaking and Liquefaction
             </h5>
           </a>
         </p>
@@ -264,8 +263,12 @@
     <!-- <div class="col-md-5"> -->
     <div class="col">
       <div class="card-body">
-          <!-- <h5 class="card-title">Earthquake - Alameda</h5> -->
-        <p class="card-text">A basic earthquake example.</p>
+          <!-- <h5 class="card-title">E5 - Ground Shaking and Liquefaction</h5> -->
+        <p class="card-text">This example presents a coupled damage assessment for ground shaking and liquefaction hazards. 
+To infer liquefaction, estimates of horizontal spreading and vertical settlement are generated from PGA values obtained through PSHA. 
+These three intensity measures form the basis of input to a building-level, HAZUS-based damage and loss assessment that accounts for potential collapses due to liquefaction. 
+Approximately 14,000 buildings are considered in the city of Alameda, CA.
+</p>
       </div>
     </div>
         
@@ -277,14 +280,14 @@
 </div>
 
   
-<div class="card shadow-sm mb-3  r2dt-0003 Earthquake---Anchorage gallery-item" >
+<div class="card shadow-sm mb-3  r2dt-0003 E2---MDOF-Building-Response gallery-item" >
   <div class="row g-0">
     <div class="card-header">
         <p>
-          <a href="./Earthquake3_Anchorage/README.html"> 
+          <a href="./E2MDOFBuildingResponse/README.html"> 
             <h5 class="gx-3">
               <!-- <code>r2dt-0003</code> -->
-              Earthquake - Anchorage
+              E2 - MDOF Building Response
             </h5>
           </a>
         </p>
@@ -294,73 +297,14 @@
     <!-- <div class="col-md-5"> -->
     <div class="col">
       <div class="card-body">
-          <!-- <h5 class="card-title">Earthquake - Anchorage</h5> -->
-        <p class="card-text">A basic earthquake example.</p>
+          <!-- <h5 class="card-title">E2 - MDOF Building Response</h5> -->
+        <p class="card-text">This example uses ground motions from the 2018 earthquake in Anchorage, AK, to characterize the response of buildings with an idealized MDOF building model through story-level Engineering Demand Parameters (EDP). Exploiting the refinement in EDPs, a HAZUS-based story-level assessment is employed to evaluate the performance of 510 buildings.
+</p>
       </div>
     </div>
         
       <!-- <div class="col-md-4 ml-auto mr-2 my-1"> -->
-        <!-- <img src="../../../../../_images/figures/r2dt-0003-GI.png" class="card-image" style="max-width:275px;max-height:220px;width:auto;height:auto;"> -->
-      <!-- </div> -->
-        
-  </div>
-</div>
-
-  
-<div class="card shadow-sm mb-3  r2dt-0004 Earthquake---Alameda-(SW4) gallery-item" >
-  <div class="row g-0">
-    <div class="card-header">
-        <p>
-          <a href="./Earthquake4_Alameda_SW4/README.html"> 
-            <h5 class="gx-3">
-              <!-- <code>r2dt-0004</code> -->
-              Earthquake - Alameda (SW4)
-            </h5>
-          </a>
-        </p>
-      
-      
-    </div>
-    <!-- <div class="col-md-5"> -->
-    <div class="col">
-      <div class="card-body">
-          <!-- <h5 class="card-title">Earthquake - Alameda (SW4)</h5> -->
-        <p class="card-text">A basic earthquake example.</p>
-      </div>
-    </div>
-        
-      <!-- <div class="col-md-4 ml-auto mr-2 my-1"> -->
-        <!-- <img src="../../../../../_images/figures/r2dt-0004-GI.png" class="card-image" style="max-width:275px;max-height:220px;width:auto;height:auto;"> -->
-      <!-- </div> -->
-        
-  </div>
-</div>
-
-  
-<div class="card shadow-sm mb-3  r2dt-0005 Earthquake---Custom---OpenSees gallery-item" >
-  <div class="row g-0">
-    <div class="card-header">
-        <p>
-          <a href="./Earthquake5_Custom_OSPy/README.html"> 
-            <h5 class="gx-3">
-              <!-- <code>r2dt-0005</code> -->
-              Earthquake - Custom - OpenSeesPy
-            </h5>
-          </a>
-        </p>
-      
-      
-    </div>
-    <!-- <div class="col-md-5"> -->
-    <div class="col">
-      <div class="card-body">
-          <!-- <h5 class="card-title">Earthquake - Custom - OpenSeesPy</h5> -->
-        <p class="card-text">A basic earthquake example.</p>
-      </div>
-    </div>
-        
-      <!-- <div class="col-md-4 ml-auto mr-2 my-1"> -->
-        <!-- <img src="../../../../../_images/figures/r2dt-0005-GI.png" class="card-image" style="max-width:275px;max-height:220px;width:auto;height:auto;"> -->
+        <!-- <img src="../../../../../_images/figures/r2dt-0003-VIZ.png" class="card-image" style="max-width:275px;max-height:220px;width:auto;height:auto;"> -->
       <!-- </div> -->
         
   </div>
