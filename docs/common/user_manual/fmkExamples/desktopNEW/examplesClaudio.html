@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -71,7 +70,7 @@
 
 
   
-  <img src="../../../../_static/RDT-Logo-grey3.png" class="logo" alt="Logo"/>
+  <img src="../../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -116,6 +115,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">1. Atlantic County, NJ</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -127,6 +130,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -208,159 +212,129 @@
 
   <div class="gallery" id="gallery">
   
-<div class="card shadow-sm mb-3  r2dt-0001 E4---OpenSeesPy-FEM gallery-item" >
-  <div class="row g-0">
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
     <div class="card-header">
         <p>
-          <a href="./E4OpenSeesPyFEM/README.html"> 
-            <h5 class="gx-3">
-              <!-- <code>r2dt-0001</code> -->
-              E4 - OpenSeesPy FEM
-            </h5>
+        <a href="./E1BasicHAZUS/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">E1 - Basic HAZUS</h5>
           </a>
         </p>
-      
-      
     </div>
-    <!-- <div class="col-md-5"> -->
-    <div class="col">
+    <div class="col-md-6"> 
       <div class="card-body">
-          <!-- <h5 class="card-title">E4 - OpenSeesPy FEM</h5> -->
-        <p class="card-text">This example highlights the use of R2D for advanced response estimation leveraging information provided through a building inventory. A template script is provided that creates a building-specific cantilever and performs the response-history analysis to obtain EDPs and the hazard is generated using empirical ground motion records from the PEER NGA West2 database.
+        <p class="card-text bg-light">This earthquake example demonstrates rapid analysis capabilities with the HAZUS earthquake damage and loss assessment methodology. Building-level Damage and Losses (D&L) are calculated directly from Intensity Measures (IM) for 25 assets. The IM field that represents peak ground acceleration in the city of San Francisco, CA, from an Mw7.2 event on the San Andreas fault, was obtained from Probabilistic Seismic Hazard Analysis (PSHA).
 </p>
+          
       </div>
     </div>
         
-      <!-- <div class="col-md-4 ml-auto mr-2 my-1"> -->
-        <!-- <img src="../../../../../_images/figures/r2dt-0001-VIZ.png" class="card-image" style="max-width:275px;max-height:220px;width:auto;height:auto;"> -->
-      <!-- </div> -->
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/r2dt-0006.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
         
   </div>
 </div>
 
   
-<div class="card shadow-sm mb-3  r2dt-0002 E5---Ground-Shaking-and-Liquef gallery-item" >
-  <div class="row g-0">
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
     <div class="card-header">
         <p>
-          <a href="./E5GroundShakingAndLiquefaction/README.html"> 
-            <h5 class="gx-3">
-              <!-- <code>r2dt-0002</code> -->
-              E5 - Ground Shaking and Liquefaction
-            </h5>
+        <a href="./E2MDOFBuildingResponse/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">E2 - MDOF Building Response</h5>
           </a>
         </p>
-      
-      
     </div>
-    <!-- <div class="col-md-5"> -->
-    <div class="col">
+    <div class="col-md-6"> 
       <div class="card-body">
-          <!-- <h5 class="card-title">E5 - Ground Shaking and Liquefaction</h5> -->
-        <p class="card-text">This example presents a coupled damage assessment for ground shaking and liquefaction hazards. 
+        <p class="card-text bg-light">This example uses ground motions from the 2018 earthquake in Anchorage, AK, to characterize the response of buildings with an idealized MDOF building model through story-level Engineering Demand Parameters (EDP). Exploiting the refinement in EDPs, a HAZUS-based story-level assessment is employed to evaluate the performance of 10 buildings.
+</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/r2dt-0003.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./E3PhysicsBasedGroundMotions/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">E3 - Physics-based Ground Motions</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example features ground motion acceleration time histories simulated using the SW4 software and a detailed geophysical model of the San Francisco Bay Area by the Lawrence Livermore National Laboratory. The ground motions are used to investigate the impact of a Mw7.0 earthquake on the Hayward fault on the city of Berkeley. Engineering Demand Parameters are simulated with an idealized MDOF building model; building performance is evaluated at the story-level based on the HAZUS earthquake damage and loss assessment methodology.
+</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/r2dt-0007.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./E4OpenSeesPyFEM/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">E4 - OpenSeesPy FEM</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example highlights the use of R2D for advanced response estimation leveraging information provided through a building inventory. A template script is provided that creates a building-specific cantilever and performs the response-history analysis to obtain EDPs and the hazard is generated using empirical ground motion records from the PEER NGA West2 database.
+</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/r2dt-0001.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./E5GroundShakingAndLiquefaction/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">E5 - Ground Shaking and Liquefaction</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example presents a coupled damage assessment for ground shaking and liquefaction hazards. 
 To infer liquefaction, estimates of horizontal spreading and vertical settlement are generated from PGA values obtained through PSHA. 
 These three intensity measures form the basis of input to a building-level, HAZUS-based damage and loss assessment that accounts for potential collapses due to liquefaction. 
 Approximately 14,000 buildings are considered in the city of Alameda, CA.
 </p>
+          
       </div>
     </div>
         
-      <!-- <div class="col-md-4 ml-auto mr-2 my-1"> -->
-        <!-- <img src="../../../../../_images/figures/r2dt-0002-VIZ.png" class="card-image" style="max-width:275px;max-height:220px;width:auto;height:auto;"> -->
-      <!-- </div> -->
-        
-  </div>
-</div>
-
-  
-<div class="card shadow-sm mb-3  r2dt-0003 E2---MDOF-Building-Response gallery-item" >
-  <div class="row g-0">
-    <div class="card-header">
-        <p>
-          <a href="./E2MDOFBuildingResponse/README.html"> 
-            <h5 class="gx-3">
-              <!-- <code>r2dt-0003</code> -->
-              E2 - MDOF Building Response
-            </h5>
-          </a>
-        </p>
-      
-      
-    </div>
-    <!-- <div class="col-md-5"> -->
-    <div class="col">
-      <div class="card-body">
-          <!-- <h5 class="card-title">E2 - MDOF Building Response</h5> -->
-        <p class="card-text">This example uses ground motions from the 2018 earthquake in Anchorage, AK, to characterize the response of buildings with an idealized MDOF building model through story-level Engineering Demand Parameters (EDP). Exploiting the refinement in EDPs, a HAZUS-based story-level assessment is employed to evaluate the performance of 510 buildings.
-</p>
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/r2dt-0002.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
       </div>
-    </div>
-        
-      <!-- <div class="col-md-4 ml-auto mr-2 my-1"> -->
-        <!-- <img src="../../../../../_images/figures/r2dt-0003-VIZ.png" class="card-image" style="max-width:275px;max-height:220px;width:auto;height:auto;"> -->
-      <!-- </div> -->
-        
-  </div>
-</div>
-
-  
-<div class="card shadow-sm mb-3  r2dt-0006 E1---Basic-HAZUS gallery-item" >
-  <div class="row g-0">
-    <div class="card-header">
-        <p>
-          <a href="./E1BasicHAZUS/README.html"> 
-            <h5 class="gx-3">
-              <!-- <code>r2dt-0006</code> -->
-              E1 - Basic HAZUS
-            </h5>
-          </a>
-        </p>
-      
-      
-    </div>
-    <!-- <div class="col-md-5"> -->
-    <div class="col">
-      <div class="card-body">
-          <!-- <h5 class="card-title">E1 - Basic HAZUS</h5> -->
-        <p class="card-text">This earthquake example demonstrates rapid analysis capabilities with the HAZUS earthquake damage and loss assessment methodology. Building-level Damage and Losses (D&L) are calculated directly from Intensity Measures (IM) for 100 assets. The IM field that represents peak ground acceleration in the city of San Francisco, CA, from an Mw7.2 event on the San Andreas fault, was obtained from Probabilistic Seismic Hazard Analysis (PSHA).
-</p>
-      </div>
-    </div>
-        
-      <!-- <div class="col-md-4 ml-auto mr-2 my-1"> -->
-        <!-- <img src="../../../../../_images/r2dt-0006.png" class="card-image" style="max-width:275px;max-height:220px;width:auto;height:auto;"> -->
-      <!-- </div> -->
-        
-  </div>
-</div>
-
-  
-<div class="card shadow-sm mb-3  r2dt-0007 E3---Physics-based-Ground-Moti gallery-item" >
-  <div class="row g-0">
-    <div class="card-header">
-        <p>
-          <a href="./E3PhysicsBasedGroundMotions/README.html"> 
-            <h5 class="gx-3">
-              <!-- <code>r2dt-0007</code> -->
-              E3 - Physics-based Ground Motions
-            </h5>
-          </a>
-        </p>
-      
-      
-    </div>
-    <!-- <div class="col-md-5"> -->
-    <div class="col">
-      <div class="card-body">
-          <!-- <h5 class="card-title">E3 - Physics-based Ground Motions</h5> -->
-        <p class="card-text">This example features ground motion acceleration time histories simulated using the SW4 software and a detailed geophysical model of the San Francisco Bay Area by the Lawrence Livermore National Laboratory. The ground motions are used to investigate the impact of a Mw7.0 earthquake on the Hayward fault on the city of Berkeley. Engineering Demand Parameters are simulated with an idealized MDOF building model; building performance is evaluated at the story-level based on the HAZUS earthquake damage and loss assessment methodology.
-</p>
-      </div>
-    </div>
-        
-      <!-- <div class="col-md-4 ml-auto mr-2 my-1"> -->
-        <!-- <img src="../../../../../_images/figures/r2dt-0007-VIZ.png" class="card-image" style="max-width:275px;max-height:220px;width:auto;height:auto;"> -->
-      <!-- </div> -->
         
   </div>
 </div>
@@ -369,7 +343,25 @@ Approximately 14,000 buildings are considered in the city of Alameda, CA.
 </div>
 
 <script>
-let selectedFilters = [];
+function findGetParameter(parameterName) {
+	var result = null,
+		tmp = [];
+	location.search
+		.substr(1)
+		.split("&")
+		.forEach(function (item) {
+		  tmp = item.split("=");
+		  if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+		});
+	return result;
+} 
+
+/*if(window.location.search) {
+  selectedFilters.push(findGetParameter("rtm"));
+}*/
+
+/*let selectedFilters = [];*/
+let selectedFilters = window.location.search.split("=")[1].split(",");
 const images  = document.getElementsByClassName("gallery-item");
 const filters = [...document.querySelectorAll('.filter select')];
 const toggles = [...document.querySelectorAll('.filter input')];
@@ -393,6 +385,16 @@ var toggleFilter =  function(el,elid) {
         filter.fireEvent("change");
 };
 
+for (filter of selectedFilters){
+    for (const image of images) {
+        if (selectedFilters.every(filter => image.classList.contains(filter.replace(".","-")))) {
+            show(image);
+        } else {
+            hide(image)
+        };
+    }
+}
+/*
 for (const filter of filters) {
     filter.addEventListener('change', function(event) {
         selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
@@ -400,11 +402,13 @@ for (const filter of filters) {
         for (const image of images) {
             if (selectedFilters.every(filter => image.classList.contains(filter))) {
                 show(image);
-            }
-            else {hide(image)};
+            } else {
+                hide(image)
+            };
         };
     })
 };
+*/
 </script>
 </div>
 
@@ -418,7 +422,7 @@ for (const filter of filters) {
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, The Regents of the University of California.
+        &#169; Copyright 2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -469,6 +473,7 @@ for (const filter of filters) {
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -505,6 +510,7 @@ for (const filter of filters) {
             };
         })
     };
+    */
 </script>
 
 

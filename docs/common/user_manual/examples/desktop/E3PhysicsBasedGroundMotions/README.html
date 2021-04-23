@@ -7,14 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.5. E3 - Physics-based Ground Motions &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>4.3. E3 - Physics-based Ground Motions &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,18 +34,18 @@
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="5. Bugs &amp; Feature Requests" href="../../../bugs.html" />
-    <link rel="prev" title="4.4. E1 - Basic HAZUS" href="../E1BasicHAZUS/README.html" />
+    <link rel="next" title="4.4. E4 - OpenSeesPy FEM" href="../E4OpenSeesPyFEM/README.html" />
+    <link rel="prev" title="4.2. E2 - MDOF Building Response" href="../E2MDOFBuildingResponse/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -73,7 +73,7 @@
 
 
   
-  <img src="../../../../../_static/RDT-Logo-grey3.png" class="logo" alt="Logo"/>
+  <img src="../../../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -116,17 +116,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../E4OpenSeesPyFEM/README.html">4.1. E4 - OpenSeesPy FEM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../E5GroundShakingAndLiquefaction/README.html">4.2. E5 - Ground Shaking and Liquefaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../E2MDOFBuildingResponse/README.html">4.3. E2 - MDOF Building Response</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../E1BasicHAZUS/README.html">4.4. E1 - Basic HAZUS</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.5. E3 - Physics-based Ground Motions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#modeling-procedure">4.5.1. Modeling Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../E1BasicHAZUS/README.html">4.1. E1 - Basic HAZUS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../E2MDOFBuildingResponse/README.html">4.2. E2 - MDOF Building Response</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. E3 - Physics-based Ground Motions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modeling-procedure">4.3.1. Modeling Procedure</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../E4OpenSeesPyFEM/README.html">4.4. E4 - OpenSeesPy FEM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../E5GroundShakingAndLiquefaction/README.html">4.5. E5 - Ground Shaking and Liquefaction</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">1. Atlantic County, NJ</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -139,6 +143,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -189,7 +194,7 @@
         
           <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">4.5. </span>E3 - Physics-based Ground Motions</li>
+      <li><span class="section-number">4.3. </span>E3 - Physics-based Ground Motions</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -209,7 +214,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="e3-physics-based-ground-motions">
-<h1><span class="section-number">4.5. </span>E3 - Physics-based Ground Motions<a class="headerlink" href="#e3-physics-based-ground-motions" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.3. </span>E3 - Physics-based Ground Motions<a class="headerlink" href="#e3-physics-based-ground-motions" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 22%" />
@@ -227,7 +232,7 @@
 <p>This example uses simulated ground motion time histories from the Lawrence Livermore National Lab. Due to size constraints, only the time histories near Berkeley are bundled with R2D. The complete set of simulated ground motions are available at <a class="reference external" href="https://berkeley.box.com/s/65113pqclc2j29ve9alita5kr7q2jnwc">https://berkeley.box.com/s/65113pqclc2j29ve9alita5kr7q2jnwc</a> . After downloading the zip file, extract its contents to the SW4 folder under input_data.</p>
 </div>
 <div class="section" id="modeling-procedure">
-<h2><span class="section-number">4.5.1. </span>Modeling Procedure<a class="headerlink" href="#modeling-procedure" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3.1. </span>Modeling Procedure<a class="headerlink" href="#modeling-procedure" title="Permalink to this headline">¶</a></h2>
 <p>We now embark on our journey through the input panels of R2D, making known to the workflow builder how our procedure should be built. An input file which will automatically configure these steps can be downloaded <a class="reference external" href="https://github.com/NHERI-SimCenter/R2DTool/tree/master/Examples/E3PhysicsBasedGroundMotions/input.json">here</a>.</p>
 <ol class="arabic">
 <li><p><strong>GI</strong> The following figure shows how the general information panel is configured to handle the units of our analysis and provide output corresponding to demand parameters, damage measures, and decision variables.</p>
@@ -278,7 +283,7 @@
 </li>
 <li><p><strong>RES</strong></p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="common/user_manual/examples/desktop/E3PhysicsBasedGroundMotions/figures/r2dt-0007-RES.png"><img alt="common/user_manual/examples/desktop/E3PhysicsBasedGroundMotions/figures/r2dt-0007-RES.png" src="common/user_manual/examples/desktop/E3PhysicsBasedGroundMotions/figures/r2dt-0007-RES.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0007.png"><img alt="../../../../../_images/r2dt-0007.png" src="../../../../../_images/r2dt-0007.png" style="width: 600px;" /></a>
 </div>
 </li>
 </ol>
@@ -295,7 +300,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, The Regents of the University of California.
+        &#169; Copyright 2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -346,6 +351,7 @@
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -382,6 +388,7 @@
             };
         })
     };
+    */
 </script>
 
 

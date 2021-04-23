@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -71,7 +70,7 @@
 
 
   
-  <img src="../../../../../_static/RDT-Logo-grey3.png" class="logo" alt="Logo"/>
+  <img src="../../../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -116,6 +115,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">1. Atlantic County, NJ</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -127,6 +130,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -215,44 +219,44 @@
 </li>
 <li><p><strong>GI</strong> First, the unit system and asset type are prescribed in this panel, and we’re interested in the building engineering demand parameters, damage measures, and the resulting decision variables.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-GI.png"><img alt="../../../../../_images/r2dt-0003-GI.png" src="../../../../../_images/r2dt-0003-GI.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-GI1.png"><img alt="../../../../../_images/r2dt-0003-GI1.png" src="../../../../../_images/r2dt-0003-GI1.png" style="width: 600px;" /></a>
 </div>
 </li>
 <li><p><strong>HAZ</strong> 12 recorded ground motions cross Anchorage (from the Center for Engineering Strong Motion Data, CESMD) are used as the ground acceleration time history inputs in this example. The PGA values of these 12 records range from 0.12 g to 0.81 g.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-HAZ.png"><img alt="../../../../../_images/r2dt-0003-HAZ.png" src="../../../../../_images/r2dt-0003-HAZ.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-HAZ1.png"><img alt="../../../../../_images/r2dt-0003-HAZ1.png" src="../../../../../_images/r2dt-0003-HAZ1.png" style="width: 600px;" /></a>
 </div>
 </li>
 <li><p><strong>ASD</strong> In the asset definition panel, the path to the <code class="docutils literal notranslate"><span class="pre">AnchorageBuilding.csv</span></code> file is specified. Once this file is loaded, the user can select which particular assets will be included in the analysis by entering a valid range (e.g., 1-50) in the form and clicking <strong>Select</strong>. The <code class="docutils literal notranslate"><span class="pre">AnchorageBuilding.csv</span></code> includes parameters for the damage and loss assessment (i.e., number of stories, year of built, occupancy class, structure type, and plan area) for more than 80,000 buildings in the community.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-ASD.png"><img alt="../../../../../_images/r2dt-0003-ASD.png" src="../../../../../_images/r2dt-0003-ASD.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-ASD1.png"><img alt="../../../../../_images/r2dt-0003-ASD1.png" src="../../../../../_images/r2dt-0003-ASD1.png" style="width: 600px;" /></a>
 </div>
 </li>
 <li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbour</strong> method and the <strong>SimCenterEvent</strong> application, which are configured as show in the following figure with <strong>3</strong> samples in <strong>4</strong> neighborhoods, i.e., randomly sampling 5 ground motions from the nearest four stations (each station has one ground motion recording specified in the <strong>HAZ</strong>).</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-HTA.png"><img alt="../../../../../_images/r2dt-0003-HTA.png" src="../../../../../_images/r2dt-0003-HTA.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-HTA1.png"><img alt="../../../../../_images/r2dt-0003-HTA1.png" src="../../../../../_images/r2dt-0003-HTA1.png" style="width: 600px;" /></a>
 </div>
 </li>
 <li><p><strong>MOD</strong> In the modeling panel, the <strong>MDOF-LU</strong> method is used to create Multi-Degree-Of-Freedom (MDOF) nonlinear shear building model from the input <code class="docutils literal notranslate"><span class="pre">AnchorageBuilding.csv</span></code>. Following the HAZUS EQ Technical Manual Chapter 5, a hysteretic nonlinear material is defined for each story with a story shear and displacement relationship with the initial stiffness, over-strength ratio, hardening ratio, and degradation factor. These parameters are stored in the <code class="docutils literal notranslate"><span class="pre">HazusData.txt</span></code> for different building design levels (e.g., high-, moderate-, or pre-code) which is now primarily based on the built year of the structure.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-MOD.png"><img alt="../../../../../_images/r2dt-0003-MOD.png" src="../../../../../_images/r2dt-0003-MOD.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-MOD1.png"><img alt="../../../../../_images/r2dt-0003-MOD1.png" src="../../../../../_images/r2dt-0003-MOD1.png" style="width: 600px;" /></a>
 </div>
 </li>
 <li><p><strong>ANA</strong> In the analysis panel, <strong>OpenSees</strong> is selected from the primary dropdown.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-ANA.png"><img alt="../../../../../_images/r2dt-0003-ANA.png" src="../../../../../_images/r2dt-0003-ANA.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-ANA1.png"><img alt="../../../../../_images/r2dt-0003-ANA1.png" src="../../../../../_images/r2dt-0003-ANA1.png" style="width: 600px;" /></a>
 </div>
 </li>
 <li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun</strong> backend. The <strong>HAZUS MH EQ</strong> damage and loss method is selected and configured as shown in the following figure:</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-DL.png"><img alt="../../../../../_images/r2dt-0003-DL.png" src="../../../../../_images/r2dt-0003-DL.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-DL1.png"><img alt="../../../../../_images/r2dt-0003-DL1.png" src="../../../../../_images/r2dt-0003-DL1.png" style="width: 600px;" /></a>
 </div>
 </li>
 </ol>
 <ol class="arabic">
 <li><p><strong>RES</strong> The analysis outputs for the selected 50 buildings are show in the figure below. The buildings are mostly likely in moderate damage states (Damage State 2 or 3 per HAZUS) with the non-structural damage would dominate the economic losses. The repair costs range from 1% to 7% of the total replacement costs, and the repair time range from 1 to 20 days.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-RES.png"><img alt="../../../../../_images/r2dt-0003-RES.png" src="../../../../../_images/r2dt-0003-RES.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0003-RES1.png"><img alt="../../../../../_images/r2dt-0003-RES1.png" src="../../../../../_images/r2dt-0003-RES1.png" style="width: 600px;" /></a>
 </div>
 </li>
 </ol>
@@ -268,7 +272,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, The Regents of the University of California.
+        &#169; Copyright 2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -319,6 +323,7 @@
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -355,6 +360,7 @@
             };
         })
     };
+    */
 </script>
 
 

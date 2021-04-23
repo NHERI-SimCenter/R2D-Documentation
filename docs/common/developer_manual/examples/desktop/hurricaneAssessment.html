@@ -7,14 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Hurricane Assessment &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>6.2. Hurricane Assessment &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -34,7 +34,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -44,6 +43,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="6.3. Regional Site Response Assessment" href="siteResponseAssessment/siteResponseAssessment.html" />
+    <link rel="prev" title="6.1. Earthquake Assessment" href="eqAssessment.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -71,7 +72,7 @@
 
 
   
-  <img src="../../../../_static/RDT-Logo-grey3.png" class="logo" alt="Logo"/>
+  <img src="../../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -103,10 +104,10 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/R2D/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">2. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -116,17 +117,32 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">1. Atlantic County, NJ</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../architecture/desktop/architecture.html">2. Software Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="examples.html">6. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="eqAssessment.html">6.1. Earthquake Assessment</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.2. Hurricane Assessment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inputs">6.2.1. Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-workflow">6.2.2. Run Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#outputs">6.2.3. Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="siteResponseAssessment/siteResponseAssessment.html">6.3. Regional Site Response Assessment</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -175,7 +191,9 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Hurricane Assessment</li>
+          <li><a href="examples.html"><span class="section-number">6. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">6.2. </span>Hurricane Assessment</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,15 +213,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="hurricane-assessment">
-<span id="lblhurricaneassessment-2"></span><h1>Hurricane Assessment<a class="headerlink" href="#hurricane-assessment" title="Permalink to this headline">¶</a></h1>
+<span id="lblhurricaneassessment-2"></span><h1><span class="section-number">6.2. </span>Hurricane Assessment<a class="headerlink" href="#hurricane-assessment" title="Permalink to this headline">¶</a></h1>
 <p>This example is a small-scale regional hurricane risk assessment which performs damage/loss estimation for a group of 20 wood buildings in Atlantic City under the Sandy Storm. The buildings are subject to two types of hazards: wind, measured by peak wind speed (PWS), and flooding, measured by flood water depth (FWD). This example does not use response simulation; rather, an <strong>IMasEDP</strong> application translates the IMs directly to the DL application and uses IM-based component fragility functions to estimate damage.
 The distribution of the buildings’ structural types and stories are illustrated below.</p>
 <div class="align-center figure" id="id1">
 <img alt="../../../../_images/SandyWindFlood.png" src="../../../../_images/SandyWindFlood.png" />
-<p class="caption"><span class="caption-text">Peak wind speed and floor water depth maps of the Sandy Storm</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6.2.1 </span><span class="caption-text">Peak wind speed and floor water depth maps of the Sandy Storm</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="inputs">
-<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.2.1. </span>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
 <p>The example input files can be downloaded here: <a class="reference download internal" download="" href="../../../../_downloads/1186f68647c09afb8cc26b551a16a31e/example_hu.zip"><code class="xref download docutils literal notranslate"><span class="pre">example_hu.zip</span></code></a>. For more information about required input files, refer to <a class="reference internal" href="../../architecture/desktop/file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">Inputs</span></a>.</p>
 <ol class="arabic simple">
 <li><p><strong>Configuration file</strong>: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.</p></li>
@@ -332,7 +350,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 </ol>
 <p><strong>Building source file:</strong></p>
 <table class="docutils align-center" id="id2">
-<caption><span class="caption-text">input_params.csv</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.2.1.1 </span><span class="caption-text">input_params.csv</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 3%" />
 <col style="width: 3%" />
@@ -368,7 +386,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
-<th class="head"><p>BldgID</p></th>
 <th class="head"><p>Latitude</p></th>
 <th class="head"><p>Longitude</p></th>
 <th class="head"><p>NumberofStories</p></th>
@@ -377,6 +394,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <th class="head"><p>StructureType</p></th>
 <th class="head"><p>PlanArea</p></th>
 <th class="head"><p>ReplacementCost</p></th>
+<th class="head"><p>BldgID</p></th>
 <th class="head"><p>BuildingType</p></th>
 <th class="head"><p>DesignLevel</p></th>
 <th class="head"><p>NoUnits</p></th>
@@ -402,7 +420,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 </thead>
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
-<td><p>NJBF000076747</p></td>
 <td><p>39.3946476</p></td>
 <td><p>-74.38335171</p></td>
 <td><p>2</p></td>
@@ -411,6 +428,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>2374.401933</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076747</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -434,7 +452,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
-<td><p>NJBF000078331</p></td>
 <td><p>39.40478555</p></td>
 <td><p>-74.37292084</p></td>
 <td><p>2</p></td>
@@ -443,6 +460,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1818.980493</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000078331</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -466,7 +484,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>3</p></td>
-<td><p>NJBF000077993</p></td>
 <td><p>39.40217618</p></td>
 <td><p>-74.37051873</p></td>
 <td><p>3</p></td>
@@ -475,6 +492,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1619.336001</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000077993</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -498,7 +516,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
-<td><p>NJBF000076799</p></td>
 <td><p>39.3948475</p></td>
 <td><p>-74.3972315</p></td>
 <td><p>3</p></td>
@@ -507,6 +524,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>3055.902695</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076799</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>2</p></td>
@@ -530,7 +548,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>5</p></td>
-<td><p>NJBF000074714</p></td>
 <td><p>39.38753797</p></td>
 <td><p>-74.39629697</p></td>
 <td><p>2</p></td>
@@ -539,6 +556,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1582.19943</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000074714</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -562,7 +580,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>6</p></td>
-<td><p>NJBF000073094</p></td>
 <td><p>39.37750766</p></td>
 <td><p>-74.40624347</p></td>
 <td><p>3</p></td>
@@ -571,6 +588,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>2517.40494</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000073094</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -594,7 +612,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>7</p></td>
-<td><p>NJBF000075007</p></td>
 <td><p>39.38842155</p></td>
 <td><p>-74.39774174</p></td>
 <td><p>2</p></td>
@@ -603,6 +620,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1848.058233</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000075007</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -626,7 +644,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>8</p></td>
-<td><p>NJBF000076649</p></td>
 <td><p>39.39420925</p></td>
 <td><p>-74.39982597</p></td>
 <td><p>1</p></td>
@@ -635,6 +652,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1741.939084</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076649</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -658,7 +676,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>9</p></td>
-<td><p>NJBF000077041</p></td>
 <td><p>39.39605527</p></td>
 <td><p>-74.37686411</p></td>
 <td><p>2</p></td>
@@ -667,6 +684,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>2607.634807</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000077041</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -690,7 +708,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>10</p></td>
-<td><p>NJBF000076014</p></td>
 <td><p>39.39195514</p></td>
 <td><p>-74.39192268</p></td>
 <td><p>2</p></td>
@@ -699,6 +716,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1822.850966</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076014</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>2</p></td>
@@ -722,7 +740,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>11</p></td>
-<td><p>NJBF000076122</p></td>
 <td><p>39.39230634</p></td>
 <td><p>-74.39190046</p></td>
 <td><p>1</p></td>
@@ -731,6 +748,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1452.656628</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076122</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -754,7 +772,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>12</p></td>
-<td><p>NJBF000074951</p></td>
 <td><p>39.38827458</p></td>
 <td><p>-74.40175717</p></td>
 <td><p>2</p></td>
@@ -763,6 +780,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1484.453177</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000074951</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -786,7 +804,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>13</p></td>
-<td><p>NJBF000076280</p></td>
 <td><p>39.39283616</p></td>
 <td><p>-74.38484882</p></td>
 <td><p>1</p></td>
@@ -795,6 +812,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1193.381064</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076280</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -818,7 +836,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>14</p></td>
-<td><p>NJBF000077814</p></td>
 <td><p>39.4010149</p></td>
 <td><p>-74.37840223</p></td>
 <td><p>2</p></td>
@@ -827,6 +844,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>2221.005922</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000077814</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -850,7 +868,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>15</p></td>
-<td><p>NJBF000076854</p></td>
 <td><p>39.39508401</p></td>
 <td><p>-74.37938833</p></td>
 <td><p>3</p></td>
@@ -859,6 +876,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>4174.045602</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076854</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -882,7 +900,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>16</p></td>
-<td><p>NJBF000077477</p></td>
 <td><p>39.39891822</p></td>
 <td><p>-74.38374712</p></td>
 <td><p>1</p></td>
@@ -891,6 +908,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1854.784061</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000077477</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -914,7 +932,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>17</p></td>
-<td><p>NJBF000077411</p></td>
 <td><p>39.39846003</p></td>
 <td><p>-74.37610456</p></td>
 <td><p>1</p></td>
@@ -923,6 +940,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>2564.4215</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000077411</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -946,7 +964,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>18</p></td>
-<td><p>NJBF000074052</p></td>
 <td><p>39.3846399</p></td>
 <td><p>-74.40300921</p></td>
 <td><p>2</p></td>
@@ -955,6 +972,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>7108.155643</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000074052</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -978,7 +996,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-even"><td><p>19</p></td>
-<td><p>NJBF000076250</p></td>
 <td><p>39.39273002</p></td>
 <td><p>-74.38416265</p></td>
 <td><p>2</p></td>
@@ -987,6 +1004,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>1044.401088</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076250</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -1010,7 +1028,6 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>NJ</p></td>
 </tr>
 <tr class="row-odd"><td><p>20</p></td>
-<td><p>NJBF000076852</p></td>
 <td><p>39.39505885</p></td>
 <td><p>-74.39231003</p></td>
 <td><p>2</p></td>
@@ -1019,6 +1036,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 <td><p>nav</p></td>
 <td><p>3546.990298</p></td>
 <td><p>1</p></td>
+<td><p>NJBF000076852</p></td>
 <td><p>3001</p></td>
 <td><p>NE</p></td>
 <td><p>1</p></td>
@@ -1049,7 +1067,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 </ol>
 <p><strong>Event grid file:</strong></p>
 <table class="docutils align-center" id="id3">
-<caption><span class="caption-text">EventGrid.csv</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.2.1.2 </span><span class="caption-text">EventGrid.csv</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 100%" />
 </colgroup>
@@ -6062,7 +6080,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 </table>
 <p><strong>Site file:</strong></p>
 <table class="docutils align-center" id="id4">
-<caption><span class="caption-text">1596.csv</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.2.1.3 </span><span class="caption-text">1596.csv</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -6084,7 +6102,7 @@ The distribution of the buildings’ structural types and stories are illustrate
 </ol>
 </div>
 <div class="section" id="run-workflow">
-<h2>Run Workflow<a class="headerlink" href="#run-workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.2.2. </span>Run Workflow<a class="headerlink" href="#run-workflow" title="Permalink to this headline">¶</a></h2>
 <p>The workflow can be executed by uploading the appropriate files to <a class="reference internal" href="../../architecture/desktop/run-manually/runRemote.html#lblrunremote"><span class="std std-ref">DesignSafe</span></a>, or by running the example on your <a class="reference internal" href="../../architecture/desktop/run-manually/runLocal.html#lblrunlocal"><span class="std std-ref">local desktop</span></a>, using the following <em>initialization command</em> in the terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/Workflow/R2D_workflow.py&quot;</span> <span class="s2">&quot;C:/rWHALE/hurricane_example/rWHALE_config_hu.json&quot;</span> <span class="o">--</span><span class="n">registry</span> <span class="s2">&quot;C:/rWHALE/applications/Workflow/WorkflowApplications.json&quot;</span> <span class="o">--</span><span class="n">referenceDir</span> <span class="s2">&quot;C:/rWHALE/hurricane_example/input_data/&quot;</span> <span class="o">-</span><span class="n">w</span> <span class="s2">&quot;C:/rWHALE/hurricane_example/results&quot;</span>
 </pre></div>
@@ -6107,13 +6125,13 @@ hurricane_example
 </div>
 </div>
 <div class="section" id="outputs">
-<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.2.3. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
 <p>The example output files can be downloaded here: <a class="reference download internal" download="" href="../../../../_downloads/ba9ae435959aec743e510d2129ac3bf0/output_data_hu.zip"><code class="xref download docutils literal notranslate"><span class="pre">output_data_hu.zip</span></code></a>. For more information about the output files produced, refer to <a class="reference internal" href="../../architecture/desktop/file-types/Outputs.html#lbloutputs"><span class="std std-ref">Outputs</span></a>.</p>
 <ol class="arabic simple">
 <li><p><strong>EDP_1-20.csv</strong>: reports statistics on EDP results, where the hazard IM is used as the EDP. As in HAZUS, the statistics reported are the median and lognormal standard deviation of peak wind speed (PWS) and flood water depth (FWD).</p></li>
 </ol>
 <table class="docutils align-center" id="id5">
-<caption><span class="caption-text">EDP_1-20.csv</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.2.3.1 </span><span class="caption-text">EDP_1-20.csv</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 20%" />
 <col style="width: 20%" />
@@ -6274,7 +6292,7 @@ hurricane_example
 <li><p><strong>DM_1-20.csv</strong>: reports collapse probability and damage state probability for each building asset. In the table below the “DSG_DS” values 0, 1_1, 2_1, 3_1, and 4_1 are four wind-induced damage states (from minor to severe), while the rest are the flood-induced damage states.</p></li>
 </ol>
 <table class="docutils align-center" id="id6">
-<caption><span class="caption-text">DM_1-20.csv</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.2.3.2 </span><span class="caption-text">DM_1-20.csv</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 4%" />
 <col style="width: 4%" />
@@ -6957,7 +6975,7 @@ hurricane_example
 <li><p><strong>DV_1-20.csv</strong>: reports decision variable estimates (i.e., repair cost) for each building asset.</p></li>
 </ol>
 <table class="docutils align-center" id="id7">
-<caption><span class="caption-text">DV_1-20.csv</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.2.3.3 </span><span class="caption-text">DV_1-20.csv</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 14%" />
 <col style="width: 14%" />
@@ -7177,7 +7195,7 @@ hurricane_example
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, The Regents of the University of California.
+        &#169; Copyright 2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -7228,6 +7246,7 @@ hurricane_example
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -7264,6 +7283,7 @@ hurricane_example
             };
         })
     };
+    */
 </script>
 
 
