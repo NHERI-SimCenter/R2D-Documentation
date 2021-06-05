@@ -13,6 +13,11 @@
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -31,6 +36,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
@@ -122,11 +128,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../E5GroundShakingAndLiquefaction/README.html">4.5. E5 - Ground Shaking and Liquefaction</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/R2D.html">5. R2D Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Testbeds</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">1. Atlantic County, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -136,10 +144,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">5. Examples</a></li>
 </ul>
 
             
@@ -222,9 +229,9 @@
 </tr>
 </tbody>
 </table>
-<p>This earthquake example demonstrates rapid analysis capabilities with the HAZUS earthquake damage and loss assessment methodology. Building-level Damage and Losses (D&amp;L) are calculated directly from Intensity Measures (IM) for 25 assets. The IM field that represents peak ground acceleration in the city of San Francisco, CA, from an Mw7.2 event on the San Andreas fault, was obtained from Probabilistic Seismic Hazard Analysis (PSHA).</p>
+<p>This earthquake example demonstrates rapid analysis capabilities with the HAZUS earthquake damage and loss assessment methodology. Building-level Damage and Losses (D&amp;L) are calculated directly from Intensity Measures (IM) for 100 assets. The IM field that represents peak ground acceleration in the city of San Francisco, CA, from an Mw7.2 event on the San Andreas fault, was obtained from Probabilistic Seismic Hazard Analysis (PSHA).</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0006-1.png"><img alt="../../../../../_images/r2dt-0006-1.png" src="../../../../../_images/r2dt-0006-1.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0006.png"><img alt="../../../../../_images/r2dt-0006.png" src="../../../../../_images/r2dt-0006.png" style="width: 400px;" /></a>
 </div>
 <p>This study will be defined by sequentially traversing the input panels of the <strong>R2D</strong> interface. However, as outlined in the online user’s manual, these procedures can be serialized to and loaded immediately from a JSON file, which for this example may be found <a class="reference external" href="https://github.com/NHERI-SimCenter/R2DTool/tree/master/Examples/E3PhysicsBasedGroundMotions/input.json">here</a>.</p>
 <ol class="arabic">
@@ -263,14 +270,6 @@
 <li><p><strong>VIZ</strong> The visualization panel in the following figure shows the location of the assets considered by this example.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0006-VIZ.png"><img alt="../../../../../_images/r2dt-0006-VIZ.png" src="../../../../../_images/r2dt-0006-VIZ.png" style="width: 600px;" /></a>
-</div>
-</li>
-<li><p><strong>RES</strong> The final step is to click the <strong>Run</strong> button at the bottom of the application, after which the results panel will be populated with a variety of widgets which can be configured to one’s heart’s content as shown below:</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0006.png"><img alt="../../../../../_images/r2dt-0006.png" src="../../../../../_images/r2dt-0006.png" style="width: 600px;" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../../../../_images/r2dt-0006-FULL.png"><img alt="../../../../../_images/r2dt-0006-FULL.png" src="../../../../../_images/r2dt-0006-FULL.png" style="width: 600px;" /></a>
 </div>
 </li>
 </ol>
