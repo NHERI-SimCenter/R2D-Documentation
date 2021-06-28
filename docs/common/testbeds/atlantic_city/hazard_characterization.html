@@ -115,6 +115,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -166,9 +167,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -285,12 +287,12 @@ users have two ways to engage this model to generate wind fields for this testbe
 1. analytical model to generate a customized windfield for use with this testbed.</p>
 <p>Wind fields described by either approach are then locally interpolated to the coordiantes associated with each
 footprint. The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated
-Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.3.1.11</span></a>). Because the SPH model tracks the maximum wind speed over the
+Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.3.1.15</span></a>). Because the SPH model tracks the maximum wind speed over the
 entire hurricane time history - so the inland cities are subjected to slightly higher wind speed than
 the coastal cities.</p>
 <div class="align-center figure" id="pws" style="width: 1000px">
 <img alt="../../../_images/pws.png" src="../../../_images/pws.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.1.11 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.1.15 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="storm-surge-modeling">
@@ -316,12 +318,12 @@ to estimate the depth of storm surge above ground, geospatially interpolated to 
 locations at approximately 120 m spacing, accompanied by the Limit of Moderate Wave Action
 (LiMWA) and wet-dry boundary respectively defining the extent of damaging waves and inundation
 over land at each of the transect points. These are then interpolated to the location of the coastal
-parcels to express the property exposure to storm surge (<a class="reference internal" href="#pwd"><span class="std std-numref">Fig. 2.3.1.12</span></a>). In the initial implementation, as demonstrated
+parcels to express the property exposure to storm surge (<a class="reference internal" href="#pwd"><span class="std std-numref">Fig. 2.3.1.16</span></a>). In the initial implementation, as demonstrated
 in this test, only the peak water depth (PWD) was considered, which will be used in the HAZUS
 Flood Damage and Loss Assessment.</p>
 <div class="align-center figure" id="pwd" style="width: 1000px">
 <img alt="../../../_images/pwd.png" src="../../../_images/pwd.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.1.12 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.1.16 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="multiple-category-analysis-mca">

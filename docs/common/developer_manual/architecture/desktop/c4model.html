@@ -49,7 +49,7 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3. Verification" href="../../verification/desktop/verification.html" />
+    <link rel="next" title="3. How to Extend" href="../../how_to_extend/desktop/how_to_extend.html" />
     <link rel="prev" title="2.4.3. Troubleshooting Errors" href="run-manually/troubleshooting.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -114,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -151,9 +152,10 @@
 <li class="toctree-l2"><a class="reference internal" href="architecture.html#overview">2.6. Overview</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">4. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -228,7 +230,7 @@
 <p>The SimCenter workflow systems are aimed at facilitating the use, reuse and extension of common workflows encountered in NHE by a broad range of natural hazards engineering researchers with varying levels of software skills. In order to encourage this use and adoption, this chapter presents the software architecture for the SimCenter framework and R2D app using the <a class="reference external" href="https://c4model.com">C4 model</a>. The C4 model is graphical approach for documenting software architecture through diagrams that describe and communicate the software architecture at different levels of abstraction. It is a top-down approach which starts at a high level (level 1) showing how a user would interact with the software and drills down through three more levels, with level 4 containing the typical UML diagrams. The choice of the <strong>C4</strong> model was made to provide NHE researchers with a diverse range of software architecture knowledge an understanding of the software architecture behind SimCenter applications that fits their skill level. The four levels:</p>
 <div class="section" id="level-1-context-diagram">
 <h2><span class="section-number">2.5.1. </span>Level 1: Context Diagram<a class="headerlink" href="#level-1-context-diagram" title="Permalink to this headline">¶</a></h2>
-<p>A Level 1 diagram in <a class="reference internal" href="../../examples/desktop/siteResponseAssessment/siteResponseAssessment.html#figcontext"><span class="std std-numref">Fig. 5.3.1.2</span></a> shows the system context for the SimCenter applications, i.e. how it fits in the world. In the diagram:
+<p>A Level 1 diagram in <a class="reference internal" href="../../examples/desktop/siteResponseAssessment/siteResponseAssessment.html#figcontext"><span class="std std-numref">Fig. 6.3.1.2</span></a> shows the system context for the SimCenter applications, i.e. how it fits in the world. In the diagram:
 - the SimCenter computational applications (EE-UQ, WE-UQ, PBE, R2D) are shown in the center surrounded by the user and the systems it interacts with.
 - input data for the SimCenter applications can be obtained either from NHERI datasets accessible on the DesignSafe <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/">Data Depot</a>, shown to the right, or from web-based databases, shown to the left.
 - the SimCenter applications can then be run in conjunction with open-source software applications (such as Dakota, FEAP, OpenSees, Python, OpenFOAM, etc.) either on a local desktop, shown below, or using HPC resources on <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>, shown to the right.</p>
