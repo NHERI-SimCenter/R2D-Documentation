@@ -105,7 +105,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">About</span></p>
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/R2D/about.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
@@ -114,7 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">6. Release Notes</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Guide</a></li>
@@ -123,16 +123,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/R2D.html">5. R2D Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Testbeds</span></p>
+<p class="caption" role="heading"><span class="caption-text">Testbeds</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
@@ -211,14 +211,14 @@
 <span id="lbl-projsett"></span><h1>Project settings<a class="headerlink" href="#project-settings" title="Permalink to this headline">¶</a></h1>
 <p>The first step is to setup the project as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">EVTSettings</span></code>. All of these settings, except <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">type</span></code>, are optional. However, setting them makes the future steps easier.</p>
 <div class="align-center figure" id="id1">
-<span id="projsettings"></span><a class="reference internal image-reference" href="../../../../../_images/ProjSett01.png"><img alt="../../../../../_images/ProjSett01.png" src="../../../../../_images/ProjSett01.png" style="height: 400px;" /></a>
+<span id="projsettings"></span><img alt="../../../../../_images/ProjSett01.png" src="../../../../../_images/ProjSett01.png" />
 <p class="caption"><span class="caption-text">Project settings for <code class="docutils literal notranslate"><span class="pre">Hydro</span></code> event</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic">
 <li><p><strong>Project name and description</strong>: This is an <em>optional</em> parameter primarily meant for the user to identify and differentiate between projects.</p></li>
 <li><p><strong>Simulation type</strong>: This is <em>mandatory</em> and without a selection of the type, no other options can be set. The various simulation types available in <code class="docutils literal notranslate"><span class="pre">Hydro</span></code> event are as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">SimType</span></code>. The differences between different simulation types are as given below.</p>
 <div class="align-center figure" id="id2">
-<span id="simtype"></span><a class="reference internal image-reference" href="../../../../../_images/SimulationType.png"><img alt="../../../../../_images/SimulationType.png" src="../../../../../_images/SimulationType.png" style="height: 200px;" /></a>
+<span id="simtype"></span><img alt="../../../../../_images/SimulationType.png" src="../../../../../_images/SimulationType.png" />
 <p class="caption"><span class="caption-text">Simulation types available in <code class="docutils literal notranslate"><span class="pre">Hydro</span></code> event</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="loweralpha simple">
@@ -230,7 +230,7 @@
 </li>
 <li><p><strong>Turbulence model</strong>:</p>
 <div class="align-center figure" id="id3">
-<span id="turbmodel"></span><a class="reference internal image-reference" href="../../../../../_images/TurbSett.png"><img alt="../../../../../_images/TurbSett.png" src="../../../../../_images/TurbSett.png" style="height: 100px;" /></a>
+<span id="turbmodel"></span><img alt="../../../../../_images/TurbSett.png" src="../../../../../_images/TurbSett.png" />
 <p class="caption"><span class="caption-text">Turbulence settings available for <code class="docutils literal notranslate"><span class="pre">Hydro</span></code> event</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Hydro-UQ presently supports two different turbulence models as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">TurbModel</span></code>. The available options include:</p>
@@ -239,7 +239,7 @@
 <li><p>k-Epsilon</p></li>
 <li><p>k-Omega SST</p></li>
 </ol>
-<p>By default, the flow is assumed to be laminar if no turbulence model is selected. More information about the turbulence wall models is available in the technical manual (<span class="xref std std-ref">lbl-openfoam</span>).</p>
+<p>By default, the flow is assumed to be laminar if no turbulence model is selected. More information about the turbulence wall models is available in the technical manual (<a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html#lbl-openfoam"><span class="std std-ref">CFD Solvers</span></a>).</p>
 </li>
 </ol>
 </div>
