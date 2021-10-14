@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -40,8 +40,7 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
@@ -135,7 +134,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="R2DTool/RES.html">2.10. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">2.10. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2DTool/RES.html">2.11. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
@@ -147,6 +147,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">3. Lake Charles, LA</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -231,11 +232,11 @@
             
   <div class="section" id="uq-uncertainty-quantification">
 <h1><span class="section-number">2.9. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
-<p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel where the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations.</p>
+<p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel that the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations. The <strong>UQ Engine</strong> provides algorithms for solving various types of uncertainty analysis and optimization problems.</p>
 <p>Presently the only <strong>UQ Engine</strong> option is Dakota.</p>
 <div class="section" id="dakota-uq-engine">
 <h2><span class="section-number">2.9.1. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
-<p>This UQ engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. <strong>Dakota</strong> provides the user with a large number of different methods. For this reason we have divided the methods into categories though a pull-down menu, as shown in <a class="reference internal" href="#figdakota"><span class="std std-numref">Fig. 2.9.1.1</span></a>. Once the category has been selected, a number of different methods are made available to the user.</p>
+<p>This UQ engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. <strong>Dakota</strong> provides the user with a large number of methods for different kinds of analyses. For this reason we have divided the methods into categories though a pull-down menu, as shown in <a class="reference internal" href="#figdakota"><span class="std std-numref">Fig. 2.9.1.1</span></a>. Once the category has been selected, a number of different methods are made available to the user.</p>
 <div class="align-center figure" id="id1">
 <span id="figdakota"></span><img alt="../../../../_images/dakotaUQ.png" src="../../../../_images/dakotaUQ.png" />
 <p class="caption"><span class="caption-number">Fig. 2.9.1.1 </span><span class="caption-text">Dakota engine and category selection.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>

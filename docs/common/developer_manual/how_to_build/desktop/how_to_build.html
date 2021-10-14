@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -40,8 +40,7 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
@@ -129,6 +128,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">3. Lake Charles, LA</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -282,13 +282,14 @@
 </div>
 <div class="section" id="build-the-applications">
 <h3><span class="section-number">1.2.2. </span>Build the applications<a class="headerlink" href="#build-the-applications" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic">
-<li><p>Obtain the code in the SimCenterBackendApplications repository from <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterBackendApplications">Github</a>. You can do that by using your preferred Git client/GUI or by using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command in the terminal:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NHERI</span><span class="o">-</span><span class="n">SimCenter</span><span class="o">/</span><span class="n">SimCenterBackendApplications</span>
+<ol class="arabic simple">
+<li><p>Obtain the code in the SimCenterBackendApplications repository from <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterBackendApplications">Github</a>. You can do that by using your preferred Git client/GUI or by using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command in the terminal:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NHERI</span><span class="o">-</span><span class="n">SimCenter</span><span class="o">/</span><span class="n">SimCenterBackendApplications</span>
 </pre></div>
 </div>
-</li>
-</ol>
+</div></blockquote>
 <ol class="arabic simple">
 <li><p>To build the applications you need to now navigate to the <strong>SimCenterBackendApplications</strong> folder that was created with the <strong>git clone</strong> command. Once there you will issue the following set of commands to create a <strong>build</strong> folder, change director to that folder, install needed software using conan, and finally use <strong>cmake</strong> to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).</p></li>
 </ol>
@@ -304,13 +305,9 @@
 </pre></div>
 </div>
 </div></blockquote>
-<p>For those developers using a Mac or Luinux operating system, in a terminal window type the following:</p>
+<p>On Windows, it is necessary to specify a compiler for CMake. To do this, you need to add additional arguments to line 4, i.e., if you have Visual Studio 2019, you would instead type:</p>
 <blockquote>
-<div><blockquote>
-<div><ol class="arabic simple">
-<li><p>On Windows, it is necessary to specify a compiler for CMake. To do this, you need to add additional arguments to line 4, i.e., if you have Visual Studio 2019, you would instead type:</p></li>
-</ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir build</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir build</span>
 <span class="go">cd build</span>
 <span class="go">conan install .. --build missing</span>
 <span class="go">cmake ..</span>
@@ -337,7 +334,6 @@
 </li>
 </ol>
 </div>
-</div></blockquote>
 <p>If building and installation were successful, you should find a folder called <code class="docutils literal notranslate"><span class="pre">applications</span></code> in the repository with all the applications inside of it.   The name of this folder should not be changed.</p>
 </div>
 </div>
@@ -358,9 +354,7 @@
 <li><p>Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler, and configuration and following the onscreen dialog.</p></li>
 <li><p>Build the application and run it in Qt Creator IDE using the <strong>Run</strong> button. This can be done using the keyboard shortcut <code class="docutils literal notranslate"><span class="pre">F5</span></code> to build and start the tool.</p></li>
 </ol>
-<ol class="arabic simple">
-<li><p>The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run <strong>qmake</strong>, and finally make (or on Windows nmake) to create the application.</p></li>
-</ol>
+<p>The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run <strong>qmake</strong>, and finally make (or on Windows nmake) to create the application.</p>
 <p>Windows developers will type the following in a terminal or a powershell window:</p>
 <blockquote>
 <div><pre class="literal-block">mkdir build
@@ -400,9 +394,9 @@ make</pre>
 <li><p>Custom Local Application: Here, select the checkbox to the left, and then provide the path to the SimCenterBackendApplications directory. The code assumes that the folder <strong>applications</strong>, which you created when building the backend applications, exists.</p></li>
 </ol>
 </div></blockquote>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id4">
 <span id="figpreferences"></span><img alt="../../../../_images/Preferences.png" src="../../../../_images/Preferences.png" />
-<p class="caption"><span class="caption-number">Fig. 1.4.4 </span><span class="caption-text">Preferences Dialog</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.4.4 </span><span class="caption-text">Preferences Dialog</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
