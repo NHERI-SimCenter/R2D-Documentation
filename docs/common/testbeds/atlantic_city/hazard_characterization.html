@@ -149,8 +149,8 @@
 <li class="toctree-l2"><a class="reference internal" href="response_simulation.html">2.5. Response Simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">2.6. Damage and Loss Estimation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">2.7. Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sample_results.html">2.8. Verification Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">2.9. Example Outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">2.8. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample_results.html">2.9. Verification Results</a></li>
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
@@ -287,12 +287,12 @@ users have two ways to engage this model to generate wind fields for this testbe
 1. analytical model to generate a customized windfield for use with this testbed.</p>
 <p>Wind fields described by either approach are then locally interpolated to the coordiantes associated with each
 footprint. The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated
-Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.3.1.15</span></a>). Because the SPH model tracks the maximum wind speed over the
+Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.3.1.17</span></a>). Because the SPH model tracks the maximum wind speed over the
 entire hurricane time history - so the inland cities are subjected to slightly higher wind speed than
 the coastal cities.</p>
 <div class="align-center figure" id="pws">
 <a class="reference internal image-reference" href="../../../_images/pws.png"><img alt="../../../_images/pws.png" src="../../../_images/pws.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.1.15 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.1.17 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="storm-surge-modeling">
@@ -318,12 +318,12 @@ to estimate the depth of storm surge above ground, geospatially interpolated to 
 locations at approximately 120 m spacing, accompanied by the Limit of Moderate Wave Action
 (LiMWA) and wet-dry boundary respectively defining the extent of damaging waves and inundation
 over land at each of the transect points. These are then interpolated to the location of the coastal
-parcels to express the property exposure to storm surge (<a class="reference internal" href="#pwd"><span class="std std-numref">Fig. 2.3.1.16</span></a>). In the initial implementation, as demonstrated
+parcels to express the property exposure to storm surge (<a class="reference internal" href="#pwd"><span class="std std-numref">Fig. 2.3.1.18</span></a>). In the initial implementation, as demonstrated
 in this test, only the peak water depth (PWD) was considered, which will be used in the HAZUS
 Flood Damage and Loss Assessment.</p>
 <div class="align-center figure" id="pwd">
 <a class="reference internal image-reference" href="../../../_images/pwd.png"><img alt="../../../_images/pwd.png" src="../../../_images/pwd.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.1.16 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.1.18 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="multiple-category-analysis-mca">
@@ -535,7 +535,7 @@ Report on the Effects of Hurricane Sandy on the State of New Jersey’s Natural 
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>

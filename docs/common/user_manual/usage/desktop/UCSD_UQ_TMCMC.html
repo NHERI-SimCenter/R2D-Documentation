@@ -256,51 +256,51 @@
 <p>In the <strong>Log Likelihood Script</strong> field, users can provide the path to a Python script which contains a function called <code class="docutils literal notranslate"><span class="pre">log_likelihood</span></code> that returns the log-likelihood value.</p>
 <p>By allowing users to define a <code class="docutils literal notranslate"><span class="pre">log_likelihood</span></code> function in the <strong>Log Likelihood Script</strong>, the workflow provides users full control in defining the log-likelihood model they desire to use.
 The <code class="docutils literal notranslate"><span class="pre">log_likelihood</span></code> function is called internally during the execution of the TMCMC algorithm, and this function must compute and return the log-likelihood value at a point in the parameter space. The function must take the arguments as shown below in signature of the <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/blob/master/backend/modules/performUQ/UCSD_UQ/defaultLogLikeScript.py">default log-likelihood script</a>. Within this function, users can define their own log-likelihood function.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">log_likelihood</span><span class="p">(</span><span class="n">calibrationData</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="n">numExperiments</span><span class="p">,</span> <span class="n">covarianceMatrixList</span><span class="p">,</span> <span class="n">edpNamesList</span><span class="p">,</span> <span class="n">edpLengthsList</span><span class="p">,</span>
-<span class="linenos"> 2</span>                   <span class="n">covarianceMultiplierList</span><span class="p">,</span> <span class="n">scaleFactors</span><span class="p">,</span> <span class="n">shiftFactors</span><span class="p">):</span>
-<span class="linenos"> 3</span>    <span class="sd">&quot;&quot;&quot; Compute the log-likelihood</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">log_likelihood</span><span class="p">(</span><span class="n">calibrationData</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">numExperiments</span><span class="p">,</span> <span class="n">covarianceMatrixList</span><span class="p">,</span> <span class="n">edpNamesList</span><span class="p">,</span>
+<span class="linenos"> 2</span>                   <span class="n">edpLengthsList</span><span class="p">,</span> <span class="n">covarianceMultiplierList</span><span class="p">,</span> <span class="n">scaleFactors</span><span class="p">,</span> <span class="n">shiftFactors</span><span class="p">):</span>
+<span class="linenos"> 3</span>    <span class="s2">&quot;&quot;&quot; Compute the log-likelihood</span>
 <span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="sd">    :param calibrationData: Calibration data consisting of the measured values of response. Each row contains the data</span>
-<span class="linenos"> 6</span><span class="sd">    from one experiment. The length of each row equals the sum of the lengths of all response quantities.</span>
-<span class="linenos"> 7</span><span class="sd">    :type calibrationData: numpy ndarray (atleast_2d)</span>
+<span class="linenos"> 5</span><span class="s2">    :param calibrationData: Calibration data consisting of the measured values of response. Each row contains the data</span>
+<span class="linenos"> 6</span><span class="s2">    from one experiment. The length of each row equals the sum of the lengths of all response quantities.</span>
+<span class="linenos"> 7</span><span class="s2">    :type calibrationData: numpy ndarray (atleast_2d)</span>
 <span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="sd">    :param prediction: Prediction of the response from the model, evaluated using the parameter values for</span>
-<span class="linenos">10</span><span class="sd">    which the log-likelihood function needs to be calculated.</span>
-<span class="linenos">11</span><span class="sd">    :type prediction: numpy ndarray (atleast_2d)</span>
+<span class="linenos"> 9</span><span class="s2">    :param prediction: Prediction of the response from the model, evaluated using the parameter values for</span>
+<span class="linenos">10</span><span class="s2">    which the log-likelihood function needs to be calculated.</span>
+<span class="linenos">11</span><span class="s2">    :type prediction: numpy ndarray (atleast_2d)</span>
 <span class="linenos">12</span>
-<span class="linenos">13</span><span class="sd">    :param numExperiments: Number of experiments from which data is available, this is equal to the number of rows</span>
-<span class="linenos">14</span><span class="sd">    (i.e., the first index) of the calibration data array</span>
-<span class="linenos">15</span><span class="sd">    :type numExperiments: int</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span><span class="sd">    :param covarianceMatrixList: A list of length numExperiments * numResponses, where each item in the list contains</span>
-<span class="linenos">18</span><span class="sd">    the covariance matrix or variance value corresponding to that experiment and response quantity, i.e., each item in</span>
-<span class="linenos">19</span><span class="sd">    the list is a block on the diagonal of the error covariance matrix</span>
-<span class="linenos">20</span><span class="sd">    :type covarianceMatrixList: list of numpy ndarrays</span>
-<span class="linenos">21</span>
-<span class="linenos">22</span><span class="sd">    :param edpNamesList: A list containing the names of the response quantities</span>
-<span class="linenos">23</span><span class="sd">    :type edpNamesList: list of strings</span>
+<span class="linenos">13</span><span class="s2">    :param parameters: A sample value of the model parameter vector.</span>
+<span class="linenos">14</span><span class="s2">    :type parameters: numpy ndarray</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="s2">    :param numExperiments: Number of experiments from which data is available, this is equal to the number of rows</span>
+<span class="linenos">17</span><span class="s2">    (i.e., the first index) of the calibration data array</span>
+<span class="linenos">18</span><span class="s2">    :type numExperiments: int</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="s2">    :param covarianceMatrixList: A list of length numExperiments * numResponses, where each item in the list contains</span>
+<span class="linenos">21</span><span class="s2">    the covariance matrix or variance value corresponding to that experiment and response quantity, i.e., each item in</span>
+<span class="linenos">22</span><span class="s2">    the list is a block on the diagonal of the error covariance matrix</span>
+<span class="linenos">23</span><span class="s2">    :type covarianceMatrixList: list of numpy ndarrays</span>
 <span class="linenos">24</span>
-<span class="linenos">25</span><span class="sd">    :param edpLengthsList: A list containing the length of each response quantity</span>
-<span class="linenos">26</span><span class="sd">    :type edpLengthsList: list of ints</span>
+<span class="linenos">25</span><span class="s2">    :param edpNamesList: A list containing the names of the response quantities</span>
+<span class="linenos">26</span><span class="s2">    :type edpNamesList: list of strings</span>
 <span class="linenos">27</span>
-<span class="linenos">28</span><span class="sd">    :param covarianceMultiplierList: A list containing multipliers on the default covariance matrices or variance</span>
-<span class="linenos">29</span><span class="sd">    values. The length of this list is equal to the number of response quantities. These additional variables, one</span>
-<span class="linenos">30</span><span class="sd">    per response quantity, are parameters of the likelihood model whose values are also calibrated.</span>
-<span class="linenos">31</span><span class="sd">    :type covarianceMultiplierList: list of floats</span>
-<span class="linenos">32</span>
-<span class="linenos">33</span><span class="sd">    :param scaleFactors: A list containing the normalizing factors used to scale (i.e. divide) the model</span>
-<span class="linenos">34</span><span class="sd">    prediction values. The length of this list is equal to the number of response quantities.</span>
-<span class="linenos">35</span><span class="sd">    :type scaleFactors: list of ints</span>
-<span class="linenos">36</span>
-<span class="linenos">37</span><span class="sd">    :param shiftFactors: A list containing the values used to shift (i.e. added to) the prediction values. The length of</span>
-<span class="linenos">38</span><span class="sd">    this list is equal to the number of response quantities.</span>
-<span class="linenos">39</span><span class="sd">    :type shiftFactors: list of ints</span>
-<span class="linenos">40</span>
-<span class="linenos">41</span><span class="sd">    :return: loglikelihood. This is a scalar value, which is equal to the logpdf of a zero-mean multivariate normal</span>
-<span class="linenos">42</span><span class="sd">    distribution and a user-supplied covariance structure. Block-diagonal covariance structures are supported. The value</span>
-<span class="linenos">43</span><span class="sd">    of multipliers on the covariance block corresponding to each response quantity is also calibrated.</span>
-<span class="linenos">44</span><span class="sd">    :rtype: float</span>
-<span class="linenos">45</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">28</span><span class="s2">    :param edpLengthsList: A list containing the length of each response quantity</span>
+<span class="linenos">29</span><span class="s2">    :type edpLengthsList: list of ints</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="s2">    :param covarianceMultiplierList: A list containing multipliers on the default covariance matrices or variance</span>
+<span class="linenos">32</span><span class="s2">    values. The length of this list is equal to the number of response quantities. These additional variables, one</span>
+<span class="linenos">33</span><span class="s2">    per response quantity, are parameters of the likelihood model whose values are also calibrated.</span>
+<span class="linenos">34</span><span class="s2">    :type covarianceMultiplierList: list of floats</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="s2">    :param scaleFactors: A list containing the normalizing factors used to scale (i.e. divide) the model</span>
+<span class="linenos">37</span><span class="s2">    prediction values. The length of this list is equal to the number of response quantities.</span>
+<span class="linenos">38</span><span class="s2">    :type scaleFactors: list of ints</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="s2">    :param shiftFactors: A list containing the values used to shift (i.e. added to) the prediction values. The length of</span>
+<span class="linenos">41</span><span class="s2">    this list is equal to the number of response quantities.</span>
+<span class="linenos">42</span><span class="s2">    :type shiftFactors: list of ints</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="s2">    :return: loglikelihood. This is a scalar value, which is equal to the logpdf of a zero-mean multivariate normal</span>
+<span class="linenos">45</span><span class="s2">    distribution and a user-supplied covariance structure. Block-diagonal covariance structures are supported. The value</span>
 </pre></div>
 </div>
 </div>
@@ -356,7 +356,7 @@ The <code class="docutils literal notranslate"><span class="pre">log_likelihood<
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>

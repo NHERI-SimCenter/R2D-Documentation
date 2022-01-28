@@ -126,8 +126,8 @@
 <li class="toctree-l2"><a class="reference internal" href="E3PhysicsBasedGroundMotions/README.html">4.3. E3 - Physics-based Ground Motions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="E4OpenSeesPyFEM/README.html">4.4. E4 - OpenSeesPy FEM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="E5GroundShakingAndLiquefaction/README.html">4.5. E5 - Ground Shaking and Liquefaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="E6ShakeMapScenario/README.html">4.6. E6 - ShakeMap Scenario</a></li>
-<li class="toctree-l2"><a class="reference internal" href="E7HurricaneWindWater/README.html">4.7. E7 - Hurricane Wind + Water</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E7HurricaneWindWater/README.html">4.6. E7 - Hurricane Wind + Water</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E8HurricaneWind/README.html">4.7. E8 - Hurricane Wind</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/R2D.html">5. R2D Requirements</a></li>
@@ -242,7 +242,7 @@
     </div>
     <div class="col-md-6"> 
       <div class="card-body">
-        <p class="card-text bg-light">This earthquake example demonstrates rapid analysis capabilities with the HAZUS earthquake damage and loss assessment methodology. Building-level Damage and Losses (D&L) are calculated directly from Intensity Measures (IM) for 25 assets. The IM field that represents peak ground acceleration in the city of San Francisco, CA, from an Mw7.2 event on the San Andreas fault, was obtained from Probabilistic Seismic Hazard Analysis (PSHA).
+        <p class="card-text bg-light">This earthquake example demonstrates rapid analysis capabilities with the HAZUS earthquake damage and loss assessment methodology. Building-level Damage and Losses (D&L) are calculated directly from Intensity Measures (IM) for 100 assets. The IM field that represents peak ground acceleration in the city of San Francisco, CA, from an Mw7.2 event on the San Andreas fault, was obtained from Probabilistic Seismic Hazard Analysis (PSHA).
 </p>
           
       </div>
@@ -267,7 +267,7 @@
     </div>
     <div class="col-md-6"> 
       <div class="card-body">
-        <p class="card-text bg-light">This example uses ground motions from the 2018 earthquake in Anchorage, AK, to characterize the response of buildings with an idealized MDOF building model through story-level Engineering Demand Parameters (EDP). Exploiting the refinement in EDPs, a HAZUS-based story-level assessment is employed to evaluate the performance of 10 buildings.
+        <p class="card-text bg-light">This example uses ground motions from the 2018 earthquake in Anchorage, AK, to characterize the response of buildings with an idealized MDOF building model through story-level Engineering Demand Parameters (EDP). Exploiting the refinement in EDPs, a HAZUS-based story-level assessment is employed to evaluate the performance of 510 buildings.
 </p>
           
       </div>
@@ -363,15 +363,16 @@ Approximately 14,000 buildings are considered in the city of Alameda, CA.
   <div class="row g-0 mb-3">
     <div class="card-header">
         <p>
-        <a href="./E6ShakeMapScenario/README.html"> 
-              <h5 style="--bs-gutter-x: 1.5em;">E6 - ShakeMap Input</h5>
+        <a href="./E6ShakemapScenario/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">E6 - ShakeMap Scenario</h5>
           </a>
         </p>
     </div>
     <div class="col-md-6"> 
       <div class="card-body">
-        <p class="card-text bg-light">This example presents a building loss assessment given a USGS ShakeMap as input. The Mw7.8 Scenario Earthquake - North San Andreas + North Coast + Peninsula + Santa Cruz Mountain (https://earthquake.usgs.gov/scenarios/eventpage/nclegacynpsanandreassansapsasm7p8_se/shakemap/) is employed in this example.
-Approximately 21,000 buildings are considered in the city of San Mateo, CA.</p>
+        <p class="card-text bg-light">This example presents a building loss assessment given a USGS ShakeMap as input. The Mw7.8 Scenario Earthquake - North San Andreas + North Coast + Peninsula + Santa Cruz Mountain (shakemap_id=npsanandreassansapsasm7p8_se) is employed in this example.
+Approximately 21,000 buildings are considered in the city of San Mateo, CA.
+</p>
           
       </div>
     </div>
@@ -395,13 +396,42 @@ Approximately 21,000 buildings are considered in the city of San Mateo, CA.</p>
     </div>
     <div class="col-md-6"> 
       <div class="card-body">
-        <p class="card-text bg-light">This example presents a damage and loss assessment for buildings under wind and water inundation hazards from a hurricane. Approximately 6,600 buildings with various occupancy types and construction materials are considered in Atlantic City, NJ, with specified rulesets for determining key building characteristics. A Category 5 intensity hurricane with 3-s gust peak wind speeds, obtained from the Storm Hazard Projection Tool (NJCoast project), is employed with HAZUS-Hurricane wind fragility functions to estimate building damage states and loss ratios. The peak wind speeds are calculated using a linear analytical model for the boundary layer winds (Snaiki and Wu, 2017), and the peak inundation heights are calculated from a surrogate model (Jia and Taflanidis, 2013).</p>
+        <p class="card-text bg-light">This example presents a damage and loss assessment for buildings under wind and water inundation hazards from a hurricane. Approximately 6,600 buildings with various occupancy types and construction materials are considered in Atlantic City, NJ, with specified rulesets for determining key building characteristics.
+A Category 5 intensity hurricane with 3-s gust peak wind speeds, obtained from the Storm Hazard Projection Tool (NJCoast project), is employed with HAZUS-Hurricane wind fragility functions to estimate building damage states and loss ratios. The peak wind speeds are calculated using a linear analytical model for the boundary layer winds (Snaiki and Wu, 2017), and the peak inundation heights are calculated from a surrogate model (Jia and Taflanidis, 2013).
+</p>
           
       </div>
     </div>
         
       <div class="col-md-5 ml-auto mr-2 my-3">
        <img src="../../../../_images/r2dt-0007.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./E8HurricaneWind/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">E8 - Hurricane Wind</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">Hurricane Laura made landfall as a strong Category 4 storm near Cameron, LA in the early hours of 27 August 2020, tying the Last Island Hurricane of 1856 as the strongest land-falling hurricane in Louisiana history.
+This example presents a wind-induced damage assessment for Lake Charles, LA. Peak wind speed data of Hurricane Laura from Applied Research Associates, Inc. is used as intensity measure, inventory data of about 26,000 wood residential buildings
+is used along with the rulesets developed tp map the inventory to HAZUS-type damage assessment. Final results include the damage and loss estimations along with the building information models based on the rulesets.
+</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/r2dt-0008.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
       </div>
         
   </div>
@@ -490,7 +520,7 @@ for (const filter of filters) {
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>
