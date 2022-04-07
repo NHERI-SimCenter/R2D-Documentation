@@ -126,6 +126,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#buildings">2.4.1. Buildings</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#csv-to-bim">2.4.1.1. CSV to BIM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gis-to-bim">2.4.1.2. GIS to BIM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#housing-unit-allocation">2.4.1.3. Housing Unit Allocation</a></li>
 </ul>
 </li>
 </ul>
@@ -236,19 +237,20 @@
 <p>In this panel the user can import the databases of different asset classes. The user can select the type of asset from the <strong>Asset Selection Ribbon</strong>, e.g., Buildings and Gas Network, as shown on the left-hand side of <a class="reference internal" href="#fig-buildinginputpanel"><span class="std std-numref">Fig. 2.4.1.1.2</span></a>. The <strong>Asset Selection Ribbon</strong> appears when more than one type of asset is selected in the <strong>GI: General Information</strong> panel. Moreover, only the assets that are checked in the <strong>GI: General Information</strong> panel will appear in the <strong>Asset Selection Ribbon</strong>. As the user switches between assets, the main panel changes to reflect the applications available for the import of each type of asset.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#buildings" id="id4">Buildings</a></p>
+<li><p><a class="reference internal" href="#buildings" id="id5">Buildings</a></p>
 <ul>
-<li><p><a class="reference internal" href="#csv-to-bim" id="id5">CSV to BIM</a></p></li>
-<li><p><a class="reference internal" href="#gis-to-bim" id="id6">GIS to BIM</a></p></li>
+<li><p><a class="reference internal" href="#csv-to-bim" id="id6">CSV to BIM</a></p></li>
+<li><p><a class="reference internal" href="#gis-to-bim" id="id7">GIS to BIM</a></p></li>
+<li><p><a class="reference internal" href="#housing-unit-allocation" id="id8">Housing Unit Allocation</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="buildings">
-<h2><a class="toc-backref" href="#id4"><span class="section-number">2.4.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5"><span class="section-number">2.4.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this headline">¶</a></h2>
 <p>The buildings input panel, as shown in <a class="reference internal" href="#fig-buildinginputpanel"><span class="std std-numref">Fig. 2.4.1.1.2</span></a>, allows a user to input a building inventory database. The <strong>Building Import Selection</strong> combo box is where the user selects the application for the import of buildings, and for the generation of a building information model (BIM).</p>
 <div class="section" id="csv-to-bim">
-<h3><a class="toc-backref" href="#id5"><span class="section-number">2.4.1.1. </span>CSV to BIM</a><a class="headerlink" href="#csv-to-bim" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6"><span class="section-number">2.4.1.1. </span>CSV to BIM</a><a class="headerlink" href="#csv-to-bim" title="Permalink to this headline">¶</a></h3>
 <p>The <strong>CSV to BIM</strong> application imports a building inventory database from a user provided .csv file.</p>
 <ol class="arabic">
 <li><p>The <strong>Path to Buildings Database</strong> box is where the user supplies the file path to the .csv file that contains the building inventory. At a minimum, the .csv file must contain columns providing the building identification numbers (ID), in sequential order, and the latitudes and the longitudes of the locations of the buildings. Any number of columns can be added to the file to provide information required by other applications in the workflow.</p></li>
@@ -273,7 +275,7 @@
 </div>
 </div>
 <div class="section" id="gis-to-bim">
-<h3><a class="toc-backref" href="#id6"><span class="section-number">2.4.1.2. </span>GIS to BIM</a><a class="headerlink" href="#gis-to-bim" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7"><span class="section-number">2.4.1.2. </span>GIS to BIM</a><a class="headerlink" href="#gis-to-bim" title="Permalink to this headline">¶</a></h3>
 <p>The <strong>GIS to BIM</strong> application imports a building inventory database from a user-provided GIS file (e.g., shapefile, geodatabase). The input panel is shown in <a class="reference internal" href="#fig-r2dgisbuildingsinputpanel"><span class="std std-numref">Fig. 2.4.1.2.1</span></a>.</p>
 <ol class="arabic">
 <li><p>The <strong>GIS Input File</strong> box is where the user supplies the file path to the GIS file that contains the building inventory. Clicking on the <strong>Browse</strong> button will open a dialog where you can select the appropriate file.</p></li>
@@ -290,6 +292,23 @@
 <div class="align-center figure" id="id3">
 <span id="fig-r2dgisbuildingsinputpanel"></span><img alt="../../../../../_images/R2DGISBuildingsInputPanel.png" src="../../../../../_images/R2DGISBuildingsInputPanel.png" />
 <p class="caption"><span class="caption-number">Fig. 2.4.1.2.1 </span><span class="caption-text">GIS to BIM input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="housing-unit-allocation">
+<h3><a class="toc-backref" href="#id8"><span class="section-number">2.4.1.3. </span>Housing Unit Allocation</a><a class="headerlink" href="#housing-unit-allocation" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Housing Unit Allocation</strong> application can be employed to augment an existing building inventory (supplied in a GIS format, e.g., shapefile, geodatabase) with census demographic information. The input panel is shown in <a class="reference internal" href="#fig-r2dhuapanel"><span class="std std-numref">Fig. 2.4.1.3.1</span></a>. Given a building inventory, the <strong>Housing Unit Allocation</strong> application will download demographic data from the US Census website. First, the application cross-references the building inventory with a US counties map (2021), generating a set of unique US county codes that overlap with the building inventory. Next, the US census API is queried and the population demographic information within each county is downloaded at the block level and saved locally as GIS files to the output folder. The download of census data employs a modified version of the <code class="docutils literal notranslate"><span class="pre">censusutil.py</span></code> script from the <a class="reference external" href="https://github.com/IN-CORE/pyincore-data">pyincore-data</a> module, a component of IN-CORE. Lastly, the demographic information from the downloaded GIS files can be extracted and saved to a new layer that is a copy of the original building inventory. Each building within the new building inventory layer will contain the population demographics (percent inhabitants that are of black, hispanic, white, and other races), extracted from the downloaded census block level layer.</p>
+<ol class="arabic simple">
+<li><p>The <strong>Building GIS File</strong> box is where the file path to the GIS file that contains the building inventory is specified. Clicking on the <strong>Browse</strong> button will open a dialog where you can select the appropriate file. When a building GIS file is loaded, a copy of the original building inventory layer is automatically created. Going forward, the copied building inventory layer is employed, as to keep the original building inventory file intact.</p></li>
+<li><p>The <strong>Coordinate Reference System (CRS)</strong> dropdown is where the coordinate reference system for a particular GIS file is specified. Each GIS file should have an accompanying CRS that will need to be specified.</p></li>
+<li><p>The <strong>Census Date</strong> dropdown is where the census vintage is provided. Currently, the 2000 and 2010 census dates are supported.</p></li>
+<li><p>The <strong>Output Folder</strong> is where the program will save the GIS files that are downloaded from the US Census API.</p></li>
+<li><p>The <strong>Download Census Data Button</strong> runs the process that extracts counties from the building inventory, calls the US Census API to download demographic data for the extracted counties, and saves the data as GIS files to the output folder.</p></li>
+<li><p>The <strong>Census Block-level GIS File</strong> box provides the file path to the GIS file that should contain the block-level census data. This will be populated automatically if the <strong>Download Census Data</strong> process from above is run. Otherwise, users can supply their own data.  Clicking on the <strong>Browse</strong> button will open a dialog where you can select the appropriate file.</p></li>
+<li><p>The <strong>Extract Census Data Button</strong> runs the process that extracts the demographics data from the block-level GIS file and appends that information to each building in the building inventory layer copy. Users can now save the newly augmented layer by right-clicking on the layer in the layer tree and selecting the <code class="docutils literal notranslate"><span class="pre">Export-&gt;Save</span> <span class="pre">As</span></code> option.</p></li>
+</ol>
+<div class="align-center figure" id="id4">
+<span id="fig-r2dhuapanel"></span><img alt="../../../../../_images/R2DHUAPanel.png" src="../../../../../_images/R2DHUAPanel.png" />
+<p class="caption"><span class="caption-number">Fig. 2.4.1.3.1 </span><span class="caption-text">Housing Unit Allocation input panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

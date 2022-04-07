@@ -258,8 +258,13 @@
 </dd>
 </dl>
 </li>
+<li><dl class="simple">
+<dt>User-provided Fragilities</dt><dd><p>The <strong>User-provided Fragilities</strong> option allows users to employ their own custom fragility functions in the damage and loss workflow. This option expects the user to provide an auto-populate script and the path to a folder containing the user-defined fragility functions, as seen below in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>.</p>
+</dd>
+</dl>
+</li>
 </ul>
-<p>All of the HAZUS options employ data from the <em>Hazards U.S. Multi-Hazard project</em> (HAZUS-MH). The <strong>Hazus MH EQ</strong> and the <strong>Hazus MH EQ IM</strong> options are intended for damage and loss analysis of buildings subjected to earthquakes. The <strong>Hazus MH HU</strong> option is intended for damage and loss analysis of buildings subjected to hurricanes.</p>
+<p>The HAZUS options employ data from the <em>Hazards U.S. Multi-Hazard project</em> (HAZUS-MH). The <strong>Hazus MH EQ</strong> and the <strong>Hazus MH EQ IM</strong> options are intended for damage and loss analysis of buildings subjected to earthquakes. The <strong>Hazus MH HU</strong> option is intended for damage and loss analysis of buildings subjected to hurricanes.</p>
 </div></blockquote>
 </li>
 <li><p><strong>Event Time:</strong> Select event time ‘on’ or ‘off’. Selecting the event time to ‘on’ defines the time of the event in YYYY-MM-DD:HH format. ‘off’ turns all time-effects off.</p></li>
@@ -267,6 +272,8 @@
 <li><p><strong>Output Detailed Results:</strong> Checking this box will output detailed results.</p></li>
 <li><p><strong>Create Log File:</strong> Checking this box will create a log file of the analysis.</p></li>
 <li><p><strong>Include Ground Failure:</strong> Checking this box will include ground failure in the analysis. If ground failure is included, fragility groups associated with ground failure are added in the auto-population phase. Note that such analysis requires peak ground displacement (PGD) values as inputs.</p></li>
+<li><p><strong>Auto-populate Script:</strong> A path to a Python script that is user-provided. The auto-populate script is employed to link or map assets to their respective fragility functions.</p></li>
+<li><p><strong>User-defined Fragility Function Folder:</strong> A path to a folder that contains any user-defined fragility functions.</p></li>
 </ol>
 </div></blockquote>
 <div class="align-center figure" id="id1">
