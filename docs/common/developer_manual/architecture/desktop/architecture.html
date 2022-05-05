@@ -111,9 +111,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/R2D/about.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/releasenotes.html">7. Release Notes</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -278,7 +279,7 @@
 <span id="figcontext"></span><a class="reference internal image-reference" href="../../../../_images/context.png"><img alt="../../../../_images/context.png" src="../../../../_images/context.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.6.4 </span><span class="caption-text">System context diagram for SimCenter applications.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
-<p>Given how SimCenter applications fit in with the environment, a level 2 diagram demonstrates how the SimCenter applications are broken into high-level components. The SimCenter applications are, as shown in <a class="reference internal" href="c4model.html#figcontainer"><span class="std std-numref">Fig. 2.5.2.1</span></a>, split into two components: A front-end UI and a back-end application that runs the workflow. The front-end applications are desktop applications written using the cross-platform <a class="reference external" href="https://www.qt.io/product/framework">Qt framework</a>. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow, and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications were possible and run on either the local desktop machine or on an HPC utilizing resources made available to the NHE community through DesignSafe.</p>
+<p>Given how SimCenter applications fit in with the environment, a level 2 diagram demonstrates how the SimCenter applications are broken into high-level components. The SimCenter applications are, as shown in <a class="reference internal" href="c4model.html#figcontainer"><span class="std std-numref">Fig. 2.5.2.1</span></a>, split into two components: A front-end UI and a back-end application that runs the workflow. The front-end applications are desktop applications written using the cross-platform <a class="reference external" href="https://www.qt.io/product/framework">Qt framework</a>. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow, and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications where possible and run on either the local desktop machine or on an HPC utilizing resources made available to the NHE community through DesignSafe.</p>
 <div class="align-center figure" id="id6">
 <span id="figcontainer"></span><a class="reference internal image-reference" href="../../../../_images/container.png"><img alt="../../../../_images/container.png" src="../../../../_images/container.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.6.5 </span><span class="caption-text">System container diagram for SimCenter applications.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
