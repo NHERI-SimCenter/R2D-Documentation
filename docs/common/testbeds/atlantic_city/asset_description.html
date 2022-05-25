@@ -612,7 +612,7 @@ specific implementation, the peak model performance was achieved using the <a cl
 rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" href="../lake_charles/asset_description.html#num-stories-detection"><span class="std std-numref">Fig. 3.2.2.5</span></a> shows examples of the
 floor detections performed by the model.</p>
 <div class="align-center figure" id="num-stories-detection">
-<a class="reference internal image-reference" href="../../../_images/NumOfStoriesDetection1.png"><img alt="../../../_images/NumOfStoriesDetection1.png" src="../../../_images/NumOfStoriesDetection1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/NumOfStoriesDetection.png"><img alt="../../../_images/NumOfStoriesDetection.png" src="../../../_images/NumOfStoriesDetection.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.2.1 </span><span class="caption-text">Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates model confidence level associated with that prediction.</span><a class="headerlink" href="#num-stories-detection" title="Permalink to this image">¶</a></p>
 </div>
 <p>For an image, the described floor detection model generates the bounding box output for its
@@ -635,7 +635,7 @@ In quantifying both accuracy levels, a test set of 3,000 images randomly selecte
 across all counties of a companion testbed in New Jersey, excluding Atlantic County (site of that
 testbed), was utilized.</p>
 <div class="align-center figure" id="num-stories-vali">
-<a class="reference internal image-reference" href="../../../_images/NumOfStoriesVali1.png"><img alt="../../../_images/NumOfStoriesVali1.png" src="../../../_images/NumOfStoriesVali1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/NumOfStoriesVali.png"><img alt="../../../_images/NumOfStoriesVali.png" src="../../../_images/NumOfStoriesVali.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.2.2 </span><span class="caption-text">Confusion matrices for the number of floors predictor used in this study.</span><a class="headerlink" href="#num-stories-vali" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -647,7 +647,7 @@ These geometric properties are defined visually for common residential coastal t
 <a class="reference internal" href="../lake_charles/asset_description.html#building-elevation"><span class="std std-numref">Fig. 3.2.2.7</span></a>. The mean height of the roof system is then derived as
 the average of these dimensions.</p>
 <div class="align-center figure" id="building-elevation">
-<a class="reference internal image-reference" href="../../../_images/BldgElev1.png"><img alt="../../../_images/BldgElev1.png" src="../../../_images/BldgElev1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/BldgElev.png"><img alt="../../../_images/BldgElev.png" src="../../../_images/BldgElev.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.2.3 </span><span class="caption-text">Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.</span><a class="headerlink" href="#building-elevation" title="Permalink to this image">¶</a></p>
 </div>
 <p>The MeanRoofHt is based on the following AI technique. <a class="reference internal" href="../lake_charles/asset_description.html#mean-roof-ht-app"><span class="std std-numref">Fig. 3.2.2.8</span></a>
@@ -687,7 +687,7 @@ attained by use of field of view and camera distance information collected for e
 A general trend observed in this plot is that the roof height increases with the number of floors,
 which is in line with the general intuition.</p>
 <div class="align-center figure" id="mean-roof-ht-app">
-<a class="reference internal image-reference" href="../../../_images/MeanRoofHtApp1.png"><img alt="../../../_images/MeanRoofHtApp1.png" src="../../../_images/MeanRoofHtApp1.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/MeanRoofHtApp.png"><img alt="../../../_images/MeanRoofHtApp.png" src="../../../_images/MeanRoofHtApp.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.2.4 </span><span class="caption-text">AI-predicted MeanRoofHt versus number of floors.</span><a class="headerlink" href="#mean-roof-ht-app" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -704,7 +704,7 @@ section. Roof run is determined as half the smaller dimension of the building, a
 the dimensions of the building footprint. <a class="reference internal" href="../lake_charles/asset_description.html#mean-slope-app"><span class="std std-numref">Fig. 3.2.2.9</span></a> displays the AI-predicted mean roof height versus the
 AI-precited roof pitch ratios. As expected, very little correlation between these two parameters are observed.</p>
 <div class="align-center figure" id="mean-slope-app">
-<a class="reference internal image-reference" href="../../../_images/RoofSlopeApp1.png"><img alt="../../../_images/RoofSlopeApp1.png" src="../../../_images/RoofSlopeApp1.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/RoofSlopeApp.png"><img alt="../../../_images/RoofSlopeApp.png" src="../../../_images/RoofSlopeApp.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.2.5 </span><span class="caption-text">AI-predicted RoofSlope versus mean roof height.</span><a class="headerlink" href="#mean-slope-app" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -723,7 +723,7 @@ More details of the classifier can be found
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/roofClassifier.html">here</a>.
 The trained classifier was employed here to classify the roof information for Lake Charles.</p>
 <div class="align-center figure" id="roof-shape">
-<a class="reference internal image-reference" href="../../../_images/RoofShape1.png"><img alt="../../../_images/RoofShape1.png" src="../../../_images/RoofShape1.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/RoofShape.png"><img alt="../../../_images/RoofShape.png" src="../../../_images/RoofShape.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.2.6 </span><span class="caption-text">Roof type classification with examples of aerial images (a-f) and simplified archetypes (d-f) used by Hazus.</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
 </div>
 <p>The performance of the roof shape classifier was validated against two ground truth datasets.
@@ -737,7 +737,7 @@ The confusion matrices are presented in <a class="reference internal" href="../l
 the comparison between the predictions and actual data and should have values of 1.0 along the diagonal
 if the classification is perfect, affirming the accuracy of the classification by the roof shape classifier.</p>
 <div class="align-center figure" id="roof-shape-vali">
-<a class="reference internal image-reference" href="../../../_images/RoofShapeVali1.png"><img alt="../../../_images/RoofShapeVali1.png" src="../../../_images/RoofShapeVali1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/RoofShapeVali.png"><img alt="../../../_images/RoofShapeVali.png" src="../../../_images/RoofShapeVali.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.2.7 </span><span class="caption-text">Validation of BRAILS predicted roof shapes to roof shapes from OpenStreetMap and StEER.</span><a class="headerlink" href="#roof-shape-vali" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -750,7 +750,7 @@ section. Roof run is determined as half the smaller dimension of the building, a
 the dimensions of the building footprint. <a class="reference internal" href="../lake_charles/asset_description.html#mean-slope-app"><span class="std std-numref">Fig. 3.2.2.9</span></a> displays the AI-predicted mean roof height versus the
 AI-precited roof pitch ratios. As expected, very little correlation between these two parameters are observed.</p>
 <div class="align-center figure" id="id4">
-<a class="reference internal image-reference" href="../../../_images/RoofSlopeApp1.png"><img alt="../../../_images/RoofSlopeApp1.png" src="../../../_images/RoofSlopeApp1.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/RoofSlopeApp.png"><img alt="../../../_images/RoofSlopeApp.png" src="../../../_images/RoofSlopeApp.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.2.8 </span><span class="caption-text">AI-predicted RoofSlope versus mean roof height.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -1066,7 +1066,7 @@ values reported in NJDEP and MOD IV for consistency with Hazus conventions.</p>
 </li>
 </ol>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../_images/NumOfStoriesVali1.png"><img alt="../../../_images/NumOfStoriesVali1.png" src="../../../_images/NumOfStoriesVali1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/NumOfStoriesVali.png"><img alt="../../../_images/NumOfStoriesVali.png" src="../../../_images/NumOfStoriesVali.png" style="width: 600px;" /></a>
 </div>
 <ol class="arabic" start="2">
 <li><dl>
