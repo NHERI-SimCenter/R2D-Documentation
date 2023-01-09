@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -109,12 +110,13 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/R2D/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">5. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/R2DTool/releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/r2dPlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -238,23 +240,24 @@
 <div class="section" id="download-the-application">
 <h2><span class="section-number">1.1.2. </span>Download the Application<a class="headerlink" href="#download-the-application" title="Permalink to this headline">¶</a></h2>
 <p>To download the R2D app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt">R2D Download</a> page which should resemble <a class="reference internal" href="install_macOS.html#figdownload-r2d"><span class="std std-numref">Fig. 1.2.3.1</span></a>. The download page contains a list of downloadable files and directories.</p>
-<div class="align-center figure" id="id1">
+<div class="align-center figure" id="id3">
 <span id="figdownloadwin-r2d"></span><img alt="../../../../_images/R2DDownload.png" src="../../../../_images/R2DDownload.png" />
-<p class="caption"><span class="caption-number">Fig. 1.1.2.1 </span><span class="caption-text">R2DTool download page.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.1.2.1 </span><span class="caption-text">R2DTool download page.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p>Click on the file with a name ending with <strong>Windows_Download.zip</strong> to download the R2D app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download completed, extract the zip archive to a location in your filesystem.</p>
-<p>We suggest placing the directory in the <strong>C:\SimCenter</strong> folder. Once here, you can create a shortcut to the application and move this shortcut to your Desktop.</p>
+<p>Click on the file with a name ending with <strong>Windows_Download.zip</strong> to download the R2D app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner.</p>
+<p>After the download completed, extract the zip archive to a location in your filesystem. We suggest extracting to the <a href="#id1"><span class="problematic" id="id2">**</span></a>C:\SimCenter** folder. You can create a shortcut that points to the R2D.exe executable of the application and move this shortcut to your Desktop for easy access.</p>
 </div>
 <div class="section" id="test-the-installation">
 <h2><span class="section-number">1.1.3. </span>Test the Installation<a class="headerlink" href="#test-the-installation" title="Permalink to this headline">¶</a></h2>
-<p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the R2D.exe executable. You should see the user interface shown in <a class="reference internal" href="#figwinui-r2d"><span class="std std-numref">Fig. 1.1.3.1</span></a>. The installation can be tested by running the example problem <span class="xref std std-ref">r2dt-0006</span>.</p>
+<p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the R2D.exe executable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Since the SimCenter is not recognized as a Windows vendor, our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the R2D app application for the first time.</p>
+<p>Since the SimCenter is not registered as a Windows vendor, our apps are not recognized by the operating system as signed applications. You may receive a warning message that lets you know about risks involved in running unsigned applications from unkown sources when you start the R2D app application for the first time. It is safe to bypass that warning when running SimCenter applications.</p>
 </div>
-<div class="align-center figure" id="id7">
+<p>Once the application started, you should see the user interface shown in <a class="reference internal" href="#figwinui-r2d"><span class="std std-numref">Fig. 1.1.3.1</span></a>. We recommend running the example problem <span class="xref std std-ref">r2dt-0006</span> to test the application.</p>
+<div class="align-center figure" id="id9">
 <span id="figwinui-r2d"></span><img alt="../../../../_images/R2D-Startup.png" src="../../../../_images/R2D-Startup.png" />
-<p class="caption"><span class="caption-number">Fig. 1.1.3.1 </span><span class="caption-text">R2DTool on startup.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.1.3.1 </span><span class="caption-text">R2DTool on startup.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -269,7 +272,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2022, The Regents of the University of California.
+        &#169; Copyright 2023, The Regents of the University of California.
 
     </p>
   </div>

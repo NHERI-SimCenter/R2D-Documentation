@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -109,12 +110,13 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/R2D/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dPlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -125,11 +127,16 @@
 <li class="toctree-l2"><a class="reference internal" href="HAZ.html">2.3. HAZ: Hazards</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. ASD: Asset Definition</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#buildings">2.4.1. Buildings</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#csv-to-bim">2.4.1.1. CSV to BIM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gis-to-bim">2.4.1.2. GIS to BIM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#housing-unit-allocation">2.4.1.3. Housing Unit Allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#csv-to-aim">2.4.1.1. CSV to AIM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gis-to-aim">2.4.1.2. GIS to AIM</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#regional-water-distribution-networks">2.4.2. Regional Water Distribution Networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#csv-to-regional-water-network">2.4.2.1. CSV to Regional Water Network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gis-to-regional-water-network">2.4.2.2. GIS to Regional Water Network</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#housing-unit-allocation">2.4.3. Housing Unit Allocation</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="HTA.html">2.5. HTA: Hazard to Asset</a></li>
@@ -238,21 +245,27 @@
 <p>In this panel the user can import the databases of different asset classes. The user can select the type of asset from the <strong>Asset Selection Ribbon</strong>, e.g., Buildings and Gas Network, as shown on the left-hand side of <a class="reference internal" href="#fig-buildinginputpanel"><span class="std std-numref">Fig. 2.4.1.1.2</span></a>. The <strong>Asset Selection Ribbon</strong> appears when more than one type of asset is selected in the <strong>GI: General Information</strong> panel. Moreover, only the assets that are checked in the <strong>GI: General Information</strong> panel will appear in the <strong>Asset Selection Ribbon</strong>. As the user switches between assets, the main panel changes to reflect the applications available for the import of each type of asset.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#buildings" id="id5">Buildings</a></p>
+<li><p><a class="reference internal" href="#buildings" id="id7">Buildings</a></p>
 <ul>
-<li><p><a class="reference internal" href="#csv-to-bim" id="id6">CSV to BIM</a></p></li>
-<li><p><a class="reference internal" href="#gis-to-bim" id="id7">GIS to BIM</a></p></li>
-<li><p><a class="reference internal" href="#housing-unit-allocation" id="id8">Housing Unit Allocation</a></p></li>
+<li><p><a class="reference internal" href="#csv-to-aim" id="id8">CSV to AIM</a></p></li>
+<li><p><a class="reference internal" href="#gis-to-aim" id="id9">GIS to AIM</a></p></li>
 </ul>
 </li>
+<li><p><a class="reference internal" href="#regional-water-distribution-networks" id="id10">Regional Water Distribution Networks</a></p>
+<ul>
+<li><p><a class="reference internal" href="#csv-to-regional-water-network" id="id11">CSV to Regional Water Network</a></p></li>
+<li><p><a class="reference internal" href="#gis-to-regional-water-network" id="id12">GIS to Regional Water Network</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#housing-unit-allocation" id="id13">Housing Unit Allocation</a></p></li>
 </ul>
 </div>
 <div class="section" id="buildings">
-<h2><a class="toc-backref" href="#id5"><span class="section-number">2.4.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this headline">¶</a></h2>
-<p>The buildings input panel, as shown in <a class="reference internal" href="#fig-buildinginputpanel"><span class="std std-numref">Fig. 2.4.1.1.2</span></a>, allows a user to input a building inventory database. The <strong>Building Import Selection</strong> combo box is where the user selects the application for the import of buildings, and for the generation of a building information model (BIM).</p>
-<div class="section" id="csv-to-bim">
-<h3><a class="toc-backref" href="#id6"><span class="section-number">2.4.1.1. </span>CSV to BIM</a><a class="headerlink" href="#csv-to-bim" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>CSV to BIM</strong> application imports a building inventory database from a user provided .csv file.</p>
+<h2><a class="toc-backref" href="#id7"><span class="section-number">2.4.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this headline">¶</a></h2>
+<p>The buildings input panel, as shown in <a class="reference internal" href="#fig-buildinginputpanel"><span class="std std-numref">Fig. 2.4.1.1.2</span></a>, allows a user to input a building inventory database. The <strong>Building Import Selection</strong> combo box is where the user selects the application for the import of buildings, and for the generation of a asset information model (AIM).</p>
+<div class="section" id="csv-to-aim">
+<h3><a class="toc-backref" href="#id8"><span class="section-number">2.4.1.1. </span>CSV to AIM</a><a class="headerlink" href="#csv-to-aim" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>CSV to AIM</strong> application imports a building inventory database from a user provided .csv file.</p>
 <ol class="arabic">
 <li><p>The <strong>Path to Buildings Database</strong> box is where the user supplies the file path to the .csv file that contains the building inventory. At a minimum, the .csv file must contain columns providing the building identification numbers (ID), in sequential order, and the latitudes and the longitudes of the locations of the buildings. Any number of columns can be added to the file to provide information required by other applications in the workflow.</p></li>
 <li><p>The <strong>Building Selection Filtering</strong> box is where the user can select a subset of buildings for analysis. There are two ways to select and filter buildings:</p>
@@ -269,15 +282,15 @@
 </li>
 </ol>
 <p>When the <strong>Select</strong> button is pressed, the buildings that are specified in the <strong>Building Selection</strong> box are added to the list of buildings that will be analyzed. Pressing the <strong>Clear Selection</strong> button will clear the list of buildings that will be analyzed.</p>
-<p>The <strong>Building Information</strong> table, shown in <a class="reference internal" href="#fig-buildinginputpanel"><span class="std std-numref">Fig. 2.4.1.1.2</span></a>, provides a user-editable spreadsheet containing the information provided by the building inventory database file. When a subset of buildings is selected for analysis, only the selected buildings will appear in the <strong>Building Information</strong> table. Pressing the <strong>Clear Selection</strong> button will clear the list of buildings that will be analysed and show all buildings in the <strong>Building Information</strong> table again.</p>
+<p>The <strong>Building Information</strong> table, shown in <a class="reference internal" href="#fig-buildinginputpanel"><span class="std std-numref">Fig. 2.4.1.1.2</span></a>, provides a user-editable spreadsheet containing the information provided by the building inventory database file.</p>
 <div class="align-center figure" id="id2">
 <span id="fig-buildinginputpanel"></span><img alt="../../../../../_images/R2DBuildingsInputPanel.png" src="../../../../../_images/R2DBuildingsInputPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.1.1.2 </span><span class="caption-text">CSV to BIM input panel.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.1.1.2 </span><span class="caption-text">CSV to AIM input panel.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="gis-to-bim">
-<h3><a class="toc-backref" href="#id7"><span class="section-number">2.4.1.2. </span>GIS to BIM</a><a class="headerlink" href="#gis-to-bim" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>GIS to BIM</strong> application imports a building inventory database from a user-provided GIS file (e.g., shapefile, geodatabase). The input panel is shown in <a class="reference internal" href="#fig-r2dgisbuildingsinputpanel"><span class="std std-numref">Fig. 2.4.1.2.1</span></a>.</p>
+<div class="section" id="gis-to-aim">
+<h3><a class="toc-backref" href="#id9"><span class="section-number">2.4.1.2. </span>GIS to AIM</a><a class="headerlink" href="#gis-to-aim" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>GIS to AIM</strong> application imports a building inventory database from a user-provided GIS file (e.g., shapefile, geodatabase). The input panel is shown in <a class="reference internal" href="#fig-r2dgisbuildingsinputpanel"><span class="std std-numref">Fig. 2.4.1.2.1</span></a>.</p>
 <ol class="arabic">
 <li><p>The <strong>GIS Input File</strong> box is where the user supplies the file path to the GIS file that contains the building inventory. Clicking on the <strong>Browse</strong> button will open a dialog where you can select the appropriate file.</p></li>
 <li><p>The <strong>Building Selection Filtering</strong> box is where the user can select a subset of buildings for analysis. There are two ways to select and filter buildings:</p>
@@ -292,25 +305,134 @@
 </ol>
 <div class="align-center figure" id="id3">
 <span id="fig-r2dgisbuildingsinputpanel"></span><img alt="../../../../../_images/R2DGISBuildingsInputPanel.png" src="../../../../../_images/R2DGISBuildingsInputPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.1.2.1 </span><span class="caption-text">GIS to BIM input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.1.2.1 </span><span class="caption-text">GIS to AIM input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="regional-water-distribution-networks">
+<h2><a class="toc-backref" href="#id10"><span class="section-number">2.4.2. </span>Regional Water Distribution Networks</a><a class="headerlink" href="#regional-water-distribution-networks" title="Permalink to this headline">¶</a></h2>
+<p>The water distribution network input panel, as shown in <a class="reference internal" href="#fig-wdninputpanel"><span class="std std-numref">Fig. 2.4.2.1.1</span></a>, allows a user to input the nodes and pipelines of a water distribution network. The <strong>Regional Water Network Selection</strong> combo box is where the user selects the application for the import of buildings, and for the generation of a building information model (AIM).</p>
+<div class="section" id="csv-to-regional-water-network">
+<h3><a class="toc-backref" href="#id11"><span class="section-number">2.4.2.1. </span>CSV to Regional Water Network</a><a class="headerlink" href="#csv-to-regional-water-network" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>CSV to Water Network</strong> application imports a water distribution network from a set of user provided .csv files that represent the nodes and pipelines of the network.</p>
+<ol class="arabic simple">
+<li><p>The <strong>Path to Nodes</strong> box is where the user supplies the file path to the .csv file that contains the nodes of the water distribution network. At a minimum, the .csv file must contain columns providing the node identification numbers (ID), in sequential order, and the latitudes and the longitudes of the locations of each node. Any number of columns can be added to the file to provide information that may be required by other applications in the workflow.</p></li>
+<li><p>Similar to the nodes, the <strong>Path to Pipelines</strong> box is where the user supplies the file path to the .csv file that contains the pipelines of the water distribution network. At a minimum, the .csv file must contain columns providing the pipe identification numbers (ID), in sequential order, and two subsequent columns containing the node ids of the nodes where the pipe starts and where the pipe ends. Any number of columns can be added to the file to provide additional pipeline information that may be required by other applications in the workflow.</p></li>
+</ol>
+<p>The <strong>Node and Pipeline Information</strong> table, shown in <a class="reference internal" href="#fig-wdninputpanel"><span class="std std-numref">Fig. 2.4.2.1.1</span></a>, provides a user-editable spreadsheet containing the information provided by the csv files, respectively.</p>
+<ol class="arabic simple">
+<li><p>The <strong>Selection Filtering</strong> box for nodes and pipes is where the user can select a subset of assets for analysis.</p></li>
+</ol>
+<blockquote>
+<div><p>There are two ways to select and filter assets:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Input a string of numbers that correspond to the asset IDs that you want to analyze. A range of assets is specified with a dash, and multiple assetes are separated with a comma, e.g., 2-8, 9, 13, 15, 21, 34-38.</p></li>
+<li><p>Employ the Advanced Filtering capabilities by clicking on the <strong>Advanced Filter</strong> button. The <strong>Query Builder</strong> dialog will appear, as seen in <a class="reference internal" href="#fig-r2dquerybuilderdialog"><span class="std std-numref">Fig. 2.4.1.1.1</span></a>. You can create a custom filter expression (SQL format) using operators, e.g., <code class="docutils literal notranslate"><span class="pre">&lt;,</span> <span class="pre">=,</span> <span class="pre">OR</span></code>, and the fields available in the imported asset inventory, e.g., <code class="docutils literal notranslate"><span class="pre">BuildingType</span></code>. Operators and fields can be combined to perform complex filtering expressions such as <code class="docutils literal notranslate"><span class="pre">&quot;YearBuilt&quot;</span> <span class="pre">&lt;</span> <span class="pre">1970</span>&#160; <span class="pre">AND</span>&#160; <span class="pre">&quot;BuildingType&quot;</span>&#160; <span class="pre">=</span>&#160; <span class="pre">'Wood'</span></code>. When the <strong>Select</strong> button is pressed, the assets that are specified in the <strong>Asset Selection</strong> box are added to the list of assets that will be analyzed. Pressing the <strong>Clear Selection</strong> button will clear the list of assets that will be analyzed.</p></li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+<div class="align-center figure" id="id4">
+<span id="fig-wdninputpanel"></span><img alt="../../../../../_images/R2DWDNcsvInputPanel.png" src="../../../../../_images/R2DWDNcsvInputPanel.png" />
+<p class="caption"><span class="caption-number">Fig. 2.4.2.1.1 </span><span class="caption-text">CSV to regional water network input panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="gis-to-regional-water-network">
+<h3><a class="toc-backref" href="#id12"><span class="section-number">2.4.2.2. </span>GIS to Regional Water Network</a><a class="headerlink" href="#gis-to-regional-water-network" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>GIS to Regional Water Network</strong> application imports a water distribution network from a set of user provided GIS files that represent the nodes and pipelines of the network.  The input panel is shown in <a class="reference internal" href="#fig-r2dwdngisinputpanel"><span class="std std-numref">Fig. 2.4.2.2.1</span></a>. The GIS files can be in one of many common GIS file formats, e.g., shp, gdb, etc.</p>
+<ol class="arabic simple">
+<li><p>The <strong>Path to Nodes</strong> box is where the user supplies the file path to the GIS file that contains the nodes of the water distribution network. At a minimum, the GIS file must contain a field providing the node identification numbers (id), in sequential order. Any number of attributes can be added to the node features to provide information that may be required by other applications in the workflow. R2D will load all feature attributes as columns in the <strong>Node Information</strong> table.</p></li>
+<li><p>Similar to the nodes, the <strong>Path to Pipelines</strong> box is where the user supplies the file path to the GIS file that contains the pipelines of the water distribution network. Any number of attributes can be added to the pipeline features to provide information that may be required by other applications in the workflow. R2D will load all feature attributes as columns in the <strong>Pipeline Information</strong> table.</p></li>
+</ol>
+<p>The <strong>Node and Pipeline Information</strong> table, shown in <a class="reference internal" href="#fig-wdninputpanel"><span class="std std-numref">Fig. 2.4.2.1.1</span></a>, provides a spreadsheet containing the information provided by the GIS files, respectively.</p>
+<ol class="arabic simple">
+<li><p>The <strong>Coordinate Reference System (CRS)</strong> dropdowns is where the coordinate reference system for a particular GIS file is specified. Each GIS file should have an accompanying CRS that will need to be specified so that R2D can place the features in the correct projected coordinate system.</p></li>
+</ol>
+<div class="align-center figure" id="id5">
+<span id="fig-r2dwdngisinputpanel"></span><img alt="../../../../../_images/R2DWDNgisInputPanel.png" src="../../../../../_images/R2DWDNgisInputPanel.png" />
+<p class="caption"><span class="caption-number">Fig. 2.4.2.2.1 </span><span class="caption-text">GIS to regional water network input panel.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 <div class="section" id="housing-unit-allocation">
-<h3><a class="toc-backref" href="#id8"><span class="section-number">2.4.1.3. </span>Housing Unit Allocation</a><a class="headerlink" href="#housing-unit-allocation" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>Housing Unit Allocation</strong> application can be employed to augment an existing building inventory (supplied in a GIS format, e.g., shapefile, geodatabase) with census demographic information. The input panel is shown in <a class="reference internal" href="#fig-r2dhuapanel"><span class="std std-numref">Fig. 2.4.1.3.1</span></a>. Given a building inventory, the <strong>Housing Unit Allocation</strong> application will download demographic data from the US Census website. First, the application cross-references the building inventory with a US counties map (2021), generating a set of unique US county codes that overlap with the building inventory. Next, the US census API is queried and the population demographic information within each county is downloaded at the block level and saved locally as GIS files to the output folder. The download of census data employs a modified version of the <code class="docutils literal notranslate"><span class="pre">censusutil.py</span></code> script from the <a class="reference external" href="https://github.com/IN-CORE/pyincore-data">pyincore-data</a> module, a component of IN-CORE. Lastly, the demographic information from the downloaded GIS files can be extracted and saved to a new layer that is a copy of the original building inventory. Each building within the new building inventory layer will contain the population demographics (percent inhabitants that are of black, hispanic, white, and other races), extracted from the downloaded census block level layer.</p>
-<ol class="arabic simple">
-<li><p>The <strong>Building GIS File</strong> box is where the file path to the GIS file that contains the building inventory is specified. Clicking on the <strong>Browse</strong> button will open a dialog where you can select the appropriate file. When a building GIS file is loaded, a copy of the original building inventory layer is automatically created. Going forward, the copied building inventory layer is employed, as to keep the original building inventory file intact.</p></li>
-<li><p>The <strong>Coordinate Reference System (CRS)</strong> dropdown is where the coordinate reference system for a particular GIS file is specified. Each GIS file should have an accompanying CRS that will need to be specified.</p></li>
-<li><p>The <strong>Census Date</strong> dropdown is where the census vintage is provided. Currently, the 2000 and 2010 census dates are supported.</p></li>
-<li><p>The <strong>Output Folder</strong> is where the program will save the GIS files that are downloaded from the US Census API.</p></li>
-<li><p>The <strong>Download Census Data Button</strong> runs the process that extracts counties from the building inventory, calls the US Census API to download demographic data for the extracted counties, and saves the data as GIS files to the output folder.</p></li>
-<li><p>The <strong>Census Block-level GIS File</strong> box provides the file path to the GIS file that should contain the block-level census data. This will be populated automatically if the <strong>Download Census Data</strong> process from above is run. Otherwise, users can supply their own data.  Clicking on the <strong>Browse</strong> button will open a dialog where you can select the appropriate file.</p></li>
-<li><p>The <strong>Extract Census Data Button</strong> runs the process that extracts the demographics data from the block-level GIS file and appends that information to each building in the building inventory layer copy. Users can now save the newly augmented layer by right-clicking on the layer in the layer tree and selecting the <code class="docutils literal notranslate"><span class="pre">Export-&gt;Save</span> <span class="pre">As</span></code> option.</p></li>
-</ol>
-<div class="align-center figure" id="id4">
-<span id="fig-r2dhuapanel"></span><img alt="../../../../../_images/R2DHUAPanel.png" src="../../../../../_images/R2DHUAPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.1.3.1 </span><span class="caption-text">Housing Unit Allocation input panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<h2><a class="toc-backref" href="#id13"><span class="section-number">2.4.3. </span>Housing Unit Allocation</a><a class="headerlink" href="#housing-unit-allocation" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Housing Unit Allocation</strong> application can be employed to augment an existing asset inventory with US Census demographic information and socio-economic information from the American Community Survey (ACS). The input panel is shown in <a class="reference internal" href="#fig-r2dhuapanel"><span class="std std-numref">Fig. 2.4.3.1</span></a>. As seen in the figure, the asset information is supplied via selection of an already imported layer in R2D. Alternatively, a user can supply an asset layer in a GIS format, e.g., shapefile, geodatabase, and the supplied layer will be employed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>R2D will always make a copy of the asset layer it is working with. Going forward, the copied asset layer is employed to preserve the original data.</p>
 </div>
+<dl class="simple">
+<dt>The procedure is as follows:</dt><dd><ol class="arabic simple">
+<li><p>Given an asset inventory, R2D cross-references the assets with a US counties map (2021), generating a set of US county codes that overlap with the provided asset inventory.</p></li>
+<li><p>The US Census API is queried and the population demographic information within each county is downloaded at the block level and saved locally . Similarly, the ACS API is called to download socio-economic information and the data is saved as a second GIS file. The ACS data is saved at the block group level. The GIS files are found in the output folder specified by the user (shown below).</p></li>
+<li><p>The Census and ACS information from the downloaded GIS files is extracted and appended to the copied layer by performing a spatial join. This means that each asset within the copied layer will be augmented to contain the informtaion extracted from the Census block level layer and the ACS block group layer of which it is located in.</p></li>
+</ol>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The download of census data employs a modified version of the <code class="docutils literal notranslate"><span class="pre">censusutil.py</span></code> script from the <a class="reference external" href="https://github.com/IN-CORE/pyincore-data">pyincore-data</a> module, a component of IN-CORE.</p>
+</div>
+<ol class="arabic">
+<li><p>The <strong>Asset Layer Selection Dropdown</strong> is where the user selects the GIS layer that contains the asset inventory. When the user selects a layer, it will be copied automatically.</p></li>
+<li><p>If the user provides their own GIS file with the asset inventory, they will also have to provide the <strong>Coordinate Reference System (CRS)</strong>. The CRS dropdown is where the coordinate reference system for a particular GIS file is specified so that it can be located in the correct projected coordinate system.</p></li>
+<li><p>The <strong>Census Date</strong> dropdown is where the Census vintage is provided. Currently, the 2010 and 2020 Census dates are supported.</p></li>
+<li><p>The <strong>Census Variables</strong> input box is where the user can provide custom variables to download from the Census API. For the 2010 vintage the default variables are <code class="docutils literal notranslate"><span class="pre">P005001,P005003,P005004,P005010</span></code>, and for the 2020 vintage, the default variables are <code class="docutils literal notranslate"><span class="pre">P2_001N,P2_002N,P2_005N,P2_006N</span></code>. You can go to the Census website for a particular vintage to see what the variables mean.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>The default variables for 2010 are:</dt><dd><ul class="simple">
+<li><p>P005001 = Total</p></li>
+<li><p>P005003 = Total!!Not Hispanic or Latino!!White alone</p></li>
+<li><p>P005004 = Total!!Not Hispanic or Latino!!Black or African American alone</p></li>
+<li><p>P005010 = Total!!Hispanic or Latino</p></li>
+</ul>
+</dd>
+<dt>The default variables for 2020 are:</dt><dd><ul class="simple">
+<li><p>P2_001N=!!Total:</p></li>
+<li><p>P2_002N=!!Total:!!Hispanic or Latino</p></li>
+<li><p>P2_005N=!!Total:!!Not Hispanic or Latino:!!Population of one race:!!White alone</p></li>
+<li><p>P2_006N=!!Total:!!Not Hispanic or Latino:!!Population of one race:!!Black or African American alone</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>The <strong>ACS Date</strong> dropdown is where the ACS vintage is provided. Currently, the 2010, 2015, and 2020 ACS dates are supported.</p></li>
+<li><p>The <strong>ACS Variables</strong> input box is where the user can provide custom variables to download from the ACS API.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>For the 2010, 2015, and 2020 5-year ACS vintage the default variables are:</dt><dd><ul class="simple">
+<li><p>B19001_001E - Estimate!!Total</p></li>
+<li><p>B19001_002E - Estimate!!Total!!Less than $10,000</p></li>
+<li><p>B19001_003E - Estimate!!Total!!$10,000 to $14,999</p></li>
+<li><p>B19001_004E - Estimate!!Total!!$15,000 to $19,999</p></li>
+<li><p>B19001_005E - Estimate!!Total!!$20,000 to $24,999</p></li>
+<li><p>B19001_006E - Estimate!!Total!!$25,000 to $29,999</p></li>
+<li><p>B19001_007E - Estimate!!Total!!$30,000 to $34,999</p></li>
+<li><p>B19001_008E - Estimate!!Total!!$35,000 to $39,999</p></li>
+<li><p>B19001_009E - Estimate!!Total!!$40,000 to $44,999</p></li>
+<li><p>B19001_010E - Estimate!!Total!!$45,000 to $49,999</p></li>
+<li><p>B19001_011E - Estimate!!Total!!$50,000 to $59,999</p></li>
+<li><p>B19001_012E - Estimate!!Total!!$60,000 to $74,999</p></li>
+<li><p>B19001_013E - Estimate!!Total!!$75,000 to $99,999</p></li>
+<li><p>B19001_014E - Estimate!!Total!!$100,000 to $124,999</p></li>
+<li><p>B19001_015E - Estimate!!Total!!$125,000 to $149,999</p></li>
+<li><p>B19001_016E - Estimate!!Total!!$150,000 to $199,999</p></li>
+<li><p>B19001_017E - Estimate!!Total!!$200,000 or more</p></li>
+<li><p>B19013_001E - Estimate!!Median household income in the past 12 months (in 2016 inflation-adjusted dollars)</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>The <strong>Output Folder</strong> is where the program will save the GIS files that are downloaded from the US Census API.</p></li>
+<li><p>The <strong>Download Census Data Button</strong> runs the process that extracts counties from the building inventory, calls the US Census and ACS APIs to download data for the extracted counties, and saves the data as GIS files to the output folder.</p></li>
+<li><p>The <strong>Census Block-level GIS File</strong> and <strong>American Community Survey Block Group Level GIS File</strong> box provides the file paths to the respective GIS files. These paths will be populated automatically after the download process described above completes. Alternatively, you can provide their own Census and ACS layers to join to the building inventory. Clicking on the <strong>Browse</strong> button will open a dialog where you can select the appropriate file.</p></li>
+<li><p>The <strong>Extract Census Data Button</strong> runs the process that extracts the Census and ACS data from the GIS files and appends that information to each asset in the asset layer copy. Users can now save the newly augmented layer by right-clicking on the layer in the layer tree and selecting the <code class="docutils literal notranslate"><span class="pre">Export-&gt;Save</span> <span class="pre">As</span></code> option.</p></li>
+</ol>
+<div class="align-center figure" id="id6">
+<span id="fig-r2dhuapanel"></span><img alt="../../../../../_images/R2DHUAPanel.png" src="../../../../../_images/R2DHUAPanel.png" />
+<p class="caption"><span class="caption-number">Fig. 2.4.3.1 </span><span class="caption-text">Housing Unit Allocation input panel.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -325,7 +447,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2022, The Regents of the University of California.
+        &#169; Copyright 2023, The Regents of the University of California.
 
     </p>
   </div>
