@@ -114,19 +114,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/R2DTool/releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/releases/r2dCapabilities.html">5. Capabilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/releases/r2dPlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">7. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/releases/r2dReleaseNotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/R2DTool/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../reqments/R2D.html">5. R2D Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reqments/R2D.html">6. R2D Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">7. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Testbeds</span></p>
 <ul class="current">
@@ -290,12 +292,12 @@ users have two ways to engage this model to generate wind fields for this testbe
 1. analytical model to generate a customized windfield for use with this testbed.</p>
 <p>Wind fields described by either approach are then locally interpolated to the coordiantes associated with each
 footprint. The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated
-Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.3.1.17</span></a>). Because the SPH model tracks the maximum wind speed over the
+Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.3.1.2</span></a>). Because the SPH model tracks the maximum wind speed over the
 entire hurricane time history - so the inland cities are subjected to slightly higher wind speed than
 the coastal cities.</p>
 <div class="align-center figure" id="pws">
 <a class="reference internal image-reference" href="../../../_images/pws.png"><img alt="../../../_images/pws.png" src="../../../_images/pws.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.1.17 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.1.2 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="storm-surge-modeling">
@@ -321,12 +323,12 @@ to estimate the depth of storm surge above ground, geospatially interpolated to 
 locations at approximately 120 m spacing, accompanied by the Limit of Moderate Wave Action
 (LiMWA) and wet-dry boundary respectively defining the extent of damaging waves and inundation
 over land at each of the transect points. These are then interpolated to the location of the coastal
-parcels to express the property exposure to storm surge (<a class="reference internal" href="#pwd"><span class="std std-numref">Fig. 2.3.1.18</span></a>). In the initial implementation, as demonstrated
+parcels to express the property exposure to storm surge (<a class="reference internal" href="#pwd"><span class="std std-numref">Fig. 2.3.1.3</span></a>). In the initial implementation, as demonstrated
 in this test, only the peak water depth (PWD) was considered, which will be used in the HAZUS
 Flood Damage and Loss Assessment.</p>
 <div class="align-center figure" id="pwd">
 <a class="reference internal image-reference" href="../../../_images/pwd.png"><img alt="../../../_images/pwd.png" src="../../../_images/pwd.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.1.18 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.1.3 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="multiple-category-analysis-mca">
@@ -409,10 +411,10 @@ to demonstrate the workflow’s ability to support hindcast evaluations of damag
 Their hurricane model derives wind speeds based on numerically solving the differential equations of a
 translating storm and iteratively calibrating based on field observations over the weeks following an event.
 The ARA_Example.zip provides the peak 3-s gust peak wind speed field of Hurricane Sandy on a grid that can be
-directly used in the presented hurricane workflow, as visualized in <a class="reference internal" href="#ara-pws"><span class="std std-numref">Fig. 2.3.2.2</span></a> for Atlantic County.</p>
+directly used in the presented hurricane workflow, as visualized in <a class="reference internal" href="#ara-pws"><span class="std std-numref">Fig. 2.3.2.3</span></a> for Atlantic County.</p>
 <div class="align-center figure" id="ara-pws">
 <a class="reference internal image-reference" href="../../../_images/ARA_PWS.png"><img alt="../../../_images/ARA_PWS.png" src="../../../_images/ARA_PWS.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.2.2 </span><span class="caption-text">ARA 3-s gust peak wind speed (3-s gust at 10 m) in Atlantic County during Hurricane Sandy.</span><a class="headerlink" href="#ara-pws" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2.3 </span><span class="caption-text">ARA 3-s gust peak wind speed (3-s gust at 10 m) in Atlantic County during Hurricane Sandy.</span><a class="headerlink" href="#ara-pws" title="Permalink to this image">¶</a></p>
 </div>
 <p>Alternatively, users can also use other available wind field resources. For instance,
 <a class="reference external" href="https://www.rms.com/event-response/hwind/legacy-archive/storms">RMS Legacy Archive</a> provides access to
@@ -423,25 +425,25 @@ would first convert the data from other resources to the format as shown in <a c
 <div class="section" id="id11">
 <h3>Storm Surge Modeling<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>ADCIRC hindcast of Superstorm Sandy was generated by the Westerink Group at the University of Notre Dame and
-made available to the SimCentetr. <a class="reference internal" href="#adcirc-pwd"><span class="std std-numref">Fig. 2.3.2.3</span></a> shows the peak storm surge from the hindcast. Note that
+made available to the SimCentetr. <a class="reference internal" href="#adcirc-pwd"><span class="std std-numref">Fig. 2.3.2.4</span></a> shows the peak storm surge from the hindcast. Note that
 the scope of the hindcast focused on the heavier-impacted regions of New York and Northern New Jersey,
 which were resolved with a finer mesh than more southern counties like Atlantic County, i.e., ~0.5 km (New York and Norther New Jersey) vs. ~3 km (Southern counties) between two closest nodes. In futher constrast with the NACCS ADCIRC runs referenced in <a class="reference internal" href="#lbl-testbed-ac-hazard-characterization-storm"><span class="std std-ref">Storm Surge Modeling</span></a>,
 the grids adopted for the Sandy hindcast in this region of New Jersey did not extend into the riverine systems. Noting these
-limits of the simulation, peak water depth over land displayed in <a class="reference internal" href="#adcirc-sitepwd"><span class="std std-numref">Fig. 2.3.2.5</span></a> assumes zero values in the rivering
-systems and at any point inland of the grid points shown in <a class="reference internal" href="#adcirc-waterelev"><span class="std std-numref">Fig. 2.3.2.4</span></a>. The
+limits of the simulation, peak water depth over land displayed in <a class="reference internal" href="#adcirc-sitepwd"><span class="std std-numref">Fig. 2.3.2.6</span></a> assumes zero values in the rivering
+systems and at any point inland of the grid points shown in <a class="reference internal" href="#adcirc-waterelev"><span class="std std-numref">Fig. 2.3.2.5</span></a>. The
 <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/ADCIRC_Example.zip">ADCIRC_Example.zip</a> provides the peak water depth grid that can be used in
 the presented hurricane workflow.</p>
 <div class="align-center figure" id="adcirc-pwd">
 <a class="reference internal image-reference" href="../../../_images/ADCIRC_PWD.png"><img alt="../../../_images/ADCIRC_PWD.png" src="../../../_images/ADCIRC_PWD.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.2.3 </span><span class="caption-text">Simulated storm surge field of Hurricane Sandy by ADCIRC (by courtesy of Dr. Westerink).</span><a class="headerlink" href="#adcirc-pwd" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2.4 </span><span class="caption-text">Simulated storm surge field of Hurricane Sandy by ADCIRC (by courtesy of Dr. Westerink).</span><a class="headerlink" href="#adcirc-pwd" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="adcirc-waterelev">
 <a class="reference internal image-reference" href="../../../_images/ADCIRC_waterelev.png"><img alt="../../../_images/ADCIRC_waterelev.png" src="../../../_images/ADCIRC_waterelev.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.2.4 </span><span class="caption-text">Simulated water elevation of Hurricane Sandy by ADCIRC (Atlantic County).</span><a class="headerlink" href="#adcirc-waterelev" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2.5 </span><span class="caption-text">Simulated water elevation of Hurricane Sandy by ADCIRC (Atlantic County).</span><a class="headerlink" href="#adcirc-waterelev" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="adcirc-sitepwd">
 <a class="reference internal image-reference" href="../../../_images/ADCIRC_sitePWD.png"><img alt="../../../_images/ADCIRC_sitePWD.png" src="../../../_images/ADCIRC_sitePWD.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.2.5 </span><span class="caption-text">Simulated water depth over land for Hurricane Sandy by ADCIRC (Atlantic County).</span><a class="headerlink" href="#adcirc-sitepwd" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2.6 </span><span class="caption-text">Simulated water depth over land for Hurricane Sandy by ADCIRC (Atlantic County).</span><a class="headerlink" href="#adcirc-sitepwd" title="Permalink to this image">¶</a></p>
 </div>
 <table class="docutils align-center" id="superstorm-data">
 <caption><span class="caption-number">Table 2.3.2.1 </span><span class="caption-text">Access points for Superstorm Sandy files</span><a class="headerlink" href="#superstorm-data" title="Permalink to this table">¶</a></caption>

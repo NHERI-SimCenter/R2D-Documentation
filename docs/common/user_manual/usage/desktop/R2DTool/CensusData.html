@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Census Data Allocation &mdash; Regional Resilience Determination Tool  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dPlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dReleaseNotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/R2D.html">6. R2D Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/lake_charles/index.html">3. Lake Charles, LA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Regional Resilience Determination Tool</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Census Data Allocation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/R2DTool/CensusData.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="census-data-allocation">
+<h1>Census Data Allocation<a class="headerlink" href="#census-data-allocation" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Census Data Allocation</strong> application can be employed to augment an existing asset inventory with US Census demographic information and socio-economic information, e.g., household income, from the American Community Survey (ACS). The input panel is shown in <a class="reference internal" href="tools.html#fig-r2dhuapanel"><span class="std std-numref">Fig. 3.5.1</span></a>. As seen in the figure, the asset information is supplied via selection of an already imported layer in R2D. Alternatively, a user can supply an asset layer in a GIS format, e.g., shapefile, geodatabase, and the supplied layer will be employed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>R2D will make a copy of the asset layer that you provide. Going forward, the copy of the asset layer is employed to preserve the original data.</p>
+</div>
+<dl class="simple">
+<dt>The procedure is as follows:</dt><dd><ol class="arabic simple">
+<li><p>Given an asset inventory, R2D cross-references the assets with a US counties map (2021), generating a set of US county codes that overlap with the provided asset inventory.</p></li>
+<li><p>The US Census API is queried and the population demographic information within each county is downloaded at the block level and saved locally . Similarly, the ACS API is called to download socio-economic information and the data is saved as a second GIS file. The ACS data is saved at the block group level. The GIS files are found in the output folder specified by the user (shown below as Directory to store created .GIS files).</p></li>
+<li><p>The Census and ACS information from the downloaded GIS files is extracted and appended to the assets in the copied layer by performing a spatial join. This means that each asset within the copied layer will be augmented to contain the informtaion extracted from the Census block level layer and the ACS block group layer of which it is located in.</p></li>
+</ol>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The download of census data employs a modified version of the <code class="docutils literal notranslate"><span class="pre">censusutil.py</span></code> script from the <a class="reference external" href="https://github.com/IN-CORE/pyincore-data">pyincore-data</a> module, a component of IN-CORE.</p>
+</div>
+<ol class="arabic">
+<li><p>The <strong>Asset Layer Selection Dropdown</strong> is where the user selects the GIS layer in R2D that contains the asset inventory of interest. When the user selects a layer, it will be copied automatically.</p></li>
+<li><p>If the user provides their own GIS file with the asset inventory, they will also have to provide the <strong>Coordinate Reference System (CRS)</strong>. The CRS dropdown is where the coordinate reference system for a particular GIS file is specified so that it can be projected into the correct coordinates.</p></li>
+<li><p>The <strong>Census Date</strong> dropdown is where the Census vintage is provided. Currently, the 2010 and 2020 Census dates are supported.</p></li>
+<li><p>The <strong>Census Variables</strong> input box is where the user can provide custom variables to download from the Census API in a comma separated list. For the 2010 vintage the default variables are <code class="docutils literal notranslate"><span class="pre">P005001,P005003,P005004,P005010</span></code>, and for the 2020 vintage, the default variables are <code class="docutils literal notranslate"><span class="pre">P2_001N,P2_002N,P2_005N,P2_006N</span></code>. You can go to the Census website for a particular vintage to see what the variables mean, and what other variables are available.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>The default variables for 2010 are:</dt><dd><ul class="simple">
+<li><p>P005001 = Total</p></li>
+<li><p>P005003 = Total!!Not Hispanic or Latino!!White alone</p></li>
+<li><p>P005004 = Total!!Not Hispanic or Latino!!Black or African American alone</p></li>
+<li><p>P005010 = Total!!Hispanic or Latino</p></li>
+</ul>
+</dd>
+<dt>The default variables for 2020 are:</dt><dd><ul class="simple">
+<li><p>P2_001N=!!Total:</p></li>
+<li><p>P2_002N=!!Total:!!Hispanic or Latino</p></li>
+<li><p>P2_005N=!!Total:!!Not Hispanic or Latino:!!Population of one race:!!White alone</p></li>
+<li><p>P2_006N=!!Total:!!Not Hispanic or Latino:!!Population of one race:!!Black or African American alone</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>The <strong>ACS Date</strong> dropdown is where the ACS vintage is provided. Currently, the 2010, 2015, and 2020 ACS dates are supported.</p></li>
+<li><p>The <strong>ACS Variables</strong> input box is where the user can provide custom variables to download from the ACS API. They should also be provided in a comma separated list.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>For the 2010, 2015, and 2020 5-year ACS vintage the default variables are:</dt><dd><ul class="simple">
+<li><p>B19001_001E - Estimate!!Total</p></li>
+<li><p>B19001_002E - Estimate!!Total!!Less than $10,000</p></li>
+<li><p>B19001_003E - Estimate!!Total!!$10,000 to $14,999</p></li>
+<li><p>B19001_004E - Estimate!!Total!!$15,000 to $19,999</p></li>
+<li><p>B19001_005E - Estimate!!Total!!$20,000 to $24,999</p></li>
+<li><p>B19001_006E - Estimate!!Total!!$25,000 to $29,999</p></li>
+<li><p>B19001_007E - Estimate!!Total!!$30,000 to $34,999</p></li>
+<li><p>B19001_008E - Estimate!!Total!!$35,000 to $39,999</p></li>
+<li><p>B19001_009E - Estimate!!Total!!$40,000 to $44,999</p></li>
+<li><p>B19001_010E - Estimate!!Total!!$45,000 to $49,999</p></li>
+<li><p>B19001_011E - Estimate!!Total!!$50,000 to $59,999</p></li>
+<li><p>B19001_012E - Estimate!!Total!!$60,000 to $74,999</p></li>
+<li><p>B19001_013E - Estimate!!Total!!$75,000 to $99,999</p></li>
+<li><p>B19001_014E - Estimate!!Total!!$100,000 to $124,999</p></li>
+<li><p>B19001_015E - Estimate!!Total!!$125,000 to $149,999</p></li>
+<li><p>B19001_016E - Estimate!!Total!!$150,000 to $199,999</p></li>
+<li><p>B19001_017E - Estimate!!Total!!$200,000 or more</p></li>
+<li><p>B19013_001E - Estimate!!Median household income in the past 12 months (in 2016 inflation-adjusted dollars)</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>The <strong>Output Folder</strong> is the location on your computer where R2D will save the GIS files that are downloaded from the US Census APIs.</p></li>
+<li><p>The <strong>Download Census Data Button</strong> runs the process that extracts the counties that overlap the building inventory, calls the US Census and ACS APIs to download data for the extracted counties, and saves the data as GIS files to the output folder.</p></li>
+<li><p>The <strong>Census Block-level GIS File</strong> and <strong>American Community Survey Block Group Level GIS File</strong> box provides the file paths to the respective GIS files. These paths will be populated automatically after the download process described above completes. Alternatively, you can provide your own Census and ACS layers to join to the building inventory. Clicking on the <strong>Browse</strong> button will open a dialog where you can select the respective file.</p></li>
+<li><p>The <strong>Extract Census Data Button</strong> runs the process that extracts the Census and ACS data from the GIS files and appends that information to each asset in the copied asset layer. Users can now save the newly augmented layer by right-clicking on the layer in the layer tree and selecting the <code class="docutils literal notranslate"><span class="pre">Export-&gt;Save</span> <span class="pre">As</span></code> option.</p></li>
+</ol>
+<div class="align-center figure" id="id1">
+<span id="fig-r2dhuapanel"></span><img alt="../../../../../_images/R2DHUAPanel.png" src="../../../../../_images/R2DHUAPanel.png" />
+<p class="caption"><span class="caption-text">Census data allocation input panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

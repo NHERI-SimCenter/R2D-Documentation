@@ -113,15 +113,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dCapabilities.html">5. Capabilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dPlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dReleaseNotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="VIZ.html">2.1. VIZ: Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GI.html">2.2. GI: General Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HAZ.html">2.3. HAZ: Hazards</a></li>
@@ -132,7 +133,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#buildings">2.7.1. Buildings</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#opensees-analysis-model">2.7.1.1. OpenSees Analysis Model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#openseespy-analysis-model">2.7.1.2. OpenSeesPy Analysis Model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#im-as-edp-analysis-model">2.7.1.3. IM as EDP Analysis Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custompy-simulation">2.7.1.3. CustomPy Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#im-as-edp-analysis-model">2.7.1.4. IM as EDP Analysis Model</a></li>
 </ul>
 </li>
 </ul>
@@ -143,10 +145,11 @@
 <li class="toctree-l2"><a class="reference internal" href="RES.html">2.11. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/R2D.html">5. R2D Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/R2D.html">6. R2D Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Testbeds</span></p>
 <ul>
@@ -214,7 +217,7 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
         
       <li><span class="section-number">2.7. </span>ANA: Asset Analysis</li>
     
@@ -248,7 +251,8 @@
 <ul>
 <li><p><a class="reference internal" href="#opensees-analysis-model" id="id3">OpenSees Analysis Model</a></p></li>
 <li><p><a class="reference internal" href="#openseespy-analysis-model" id="id4">OpenSeesPy Analysis Model</a></p></li>
-<li><p><a class="reference internal" href="#im-as-edp-analysis-model" id="id5">IM as EDP Analysis Model</a></p></li>
+<li><p><a class="reference internal" href="#custompy-simulation" id="id5">CustomPy Simulation</a></p></li>
+<li><p><a class="reference internal" href="#im-as-edp-analysis-model" id="id6">IM as EDP Analysis Model</a></p></li>
 </ul>
 </li>
 </ul>
@@ -270,10 +274,22 @@
 </div>
 <div class="section" id="openseespy-analysis-model">
 <h3><a class="toc-backref" href="#id4"><span class="section-number">2.7.1.2. </span>OpenSeesPy Analysis Model</a><a class="headerlink" href="#openseespy-analysis-model" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>OpenSeesPy</strong> analysis application employs OpenSeesPy to conduct the structural analysis.</p>
+<p>The <strong>OpenSeesPy</strong> analysis application employs OpenSeesPy to conduct the structural analysis. The inputs for this option have been specified in the MOD pane (see Warning below)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This option must be selected when the user has selected the <strong>OpenSeesPy Script</strong> generator in the MOD (modeling) selection.</p>
+</div>
+</div>
+<div class="section" id="custompy-simulation">
+<h3><a class="toc-backref" href="#id5"><span class="section-number">2.7.1.3. </span>CustomPy Simulation</a><a class="headerlink" href="#custompy-simulation" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>OpenSeesPy</strong> analysis application employs OpenSeesPy to conduct the structural analysis. The inputs for this option have been specified in the MOD pane. (see Warning below)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This option must be selected when the user has selected the <strong>CustomPy</strong> generator in the MOD (modeling) selection.</p>
+</div>
 </div>
 <div class="section" id="im-as-edp-analysis-model">
-<h3><a class="toc-backref" href="#id5"><span class="section-number">2.7.1.3. </span>IM as EDP Analysis Model</a><a class="headerlink" href="#im-as-edp-analysis-model" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6"><span class="section-number">2.7.1.4. </span>IM as EDP Analysis Model</a><a class="headerlink" href="#im-as-edp-analysis-model" title="Permalink to this headline">¶</a></h3>
 <p>The <strong>IM as EDP</strong> application forgoes a structural analysis altogether. In this case, the hazard intensity measure (IM) is considered the engineering demand parameter (EDP).</p>
 </div>
 </div>

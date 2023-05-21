@@ -33,8 +33,22 @@ The **OpenSees** analysis application employs OpenSees to conduct the structural
 OpenSeesPy Analysis Model
 *************************
 
-The **OpenSeesPy** analysis application employs OpenSeesPy to conduct the structural analysis.
+The **OpenSeesPy** analysis application employs OpenSeesPy to conduct the structural analysis. The inputs for this option have been specified in the MOD pane (see Warning below)
 
+.. warning::
+
+   This option must be selected when the user has selected the **OpenSeesPy Script** generator in the MOD (modeling) selection.
+
+
+CustomPy Simulation
+*******************
+
+The **OpenSeesPy** analysis application employs OpenSeesPy to conduct the structural analysis. The inputs for this option have been specified in the MOD pane. (see Warning below)
+
+.. warning::
+
+   This option must be selected when the user has selected the **CustomPy** generator in the MOD (modeling) selection.
+   
 IM as EDP Analysis Model
 *************************
 

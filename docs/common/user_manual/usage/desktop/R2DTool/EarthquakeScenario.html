@@ -1,0 +1,586 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Earthquake Scenario Simulation &mdash; Regional Resilience Determination Tool  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dPlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dReleaseNotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/R2D.html">6. R2D Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/lake_charles/index.html">3. Lake Charles, LA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Regional Resilience Determination Tool</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Earthquake Scenario Simulation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/R2DTool/EarthquakeScenario.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="earthquake-scenario-simulation">
+<span id="ground-motion-tool"></span><h1>Earthquake Scenario Simulation<a class="headerlink" href="#earthquake-scenario-simulation" title="Permalink to this headline">¶</a></h1>
+<p>This tool dialog is where user can enter data on an earthquake scenario and the tool will generate a series of ground motions for a series of points in the area. The application employs OpenSHA, determining which records to select from a ground motion database. The <strong>Earthquake Scenario Simulation</strong> input panel is given in <a class="reference internal" href="tools.html#fig-eqsspanel"><span class="std std-numref">Fig. 3.1.1</span></a> and the individual input panes are discussed below.</p>
+<div class="align-center figure" id="id3">
+<span id="fig-eqsspanel"></span><img alt="../../../../../_images/R2DEQSSPanel.png" src="../../../../../_images/R2DEQSSPanel.png" />
+<p class="caption"><span class="caption-text">Earthquake Scenario Simulation Input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Site Definition Parameters</strong></p>
+<p>This is where a user defines the geographical locations where ground motion selection will occur. A user can select to input a single location, multiple locations on a grid, or a collection of scattered sites as seen in the <strong>Grid Type Selection</strong> box in the top-left corner of <a class="reference internal" href="tools.html#fig-r2deqsssitesinglepane"><span class="std std-numref">Fig. 3.1.2</span></a>.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p><strong>Single Location</strong></p>
+<blockquote>
+<div><p>In the <strong>Single Location</strong> pane, shown in <a class="reference internal" href="tools.html#fig-r2deqsssitesinglepane"><span class="std std-numref">Fig. 3.1.2</span></a>, the user needs to provide the following inputs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Location:</strong> The latitude and longitude of the site.</p></li>
+<li><p><strong>Number of Ground Motions per Site:</strong> The number of ground motions that will be selected at the site.</p></li>
+</ul>
+</div></blockquote>
+<div class="align-center figure" id="id4">
+<span id="fig-r2deqsssitesinglepane"></span><img alt="../../../../../_images/R2DEQSSSiteSinglePane.png" src="../../../../../_images/R2DEQSSSiteSinglePane.png" />
+<p class="caption"><span class="caption-text">Single location site definition.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Grid of Locations</strong></p>
+<blockquote>
+<div><p>In the <strong>Grid of Locations</strong> input pane, given in <a class="reference internal" href="tools.html#fig-r2deqsssitegridpane"><span class="std std-numref">Fig. 3.1.3</span></a>, the user can either manually define a grid, or select a grid on a map. To manually define a grid, the user needs to provide the following input parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Latitude Extents:</strong>  The minimum and maximum latitude values that the grid will span.</p></li>
+<li><p><strong>Longitude Extents:</strong> The minimum and maximum longitude values that the grid will span.</p></li>
+</ul>
+</div></blockquote>
+<p>In addition to defining the geographical extents of the grid, the user must also provide the following inputs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Number of Ground Motions per Site:</strong> The number of ground motions that will be selected at each grid point.</p></li>
+<li><p><strong>Latitude Discretization:</strong> The number of divisions along the latitude direction.</p></li>
+<li><p><strong>Longitude Discretization:</strong> The number of divisions along the longitude direction.</p></li>
+</ul>
+</div></blockquote>
+<div class="align-center figure" id="id5">
+<span id="fig-r2deqsssitegridpane"></span><img alt="../../../../../_images/R2DEQSSSiteGridPane.png" src="../../../../../_images/R2DEQSSSiteGridPane.png" />
+<p class="caption"><span class="caption-text">Grid of locations site definition pane.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>To select a grid on a map, the user needs to click on the <strong>Define Grid on Map</strong> button and a new <strong>Grid Selection Window</strong> will appear with the grid, as seen in <a class="reference internal" href="tools.html#fig-r2deqssgridselection"><span class="std std-numref">Fig. 3.1.4</span></a>. A user can click and drag the <strong>Resize</strong> and <strong>Move</strong> handles, shown in <a class="reference internal" href="tools.html#fig-r2deqssgridselection"><span class="std std-numref">Fig. 3.1.4</span></a> as blue circles, to resize the grid extents and to move the grid. Changing the grid discretization along the latitude and longitude directions will change the number of grid divisions on the map. Once a grid is defined on the map, the window can be closed and the grid information will be updated in the input pane. To view or modify the grid again, press the <strong>Define Grid on Map</strong> button and the <strong>Grid Selection Window</strong> displaying the grid will reappear.</p>
+<div class="align-center figure" id="id6">
+<span id="fig-r2deqssgridselection"></span><img alt="../../../../../_images/R2DEQSSGridSelection.png" src="../../../../../_images/R2DEQSSGridSelection.png" />
+<p class="caption"><span class="caption-text">Selection of grid on map.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Scattered Locations</strong></p>
+<blockquote>
+<div><p>In the <strong>Scattered Locations</strong> input pane, given in <a class="reference internal" href="tools.html#fig-r2deqsssitescatterpane"><span class="std std-numref">Fig. 3.1.5</span></a>, the user provides a custom list of sites. The following inputs are required:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Site File:</strong> The user provided file, in <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format, containing the list of sites and corresponding site data. At a minimum the site file must contain the station number, latitude, and longitude of each site, as seen in the <strong>Site Preview Table</strong> in <a class="reference internal" href="tools.html#fig-r2deqsssitescatterpane"><span class="std std-numref">Fig. 3.1.5</span></a>.</p></li>
+<li><p><strong>Site Preview Table:</strong> Table providing the information at each site. Apart from the station number, latitude, and longitude at each site, the site file can include other information such as the Vs30 at the site.</p></li>
+<li><p><strong>Minimum and Maximum Site ID:</strong> The minimum and maximum site IDs considered.</p></li>
+<li><p><strong>Number of Ground Motions per Site:</strong> The number of ground motions that will be selected at each site.</p></li>
+</ul>
+</div></blockquote>
+<div class="align-center figure" id="id7">
+<span id="fig-r2deqsssitescatterpane"></span><img alt="../../../../../_images/R2DEQSSSiteScatterPane.png" src="../../../../../_images/R2DEQSSSiteScatterPane.png" />
+<p class="caption"><span class="caption-text">Scattered sites input pane.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+<p><strong>Spatial Correlation and Ground Motion Scaling Factors</strong></p>
+<p>This is where the user selects the spatial correlation models, and where the user defines the minimum and maximum scaling factors that are used in ground motion selection. Shown at the top of <a class="reference internal" href="tools.html#fig-r2deqsscorrscalepane"><span class="std std-numref">Fig. 3.1.6</span></a>, the user has the option to select the Intra- and Inter-event Spatial Correlation Models. Spatial correlation ensures that ground motions at different locations will share similar characteristics. The following Inter-event Spatial Correlation Models are available:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Baker &amp; Jayaram (2008)</p></li>
+</ul>
+</div></blockquote>
+<p>and the following Intra-event Spatial Correlation Models are available:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Markhvida et al. (2017)</p></li>
+<li><p>Jayaram &amp; Baker (2009)</p></li>
+<li><p>Loth &amp; Baker (2013)</p></li>
+</ul>
+</div></blockquote>
+<p>Special thanks to Dr. Anne Husley for sharing the python package <a class="reference external" href="https://github.com/annehulsey/seaturtles">seaturtles</a>, especially for the method of computing the regional ground motion intensity using the Markhvida et al. (2017) and Baker &amp; Jayaram (2008) correlation models.</p>
+<p>The <strong>Ground Motion Record Scaling Bounds</strong>, shown at the bottom of <a class="reference internal" href="tools.html#fig-r2deqsscorrscalepane"><span class="std std-numref">Fig. 3.1.6</span></a>, are the minimum and maximum scaling factors that intensity measures can be scaled by during the ground motion selection process.</p>
+<div class="align-center figure" id="id8">
+<span id="fig-r2deqsscorrscalepane"></span><img alt="../../../../../_images/R2DEQSSCorrScalePane.png" src="../../../../../_images/R2DEQSSCorrScalePane.png" />
+<p class="caption"><span class="caption-text">Spatial correlation and ground motion selection scaling factors.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Ground Motion Record Database</strong></p>
+<p>Ground motion records are selected from a ground motion database. Currently, only the <em>PEER NGA-West2</em> database is available, shown in the <strong>Ground Motion Record Database</strong> combo box in <a class="reference internal" href="tools.html#fig-r2deqssgmdbpane"><span class="std std-numref">Fig. 3.1.7</span></a>. Alternatively, a user can select <em>None</em> to skip ground motion selection altogether. In that case, only the intensity measures will be saved at each location.</p>
+<blockquote>
+<div><div class="align-center figure" id="id9">
+<span id="fig-r2deqssgmdbpane"></span><img alt="../../../../../_images/R2DEQSSGMDBPane.png" src="../../../../../_images/R2DEQSSGMDBPane.png" />
+<p class="caption"><span class="caption-text">Ground motion records database.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p><strong>Ground Motion Prediction Equations</strong></p>
+<p>Ground motion prediction equations estimate the intensity of ground shaking that may occur at a site. The <strong>Ground Motion Prediction Equation</strong> combo box, shown in <a class="reference internal" href="tools.html#fig-r2deqssgmpepane"><span class="std std-numref">Fig. 3.1.8</span></a>, contains the following ground motion prediction equations:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Abrahamson, Silva &amp; Kamai (2014)</p></li>
+<li><p>Boore, Stewart, Seyhan &amp; Atkinson (2014)</p></li>
+<li><p>Campbell &amp; Bozorgnia (2014)</p></li>
+<li><p>Chiou &amp; Youngs (2014)</p></li>
+</ul>
+</div></blockquote>
+<div class="align-center figure" id="id10">
+<span id="fig-r2deqssgmpepane"></span><img alt="../../../../../_images/R2DEQSSGMPEPane.png" src="../../../../../_images/R2DEQSSGMPEPane.png" />
+<p class="caption"><span class="caption-text">Ground motion prediction equations.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Earthquake Source</strong></p>
+<p>This is where the user defines the earthquake rupture characteristics. In the <strong>Rupture Type</strong> combo box, shown in <a class="reference internal" href="tools.html#fig-r2deqssseqruppointpane"><span class="std std-numref">Fig. 3.1.9</span></a>, point source and UCERF earthquake rupture forecast models are available.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p><strong>Point Source</strong></p>
+<blockquote>
+<div><p>The <strong>Point Source</strong> pane, shown in <a class="reference internal" href="tools.html#fig-r2deqssseqruppointpane"><span class="std std-numref">Fig. 3.1.9</span></a>, requires the following inputs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Magnitude:</strong> Magnitude of the earthquake.</p></li>
+<li><p><strong>Location and Depth:</strong> Location and depth of earthquake rupture.</p></li>
+<li><p><strong>Rupture Geometry:</strong> Average dip and rake of rupture.</p></li>
+</ul>
+</div></blockquote>
+<div class="align-center figure" id="id11">
+<span id="fig-r2deqssseqruppointpane"></span><img alt="../../../../../_images/R2DEQSSSEQRupPointPane.png" src="../../../../../_images/R2DEQSSSEQRupPointPane.png" />
+<p class="caption"><span class="caption-text">Point source earthquake rupture.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>UCERF Earthquake Rupture Forecast</strong></p>
+<blockquote>
+<div><p>The <strong>UCERF Earthquake Rupture Forecast</strong> pane, shown in <a class="reference internal" href="tools.html#fig-r2deqssseqrupforecastpane"><span class="std std-numref">Fig. 3.1.10</span></a>, requires the following inputs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Number of scenarios:</strong> The number of rupture scenarios considered.</p></li>
+<li><p><strong>Magnitude and Distance:</strong> Magnitude of the earthquake and the maximum distance, in km, from a site.</p></li>
+<li><p><strong>Name:</strong> Users can specify keywords here to search for specific earthquakes.</p></li>
+<li><p><strong>Earthquake Forecast Model:</strong> Type of earthquake forecast model.</p></li>
+</ul>
+</div></blockquote>
+<p>The types of UCERF earthquake forecast models available are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>WGCEP (2007) UCERF2 - Single Branch</p></li>
+<li><p>Mean UCERF3</p></li>
+<li><p>Mean UCERF3 FM3.1</p></li>
+<li><p>Mean UCERF3 FM3.2</p></li>
+</ul>
+</div></blockquote>
+<div class="align-center figure" id="id12">
+<span id="fig-r2deqssseqrupforecastpane"></span><img alt="../../../../../_images/R2DEQSSSEQRupForecastPane.png" src="../../../../../_images/R2DEQSSSEQRupForecastPane.png" />
+<p class="caption"><span class="caption-text">Earthquake rupture forecast.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>OpenQuake Scenario-Based</strong></p>
+<blockquote>
+<div><p>The <strong>OpenQuake Scenario-Based</strong> pane, shown in <a class="reference internal" href="tools.html#fig-r2dopenquakescenariobased"><span class="std std-numref">Fig. 3.1.11</span></a>, requires the following inputs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>OpenQuake Version:</strong> Version of OpenQuake (currently available 3.10, 3.11, 3.12, and latest minor version is supported).</p></li>
+<li><p><strong>Rupture File:</strong> A xml file (NRML format) defining an earthquake source.</p></li>
+<li><p><strong>Rupture Meshsize:</strong> Mesh size for line sources.</p></li>
+<li><p><strong>Area Meshsize:</strong> Mesh size for area sources.</p></li>
+<li><p><strong>Maximum Distance:</strong> Maximum considered distance from source to site.</p></li>
+</ul>
+</div></blockquote>
+<div class="align-center figure" id="id13">
+<span id="fig-r2dopenquakescenariobased"></span><img alt="../../../../../_images/R2DOpenQuakeScenarioBased.png" src="../../../../../_images/R2DOpenQuakeScenarioBased.png" />
+<p class="caption"><span class="caption-text">OpenQuake Scenario-Based Input.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>OpenQuake Classcial PSHA</strong></p>
+<blockquote>
+<div><p>The <strong>OpenQuake Classcial PSHA</strong> pane, shown in <a class="reference internal" href="tools.html#fig-r2dopenquakeclassicalpsha"><span class="std std-numref">Fig. 3.1.12</span></a>, requires the following inputs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>OpenQuake Version:</strong> Version of OpenQuake (currently available 3.10, 3.11, 3.12, and latest minor version is supported).</p></li>
+<li><p><strong>Source Logic Tree:</strong> A xml file (NRML format) defining a logic tree model for seismic sources.</p></li>
+<li><p><strong>Source Model Folder:</strong> A directory hosting the seismic sources defined in the source logic tree.</p></li>
+<li><p><strong>Rupture Meshsize:</strong> Mesh size for line sources.</p></li>
+<li><p><strong>Area Meshsize:</strong> Mesh size for area sources.</p></li>
+<li><p><strong>Maximum Distance:</strong> Maximum considered distance from source to site.</p></li>
+<li><p><strong>GMPE Logic Tree:</strong> A xml file (NRML format) defining a logic tree model for ground motion prediction equations.</p></li>
+<li><p><strong>Return Period:</strong> Return period of the PSHA.</p></li>
+<li><p><strong>Seed:</strong> Seed in generating ground motion maps.</p></li>
+<li><p><strong>Quantiles:</strong> Quantile levels of ground motion intensity measures in the output (e.g., uniform hazard spectra).</p></li>
+<li><p><strong>Investigation Time:</strong> time period for computing the probability of exceedance</p></li>
+<li><p><strong>Output:</strong> Checkboxes for <em>Individual hazard curve</em>, <em>Mean hazard curve</em>, <em>Hazard map</em>, and <em>Uniform hazard spectra</em></p></li>
+</ul>
+</div></blockquote>
+<div class="align-center figure" id="id14">
+<span id="fig-r2dopenquakeclassicalpsha"></span><img alt="../../../../../_images/R2DOpenQuakeClassicalPSHA.png" src="../../../../../_images/R2DOpenQuakeClassicalPSHA.png" />
+<p class="caption"><span class="caption-text">OpenQuake Classical PSHA Input.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Hazard Occurrence</strong></p>
+<blockquote>
+<div><p>The <strong>Hazard Occurrence</strong> pane, shown in <a class="reference internal" href="tools.html#fig-r2dhazardoccurrence"><span class="std std-numref">Fig. 3.1.13</span></a>, requires the following inputs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Hazard occurrence model:</strong> Currently Manzour and Davidson (2016) (<a class="reference internal" href="HAZ.html#manzour2016" id="id1"><span>[Manzour2016]</span></a>) is available.</p></li>
+<li><dl class="simple">
+<dt><strong>Forecast model:</strong> Type of earthquake forecast model where the candidate earthquake scenarios are collected from.</dt><dd><ul>
+<li><p>WGCEP (2007) UCERF2 - Single Branch</p></li>
+<li><p>Mean UCERF3</p></li>
+<li><p>Mean UCERF3 FM3.1</p></li>
+<li><p>Mean UCERF3 FM3.2</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>Candidate earthquake number:</strong> Number of earthquakes used as candidates to select from.</p></li>
+<li><p><strong>Reduced earthquake number:</strong> Maximum number of selected (reduced) earthquakes to recover the hazard curves.</p></li>
+<li><p><strong>Reduced motion number:</strong> Maximum number of selected (reduced) ground motions per individual site to recover the site hazard curve.</p></li>
+<li><p><strong>Hazard curve input:</strong> Types of reference hazard curves: (1) Inferred and (2) User-defined. Inferred hazard curves are fetched from National seismic hazar map project (<a class="reference internal" href="HAZ.html#peterson2020" id="id2"><span>[Peterson2020]</span></a>). User-defined hazard curves should be summarized in a csv file following the <a class="reference download internal" download="" href="../../../../../_downloads/dacbdced5505dcbc798da94687495c1b/HazardCurves.csv"><code class="xref download docutils literal notranslate"><span class="pre">template</span></code></a>.</p></li>
+<li><p><strong>National seismic hazard map:</strong> Version of national seismic hazard map used to infer reference site-specific hazard curves.</p></li>
+<li><p><strong>Hazard curve file:</strong> User-defined hazard curve file.</p></li>
+<li><p><strong>Intensity measure:</strong> The intensity measure type used in reference hazard curves.</p></li>
+<li><p><strong>Hazard curve Sa period:</strong> Period of the response acceleration Sa if the intensity measure type is Sa.</p></li>
+<li><p><strong>Return periods (yr):</strong> A list of return periods in year used in minimizing the difference between recovered and reference hazard curves (seperated by “,”).</p></li>
+</ul>
+</div></blockquote>
+<div class="align-center figure" id="id15">
+<span id="fig-r2dhazardoccurrence"></span><img alt="../../../../../_images/R2DHazardOccurrence.png" src="../../../../../_images/R2DHazardOccurrence.png" />
+<p class="caption"><span class="caption-text">Hazard Occurrence Input.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+<p><strong>Intensity Measure and Period Points</strong></p>
+<p>The <strong>Intensity Measure and Period Points</strong> pane, shown in <a class="reference internal" href="tools.html#fig-r2deqssimpane"><span class="std std-numref">Fig. 3.1.14</span></a>, requires the following inputs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Intensity Measure Type:</strong> Type of intensity measure. The Spectral Acceleration (SA) and Peak Ground Acceleration (PGA) intensity measures are available.</p></li>
+<li><p><strong>Period Points:</strong> List of periods, in seconds, that are used in the ground motion selection procedure.</p></li>
+</ul>
+</div></blockquote>
+<div class="align-center figure" id="id16">
+<span id="fig-r2deqssimpane"></span><img alt="../../../../../_images/R2DEQSSIMPane.png" src="../../../../../_images/R2DEQSSIMPane.png" />
+<p class="caption"><span class="caption-text">Intensity measure and period.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Output Directory and Run Button</strong></p>
+<p>Shown at the bottom of <a class="reference internal" href="tools.html#fig-r2deqssoutputdirpane"><span class="std std-numref">Fig. 3.1.15</span></a>, the <strong>Run Hazard Simulation</strong> button starts the ground motion selection application. The <strong>Output Directory</strong> box, provided in <a class="reference internal" href="tools.html#fig-r2deqssoutputdirpane"><span class="std std-numref">Fig. 3.1.15</span></a>, allows the user to select a directory that will contain the input and output files of the earthquake scenario simulation.</p>
+<div class="align-center figure" id="id17">
+<span id="fig-r2deqssoutputdirpane"></span><img alt="../../../../../_images/R2DEQSSOutputDirPane.png" src="../../../../../_images/R2DEQSSOutputDirPane.png" />
+<p class="caption"><span class="caption-text">Earthquake Scenario Simulation Output Directory.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>The earthquake scenario simulation is run via a Python script. When the <strong>Run Hazard Simulation</strong> button is pressed, text output from the script will appear in the <strong>Program Output</strong> console at the bottom of the application.</dt><dd><p>Upon successful completion of the earthquake scenario simulation, results from the simulation are in the <strong>Output Directory</strong> folder that is specified above, as shown in <a class="reference internal" href="tools.html#fig-r2deqssoutputdirpane"><span class="std std-numref">Fig. 3.1.15</span></a>. The final output is a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file called <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code>. The <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file contains the grid points and their locations and file names. Each grid point is assigned a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file containing a list of the ground motions at the grid point and their scaling factors. If applicable, the corresponding ground motion records, in <code class="docutils literal notranslate"><span class="pre">JSON</span></code> format, are also in the <strong>Output Directory</strong> directoy. Next, the <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> is post-processed, and a new layer containing the ground motions is added to the GIS widget. Shown on the right-hand side of <a class="reference internal" href="tools.html#fig-r2deqssoutput"><span class="std std-numref">Fig. 3.1.16</span></a>, the grid points are represented with a cross symbol. Clicking on a grid point will produce a popup with information about the ground motions at that point.</p>
+</dd>
+</dl>
+<div class="align-center figure" id="id18">
+<span id="fig-r2deqssoutput"></span><img alt="../../../../../_images/R2DEQSSOutput.png" src="../../../../../_images/R2DEQSSOutput.png" />
+<p class="caption"><span class="caption-text">Post-processing output and grid visualization.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

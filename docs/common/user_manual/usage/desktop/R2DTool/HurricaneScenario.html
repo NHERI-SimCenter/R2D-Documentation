@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Hurricane Scenario &mdash; Regional Resilience Determination Tool  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dPlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dReleaseNotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/R2D.html">6. R2D Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/lake_charles/index.html">3. Lake Charles, LA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Regional Resilience Determination Tool</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Hurricane Scenario</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/R2DTool/HurricaneScenario.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hurricane-scenario">
+<h1>Hurricane Scenario<a class="headerlink" href="#hurricane-scenario" title="Permalink to this headline">¶</a></h1>
+<p>This tool dialog is where user can enter data for a specific Hurricane and it will generate a wind field for a specific region..</p>
+<p>The <strong>Hurricane Scenario Simulation</strong>, seen in <a class="reference internal" href="tools.html#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, is an tool that calculates a wind field over a user defined grid. The application is implemented based on the method proposed by <a class="reference internal" href="HAZ.html#snaikiwu2017a" id="id1"><span>[SnaikiWu2017a]</span></a> and <a class="reference internal" href="HAZ.html#snaikiwu2017b" id="id2"><span>[SnaikiWu2017b]</span></a>. The GIS visualization window, seen at the bottom of <a class="reference internal" href="tools.html#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, is used to interactively define hurricane inputs. At a minimum, a user needs to specify a set of hurricane track points, landfall location and parameters, and a wind field grid. The individual input panes are discussed below.</p>
+<div class="align-center figure" id="id3">
+<span id="fig-r2dhurricanemainpanel"></span><img alt="../../../../../_images/R2DHurricaneMainPanel.png" src="../../../../../_images/R2DHurricaneMainPanel.png" />
+<p class="caption"><span class="caption-text">Hurricane Scenario Simulation Application.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Hurricane Definition</strong></p>
+<p>A user has the option to specify a hurricane track and associated landfall parameters, or select a historical hurricane from a built-in database.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p><strong>Specify Hurricane Track</strong></p>
+<blockquote>
+<div><p>To manually input a hurricane track, the user needs to supply a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file with rows that contain the latitude and longitude coordinates of the points along the track. To input the hurricane track file, the user needs to specify the file path in the <strong>Path to Hurricane Track File</strong> input shown in <a class="reference internal" href="tools.html#fig-r2dhurricanetrackselectpane"><span class="std std-numref">Fig. 3.3.2</span></a>. A successfully loaded track is shown at the top of <a class="reference internal" href="tools.html#fig-r2dhurricanetrackselectpane"><span class="std std-numref">Fig. 3.3.2</span></a>. The circles represent a measurement point along the track and the arrow head shows the direction of the hurricane. Clicking on a circle will produce a dialog with the available information at that point.</p>
+<div class="align-center figure" id="id4">
+<span id="fig-r2dhurricanetrackselectpane"></span><img alt="../../../../../_images/R2DHurricaneTrackSelectPane.png" src="../../../../../_images/R2DHurricaneTrackSelectPane.png" />
+<p class="caption"><span class="caption-text">Manually defined hurricane track.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>An example hurricane track input file is given below in  <a class="reference internal" href="tools.html#fig-r2dhurricanetrackselectexdata"><span class="std std-numref">Fig. 3.3.3</span></a>. The track data should be in temporal order, i.e., the first measurement should be in the first row of the input file.</p>
+<div class="align-center figure" id="id5">
+<span id="fig-r2dhurricanetrackselectexdata"></span><img alt="../../../../../_images/R2DHurricaneTrackSelectExData.png" src="../../../../../_images/R2DHurricaneTrackSelectExData.png" />
+<p class="caption"><span class="caption-text">Example data for hurricane track input.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>Users also have the option to specify a terrain roughness file in the <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> format. Users need to provide the path to the terrain roughness file in the <strong>Path to Terrain Roughness File</strong> input, given in <a class="reference internal" href="tools.html#fig-r2dhurricanetrackselectpane"><span class="std std-numref">Fig. 3.3.2</span></a>. When loaded, the terrain roughness file will be visualized in the GIS window, as highlighted at the bottom of <a class="reference internal" href="tools.html#fig-r2dhurricanetrackselectpane"><span class="std std-numref">Fig. 3.3.2</span></a>. If a terrain roughness is not specified, a default value of 0.03 m is used (assuming open/flat terrain few isolated obstacles).</p>
+</div></blockquote>
+</li>
+<li><p><strong>Select Hurricane from Database</strong></p>
+<blockquote>
+<div><p>The panel to select a historical hurricane is shown in <a class="reference internal" href="tools.html#fig-r2dhurricanetrackdb"><span class="std std-numref">Fig. 3.3.4</span></a>. Clicking on the <strong>Load Hurricane Database</strong> button will load the database and all of the hurricanes in the database will appear in the GIS window, as shown at the bottom of <a class="reference internal" href="tools.html#fig-r2dhurricanetrackdb"><span class="std std-numref">Fig. 3.3.4</span></a>. The database that is pre-bundled with the application is the International Best Track Archive for Climate Stewardship (IBTrACS) v04r00 database, listing storms that have occurred in the last three years. Users can modify the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> database file, e.g., update it or add their own storm information, if the same header format and file name (ibtracs.last3years.list.v04r00.csv) is retained. Users can find this file in the <code class="docutils literal notranslate"><span class="pre">Databases</span></code> folder that is in the R2D installation directory.</p>
+<div class="align-center figure" id="id6">
+<span id="fig-r2dhurricanetrackdb"></span><img alt="../../../../../_images/R2DHurricaneTrackDB.png" src="../../../../../_images/R2DHurricaneTrackDB.png" />
+<p class="caption"><span class="caption-text">Hurricane selection from database.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>To load a specific hurricane, a user needs to navigate to a hurricane of their choice in the GIS window and click on the hurricane to select it. The selected hurricane will be highlighted, as shown in <a class="reference internal" href="tools.html#fig-r2dhurricanetrackdb2"><span class="std std-numref">Fig. 3.3.5</span></a>, and a dialog will appear providing the hurricane track metadata. Clicking on the <strong>Select Hurricane Button</strong> in <a class="reference internal" href="tools.html#fig-r2dhurricanetrackdb2"><span class="std std-numref">Fig. 3.3.5</span></a> will finalize the selection. The selected hurricane’s metadata will appear in the box that is given in the middle of <a class="reference internal" href="tools.html#fig-r2dhurricanetrackdb"><span class="std std-numref">Fig. 3.3.4</span></a>.</p>
+<div class="align-center figure" id="id7">
+<span id="fig-r2dhurricanetrackdb2"></span><img alt="../../../../../_images/R2DHurricaneTrackDB2.png" src="../../../../../_images/R2DHurricaneTrackDB2.png" />
+<p class="caption"><span class="caption-text">Selecting a hurricane from the map.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>After selecting a hurricane, a user will see the final hurricane track, similar to what is shown in <a class="reference internal" href="tools.html#fig-r2dhurricanetrackdb3"><span class="std std-numref">Fig. 3.3.6</span></a>. The circles represent a measurement point along the track. Clicking on a circle will produce a dialog with the available information at that point. The blue diamond represents the first point of hurricane landfall, i.e., the first point at which the distance to land is equal to zero. If a landfall location is found, the landfall parameters are programmatically filled in with the measurements at the landfall location. In the case where a hurricane makes landfall more than once, the user has the option to clear the initial landfall point, and select another landfall point, the procedure of which is described below. Note that if a new landfall location is selected by the user, except for the latitude and longitude which is updated programmatically, users should manually update the landfall parameters to agree with the expected parameter values at new location.</p>
+<div class="align-center figure" id="id8">
+<span id="fig-r2dhurricanetrackdb3"></span><img alt="../../../../../_images/R2DHurricaneTrackDB3.png" src="../../../../../_images/R2DHurricaneTrackDB3.png" />
+<p class="caption"><span class="caption-text">Output after hurricane selection.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+<p><strong>Hurricane Landfall Parameters</strong></p>
+<p>This is where the user inputs the hurricane landfall parameters. Hurricane landfall occurs when the center of the storm moves across a coastline after traversing open water. Shown in <a class="reference internal" href="tools.html#fig-r2dhurricanelandfallparams"><span class="std std-numref">Fig. 3.3.7</span></a>, the user must supply the following parameter values:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Latitude in degrees North</p></li>
+<li><p>Longitude in degrees East</p></li>
+<li><p>Landing, or approach angle, in degrees</p></li>
+<li><p>Speed in knots (kts)</p></li>
+<li><p>Pressure in millibars (mb)</p></li>
+<li><p>Radius in nautical miles (nmile)</p></li>
+<li><p>Exposure category to classify terrain roughness</p></li>
+<li><p>Gust duration in seconds (s)</p></li>
+<li><p>Reference height in meters (m).</p></li>
+</ul>
+</div></blockquote>
+<p>Note that if a track is selected from the database, the landfall parameters will be automatically filled in based on the first encountered landfall. The <strong>Perturbation</strong> input boxes allow the user to specify uncertainty in the parameter values.</p>
+<div class="align-center figure" id="id9">
+<span id="fig-r2dhurricanelandfallparams"></span><img alt="../../../../../_images/R2DHurricaneLandfallParams.png" src="../../../../../_images/R2DHurricaneLandfallParams.png" />
+<p class="caption"><span class="caption-text">Hurricane Landfall Parameters.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Specify Landfall Location</strong></p>
+<p>The hurricane landfall location is manually defined using the buttons in <a class="reference internal" href="tools.html#fig-r2dhurricanelandfallselect"><span class="std std-numref">Fig. 3.3.8</span></a>. Clicking on the <strong>Define Landfall on Map</strong> button causes a blue circle to appear in the GIS window, as seen in the righthand side of the window in <a class="reference internal" href="tools.html#fig-r2dhurricanelandfallparams"><span class="std std-numref">Fig. 3.3.7</span></a>. A user can click on and drag this circle to any location on the map. When the user is satisfied with their new landfall location, they need to click on the <strong>Select Landfall</strong> button to finalize the selection. The landfall will then appear as a blue diamond symbol in its own layer in the GIS window. If a user wants to erase an existing landfall location, they need to click on the <strong>Clear Landfall</strong> button and start over.</p>
+<div class="align-center figure" id="id10">
+<span id="fig-r2dhurricanelandfallselect"></span><img alt="../../../../../_images/R2DHurricaneLandfallSelect.png" src="../../../../../_images/R2DHurricaneLandfallSelect.png" />
+<p class="caption"><span class="caption-text">Specify Hurricane Landfall.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Truncate Hurricane Track</strong></p>
+<p>R2D allows users to truncate hurricane tracks to save time in the wind field computations. This is also useful when a user requires only a portion of a hurricane track in their region of interest. The buttons for truncating a hurricane track are shown in <a class="reference internal" href="tools.html#fig-r2dhurricanetruncatetrack"><span class="std std-numref">Fig. 3.3.9</span></a>. Clicking on the <strong>Select Area on Map</strong> button in the figure will turn on the selection procedure. Clicking on any point in the GIS window will start the selection process. Continuing the point selection procedure by clicking elsewhere on the map will form the boundary of the selection polygon, an example of which is provided in <a class="reference internal" href="tools.html#fig-r2dhurricanetruncatetrack"><span class="std std-numref">Fig. 3.3.9</span></a>. Right-clicking anywhere on the map, or my pressing the escape key, will clear the polygon and select the points within the polygon. The selected points will be highlighted in yellow.The selection points can be cleared at any time by pressing the <strong>Clear</strong> button. Clicking on the <strong>Apply</strong> button will finalize the selection. The yellow-highlighted track points that are selected will be kept and all other points will be discarded. Note that once the <strong>Apply</strong> button is pressed, the procedure cannot be undone. An example truncated track is given in the left-hand side of the GIS window in <a class="reference internal" href="tools.html#fig-r2dhurricanetruncatetrack"><span class="std std-numref">Fig. 3.3.9</span></a>.</p>
+<div class="align-center figure" id="id11">
+<span id="fig-r2dhurricanetruncatetrack"></span><img alt="../../../../../_images/R2DHurricaneTruncateTrack.png" src="../../../../../_images/R2DHurricaneTruncateTrack.png" />
+<p class="caption"><span class="caption-text">Truncate Hurricane Track.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Specify Wind Field Grid</strong></p>
+<p>To select the wind field grid on a map, the user needs to click on the <strong>Define Grid on Map</strong> button. A new grid will appear in the GIS window, as seen in <a class="reference internal" href="tools.html#fig-r2dhurricanedefinegrid"><span class="std std-numref">Fig. 3.3.10</span></a>. A user can click and drag the <strong>Resize</strong> and <strong>Move</strong> handles, shown in <a class="reference internal" href="tools.html#fig-r2dhurricanedefinegrid"><span class="std std-numref">Fig. 3.3.10</span></a>, to resize the grid extents and to move the grid. Changing the grid discretization along the latitude and longitude directions will change the number of grid divisions on the map. Once a grid is defined on the map, the user needs to click on the <strong>Select Grid</strong> button to finalize grid selection. When grid selection is finalized, a new layer is added to the GIS widget. Shown on the right-hand side of <a class="reference internal" href="tools.html#fig-r2dhurricanedefinegrid"><span class="std std-numref">Fig. 3.3.10</span></a>, the wind field grid points are represented with a cross symbol. Clicking on the <strong>Clear Grid</strong> button will clear the existing grid, allowing for the selection of a new grid.</p>
+<div class="align-center figure" id="id12">
+<span id="fig-r2dhurricanedefinegrid"></span><img alt="../../../../../_images/R2DHurricaneDefineGrid.png" src="../../../../../_images/R2DHurricaneDefineGrid.png" />
+<p class="caption"><span class="caption-text">Hurricane Wind Field Grid.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Run Simulation Button</strong></p>
+<p>Shown on the right-hand side of <a class="reference internal" href="tools.html#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, the <strong>Run Simulation</strong> button starts the hurricane simulation application. The results from the simulation are in the <strong>Output Directory</strong> folder specified in R2D preferences. The final output is a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file called <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code>. The <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file contains the grid point locations and file names. Each grid point is assigned a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file containing a list of the peak wind speeds at the grid point. The <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> is post-processed and the grid points created in the <strong>Specify Wind Field Grid</strong> step will be updated with the Peak Wind Speed values that are calculated in the simulation. Clicking on a grid point will produce a popup listing the wind speeds at that point.</p>
+</div>
+<div class="section" id="user-specified-hurricane">
+<h1>User-specified Hurricane<a class="headerlink" href="#user-specified-hurricane" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>User-specified Hurricane</strong> application loads the results of a <strong>Hurricane Scenario Simulation</strong> that was shown previously. The <strong>User-specified Hurricanes</strong> application input pane is given in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-R2DUserSelectWindField</span></code>. As seen in the figure, the user is required to input the file path to the <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file. If the wind and/or inundation field stations are not in the same folder as the <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file, then the user needs to input the directory path to the folder containing the wind and/or inundation field station files. The user also needs to specify the units of the intensity measure field.</p>
+<div class="align-center figure" id="fig-r2duserselectwindfield">
+<img alt="../../../../../_images/R2DUserSelectWindField.png" src="../../../../../_images/R2DUserSelectWindField.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>
