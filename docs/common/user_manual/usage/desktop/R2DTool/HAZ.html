@@ -127,9 +127,10 @@
 <li class="toctree-l2"><a class="reference internal" href="GI.html">2.2. GI: General Information</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. HAZ: Hazards</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#user-specified-ground-motions">2.3.1. User-specified Ground Motions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#shakemap-earthquake-scenarios">2.3.2. ShakeMap Earthquake Scenarios</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#raster-defined-hazard">2.3.3. Raster Defined Hazard</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#regional-site-response">2.3.4. Regional Site Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-specified-hurricane">2.3.2. User-specified Hurricane</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shakemap-earthquake-scenarios">2.3.3. ShakeMap Earthquake Scenarios</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raster-defined-hazard">2.3.4. Raster Defined Hazard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#regional-site-response">2.3.5. Regional Site Response</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="ASD.html">2.4. ASD: Asset Definition</a></li>
@@ -241,9 +242,10 @@
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#user-specified-ground-motions" id="id13">User-specified Ground Motions</a></p></li>
-<li><p><a class="reference internal" href="#shakemap-earthquake-scenarios" id="id14">ShakeMap Earthquake Scenarios</a></p></li>
-<li><p><a class="reference internal" href="#raster-defined-hazard" id="id15">Raster Defined Hazard</a></p></li>
-<li><p><a class="reference internal" href="#regional-site-response" id="id16">Regional Site Response</a></p></li>
+<li><p><a class="reference internal" href="#user-specified-hurricane" id="id14">User-specified Hurricane</a></p></li>
+<li><p><a class="reference internal" href="#shakemap-earthquake-scenarios" id="id15">ShakeMap Earthquake Scenarios</a></p></li>
+<li><p><a class="reference internal" href="#raster-defined-hazard" id="id16">Raster Defined Hazard</a></p></li>
+<li><p><a class="reference internal" href="#regional-site-response" id="id17">Regional Site Response</a></p></li>
 </ul>
 </div>
 <div class="align-center figure" id="id6">
@@ -251,24 +253,28 @@
 <p class="caption"><span class="caption-number">Fig. 2.3.1 </span><span class="caption-text">Hazard input panel.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="user-specified-ground-motions">
-<h2><a class="toc-backref" href="#id13"><span class="section-number">2.3.1. </span>User-specified Ground Motions</a><a class="headerlink" href="#user-specified-ground-motions" title="Permalink to this headline">¶</a></h2>
+<span id="lbl-userspecifiedgroundmotions"></span><h2><a class="toc-backref" href="#id13"><span class="section-number">2.3.1. </span>User-specified Ground Motions</a><a class="headerlink" href="#user-specified-ground-motions" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>User-specified Ground Motion</strong> application loads the results of an <strong>Earthquake Scenario Simulation</strong> that was run previously. The <strong>User-specified Earthquakes</strong> application input pane is given in <a class="reference internal" href="#fig-userselecteq"><span class="std std-numref">Fig. 2.3.1.1</span></a>. As seen in the figure, the user is required to input the file path to the <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file in the <cite>Event File Listing Motions Field</cite>. If the ground motions are not in the same folder as the <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file, then the user needs to input the directory path to the folder containing the ground motions. Users also need to specify the units of the ground motion field.</p>
 <div class="align-center figure" id="id7">
 <span id="fig-userselecteq"></span><img alt="../../../../../_images/R2DUserSelectEQ.png" src="../../../../../_images/R2DUserSelectEQ.png" />
 <p class="caption"><span class="caption-number">Fig. 2.3.1.1 </span><span class="caption-text">User-defined earthquakes input panel.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div>
+<div class="section" id="user-specified-hurricane">
+<span id="lbl-userspecifiedhurricane"></span><h2><a class="toc-backref" href="#id14"><span class="section-number">2.3.2. </span>User-specified Hurricane</a><a class="headerlink" href="#user-specified-hurricane" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>User-specified Hurricane</strong> application works similar to the <strong>User-specified Ground Motion</strong> application. It loads the results of an <strong>Hurricane Scenario Simulation</strong> that was run previously. The <strong>User-specified Hurricane</strong> application input pane is similar to <a class="reference internal" href="#fig-userselecteq"><span class="std std-numref">Fig. 2.3.1.1</span></a>. As seen in the figure, the user is required to input the file path to the <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file in the <cite>Event File Listing Hurricane Field</cite>. If the hurricane files are not in the same folder as the <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file, then the user needs to input the directory path to the folder containing the hurricane stations. Users also need to specify the units of the hurricane hazard input fields.</p>
+</div>
 <div class="section" id="shakemap-earthquake-scenarios">
-<h2><a class="toc-backref" href="#id14"><span class="section-number">2.3.2. </span>ShakeMap Earthquake Scenarios</a><a class="headerlink" href="#shakemap-earthquake-scenarios" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>ShakeMap Earthquake Scenario</strong> application provides the functionality to import a USGS ShakeMap earthquake hazard. The <strong>ShakeMap Earthquake Scenario</strong> application input pane is given in <a class="reference internal" href="#fig-r2dshakemappane"><span class="std std-numref">Fig. 2.3.2.1</span></a>. As seen in the figure, the user is required to input a path to a folder on the user’s computer that contains the ShakeMap data. At a minimum, the folder must contain a <code class="docutils literal notranslate"><span class="pre">grid.xml</span></code> file that provides the ground motion intensity measures, e.g., PGA, PGV, over a geographical grid. To visualize the PGA contours or rupture in the GIS window, a user can also provide the <code class="docutils literal notranslate"><span class="pre">cont_pga.json</span></code> file, or <code class="docutils literal notranslate"><span class="pre">rupture.json</span></code> file, respectively. Note that more than one ShakeMap can be input. However, the ShakeMap that is selected in the <strong>List of ShakeMaps</strong> tree in <a class="reference internal" href="#fig-r2dshakemappane"><span class="std std-numref">Fig. 2.3.2.1</span></a>, is the one that is employed in the subsequent analysis. The user also has the option to select the type of intensity measure they want from the ShakeMap grid.</p>
+<span id="lbl-shakemapeqscenarios"></span><h2><a class="toc-backref" href="#id15"><span class="section-number">2.3.3. </span>ShakeMap Earthquake Scenarios</a><a class="headerlink" href="#shakemap-earthquake-scenarios" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>ShakeMap Earthquake Scenario</strong> application provides the functionality to import a USGS ShakeMap earthquake hazard. The <strong>ShakeMap Earthquake Scenario</strong> application input pane is given in <a class="reference internal" href="#fig-r2dshakemappane"><span class="std std-numref">Fig. 2.3.3.1</span></a>. As seen in the figure, the user is required to input a path to a folder on the user’s computer that contains the ShakeMap data. At a minimum, the folder must contain a <code class="docutils literal notranslate"><span class="pre">grid.xml</span></code> file that provides the ground motion intensity measures, e.g., PGA, PGV, over a geographical grid. To visualize the PGA contours or rupture in the GIS window, a user can also provide the <code class="docutils literal notranslate"><span class="pre">cont_pga.json</span></code> file, or <code class="docutils literal notranslate"><span class="pre">rupture.json</span></code> file, respectively. Note that more than one ShakeMap can be input. However, the ShakeMap that is selected in the <strong>List of ShakeMaps</strong> tree in <a class="reference internal" href="#fig-r2dshakemappane"><span class="std std-numref">Fig. 2.3.3.1</span></a>, is the one that is employed in the subsequent analysis. The user also has the option to select the type of intensity measure they want from the ShakeMap grid.</p>
 <div class="align-center figure" id="id8">
 <span id="fig-r2dshakemappane"></span><img alt="../../../../../_images/R2DShakeMapPane.png" src="../../../../../_images/R2DShakeMapPane.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.2.1 </span><span class="caption-text">ShakeMap input panel.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.3.1 </span><span class="caption-text">ShakeMap input panel.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
-<p>After a ShakeMap is loaded, it will appear in the list of ShakeMaps shown above in <a class="reference internal" href="#fig-r2dshakemappane"><span class="std std-numref">Fig. 2.3.2.1</span></a>. Users can see the grid, contours, etc., ShakeMap visuals by going to the <strong>VIZ</strong> pane, as highlighted in <a class="reference internal" href="#fig-r2dshakemapoutput"><span class="std std-numref">Fig. 2.3.2.2</span></a> below.</p>
+<p>After a ShakeMap is loaded, it will appear in the list of ShakeMaps shown above in <a class="reference internal" href="#fig-r2dshakemappane"><span class="std std-numref">Fig. 2.3.3.1</span></a>. Users can see the grid, contours, etc., ShakeMap visuals by going to the <strong>VIZ</strong> pane, as highlighted in <a class="reference internal" href="#fig-r2dshakemapoutput"><span class="std std-numref">Fig. 2.3.3.2</span></a> below.</p>
 <div class="align-center figure" id="id9">
 <span id="fig-r2dshakemapoutput"></span><img alt="../../../../../_images/R2DShakeMapOutput.png" src="../../../../../_images/R2DShakeMapOutput.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.2.2 </span><span class="caption-text">ShakeMap visualization.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.3.2 </span><span class="caption-text">ShakeMap visualization.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="snaikiwu2017a"><span class="brackets">SnaikiWu2017a</span></dt>
@@ -280,17 +286,17 @@
 </dl>
 </div>
 <div class="section" id="raster-defined-hazard">
-<h2><a class="toc-backref" href="#id15"><span class="section-number">2.3.3. </span>Raster Defined Hazard</a><a class="headerlink" href="#raster-defined-hazard" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>Raster Defined Hazard Widget</strong> allows for the import of raster files to represent hazard intensities. The <strong>Raster Defined Hazard Widget</strong> input pane is given in <a class="reference internal" href="#fig-r2drasterhazardpane"><span class="std std-numref">Fig. 2.3.3.1</span></a>.</p>
+<span id="lbl-rasterdefinedhazard"></span><h2><a class="toc-backref" href="#id16"><span class="section-number">2.3.4. </span>Raster Defined Hazard</a><a class="headerlink" href="#raster-defined-hazard" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Raster Defined Hazard Widget</strong> allows for the import of raster files to represent hazard intensities. The <strong>Raster Defined Hazard Widget</strong> input pane is given in <a class="reference internal" href="#fig-r2drasterhazardpane"><span class="std std-numref">Fig. 2.3.4.1</span></a>.</p>
 <ol class="arabic simple">
 <li><p>To load a raster file, click on the <strong>Browse</strong> button next to the input file box, and then select the raster file in the dialog that will appear.</p></li>
-<li><p>Next, select the event type in the <strong>Event Type Dropdown</strong>, shown in the <a class="reference internal" href="#fig-r2drasterhazardpane"><span class="std std-numref">Fig. 2.3.3.1</span></a>, e.g., Hurricane or Earthquake.</p></li>
+<li><p>Next, select the event type in the <strong>Event Type Dropdown</strong>, shown in the <a class="reference internal" href="#fig-r2drasterhazardpane"><span class="std std-numref">Fig. 2.3.4.1</span></a>, e.g., Hurricane or Earthquake.</p></li>
 <li><p>You then need to specify the coordinate reference system (CRS) that was used to create the raster so that the raster will appear in the correct geographic location. Upon import, a default CRS will be assigned, which will be the CRS that is currently used by the main map.</p></li>
 <li><p>Depending on the number of bands in your raster, the equivalent number of <strong>Unit Selection Dropdowns</strong> will appear. For each raster band, you need to provide the corresponding units.</p></li>
 </ol>
 <div class="align-center figure" id="id10">
 <span id="fig-r2drasterhazardpane"></span><img alt="../../../../../_images/R2DRasterHazardPane.png" src="../../../../../_images/R2DRasterHazardPane.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.3.1 </span><span class="caption-text">Raster hazard input pane.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.4.1 </span><span class="caption-text">Raster hazard input pane.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -298,20 +304,20 @@
 </div>
 </div>
 <div class="section" id="regional-site-response">
-<h2><a class="toc-backref" href="#id16"><span class="section-number">2.3.4. </span>Regional Site Response</a><a class="headerlink" href="#regional-site-response" title="Permalink to this headline">¶</a></h2>
-<p>Site response analysis is commonly performed to analyze the propagation of seismic wave through soil. As shown in <a class="reference internal" href="#fig-siteresponse"><span class="std std-numref">Fig. 2.3.4.1</span></a>,
+<span id="lbl-regionalsiteresponse"></span><h2><a class="toc-backref" href="#id17"><span class="section-number">2.3.5. </span>Regional Site Response</a><a class="headerlink" href="#regional-site-response" title="Permalink to this headline">¶</a></h2>
+<p>Site response analysis is commonly performed to analyze the propagation of seismic wave through soil. As shown in <a class="reference internal" href="#fig-siteresponse"><span class="std std-numref">Fig. 2.3.5.1</span></a>,
 one-dimensional response analyses, as a simplified method, assume that all boundaries are horizontal and that the response of a soil deposit is
 predominately caused by SH-waves propagating vertically from the underlying bedrock. Ground surface response is usually the major output from
 these analyses, together with profile plots such as peak horizontal acceleration along the soil profile. When liquefiable soils are presenting,
 maximum shear strain and excess pore pressure ratio plots are also important.</p>
 <div class="align-center figure" id="id11">
 <span id="fig-siteresponse"></span><img alt="../../../../../_images/siteResponse1.png" src="../../../../../_images/siteResponse1.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.4.1 </span><span class="caption-text">Schematic figure for site response analysis (courtesy of Pedro Arduino)</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.5.1 </span><span class="caption-text">Schematic figure for site response analysis (courtesy of Pedro Arduino)</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Regional Site Response</strong> consists of four major functionalities for site response analysis, each of which is encapsulated in a specific widget:</p>
 <div class="align-center figure" id="id12">
 <span id="fig-siteresponsepane"></span><img alt="../../../../../_images/R2DSiteResponsePane.png" src="../../../../../_images/R2DSiteResponsePane.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.4.2 </span><span class="caption-text">Graphic user interface of Regional Site Response</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.5.2 </span><span class="caption-text">Graphic user interface of Regional Site Response</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p><strong>Site information widget</strong>: three options for defining a set of sites for soil response analysis: (1) <code class="docutils literal notranslate"><span class="pre">Single</span> <span class="pre">Location</span></code>, (2) <code class="docutils literal notranslate"><span class="pre">Grid</span> <span class="pre">of</span> <span class="pre">Locations</span></code>, and (3) <code class="docutils literal notranslate"><span class="pre">Scattering</span> <span class="pre">Locations</span></code>.

@@ -131,6 +131,7 @@ The main window of the UI is made up from the following areas:
       :Hydro:response/EDP
       :quoFEM:quoFEM/QuantitiesOfInterest
       :PBE:PBE/DL
+      :PBE:PBE/performance
       :EEUQ:response/resEE
       :WEUQ:response/resEE
       :quoFEM:quoFEM/resQUO
@@ -190,7 +191,7 @@ The main window of the UI is made up from the following areas:
 
          * **Number of Buildings per Task**: Number of buildings per task.
 
-	 .. note:: Each task will run in parallel on its own processor. The number of tasks is equal to the number of nodes multiplied by the number of processes per node. Since it takes time to assign buildings to a task and spool up the computation, it may be advantageous to assign a batch of buildings to a task when the individual building analyses are expected to have a short runtime. A good approach is to estimate the total number of buildings to be analyzed and then select the **Number of Nodes**, **Number of processors per Node**, and **Number of Buildings per Task** so that the buildings can be strategically distributed across all processors. This is so that all processors are effectively utilized and do not sit idle.
+	 .. note:: Tasks will run in parallel on their own processors. The number of tasks is equal to the number of nodes multiplied by the number of processes per node. Since it takes time to assign buildings to a task and spool up the computation, it may be advantageous to assign a batch of buildings to a task when the individual building analyses are expected to have a short runtime. A good approach is to estimate the total number of buildings to be analyzed and then select the **Number of Nodes**, **Number of processors per Node**, and **Number of Buildings per Task** so that the buildings can be strategically distributed across all processors. This is so that all processors are effectively utilized and do not sit idle.
 
          * **Save Intermediate Results**: Save intermediate results to a compressed folder. This is only recommended for debugging purposes because intermediate results will use a substantial amount of disk space.
 
@@ -209,3 +210,23 @@ The main window of the UI is made up from the following areas:
       
 
 .. [#] For more help on external services provided by DesignSafe-CI, such as creating an account, we encourage users to explore their `documentation <https://www.designsafe-ci.org/rw/user-guides/>`_ or consider `submitting a ticket <https://www.designsafe-ci.org/help/new-ticket/>`_.
+
+.. only:: quoFEM_app
+
+
+   **Overview of User Interface**
+   
+   Recorded in tool training, 2022 (From 21:14 to 26:58)
+
+   .. raw:: html
+
+      <div style="text-align: center;">
+         <iframe src="https://www.youtube.com/embed/5oWEAiC12Dg?start=1274" width="560" height="315" frameborder="5" allowfullscreen="allowfullscreen"></iframe>
+      </div>
+    
+   .. raw:: html
+
+      <p><br>Click to replay the video from <a href="javascript:window.location.reload(true);">21:14</a>. Please note there were minor changes in the user interface since it is recorded.</p>
+
+   
+   Click here to watch :ref:`lbl-usageVideo`

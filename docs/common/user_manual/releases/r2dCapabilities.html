@@ -219,40 +219,29 @@
 <p><strong>Version 3.0</strong> of R2D app was released <strong>May 2023</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.) Note the version introduced major changes in how tool is used. Some of existing <strong>Haz</strong> options were moved to a new <strong>Tool</strong> main menu option.</p>
 <p><strong>Release date:</strong> May, 2023</p>
 <ol class="arabic">
+<li><p><strong>Hazard Types</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="../usage/desktop/R2DTool/HAZ.html#lbl-userspecifiedgroundmotions"><span class="std std-ref">User specified earthquakes</span></a>.</p></li>
+<li><p><a class="reference internal" href="../usage/desktop/R2DTool/HAZ.html#lbl-userspecifiedhurricane"><span class="std std-ref">User specified hurricanes</span></a>.</p></li>
 <li><dl class="simple">
-<dt><strong>Hazard Types</strong>:</dt><dd><ul class="simple">
-<li><dl class="simple">
-<dt>User specified earthquakes</dt><dd><ul>
-<li><p>User specified hurricanes</p></li>
-<li><dl class="simple">
-<dt>ShakeMap Scenarios</dt><dd><ul>
-<li><dl class="simple">
-<dt>Suports import of the following ShakeMap outputs:</dt><dd><ol class="loweralpha simple">
-<li><p>ShakeMap ground motion grid in .xml format</p></li>
-<li><p>PGA contours in .json format</p></li>
-<li><p>Fault rupture in .json format</p></li>
+<dt><a class="reference internal" href="../usage/desktop/R2DTool/HAZ.html#lbl-shakemapeqscenarios"><span class="std std-ref">ShakeMap Scenarios</span></a>, which suports importing the following ShakeMap outputs:</dt><dd><ol class="loweralpha simple">
+<li><p>ShakeMap ground motion grid in .xml format.</p></li>
+<li><p>PGA contours in .json format.</p></li>
+<li><p>Fault rupture in .json format.</p></li>
 </ol>
 </dd>
 </dl>
 </li>
+<li><p><a class="reference internal" href="../usage/desktop/R2DTool/HAZ.html#lbl-rasterdefinedhazard"><span class="std std-ref">Raster Defined Hazard</span></a> for Earthquake, Hurricane, Inundation**.</p></li>
+<li><p><strong>GIS Defined Hazard for Earthquake, Hurricane, Inundation</strong>.</p></li>
 </ul>
-</dd>
-</dl>
-</li>
-<li><p>Raster Defined Hazard for Earthquake, Hurricane, Inundation</p></li>
-<li><p>GIS Defined Hazard for Earthquake, Hurricane, Inundation</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
 <li><dl class="simple">
 <dt><strong>Asset Types</strong>:</dt><dd><ul class="simple">
 <li><dl class="simple">
-<dt>Buildings:</dt><dd><ol class="loweralpha simple">
+<dt><a class="reference internal" href="../usage/desktop/R2DTool/ASD.html#lbl-asdbuildings"><span class="std std-ref">Buildings</span></a>:</dt><dd><ol class="loweralpha simple">
 <li><p>Building database in a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format.</p></li>
 <li><p>Building database in a <code class="docutils literal notranslate"><span class="pre">.gis</span></code> format.</p></li>
 </ol>
@@ -266,7 +255,7 @@
 <li><dl class="simple">
 <dt><strong>Asset Modeling</strong>:</dt><dd><ul class="simple">
 <li><dl class="simple">
-<dt>Buildings:</dt><dd><ol class="loweralpha simple">
+<dt><a class="reference internal" href="../usage/desktop/R2DTool/MOD.html#lbl-modbuildings"><span class="std std-ref">Buildings</span></a>:</dt><dd><ol class="loweralpha simple">
 <li><p>MDOF-LU (MDOF shear building model)</p></li>
 <li><p>OpenSeesPy script building generator</p></li>
 <li><p>IMasEDP, i.e., no analysis as the IM is considered the EDP</p></li>
@@ -282,7 +271,7 @@
 <li><dl>
 <dt><strong>Asset Analysis</strong>:</dt><dd><ul>
 <li><dl>
-<dt>Buildings:</dt><dd><ol class="loweralpha simple">
+<dt><a class="reference internal" href="../usage/desktop/R2DTool/ANA.html#lbl-anabuildings"><span class="std std-ref">Buildings</span></a>:</dt><dd><ol class="loweralpha simple">
 <li><p>OpenSees</p></li>
 <li><p>OpenSeesPy</p></li>
 <li><p>IMasEDP, i.e., no analysis as the IM is considered the EDP</p></li>
@@ -301,7 +290,7 @@ d. None for IMasEDP option in Modeling.</p>
 <li><dl class="simple">
 <dt>Buildings:</dt><dd><ul>
 <li><dl class="simple">
-<dt>Pelicun</dt><dd><ol class="loweralpha simple">
+<dt><a class="reference internal" href="../usage/desktop/R2DTool/DL.html#lbl-dlpelicun"><span class="std std-ref">Pelicun</span></a></dt><dd><ol class="loweralpha simple">
 <li><p>HAZUS MH EQ</p></li>
 <li><p>HAZUS MH EQ IM</p></li>
 <li><p>HAZUS MH HU</p></li>
@@ -320,7 +309,7 @@ d. None for IMasEDP option in Modeling.</p>
 <li><dl class="simple">
 <dt><strong>Uncertainty Quantification</strong>:</dt><dd><ul class="simple">
 <li><dl class="simple">
-<dt>Dakota:</dt><dd><ol class="loweralpha simple">
+<dt><a class="reference internal" href="../usage/desktop/UQ.html#lbluq"><span class="std std-ref">Dakota</span></a>:</dt><dd><ol class="loweralpha simple">
 <li><p>Latin hypercube sampling (LHS)</p></li>
 <li><p>Monte Carlo Sampling (MCS)</p></li>
 </ol>
@@ -334,7 +323,7 @@ d. None for IMasEDP option in Modeling.</p>
 <li><dl class="simple">
 <dt>** Additional Tools To Perform Tasks Generating or Using Data in Workflow**:</dt><dd><ul class="simple">
 <li><dl class="simple">
-<dt>Earthquake Scenario Simulation (ground motion selection)</dt><dd><ul>
+<dt><a class="reference internal" href="../usage/desktop/R2DTool/tools.html#ground-motion-tool"><span class="std std-ref">Earthquake Scenario Simulation</span></a> (ground motion selection)</dt><dd><ul>
 <li><dl class="simple">
 <dt>Site definition:</dt><dd><ol class="loweralpha simple">
 <li><p>Grid</p></li>
@@ -413,7 +402,7 @@ d. None for IMasEDP option in Modeling.</p>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Hurricane Scenario Simulation (hurricane wind field generation)</dt><dd><ul>
+<dt><a class="reference internal" href="../usage/desktop/R2DTool/tools.html#hurricane-scenario-tool"><span class="std std-ref">Hurricane Scenario Simulation</span></a> (hurricane wind field generation)</dt><dd><ul>
 <li><dl class="simple">
 <dt>Site definition:</dt><dd><ol class="loweralpha simple">
 <li><p>Grid</p></li>
@@ -449,8 +438,8 @@ d. None for IMasEDP option in Modeling.</p>
 </dd>
 </dl>
 </li>
-<li><p><strong>OpenQuake Selection</strong></p></li>
-<li><p><strong>Census Data &amp; American Community Survey</strong></p></li>
+<li><p><a class="reference internal" href="../usage/desktop/R2DTool/tools.html#openquake-selection-tool"><span class="std std-ref">OpenQuake Selection</span></a></p></li>
+<li><p><a class="reference internal" href="../usage/desktop/R2DTool/tools.html#lbl-censusdataallocation"><span class="std std-ref">Census Data &amp; American Community Survey</span></a></p></li>
 </ul>
 </dd>
 </dl>
