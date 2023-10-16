@@ -1,0 +1,9 @@
+
+.. _lbl-dldb_damage_FEMA_P58_2nd_B_10_52
+
+******************************************
+B.10.52 - Special Reinforced Masonry Walls
+******************************************
+
+The following models are available:
+

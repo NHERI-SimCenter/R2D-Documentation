@@ -233,7 +233,7 @@
             
   <div class="section" id="workflow-structure">
 <h1><span class="section-number">2.3.1. </span>Workflow Structure<a class="headerlink" href="#workflow-structure" title="Permalink to this headline">¶</a></h1>
-<p>The backend applications for the R2D app follows a standard workflow:</p>
+<p>The backend applications for the R2D app follow a standard workflow:</p>
 <ol class="upperroman simple">
 <li><p><strong>Read the configuration file.</strong> At the start of the workflow, the workflow settings specified in the configuration file are parsed (<a class="reference internal" href="../file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">Inputs</span></a>). <em>Note that if a particular component application is excluded from the configuration file, then it is automatically skipped in the workflow.</em></p></li>
 <li><p><strong>Pre-process building and event data.</strong> The workflow completes a one-time step of setting up BIM files (<a class="reference internal" href="../applications/buildingApps.html#lblbuildingapp"><span class="std std-ref">Building</span></a> Application) for each building asset and assigning events to each building site (<a class="reference internal" href="../applications/regionalMapApps.html#lblregionalmapapp"><span class="std std-ref">RegionalMapping</span></a> Application).</p></li>
@@ -244,7 +244,7 @@
 <ul class="simple">
 <li><p>User-provided input files are shown in orange.</p></li>
 <li><p>Component applications are shown in blue. File dependencies for each component application are shown with arrows.</p></li>
-<li><p>Intermediate files produced by the workflow to propagate data is shown in grey.</p></li>
+<li><p>Intermediate files produced by the workflow to propagate data are shown in grey.</p></li>
 <li><p>Output files provided to the user are shown in green.</p></li>
 <li><p>Within the parallelized workflow for running each building asset simulation, two passes through the component applications are illustrated: the first pass in setting up the intermediate files (in red), then the second pass of executing the simulation and producing output results (in green).</p></li>
 </ul>

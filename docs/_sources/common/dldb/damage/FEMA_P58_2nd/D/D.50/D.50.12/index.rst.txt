@@ -1,0 +1,9 @@
+
+.. _lbl-dldb_damage_FEMA_P58_2nd_D_50_12
+
+*********************************************************
+D.50.12 - Electrical Service & Distribution - Low Tension
+*********************************************************
+
+The following models are available:
+

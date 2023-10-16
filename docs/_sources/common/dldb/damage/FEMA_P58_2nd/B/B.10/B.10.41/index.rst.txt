@@ -1,0 +1,9 @@
+
+.. _lbl-dldb_damage_FEMA_P58_2nd_B_10_41
+
+*********************************
+B.10.41 - RC or Composite Columns
+*********************************
+
+The following models are available:
+

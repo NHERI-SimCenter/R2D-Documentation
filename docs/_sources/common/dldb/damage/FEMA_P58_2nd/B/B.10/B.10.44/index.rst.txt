@@ -1,0 +1,9 @@
+
+.. _lbl-dldb_damage_FEMA_P58_2nd_B_10_44
+
+************************************
+B.10.44 - RC or Composite Shearwalls
+************************************
+
+The following models are available:
+
