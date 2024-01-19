@@ -139,6 +139,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../E9Tsunami/README.html">4.8. E9 - Tsunami</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E10SiteResponse/README.html">4.9. E10 - Site Response Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E12IstanbulRegionalSeismicRiskAnalysis/README.html">4.10. E12 - Istanbul Regional Seismic Risk Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../E14BasicHAZUSTransportation/README.html">4.11. E14 - Basic HAZUS Transportation Infrastructure</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -295,7 +296,7 @@ direction.</p>
 <h2><span class="section-number">4.4.2. </span>Modeling Procedure<a class="headerlink" href="#modeling-procedure" title="Permalink to this headline">¶</a></h2>
 <p>This example is a small-scale regional earthquake risk assessment which performs response simulation and damage/loss estimation for a group of 20 wood buildings under a pseudo earthquake scenario. The procedure for this example can be configured through the R2D interface by sequentially entering the following parameters into the respective panels:</p>
 <ol class="arabic">
-<li><p><strong>VIZ</strong> The visualization pane showing the assets and ground motion grid.</p>
+<li><p><strong>VIZ</strong> The visualization pane shows the assets and ground motion grid.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0004-VIZ.png"><img alt="../../../../../_images/r2dt-0004-VIZ.png" src="../../../../../_images/r2dt-0004-VIZ.png" style="width: 600px;" /></a>
 </div>
@@ -315,7 +316,7 @@ direction.</p>
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0004-ASD.png"><img alt="../../../../../_images/r2dt-0004-ASD.png" src="../../../../../_images/r2dt-0004-ASD.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbor</strong> method and the <strong>SimCenterEvent</strong> application, which are configured as show in the following figure with <strong>5</strong> samples in <strong>4</strong> neighbors, i.e., randomly sampling 5 ground motions from the nearest four stations (each station has a set of records specified in the <strong>HAZ</strong>).</p>
+<li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbor</strong> method and the <strong>SimCenterEvent</strong> application, which are configured as shown in the following figure with <strong>5</strong> samples in <strong>4</strong> neighbors, i.e., randomly sampling 5 ground motions from the nearest four stations (each station has a set of records specified in the <strong>HAZ</strong>).</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0004-HTA.png"><img alt="../../../../../_images/r2dt-0004-HTA.png" src="../../../../../_images/r2dt-0004-HTA.png" style="width: 600px;" /></a>
 </div>
@@ -330,12 +331,12 @@ direction.</p>
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0004-ANA.png"><img alt="../../../../../_images/r2dt-0004-ANA.png" src="../../../../../_images/r2dt-0004-ANA.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun</strong> backend. The <strong>HAZUS MH EQ</strong> damage and loss method is selected and configured as shown in the following figure:</p>
+<li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun3</strong> backend. The <strong>HAZUS MH EQ Story</strong> damage and loss method is selected and configured as shown in the following figure:</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0004-DL.png"><img alt="../../../../../_images/r2dt-0004-DL.png" src="../../../../../_images/r2dt-0004-DL.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>UQ</strong> In the UQ panel <strong>Dakota</strong> uncertainty quantification engine is employed to carry out latin hypercube sampling (LHS) with <strong>5</strong> samples and an arbitrary seed for reproducibility.</p>
+<li><p><strong>UQ</strong> In the UQ panel <strong>Dakota</strong> uncertainty quantification engine is employed to carry out Latin Hypercube Sampling (LHS) with <strong>5</strong> samples and an arbitrary seed for reproducibility.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0004-UQ.png"><img alt="../../../../../_images/r2dt-0004-UQ.png" src="../../../../../_images/r2dt-0004-UQ.png" style="width: 600px;" /></a>
 </div>
@@ -343,7 +344,7 @@ direction.</p>
 <li><p><strong>RV</strong></p>
 <p>The random variable panel will be left empty for this example.</p>
 </li>
-<li><p><strong>RES</strong> The analysis outputs for the selected buildings are show in the figure below. In the given earthquake scenario, the buildings are mostly likely in no damage or minor damage (Damage State 1 or 2 per HAZUS) with under 5% expected loss ratios.</p>
+<li><p><strong>RES</strong> The analysis outputs for the selected buildings are shown in the figure below.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0004-RES.png"><img alt="../../../../../_images/r2dt-0004-RES.png" src="../../../../../_images/r2dt-0004-RES.png" style="width: 600px;" /></a>
 </div>
@@ -362,7 +363,7 @@ direction.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

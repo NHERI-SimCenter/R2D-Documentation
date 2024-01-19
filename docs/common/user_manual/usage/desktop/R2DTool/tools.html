@@ -124,12 +124,45 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3. Tools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#earthquake-scenario-simulation">3.1. Earthquake Scenario Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#earthquake-scenario-simulation">3.1. Earthquake Scenario Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#site-definition-panel">3.1.1. Site Definition Panel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#site-definition-options">3.1.1.1. Site Definition Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shear-wave-velocity">3.1.1.2. Shear Wave Velocity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#site-file-csv-definition-and-simcentersitemodel-csv">3.1.1.3. Site File (.csv) Definition and SimCenterSiteModel.csv</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#earthquake-rupture-panel">3.1.2. Earthquake Rupture Panel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#opensha-erf">3.1.2.1. OpenSHA ERF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#point-source">3.1.2.2. Point Source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#openquake-earthquake-rupture-forecasting">3.1.2.3. OpenQuake Earthquake Rupture Forecasting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#forecast-rupture-scenarios-button">3.1.2.4. Forecast Rupture Scenarios Button</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#scenario-selection-panel">3.1.3. Scenario Selection Panel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scenario-specific">3.1.3.1. Scenario-specific</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conventional-monte-carlo">3.1.3.2. Conventional Monte Carlo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hazard-consistent-downsampling">3.1.3.3. Hazard Consistent Downsampling</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ground-motion-models">3.1.4. Ground Motion Models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#intensity-measure-and-period-points">3.1.4.1. Intensity Measure and Period Points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ground-motion-prediction-equations">3.1.4.2. Ground Motion Prediction Equations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spatial-correlation-models">3.1.4.3. Spatial Correlation Models</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ground-motion-record-selection">3.1.5. Ground Motion Record Selection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ground-motion-record-database">3.1.5.1. Ground Motion Record Database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-hazard-simulation-button">3.1.5.2. Run Hazard Simulation Button</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#openquake-selection-widget">3.2. OpenQuake Selection Widget</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hurricane-scenario">3.3. Hurricane Scenario</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#user-specified-hurricane">3.4. User-specified Hurricane</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#census-data-allocation">3.5. Census Data Allocation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#brails">3.6. BRAILS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#brails-buildings">3.6. BRAILS - Buildings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#brails-transportation">3.7. BRAILS - Transportation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
@@ -227,269 +260,655 @@
 <p>The main menu toolbar contains the tools dropdown menu. Tools in R2D are applications that are provided to create inputs for certain workflow applications, e.g. the <strong>Earthquake Scenario Simulation</strong> tool will provide inputs for the User Defined Ground motion and the Regional Site Response HAZ widegets.</p>
 <div class="section" id="earthquake-scenario-simulation">
 <span id="ground-motion-tool"></span><h2><span class="section-number">3.1. </span>Earthquake Scenario Simulation<a class="headerlink" href="#earthquake-scenario-simulation" title="Permalink to this headline">¶</a></h2>
-<p>This tool dialog is where user can enter data on an earthquake scenario and the tool will generate a series of ground motions for a series of points in the area. The application employs OpenSHA, determining which records to select from a ground motion database. The <strong>Earthquake Scenario Simulation</strong> input panel is given in <a class="reference internal" href="#fig-eqsspanel"><span class="std std-numref">Fig. 3.1.1</span></a> and the individual input panes are discussed below.</p>
-<div class="align-center figure" id="id5">
-<span id="fig-eqsspanel"></span><img alt="../../../../../_images/R2DEQSSPanel.png" src="../../../../../_images/R2DEQSSPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.1 </span><span class="caption-text">Earthquake Scenario Simulation Input panel.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p>This tool dialog is where users can enter data on an earthquake scenario, and the
+tool will generate a series of ground motions for a series of points in the area.
+The application employs OpenSHA, determining which records to select from a ground
+motion database. The individual input panels in the <strong>Earthquake Scenario Simulation</strong>
+are discussed below. The typical use cases of this tool is described in the
+<a class="reference internal" href="../../../../technical_manual/desktop/HazardSimulationTool_useCase.html#lbleqsimulationusecases"><span class="std std-ref">technical manual</span></a>.</p>
+<div class="section" id="site-definition-panel">
+<h3><span class="section-number">3.1.1. </span>Site Definition Panel<a class="headerlink" href="#site-definition-panel" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Site Definition Panel</strong> is shown in <a class="reference internal" href="#fig-r2deqssitepanel"><span class="std std-numref">Fig. 3.1.1.1</span></a>.
+This is where a user defines the geographical locations and seismic site conditions
+of the sites where ground motion selection will occur.</p>
+<div class="align-center figure" id="id27">
+<span id="fig-r2deqssitepanel"></span><img alt="../../../../../_images/R2DEQSSitePanel.png" src="../../../../../_images/R2DEQSSitePanel.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.1.1 </span><span class="caption-text">Earthquake Scenario Simulation Site Definition Input panel.</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong>Site Definition Parameters</strong></p>
-<p>This is where a user defines the geographical locations where ground motion selection will occur. A user can select to input a single location, multiple locations on a grid, or a collection of scattered sites as seen in the <strong>Grid Type Selection</strong> box in the top-left corner of <a class="reference internal" href="#fig-r2deqsssitesinglepane"><span class="std std-numref">Fig. 3.1.2</span></a>.</p>
+<div class="section" id="site-definition-options">
+<h4><span class="section-number">3.1.1.1. </span>Site Definition Options<a class="headerlink" href="#site-definition-options" title="Permalink to this headline">¶</a></h4>
+<p>To input site locations, users can select to input a single location,
+multiple locations on a grid, or a collection of scattering sites, as seen in the
+<strong>Site Location Definition</strong> box at the top of <a class="reference internal" href="#fig-r2deqssitepanel"><span class="std std-numref">Fig. 3.1.1.1</span></a>.
+The available methods to input site definitions are:</p>
 <blockquote>
 <div><ol class="arabic">
 <li><p><strong>Single Location</strong></p>
 <blockquote>
-<div><p>In the <strong>Single Location</strong> pane, shown in <a class="reference internal" href="#fig-r2deqsssitesinglepane"><span class="std std-numref">Fig. 3.1.2</span></a>, the user needs to provide the following inputs:</p>
+<div><p>In the <strong>Single Location</strong> pane at the top of <a class="reference internal" href="#fig-r2deqssitepanel"><span class="std std-numref">Fig. 3.1.1.1</span></a> is shown as <a class="reference internal" href="#fig-r2deqsssitesinglepane"><span class="std std-numref">Fig. 3.1.1.1.1</span></a>.
+Users could define a single site where the seismic hazard is analyzed.
+The following inputs are needed:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><strong>Location:</strong> The latitude and longitude of the site.</p></li>
-<li><p><strong>Number of Ground Motions per Site:</strong> The number of ground motions that will be selected at the site.</p></li>
+<li><p><strong>Vs30 model:</strong> The model of the average shear-wave velocity (m/s) between 0 and 30 meters depth (Vs30). Note that the “User-specified” option is not available for this single site definition method.</p></li>
+<li><p><strong>Z1pt0 model:</strong> The model of depth (m) to where shear-wave velocity = 1.0 km/sec (the first occurrence if more than one depth exists).</p></li>
+<li><p><strong>Z2pt5 model:</strong> The model of depth (m) to where shear-wave velocity = 2.5 km/sec (the first occurrence if more than one depth exists).</p></li>
+<li><p>The details of the available Vs30, Z1pt0, and Z2pt5 models in R2D are described <a class="reference internal" href="#lbl-shearwavevelocity"><span class="std std-ref">here</span></a></p></li>
 </ul>
 </div></blockquote>
-<div class="align-center figure" id="id6">
+<div class="align-center figure" id="id28">
 <span id="fig-r2deqsssitesinglepane"></span><img alt="../../../../../_images/R2DEQSSSiteSinglePane.png" src="../../../../../_images/R2DEQSSSiteSinglePane.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.2 </span><span class="caption-text">Single location site definition.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.1.1.1 </span><span class="caption-text">Single location site definition.</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
 <li><p><strong>Grid of Locations</strong></p>
 <blockquote>
-<div><p>In the <strong>Grid of Locations</strong> input pane, given in <a class="reference internal" href="#fig-r2deqsssitegridpane"><span class="std std-numref">Fig. 3.1.3</span></a>, the user can either manually define a grid, or select a grid on a map. To manually define a grid, the user needs to provide the following input parameters:</p>
-<blockquote>
-<div><ul class="simple">
+<div><dl class="simple">
+<dt>In the <strong>Grid of Locations</strong> input pane, given in <a class="reference internal" href="#fig-r2deqsssitegridpane"><span class="std std-numref">Fig. 3.1.1.1.2</span></a>, the user can either manually define a grid, or select a grid on a map. To manually define a grid, the user needs to provide the following input parameters:</dt><dd><ul class="simple">
 <li><p><strong>Latitude Extents:</strong>  The minimum and maximum latitude values that the grid will span.</p></li>
 <li><p><strong>Longitude Extents:</strong> The minimum and maximum longitude values that the grid will span.</p></li>
-</ul>
-</div></blockquote>
-<p>In addition to defining the geographical extents of the grid, the user must also provide the following inputs:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>Number of Ground Motions per Site:</strong> The number of ground motions that will be selected at each grid point.</p></li>
 <li><p><strong>Latitude Discretization:</strong> The number of divisions along the latitude direction.</p></li>
 <li><p><strong>Longitude Discretization:</strong> The number of divisions along the longitude direction.</p></li>
 </ul>
-</div></blockquote>
-<div class="align-center figure" id="id7">
-<span id="fig-r2deqsssitegridpane"></span><img alt="../../../../../_images/R2DEQSSSiteGridPane.png" src="../../../../../_images/R2DEQSSSiteGridPane.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.3 </span><span class="caption-text">Grid of locations site definition pane.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
-</div>
-<p>To select a grid on a map, the user needs to click on the <strong>Define Grid on Map</strong> button and a new <strong>Grid Selection Window</strong> will appear with the grid, as seen in <a class="reference internal" href="#fig-r2deqssgridselection"><span class="std std-numref">Fig. 3.1.4</span></a>. A user can click and drag the <strong>Resize</strong> and <strong>Move</strong> handles, shown in <a class="reference internal" href="#fig-r2deqssgridselection"><span class="std std-numref">Fig. 3.1.4</span></a> as blue circles, to resize the grid extents and to move the grid. Changing the grid discretization along the latitude and longitude directions will change the number of grid divisions on the map. Once a grid is defined on the map, the window can be closed and the grid information will be updated in the input pane. To view or modify the grid again, press the <strong>Define Grid on Map</strong> button and the <strong>Grid Selection Window</strong> displaying the grid will reappear.</p>
-<div class="align-center figure" id="id8">
-<span id="fig-r2deqssgridselection"></span><img alt="../../../../../_images/R2DEQSSGridSelection.png" src="../../../../../_images/R2DEQSSGridSelection.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.4 </span><span class="caption-text">Selection of grid on map.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>Scattered Locations</strong></p>
-<blockquote>
-<div><p>In the <strong>Scattered Locations</strong> input pane, given in <a class="reference internal" href="#fig-r2deqsssitescatterpane"><span class="std std-numref">Fig. 3.1.5</span></a>, the user provides a custom list of sites. The following inputs are required:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>Site File:</strong> The user provided file, in <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format, containing the list of sites and corresponding site data. At a minimum the site file must contain the station number, latitude, and longitude of each site, as seen in the <strong>Site Preview Table</strong> in <a class="reference internal" href="#fig-r2deqsssitescatterpane"><span class="std std-numref">Fig. 3.1.5</span></a>.</p></li>
-<li><p><strong>Site Preview Table:</strong> Table providing the information at each site. Apart from the station number, latitude, and longitude at each site, the site file can include other information such as the Vs30 at the site.</p></li>
-<li><p><strong>Minimum and Maximum Site ID:</strong> The minimum and maximum site IDs considered.</p></li>
-<li><p><strong>Number of Ground Motions per Site:</strong> The number of ground motions that will be selected at each site.</p></li>
-</ul>
-</div></blockquote>
-<div class="align-center figure" id="id9">
-<span id="fig-r2deqsssitescatterpane"></span><img alt="../../../../../_images/R2DEQSSSiteScatterPane.png" src="../../../../../_images/R2DEQSSSiteScatterPane.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.5 </span><span class="caption-text">Scattered sites input pane.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
-</div>
-</div></blockquote>
-</li>
-</ol>
-</div></blockquote>
-<p><strong>Spatial Correlation and Ground Motion Scaling Factors</strong></p>
-<p>This is where the user selects the spatial correlation models, and where the user defines the minimum and maximum scaling factors that are used in ground motion selection. Shown at the top of <a class="reference internal" href="#fig-r2deqsscorrscalepane"><span class="std std-numref">Fig. 3.1.6</span></a>, the user has the option to select the Intra- and Inter-event Spatial Correlation Models. Spatial correlation ensures that ground motions at different locations will share similar characteristics. The following Inter-event Spatial Correlation Models are available:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Baker &amp; Jayaram (2008)</p></li>
-</ul>
-</div></blockquote>
-<p>and the following Intra-event Spatial Correlation Models are available:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Markhvida et al. (2017)</p></li>
-<li><p>Jayaram &amp; Baker (2009)</p></li>
-<li><p>Loth &amp; Baker (2013)</p></li>
-</ul>
-</div></blockquote>
-<p>Special thanks to Dr. Anne Hulsey for sharing the python package <a class="reference external" href="https://github.com/annehulsey/seaturtles">seaturtles</a>, especially for the method of computing the regional ground motion intensity using the Markhvida et al. (2017) and Baker &amp; Jayaram (2008) correlation models.</p>
-<p>The <strong>Ground Motion Record Scaling Bounds</strong>, shown at the bottom of <a class="reference internal" href="#fig-r2deqsscorrscalepane"><span class="std std-numref">Fig. 3.1.6</span></a>, are the minimum and maximum scaling factors that intensity measures can be scaled by during the ground motion selection process.</p>
-<div class="align-center figure" id="id10">
-<span id="fig-r2deqsscorrscalepane"></span><img alt="../../../../../_images/R2DEQSSCorrScalePane.png" src="../../../../../_images/R2DEQSSCorrScalePane.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.6 </span><span class="caption-text">Spatial correlation and ground motion selection scaling factors.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
-</div>
-<p><strong>Ground Motion Record Database</strong></p>
-<p>Ground motion records are selected from a ground motion database. Currently, only the <em>PEER NGA-West2</em> database is available, shown in the <strong>Ground Motion Record Database</strong> combo box in <a class="reference internal" href="#fig-r2deqssgmdbpane"><span class="std std-numref">Fig. 3.1.7</span></a>. Alternatively, a user can select <em>None</em> to skip ground motion selection altogether. In that case, only the intensity measures will be saved at each location.</p>
-<blockquote>
-<div><div class="align-center figure" id="id11">
-<span id="fig-r2deqssgmdbpane"></span><img alt="../../../../../_images/R2DEQSSGMDBPane.png" src="../../../../../_images/R2DEQSSGMDBPane.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.7 </span><span class="caption-text">Ground motion records database.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</div>
-</div></blockquote>
-<p><strong>Ground Motion Prediction Equations</strong></p>
-<p>Ground motion prediction equations estimate the intensity of ground shaking that may occur at a site. The <strong>Ground Motion Prediction Equation</strong> combo box, shown in <a class="reference internal" href="#fig-r2deqssgmpepane"><span class="std std-numref">Fig. 3.1.8</span></a>, contains the following ground motion prediction equations:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Abrahamson, Silva &amp; Kamai (2014)</p></li>
-<li><p>Boore, Stewart, Seyhan &amp; Atkinson (2014)</p></li>
-<li><p>Campbell &amp; Bozorgnia (2014)</p></li>
-<li><p>Chiou &amp; Youngs (2014)</p></li>
-</ul>
-</div></blockquote>
-<div class="align-center figure" id="id12">
-<span id="fig-r2deqssgmpepane"></span><img alt="../../../../../_images/R2DEQSSGMPEPane.png" src="../../../../../_images/R2DEQSSGMPEPane.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.8 </span><span class="caption-text">Ground motion prediction equations.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
-</div>
-<p><strong>Earthquake Source</strong></p>
-<p>This is where the user defines the earthquake rupture characteristics. In the <strong>Rupture Type</strong> combo box, shown in <a class="reference internal" href="#fig-r2deqssseqruppointpane"><span class="std std-numref">Fig. 3.1.9</span></a>, point source and UCERF earthquake rupture forecast models are available.</p>
-<blockquote>
-<div><ol class="arabic">
-<li><p><strong>Point Source</strong></p>
-<blockquote>
-<div><p>The <strong>Point Source</strong> pane, shown in <a class="reference internal" href="#fig-r2deqssseqruppointpane"><span class="std std-numref">Fig. 3.1.9</span></a>, requires the following inputs:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>Magnitude:</strong> Magnitude of the earthquake.</p></li>
-<li><p><strong>Location and Depth:</strong> Location and depth of earthquake rupture.</p></li>
-<li><p><strong>Rupture Geometry:</strong> Average dip and rake of rupture.</p></li>
-</ul>
-</div></blockquote>
-<div class="align-center figure" id="id13">
-<span id="fig-r2deqssseqruppointpane"></span><img alt="../../../../../_images/R2DEQSSSEQRupPointPane.png" src="../../../../../_images/R2DEQSSSEQRupPointPane.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.9 </span><span class="caption-text">Point source earthquake rupture.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>UCERF Earthquake Rupture Forecast</strong></p>
-<blockquote>
-<div><p>The <strong>UCERF Earthquake Rupture Forecast</strong> pane, shown in <a class="reference internal" href="#fig-r2deqssseqrupforecastpane"><span class="std std-numref">Fig. 3.1.10</span></a>, requires the following inputs:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>Number of scenarios:</strong> The number of rupture scenarios considered.</p></li>
-<li><p><strong>Magnitude and Distance:</strong> Magnitude of the earthquake and the maximum distance, in km, from a site.</p></li>
-<li><p><strong>Name:</strong> Users can specify keywords here to search for specific earthquakes.</p></li>
-<li><p><strong>Earthquake Forecast Model:</strong> Type of earthquake forecast model.</p></li>
-</ul>
-</div></blockquote>
-<p>The types of UCERF earthquake forecast models available are:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>WGCEP (2007) UCERF2 - Single Branch</p></li>
-<li><p>Mean UCERF3</p></li>
-<li><p>Mean UCERF3 FM3.1</p></li>
-<li><p>Mean UCERF3 FM3.2</p></li>
-</ul>
-</div></blockquote>
-<div class="align-center figure" id="id14">
-<span id="fig-r2deqssseqrupforecastpane"></span><img alt="../../../../../_images/R2DEQSSSEQRupForecastPane.png" src="../../../../../_images/R2DEQSSSEQRupForecastPane.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.10 </span><span class="caption-text">Earthquake rupture forecast.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>OpenQuake Scenario-Based</strong></p>
-<blockquote>
-<div><p>The <strong>OpenQuake Scenario-Based</strong> pane, shown in <a class="reference internal" href="#fig-r2dopenquakescenariobased"><span class="std std-numref">Fig. 3.1.11</span></a>, requires the following inputs:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>OpenQuake Version:</strong> Version of OpenQuake (currently available 3.10, 3.11, 3.12, and latest minor version is supported).</p></li>
-<li><p><strong>Rupture File:</strong> A xml file (NRML format) defining an earthquake source.</p></li>
-<li><p><strong>Rupture Meshsize:</strong> Mesh size for line sources.</p></li>
-<li><p><strong>Area Meshsize:</strong> Mesh size for area sources.</p></li>
-<li><p><strong>Maximum Distance:</strong> Maximum considered distance from source to site.</p></li>
-</ul>
-</div></blockquote>
-<div class="align-center figure" id="id15">
-<span id="fig-r2dopenquakescenariobased"></span><img alt="../../../../../_images/R2DOpenQuakeScenarioBased.png" src="../../../../../_images/R2DOpenQuakeScenarioBased.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.11 </span><span class="caption-text">OpenQuake Scenario-Based Input.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>OpenQuake Classcial PSHA</strong></p>
-<blockquote>
-<div><p>The <strong>OpenQuake Classcial PSHA</strong> pane, shown in <a class="reference internal" href="#fig-r2dopenquakeclassicalpsha"><span class="std std-numref">Fig. 3.1.12</span></a>, requires the following inputs:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>OpenQuake Version:</strong> Version of OpenQuake (currently available 3.10, 3.11, 3.12, and latest minor version is supported).</p></li>
-<li><p><strong>Source Logic Tree:</strong> A xml file (NRML format) defining a logic tree model for seismic sources.</p></li>
-<li><p><strong>Source Model Folder:</strong> A directory hosting the seismic sources defined in the source logic tree.</p></li>
-<li><p><strong>Rupture Meshsize:</strong> Mesh size for line sources.</p></li>
-<li><p><strong>Area Meshsize:</strong> Mesh size for area sources.</p></li>
-<li><p><strong>Maximum Distance:</strong> Maximum considered distance from source to site.</p></li>
-<li><p><strong>GMPE Logic Tree:</strong> A xml file (NRML format) defining a logic tree model for ground motion prediction equations.</p></li>
-<li><p><strong>Return Period:</strong> Return period of the PSHA.</p></li>
-<li><p><strong>Seed:</strong> Seed in generating ground motion maps.</p></li>
-<li><p><strong>Quantiles:</strong> Quantile levels of ground motion intensity measures in the output (e.g., uniform hazard spectra).</p></li>
-<li><p><strong>Investigation Time:</strong> time period for computing the probability of exceedance</p></li>
-<li><p><strong>Output:</strong> Checkboxes for <em>Individual hazard curve</em>, <em>Mean hazard curve</em>, <em>Hazard map</em>, and <em>Uniform hazard spectra</em></p></li>
-</ul>
-</div></blockquote>
-<div class="align-center figure" id="id16">
-<span id="fig-r2dopenquakeclassicalpsha"></span><img alt="../../../../../_images/R2DOpenQuakeClassicalPSHA.png" src="../../../../../_images/R2DOpenQuakeClassicalPSHA.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.12 </span><span class="caption-text">OpenQuake Classical PSHA Input.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>Hazard Occurrence</strong></p>
-<blockquote>
-<div><p>The <strong>Hazard Occurrence</strong> pane, shown in <a class="reference internal" href="#fig-r2dhazardoccurrence"><span class="std std-numref">Fig. 3.1.13</span></a>, requires the following inputs:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>Hazard occurrence model:</strong> Currently Manzour and Davidson (2016) (<a class="reference internal" href="HAZ.html#manzour2016" id="id1"><span>[Manzour2016]</span></a>) is available.</p></li>
-<li><dl class="simple">
-<dt><strong>Forecast model:</strong> Type of earthquake forecast model where the candidate earthquake scenarios are collected from.</dt><dd><ul>
-<li><p>WGCEP (2007) UCERF2 - Single Branch</p></li>
-<li><p>Mean UCERF3</p></li>
-<li><p>Mean UCERF3 FM3.1</p></li>
-<li><p>Mean UCERF3 FM3.2</p></li>
+</dd>
+<dt>In addition to defining the geographical extent of the grid, the user must also provide the following inputs:</dt><dd><ul class="simple">
+<li><p><strong>Vs30 model:</strong> same with the <strong>Single Location</strong> site definition method.</p></li>
+<li><p><strong>Z1pt0 model:</strong> The model of depth (m) to where shear-wave velocity = 1.0 km/sec. If the “User-specified” option is selected, the user-specified value will be applied to all grid points.</p></li>
+<li><p><strong>Z2pt5 model:</strong> The model of depth (m) to where shear-wave velocity = 2.5 km/sec. If the “User-specified” option is selected, the user-specified value will be applied to all grid points.</p></li>
+<li><p>The details of the available Vs30, Z1pt0, and Z2pt5 models in R2D are described <a class="reference internal" href="#lbl-shearwavevelocity"><span class="std std-ref">here</span></a></p></li>
 </ul>
 </dd>
 </dl>
+<div class="align-center figure" id="id29">
+<span id="fig-r2deqsssitegridpane"></span><img alt="../../../../../_images/R2DEQSSSiteGridPane.png" src="../../../../../_images/R2DEQSSSiteGridPane.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.1.1.2 </span><span class="caption-text">Grid of locations site definition pane.</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</div>
+<p>To select a grid on a map, the user needs to click on the <strong>Define Grid on Map</strong> button and a new <strong>Grid Selection Window</strong> will appear with the grid, as seen in <a class="reference internal" href="#fig-r2deqssgridselection"><span class="std std-numref">Fig. 3.1.1.1.3</span></a>. A user can click and drag the <strong>Resize</strong> and <strong>Move</strong> handles, shown in <a class="reference internal" href="#fig-r2deqssgridselection"><span class="std std-numref">Fig. 3.1.1.1.3</span></a> as blue circles, to resize the grid extents and to move the grid. Changing the grid discretization along the latitude and longitude directions will change the number of grid divisions on the map. Once a grid is defined on the map, the window can be closed and the grid information will be updated in the input pane. To view or modify the grid again, press the <strong>Define Grid on Map</strong> button and the <strong>Grid Selection Window</strong> displaying the grid will reappear.</p>
+<div class="align-center figure" id="id30">
+<span id="fig-r2deqssgridselection"></span><img alt="../../../../../_images/R2DEQSSGridSelection.png" src="../../../../../_images/R2DEQSSGridSelection.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.1.1.3 </span><span class="caption-text">Selection of grid on map.</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
 </li>
-<li><p><strong>Candidate earthquake number:</strong> Number of earthquakes used as candidates to select from.</p></li>
-<li><p><strong>Reduced earthquake number:</strong> Maximum number of selected (reduced) earthquakes to recover the hazard curves.</p></li>
-<li><p><strong>Reduced motion number:</strong> Maximum number of selected (reduced) ground motions per individual site to recover the site hazard curve.</p></li>
-<li><p><strong>Hazard curve input:</strong> Types of reference hazard curves: (1) Inferred and (2) User-defined. Inferred hazard curves are fetched from National seismic hazar map project (<a class="reference internal" href="HAZ.html#peterson2020" id="id2"><span>[Peterson2020]</span></a>). User-defined hazard curves should be summarized in a csv file following the <a class="reference download internal" download="" href="../../../../../_downloads/dacbdced5505dcbc798da94687495c1b/HazardCurves.csv"><code class="xref download docutils literal notranslate"><span class="pre">template</span></code></a>.</p></li>
-<li><p><strong>National seismic hazard map:</strong> Version of national seismic hazard map used to infer reference site-specific hazard curves.</p></li>
-<li><p><strong>Hazard curve file:</strong> User-defined hazard curve file.</p></li>
-<li><p><strong>Intensity measure:</strong> The intensity measure type used in reference hazard curves.</p></li>
-<li><p><strong>Hazard curve Sa period:</strong> Period of the response acceleration Sa if the intensity measure type is Sa.</p></li>
-<li><p><strong>Return periods (yr):</strong> A list of return periods in year used in minimizing the difference between recovered and reference hazard curves (seperated by “,”).</p></li>
+<li><p><strong>Scattering Locations</strong></p>
+<blockquote>
+<div><p>In the <strong>Scattering Locations</strong> input pane, given in <a class="reference internal" href="#fig-r2deqsssitescatterpane"><span class="std std-numref">Fig. 3.1.1.1.4</span></a>, the user provides a custom list of sites. The following inputs are required:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Site File (.csv):</strong> The user-provided file, in <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format, containing the list of sites and corresponding site data. Users can provide user-specified Vs30, Z1pt0 and Z2pt5 values. The conventions to define such <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file is described <a class="reference internal" href="#lbl-sitefileandscsitemodel"><span class="std std-ref">here</span></a></p></li>
+<li><p><strong>Sites to Analyze Filter:</strong> A filter to select a subset of the sites in the loaded Site File to analyze. All sites will be analyzed if this field is left empty.</p></li>
+<li><p><strong>Vs30 model:</strong> The model of the average shear-wave velocity (m/s) between 0 and 30 meters depth (Vs30). A “User-specified” option is available and the Vs30 models at each site should be provided in the Site File (.csv) as described in <a class="reference internal" href="#lbl-sitefileandscsitemodel"><span class="std std-ref">Site File (.csv) definition</span></a></p></li>
+<li><p><strong>Z1pt0 model:</strong> The model of depth (m) to where shear-wave velocity = 1.0 km/sec. If the “User-specified” option is selected, R2D will check if a “z1pt0” column exits in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used. Otherwise, the value specified in the <strong>Z1pt0</strong> pane will be applied to all sites.</p></li>
+<li><p><strong>Z2pt5 model:</strong> The model of depth (m) to where shear-wave velocity = 2.5 km/sec. If the “User-specified” option is selected, R2D will check if a “z2pt5” column exits in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used. Otherwise, the value specified in the <strong>Z2pt5</strong> pane will be applied to all sites.</p></li>
+<li><p>The details of the available Vs30, Z1pt0, and Z2pt5 models in R2D are described <a class="reference internal" href="#lbl-shearwavevelocity"><span class="std std-ref">here</span></a></p></li>
 </ul>
 </div></blockquote>
-<div class="align-center figure" id="id17">
-<span id="fig-r2dhazardoccurrence"></span><img alt="../../../../../_images/R2DHazardOccurrence.png" src="../../../../../_images/R2DHazardOccurrence.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.13 </span><span class="caption-text">Hazard Occurrence Input.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<div class="align-center figure" id="id31">
+<span id="fig-r2deqsssitescatterpane"></span><img alt="../../../../../_images/R2DEQSSSiteScatterPane.png" src="../../../../../_images/R2DEQSSSiteScatterPane.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.1.1.4 </span><span class="caption-text">Scattering sites input pane.</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
 </ol>
 </div></blockquote>
-<p><strong>Intensity Measure and Period Points</strong></p>
-<p>The <strong>Intensity Measure and Period Points</strong> pane, shown in <a class="reference internal" href="#fig-r2deqssimpane"><span class="std std-numref">Fig. 3.1.14</span></a>, requires the following inputs:</p>
+</div>
+<div class="section" id="shear-wave-velocity">
+<span id="lbl-shearwavevelocity"></span><h4><span class="section-number">3.1.1.2. </span>Shear Wave Velocity<a class="headerlink" href="#shear-wave-velocity" title="Permalink to this headline">¶</a></h4>
+<p>In seismic hazard analysis, the <strong>Shear Wave Velocity</strong> at a site is of interest
+because it gives an indication of whether the expected shaking in response to an
+Earthquake Rupture may be higher. For instance, at a bedrock site (high shear-wave
+velocity) there will be little amplification of seismic waves, whereas in a sedimentary
+basin (low shear-wave velocity) one might expect intense amplification. Vs30, Z1pt0,
+and Z2pt5 are several ways that shear-wave velocity data is incorporated into seismic hazard calculations.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><dl>
+<dt><strong>Vs30 Model</strong></dt><dd><p>Vs30 stands for the average shear-wave velocity between 0 and 30 meters depth.
+More information is available at the <a class="reference external" href="https://earthquake.usgs.gov/data/vs30/">USGS Global Vs30 Map Server site</a>.
+Some ground motion prediction equations (e.g., Abrahamson, Silva, and Kamai (2014) <a class="reference internal" href="#abrahamsonsilvakamai2014" id="id1"><span>[AbrahamsonSilvaKamai2014]</span></a>) require knowing whether a Vs30 value was
+Measured or Inferred. Inferred Vs30 values are estimated based on correlations
+with local surface geology or slope and may introduce larger intra-event standard
+deviations. See detailed discussions in <a class="reference internal" href="#abrahamsonsilvakamai2013" id="id2"><span>[AbrahamsonSilvaKamai2013]</span></a>.
+R2D supports three models to infer Vs30 values and a user-specified method to
+specify measured Vs30 values. The unit of Vs30 in R2D is meter per second.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>CGS/Wills Vs30 (Wills et al., 2015) <a class="reference internal" href="#willsetal2015" id="id3"><span>[willsetal2015]</span></a></dt><dd><p>This model is applicable to California, US and is created based on
+correlations of Vs30 with geologic units and surface slope. The database
+is obtained by interfacing the <a class="reference external" href="https://github.com/opensha/opensha/blob/master/src/main/java/org/opensha/commons/data/siteData/impl/WillsMap2015.java">WillsMap2015</a> class in <strong>openSHA</strong>, which
+inturn obtained the database from the the electronic supplements of <a class="reference internal" href="#willsetal2015" id="id4"><span>[willsetal2015]</span></a>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Thompson California Vs30 (Thompson et al. 2018) <a class="reference internal" href="#thompson2018" id="id5"><span>[Thompson2018]</span></a></dt><dd><p>This model is applicable to California, US and the raw data can be obtained from the <a class="reference external" href="https://www.sciencebase.gov/catalog/item/5a5fa029e4b06e28e9bfc43a">USGS website</a>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Global Vs30 (Heath et al., 2020) <a class="reference internal" href="#heath2020" id="id6"><span>[Heath2020]</span></a></dt><dd><p>This model is applicable to anywhere on the Earth. Heath et al. (2020)
+developed a hybrid global Vs30 map database that defaults to the global slope-based Vs30 map,
+but smoothly insets the more accurate regional Vs30 maps where available.
+The raw data can be obtained from the <a class="reference external" href="https://www.sciencebase.gov/catalog/item/5d815a9ae4b0c4f70d0586c8">USGS website</a>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>user-specified</dt><dd><p>This method allows user to input user-specified Vs30 values. This option
+is only available if <strong>Scattering Locations</strong> is used to define site locations.
+The user-specified values should be included in the user provided <code class="docutils literal notranslate"><span class="pre">.csv</span></code>
+file with a column named (“vs30”). If the user-specified option is
+selected, users need also specify if the provided “vs30” values are
+measured or inferred by providing a “vsInferred” column in the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file
+or checking/unchecking the “Specified Vs30 values are inferred”
+check box.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Z1pt0 Model</strong></dt><dd><p>The depth (km) to where shear-wave velocity = 1.0 km/sec (the first occurrence if more than one depth exists). Z1pt0 and Z2pt5
+are related to long-period site response. Z2pt5 may be more directly related to the long-period site response, but Z1pt0
+is used in many site classifications because it is closer to the traditional geotechnical parameter of “depth to bedrock” and
+is easier to measure for specific projects <a class="reference internal" href="#abrahamsonsilvakamai2014" id="id8"><span>[AbrahamsonSilvaKamai2014]</span></a>. The unit of Z1pt0 in R2D is meter.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>OpenSHA default model</dt><dd><p>This model applies to California. R2D will interpolate the SCEC Community Velocity Model Version 4, Iteration 26, Basin Depth,
+SCEC CCA, Iteration 6, Basin Depth, SCEC Community Velocity Model Version 4 Basin Depth,
+SCEC/Harvard Community Velocity Model Version 11.9.x Basin Depth, and USGS Bay Area Velocity Model Release 8.3.0
+model to get the value of Z1pt0. The models are accessed by calling the class <a class="reference external" href="https://github.com/opensha/opensha/blob/ba07dd44cb1b11448a88b142382d3a129df24df1/src/main/java/org/opensha/commons/data/siteData/OrderedSiteDataProviderList.java#L365">OrderedSiteDataProviderList</a>
+in <strong>openSHA</strong>. If a NaN value is obtained from the interpolation, the prediction equation (Eq.1) in
+[ChiouYoungs2014] will be used to infer Z1pt0 value from Vs30.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>User-specified</dt><dd><p>If the <strong>Single Location</strong> or <strong>Grid of Locations</strong> site definition method is selected. The value specified in the <strong>Z1pt0 Model</strong> pane
+will be applied to all the site(s).
+If the <strong>Scattering Location</strong> site definition method is selected.  R2D will check if a “z1pt0” column exists
+in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used.
+Otherwise, the value specified in the <strong>Z1pt0</strong> pane will be applied to all sites.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Z2pt5 Model</strong></dt><dd><p>The depth (km) to where shear-wave velocity = 2.5 km/sec (the first occurrence if more than one depth exists). Z1pt0 and Z2pt5
+are related to long-period site response. Z2pt5 may be more directly related to the long-period site response.
+The unit of Z2pt5 in R2D is meter.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>OpenSHA default model</dt><dd><p>This model applies to California. R2D will interpolate the SCEC Community Velocity Model Version 4, Iteration 26, Basin Depth,
+SCEC CCA, Iteration 6, Basin Depth, SCEC Community Velocity Model Version 4 Basin Depth,
+SCEC/Harvard Community Velocity Model Version 11.9.x Basin Depth, and USGS Bay Area Velocity Model Release 8.3.0
+model to get the value of Z2pt5. The models are accessed by calling the class <a class="reference external" href="https://github.com/opensha/opensha/blob/ba07dd44cb1b11448a88b142382d3a129df24df1/src/main/java/org/opensha/commons/data/siteData/OrderedSiteDataProviderList.java#L365">OrderedSiteDataProviderList</a>
+in <strong>openSHA</strong>. If a NaN value is obtained from the interpolation, the prediction equation (Eq.33) in
+[CampbellBozorgnia2014] will be used to infer Z2pt5 value from Vs30.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>User-specified</dt><dd><p>If the <strong>Single Location</strong> or <strong>Grid of Locations</strong> site definition method is selected. The value specified in the <strong>Z2pt5 Model</strong> pane
+will be applied to all the site(s).
+If the <strong>Scattering Location</strong> site definition method is selected.  R2D will check if a “Z2pt5” column exists
+in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used.
+Otherwise, the value specified in the <strong>Z2pt5</strong> pane will be applied to all sites.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="site-file-csv-definition-and-simcentersitemodel-csv">
+<span id="lbl-sitefileandscsitemodel"></span><h4><span class="section-number">3.1.1.3. </span>Site File (.csv) Definition and SimCenterSiteModel.csv<a class="headerlink" href="#site-file-csv-definition-and-simcentersitemodel-csv" title="Permalink to this headline">¶</a></h4>
+<p>The Site File (.csv) is the user-provided file, in <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format, that contains the list of sites and corresponding site data.
+At a minimum, the Site File (.csv) must contain the station ID, latitude, and longitude of each site.
+If the “User-specified” option is selected in the <strong>Vs30 Model</strong>, <strong>Depth to Z1pt0</strong>, or <strong>Depth to Z2pt5</strong> panes,
+corresponding information should also be included in the Site File (.csv). The naming convention for the columns in Site File (.csv)
+is “ID” for station ID, “lat” for latitude, “lon” for longitude, “vs30” for Vs30, “z1pt0” for
+depth (m) to where shear-wave velocity = 1.0 km/sec and “z2pt5” for depth (m) to where shear-wave velocity = 2.5 km/sec.
+The station ID must be a consecutive sequence starting from 0.
+Users can also provide a column of “vsInferred”. The value of “vsInferred” can be either 0 (stands for false) or 1 (stands for true).
+If such a value is provided, the “vsInferred” defined in the <strong>Vs30 Model Pane</strong> will be overwritten.
+Similarly, if users provide a column of “z1pt0” or “z2pt0”, the value specified in the
+<strong>Depth to Z1pt0</strong> and <strong>Depth to Z2pt5</strong> panes are overwritten by the values in
+the Site File (.csv).</p>
+<p>When the <strong>Forecast Rupture Scenarios</strong> button is clicked, R2D will create a <strong>SimCenterSiteModel.csv</strong> based on the site location, vs30 model,
+depth to shear-wave velocity = 1.0 km/sec and 2.5 km/sec models. This is the output of the <strong>Site Definition Panel</strong> and
+will be used in the subsequent earthquake hazard simulation workflow. This file is
+stored in the “/HazardSimulation/GroundMotions/Input” folder in the R2D local work direction defined in
+R2D preferences.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Users can check the correctness of the defined Site Model by reading the <strong>SimCenterSiteModel.csv</strong> file. If a user
+would like to overwrite a value in the <strong>SimCenterSiteModel.csv</strong>, they can edit the <strong>SimCenterSiteModel.csv</strong> and load it back
+to R2D as a Site File (.csv). Afterward, please select the “User-specified” option for the <strong>Vs30</strong>, <strong>Z1pt0</strong> and <strong>Z2pt5 Model</strong> and
+the values specified in the edited <strong>SimCenterSiteModel.csv</strong> will be used in the subsequent earthquake hazard simulation workflow.</p>
+</div>
+<dl class="citation">
+<dt class="label" id="abrahamsonsilvakamai2013"><span class="brackets"><a class="fn-backref" href="#id2">AbrahamsonSilvaKamai2013</a></span></dt>
+<dd><p>Abrahamson, N. A., Silva, W. J., and Kamai, R., 2013. Update of the AS08 Ground Motion Prediction Equations Based on the NGA-West2 Data Set, PEER Report No. 2013/04, Pacific Earthquake Engineering Research Center, University of California, Berkeley.</p>
+</dd>
+<dt class="label" id="heath2020"><span class="brackets"><a class="fn-backref" href="#id6">Heath2020</a></span></dt>
+<dd><p>Heath, D.C., Wald, D.J., Worden, C.B., Thompson, E.M., and Smoczyk, G.M., 2020, A Global Hybrid Vs30 Map with a Topographic-Slope-Based Default and Regional Map Insets: U.S. Geological Survey data release, <a class="reference external" href="https://doi.org/10.5066/P96HFVXM">https://doi.org/10.5066/P96HFVXM</a>.</p>
+</dd>
+<dt class="label" id="thompson2018"><span class="brackets"><a class="fn-backref" href="#id5">Thompson2018</a></span></dt>
+<dd><p>Thompson, E.M., 2018, An Updated Vs30 Map for California with Geologic and Topographic Constraints (ver. 2.0, July 2022): U.S. Geological Survey data release, <a class="reference external" href="https://doi.org/10.5066/F7JQ108S">https://doi.org/10.5066/F7JQ108S</a>.</p>
+</dd>
+<dt class="label" id="willsetal2015"><span class="brackets">willsetal2015</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id4">2</a>)</span></dt>
+<dd><p>Wills, C. J., Gutierrez, C. I., Perez, F. G., &amp; Branum, D. M. (2015). A next generation VS30 map for California based on geology and topography. Bulletin of the Seismological Society of America, 105(6), 3083-3091</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="earthquake-rupture-panel">
+<h3><span class="section-number">3.1.2. </span>Earthquake Rupture Panel<a class="headerlink" href="#earthquake-rupture-panel" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Earthquake Rupture Panel</strong> is shown in <a class="reference internal" href="#fig-r2deqserpane"><span class="std std-numref">Fig. 3.1.2.1</span></a>.
+This is where a user defines the earthquake rupture(s) in the regional hazard analysis.
+The available Earthquake Rupture definition methods are OpenSHA ERF, Point Source,
+and OpenQuake ERF. The details of each method are described below.</p>
+<div class="align-center figure" id="id32">
+<span id="fig-r2deqserpane"></span><img alt="../../../../../_images/R2DEQSERPane.png" src="../../../../../_images/R2DEQSERPane.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.2.1 </span><span class="caption-text">Earthquake Rupture Panel</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="opensha-erf">
+<h4><span class="section-number">3.1.2.1. </span>OpenSHA ERF<a class="headerlink" href="#opensha-erf" title="Permalink to this headline">¶</a></h4>
+<p>This method allows users to define earthquake ruptures from two Earthquake Rupture
+Forecasting (ERF) models for California, which are implemented in OpenSHA.
+The two ERF models are “WGCEP (2007) UCERF2 - Single Branch” (<a class="reference internal" href="#field2009" id="id10"><span>[Field2009]</span></a>)
+and “Mean UCERF3” (<a class="reference internal" href="#field2017" id="id11"><span>[Field2017]</span></a>)</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>WGCEP (2007) UCERF2 - Single Branch (<a class="reference internal" href="#field2009" id="id12"><span>[Field2009]</span></a>)</dt><dd><p>This ERF model selects a single branch from UCERF2’s logic tree based on the Floater Type,
+Background Seismicity, Treat Background Seismicity As, and Probability Model options.
+The ERF model is obtained by interfacing the <a class="reference external" href="https://github.com/opensha/opensha/blob/master/src/main/java/org/opensha/sha/earthquake/rupForecastImpl/WGCEP_UCERF_2_Final/MeanUCERF2/MeanUCERF2.java">MeanUCERF2</a>
+class in OpenSHA.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Mean UCERF3 (<a class="reference internal" href="#field2017" id="id13"><span>[Field2017]</span></a>)</dt><dd><p>Three most commonly used logic trees (named presets in OpenSHA) are available in R2D.
+The presets can be selected in the “Mean UCERF3 Presets” combo box. The available presets
+are “FM3.1 Branch Averaged”, “FM3.2 Branch Averaged”, and “(POISSON ONLY) Both FM Branch Averaged”.
+For each preset, there are more options to specify how to treat background seismicity,
+what probability model to use, and other parameters. More details of the ERF models
+can be found on the <a class="reference external" href="https://opensha.org/">OpenSHA website</a></p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<p>For both UCERF models, users also need to specify the Maximum Distance (km) between
+the centroid of the sites and the earthquake sources (faults) they want to consider.
+Users also need to specify the maximum magnitude and the minimum magnitude they
+want to consider in the earthquake hazard simulation. Only the ruptures that satisfy
+these three criteria will be selected.</p>
+<p>After the ERF model parameters are set up, users should click the <strong>Forecast Rupture Scenarios</strong> button.
+R2D will run the user-specified ERF models implemented in OpenSHA.
+The generated earthquake ruptures will be saved as a <code class="docutils literal notranslate"><span class="pre">.geojson</span></code>
+file named <code class="docutils literal notranslate"><span class="pre">RupFile.geojson</span></code> in the “/HazardSimulation/GroundMotions/Output” folder in
+the local work directory of R2D. The <code class="docutils literal notranslate"><span class="pre">RupFile.geojson</span></code> will be loaded to R2D and visualized
+in the lower part of the Earthquake Rupture Panel.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The number of ruptures generated by the UCERFs depends on the Fault Grid Spacing,
+if background seismicity is included, maximum and minimum considered rupture scenarios.
+A large number of scenarios (over tens of thousands) may be generated if the Mean UCERF3
+model is used. Generating, saving and visualizing such a large number of ruptures can be slow in R2D.
+If Scenario-Based ground motion simulation is desired after the earthquake rupture
+forecasting, users are recommended to look for their scenarios in OpenSHA’s Deterministic
+calculation type and identify their scenario. Afterward, a narrow selection criteria can be specified
+in R2D to reduce the run time.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>User other ERF models available in OpenSHA is also possible by directly running the backend application
+codes of R2D. Please contact the developer at the <a class="reference external" href="http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0&amp;_gl=1*1q12h3o*_ga*NzI5NDMzMDUzLjE2ODU0ODE2MzQ.*_ga_D96RT1T24K*MTcwNDkzMzIxOC4xODAuMC4xNzA0OTMzMjE4LjAuMC4w">SimCenter Forum</a>
+for inquiries and feature requests.</p>
+</div>
+</div>
+<div class="section" id="point-source">
+<h4><span class="section-number">3.1.2.2. </span>Point Source<a class="headerlink" href="#point-source" title="Permalink to this headline">¶</a></h4>
+<p>The <strong>Point Source</strong> pane, shown in <a class="reference internal" href="#fig-r2deqssseqruppointpane"><span class="std std-numref">Fig. 3.1.2.2.1</span></a>, defines a single
+earthquake rupture. The point source may not accurately reflect real fault geometry but it
+may be useful for educational and/or academic use.</p>
+<p>The required inputs are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Magnitude:</strong> Magnitude of the earthquake.</p></li>
+<li><p><strong>Location and Depth:</strong> Latitude, Longitude, and depth of earthquake rupture.</p></li>
+<li><p><strong>Rupture Geometry:</strong> Average dip and rake of rupture.</p></li>
+</ul>
+</div></blockquote>
+<div class="align-center figure" id="id33">
+<span id="fig-r2deqssseqruppointpane"></span><img alt="../../../../../_images/R2DEQSSSEQRupPointPane.png" src="../../../../../_images/R2DEQSSSEQRupPointPane.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.2.2.1 </span><span class="caption-text">Point source earthquake rupture.</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="openquake-earthquake-rupture-forecasting">
+<span id="lbl-erfopenquake"></span><h4><span class="section-number">3.1.2.3. </span>OpenQuake Earthquake Rupture Forecasting<a class="headerlink" href="#openquake-earthquake-rupture-forecasting" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>The OpenQuake Earthquake Rupture Forecasting (<strong>OpenQuake ERF</strong>) option uses
+the Global Earthquake Model Foundation’s <a class="reference external" href="https://www.globalquakemodel.org/product/openquake-engine">OpenQuake Engine</a>
+to define ruptures from earthquake sources (faults) and estimate the occurrence rate of earthquake
+ruptures. In contrast to <strong>OpenSHA ERF</strong>, where the earthquake source models
+are built in UCERFs, users need to provide a Source File (<code class="docutils literal notranslate"><span class="pre">.xml</span></code>) in <a class="reference external" href="https://docs.openquake.org/oq-engine/manual/latest/hazard.html#source-typologies">OpenQuake’s
+conventions</a>.
+Note that although R2D allows defining multiple “sourceGroup”, defining seismic
+source logic trees is not supported now.</p>
+<p>The <strong>OpenQuake ERF</strong> pane, shown in <a class="reference internal" href="#fig-r2deqsopenquakeerf"><span class="std std-numref">Fig. 3.1.2.3.1</span></a>, requires the following inputs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>OpenQuake Version:</strong> Version of OpenQuake (currently available is 3.17).</p></li>
+<li><p><strong>Source Model File:</strong> A <code class="docutils literal notranslate"><span class="pre">.xml</span></code> file (NRML format) defining an earthquake source geometry, magnitude scaling relationship,</p></li>
+</ul>
+<p>rupture aspect ratio, and magnitude frequency distribution. Examples of the rupture files can be found in the <a class="reference external" href="https://github.com/gem/oq-engine/tree/master/demos">demos folder
+of OpenQuake’s GitHub repo</a>.
+- <strong>Rupture Meshsize:</strong> Mesh size for line sources.
+- <strong>Area Meshsize:</strong> Mesh size for area sources.
+- <strong>Maximum Distance:</strong> Maximum considered distance from source to site.
+- <strong>Maximum Magnitude:</strong> Maximum considered earthquake magnitude.
+- <strong>Minimum Magnitude:</strong> Minimum considered earthquake magnitude.
+- <strong>Magnitude-Frequency Distribution Bin Width</strong> Bin width to discretize the Magnitude-Frequency Distribution defined in the Source Model File.</p>
+</div></blockquote>
+<div class="align-center figure" id="id34">
+<span id="fig-r2deqsopenquakeerf"></span><img alt="../../../../../_images/R2DEQSOpenQuakeERF.png" src="../../../../../_images/R2DEQSOpenQuakeERF.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.2.3.1 </span><span class="caption-text">OpenQuake Scenario-Based Input.</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<dl class="citation">
+<dt class="label" id="field2009"><span class="brackets">Field2009</span><span class="fn-backref">(<a href="#id10">1</a>,<a href="#id12">2</a>)</span></dt>
+<dd><p>Field, E. H., Dawson, T. E., Felzer, K. R., Frankel, A. D., Gupta, V., Jordan, T. H., … &amp; Wills, C. J. (2009). Uniform California earthquake rupture forecast, version 2 (UCERF 2). Bulletin of the Seismological Society of America, 99(4), 2053-2107.</p>
+</dd>
+<dt class="label" id="field2017"><span class="brackets">Field2017</span><span class="fn-backref">(<a href="#id11">1</a>,<a href="#id13">2</a>)</span></dt>
+<dd><p>Field, E. H., Jordan, T. H., Page, M. T., Milner, K. R., Shaw, B. E., Dawson, T. E., … &amp; Thatcher, W. R. (2017). A synoptic view of the third Uniform California Earthquake Rupture Forecast (UCERF3). Seismological Research Letters, 88(5), 1259-1267.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="forecast-rupture-scenarios-button">
+<h4><span class="section-number">3.1.2.4. </span>Forecast Rupture Scenarios Button<a class="headerlink" href="#forecast-rupture-scenarios-button" title="Permalink to this headline">¶</a></h4>
+<p>By clicking this button, R2D will clear the “HazardSimulation” folder in the local
+working directory of R2D. R2D will then create a SimCenterSiteModel.csv in the “Input”
+folder of the “HazardSimulation” folder. The SimCenterSiteModel.csv contains the location
+and site classification information defined in the Site Definition Panel.</p>
+<p>R2D will then run the earthquake rupture forecasting models defined in the earthquake rupture
+panel. A file “RupFile.geojson” will be created in the “Ouput” folder of the “HazardSimulation”
+folder. The “RupFile.geojson” contains the basic information of the rupture scenarios
+generated by the earthquake rupture forecasting models. Users could inspect the
+SimCenterSiteModel.csv and RupFile.geojson files to check the results from earthquake
+rupture forecasting.</p>
+</div>
+</div>
+<div class="section" id="scenario-selection-panel">
+<h3><span class="section-number">3.1.3. </span>Scenario Selection Panel<a class="headerlink" href="#scenario-selection-panel" title="Permalink to this headline">¶</a></h3>
+<p>The Scenario Selection Panel allows users to select which scenario(s) to consider
+in the generation of ground motion maps. Current available options are:</p>
+<div class="section" id="scenario-specific">
+<h4><span class="section-number">3.1.3.1. </span>Scenario-specific<a class="headerlink" href="#scenario-specific" title="Permalink to this headline">¶</a></h4>
+<p>This option selects a single earthquake scenario from the results of the Earthquake
+Rupture Forecasting to generate corresponding ground motion maps to be used in regional seismic
+analysis. Note that many ground motion maps can be generated from a single scenario
+because of the uncertainties associated with the ground motion prediction equations.
+Users need to identify the source ID and the rupture ID of the scenario they would like to
+analyze and input them into the Scenario-specific selection pane. To identify the source
+and rupture IDs, users can visualize in the scenario selection panel as shown in
+<a class="reference internal" href="#fig-r2deqsrupviztableview"><span class="std std-numref">Fig. 3.1.3.1.1</span></a> or visualize the earthquake rupture scenarios created in ERF by
+write click the <strong>Earthquake Rupturtes – RupFile</strong> layer in the visualization pane
+in <strong>Earthquake Rupture</strong> pane and open the attribute table as shown in <a class="reference internal" href="#fig-r2deqsrupvizattributetable"><span class="std std-numref">Fig. 3.1.3.1.2</span></a>.
+Then users click on each row in the rupture table on the scenario selection panel, the rupture ID,
+and source ID will be filled automatically.</p>
+<blockquote>
+<div><div class="align-center figure" id="id35">
+<span id="fig-r2deqsrupviztableview"></span><img alt="../../../../../_images/R2DEQSRupVizTableView.png" src="../../../../../_images/R2DEQSRupVizTableView.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.3.1.1 </span><span class="caption-text">Rupture visualization in the scenario selection panel.</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id36">
+<span id="fig-r2deqsrupvizattributetable"></span><img alt="../../../../../_images/R2DEQSRupVizAttributeTable.png" src="../../../../../_images/R2DEQSRupVizAttributeTable.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.3.1.2 </span><span class="caption-text">Rupture visualization using QGIS attribute table.</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="conventional-monte-carlo">
+<h4><span class="section-number">3.1.3.2. </span>Conventional Monte Carlo<a class="headerlink" href="#conventional-monte-carlo" title="Permalink to this headline">¶</a></h4>
+<p>This option selects a series of earthquake scenarios from the results of the Earthquake
+Rupture Forecasting to generate a series of ground motion maps to be used in regional seismic
+risk analysis. Similar to the scenario-specific option, users can visualize the
+earthquake rupture scenarios created in ERF at the lower part of the Scenario Selection Panel or by
+right-clicking the <strong>Earthquake Ruptures – RupFile</strong> layer in the visualization pane
+in <strong>Earthquake Rupture</strong> pane and opening the attribute table as shown in <a class="reference internal" href="#fig-r2deqsrupvizattributetable"><span class="std std-numref">Fig. 3.1.3.1.2</span></a>.
+Users need to specify a range of the scenarios they would like to
+analyze by selecting them on the rupture table in the scenario-specific panel
+or inputting them into the conventional Monte Carlo selection line edit. To select
+on the rupture table, when one row is selected in the usual way, the current selection
+is cleared and the new item is selected. However, if the user presses the Ctrl key
+when clicking on one row, the clicked row gets toggled and all other rows are left untouched.
+If the user presses the Shift key while clicking on one row, all rows between the
+current row and the clicked row are selected or unselected, depending on the state
+of the clicked row. Multiple rows can be selected by dragging the mouse over them.
+The range users input in this panel is the index of the ruptures in the rupture table.
+Note if a user uses the attribute table in <a class="reference internal" href="#fig-r2deqsrupvizattributetable"><span class="std std-numref">Fig. 3.1.3.1.2</span></a>
+to inspect the rupture index, R2D uses the initial index of the attribute table,
+which is sorted according to descending MeanAnnualRate. The selection will not
+synchronize if a user reorders or edits the attribute table (e.g., by sorting the
+attribute table based on source-site distance).</p>
+</div>
+<div class="section" id="hazard-consistent-downsampling">
+<h4><span class="section-number">3.1.3.3. </span>Hazard Consistent Downsampling<a class="headerlink" href="#hazard-consistent-downsampling" title="Permalink to this headline">¶</a></h4>
+<p>Because the number of earthquake scenarios is usually very big in conventional
+Monte Carlo method, there are algorithms to select a subset of all relevant earthquake
+scenarios with a scaled occurrence rate to achieve a similar hazard level with the full set of
+earthquake scenarios. R2D implemented one of such algorithms developed by Manzour &amp;
+Davidson (2016) <a class="reference internal" href="#manzour2016" id="id14"><span>[Manzour2016]</span></a>.
+To apply the algorithms, users need to define:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Hazard Curve Input</strong> The hazard curve(s) presenting the true hazard level that the downsampled earthquake scenarios aim to match. Users can select from <strong>inferred</strong> hazard curves from the full set of earthquake ruptures forecasted from the ERF model, <strong>National Seismic Hazard Map</strong> <a class="reference internal" href="#peterson2020" id="id15"><span>[Peterson2020]</span></a> hazard curves, or <strong>User-defined</strong> hazard curves. An example of the format of user-defined hazard curves is shown in <a class="reference internal" href="#fig-userspecifiedhazardcurve"><span class="std std-numref">Listing 3.1.3.3.1</span></a>.</p></li>
+<li><p><strong>Intensity measure</strong> The intensity measure used to calculate the hazard level. The intensity measure defined here has to be included in the specified <a class="reference internal" href="#lbl-groundmotionmodels"><span class="std std-ref">Ground Motion Model</span></a>.</p></li>
+<li><p><strong>Earthquake scenario sample size</strong> The earthquake scenario sample size limit in the downsampled earthquake scenario subset.</p></li>
+<li><p><strong>Ground motion map sample size</strong> The ground motion map sample size limit in the downsample earthquake suite.</p></li>
+<li><p><strong>Hazard curve Sa period:</strong> Period of the response acceleration Sa if the intensity measure type is Sa.</p></li>
+<li><p><strong>Return periods (yr):</strong> A list of return periods in years used in minimizing the difference between recovered and reference hazard curves (seperated by “,”).</p></li>
+</ul>
+</div></blockquote>
+<p>Users are encouraged to read the original paper <a class="reference internal" href="#manzour2016" id="id16"><span>[Manzour2016]</span></a> to better understand how to select parameters used in the algorithm.</p>
+<div class="literal-block-wrapper docutils container" id="fig-userspecifiedhazardcurve">
+<div class="code-block-caption"><span class="caption-number">Listing 3.1.3.3.1 </span><span class="caption-text">An example of user-defined hazard curves.</span><a class="headerlink" href="#fig-userspecifiedhazardcurve" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">[</span>
+<span class="linenos"> 2</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos"> 3</span><span class="w">        </span><span class="nt">&quot;SiteID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos"> 4</span><span class="w">        </span><span class="nt">&quot;ReturnPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos"> 5</span><span class="w">            </span><span class="mi">50</span><span class="p">,</span>
+<span class="linenos"> 6</span><span class="w">            </span><span class="mi">224</span><span class="p">,</span>
+<span class="linenos"> 7</span><span class="w">            </span><span class="mi">475</span><span class="p">,</span>
+<span class="linenos"> 8</span><span class="w">            </span><span class="mi">975</span><span class="p">,</span>
+<span class="linenos"> 9</span><span class="w">            </span><span class="mi">2475</span>
+<span class="linenos">10</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos">11</span><span class="w">        </span><span class="nt">&quot;IM&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">12</span><span class="w">            </span><span class="mf">0.11242100350620873</span><span class="p">,</span>
+<span class="linenos">13</span><span class="w">            </span><span class="mf">0.45815976690544913</span><span class="p">,</span>
+<span class="linenos">14</span><span class="w">            </span><span class="mf">0.5790443980602489</span><span class="p">,</span>
+<span class="linenos">15</span><span class="w">            </span><span class="mf">0.7318242219076182</span><span class="p">,</span>
+<span class="linenos">16</span><span class="w">            </span><span class="mf">0.9249147277217336</span>
+<span class="linenos">17</span><span class="w">        </span><span class="p">]</span>
+<span class="linenos">18</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">19</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">20</span><span class="w">        </span><span class="nt">&quot;SiteID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">21</span><span class="w">        </span><span class="nt">&quot;ReturnPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">22</span><span class="w">            </span><span class="mi">50</span><span class="p">,</span>
+<span class="linenos">23</span><span class="w">            </span><span class="mi">224</span><span class="p">,</span>
+<span class="linenos">24</span><span class="w">            </span><span class="mi">475</span><span class="p">,</span>
+<span class="linenos">25</span><span class="w">            </span><span class="mi">975</span><span class="p">,</span>
+<span class="linenos">26</span><span class="w">            </span><span class="mi">2475</span>
+<span class="linenos">27</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos">28</span><span class="w">        </span><span class="nt">&quot;IM&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">29</span><span class="w">            </span><span class="mf">0.11242100350620873</span><span class="p">,</span>
+<span class="linenos">30</span><span class="w">            </span><span class="mf">0.45815976690544913</span><span class="p">,</span>
+<span class="linenos">31</span><span class="w">            </span><span class="mf">0.5790443980602489</span><span class="p">,</span>
+<span class="linenos">32</span><span class="w">            </span><span class="mf">0.7318242219076182</span><span class="p">,</span>
+<span class="linenos">33</span><span class="w">            </span><span class="mf">0.9249147277217336</span>
+<span class="linenos">34</span><span class="w">        </span><span class="p">]</span>
+<span class="linenos">35</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">36</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The intensity measure selected in the <strong>Hazard Consistent Downsampling</strong>
+must be included in the Intensity Measure defined in the <strong>Ground Motion Models</strong> panel.
+This is because the Hazard Consistent Downsampling makes use of one of the computed intensity
+measures defined in the <strong>Ground Motion Models</strong> panel to compute the hazard level at each site.</p>
+</div>
+<dl class="citation">
+<dt class="label" id="manzour2016"><span class="brackets">Manzour2016</span><span class="fn-backref">(<a href="#id14">1</a>,<a href="#id16">2</a>)</span></dt>
+<dd><p>Manzour, H., Davidson, R. A., Horspool, N., &amp; Nozick, L. K. (2016). Seismic hazard and loss analysis for spatially distributed infrastructure in Christchurch, New Zealand. Earthquake Spectra, 32(2), 697-712.</p>
+</dd>
+<dt class="label" id="peterson2020"><span class="brackets"><a class="fn-backref" href="#id15">Peterson2020</a></span></dt>
+<dd><p>Petersen, M. D., Shumway, A. M., Powers, P. M., Mueller, C. S., Moschetti, M. P., Frankel, A. D., … &amp; Zeng, Y. (2020). The 2018 update of the US National Seismic Hazard Model: Overview of model and implications. Earthquake Spectra, 36(1), 5-41.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="ground-motion-models">
+<span id="lbl-groundmotionmodels"></span><h3><span class="section-number">3.1.4. </span>Ground Motion Models<a class="headerlink" href="#ground-motion-models" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="intensity-measure-and-period-points">
+<h4><span class="section-number">3.1.4.1. </span>Intensity Measure and Period Points<a class="headerlink" href="#intensity-measure-and-period-points" title="Permalink to this headline">¶</a></h4>
+<p>The <strong>Intensity Measure and Period Points</strong> pane, shown in <a class="reference internal" href="#fig-r2deqssimpane"><span class="std std-numref">Fig. 3.1.4.1.1</span></a>, requires the following inputs:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><strong>Intensity Measure Type:</strong> Type of intensity measure. The Spectral Acceleration (SA) and Peak Ground Acceleration (PGA) intensity measures are available.</p></li>
 <li><p><strong>Period Points:</strong> List of periods, in seconds, that are used in the ground motion selection procedure.</p></li>
 </ul>
 </div></blockquote>
-<div class="align-center figure" id="id18">
+<div class="align-center figure" id="id37">
 <span id="fig-r2deqssimpane"></span><img alt="../../../../../_images/R2DEQSSIMPane.png" src="../../../../../_images/R2DEQSSIMPane.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.14 </span><span class="caption-text">Intensity measure and period.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.4.1.1 </span><span class="caption-text">Intensity measure and period.</span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong>Output Directory and Run Button</strong></p>
-<p>Shown at the bottom of <a class="reference internal" href="#fig-r2deqssoutputdirpane"><span class="std std-numref">Fig. 3.1.15</span></a>, the <strong>Run Hazard Simulation</strong> button starts the ground motion selection application. The <strong>Output Directory</strong> box, provided in <a class="reference internal" href="#fig-r2deqssoutputdirpane"><span class="std std-numref">Fig. 3.1.15</span></a>, allows the user to select a directory that will contain the input and output files of the earthquake scenario simulation.</p>
-<div class="align-center figure" id="id19">
-<span id="fig-r2deqssoutputdirpane"></span><img alt="../../../../../_images/R2DEQSSOutputDirPane.png" src="../../../../../_images/R2DEQSSOutputDirPane.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.15 </span><span class="caption-text">Earthquake Scenario Simulation Output Directory.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
-<dl class="simple">
-<dt>The earthquake scenario simulation is run via a Python script. When the <strong>Run Hazard Simulation</strong> button is pressed, text output from the script will appear in the <strong>Program Output</strong> console at the bottom of the application.</dt><dd><p>Upon successful completion of the earthquake scenario simulation, results from the simulation are in the <strong>Output Directory</strong> folder that is specified above, as shown in <a class="reference internal" href="#fig-r2deqssoutputdirpane"><span class="std std-numref">Fig. 3.1.15</span></a>. The final output is a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file called <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code>. The <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file contains the grid points and their locations and file names. Each grid point is assigned a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file containing a list of the ground motions at the grid point and their scaling factors. If applicable, the corresponding ground motion records, in <code class="docutils literal notranslate"><span class="pre">JSON</span></code> format, are also in the <strong>Output Directory</strong> directoy. Next, the <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> is post-processed, and a new layer containing the ground motions is added to the GIS widget. Shown on the right-hand side of <a class="reference internal" href="#fig-r2deqssoutput"><span class="std std-numref">Fig. 3.1.16</span></a>, the grid points are represented with a cross symbol. Clicking on a grid point will produce a popup with information about the ground motions at that point.</p>
+<div class="section" id="ground-motion-prediction-equations">
+<h4><span class="section-number">3.1.4.2. </span>Ground Motion Prediction Equations<a class="headerlink" href="#ground-motion-prediction-equations" title="Permalink to this headline">¶</a></h4>
+<p>Ground motion prediction equations estimate the intensity of ground shaking that may occur at a site. The <strong>Ground Motion Prediction Equation</strong> combo box, shown in <a class="reference internal" href="#fig-r2deqssgmpepane"><span class="std std-numref">Fig. 3.1.4.2.1</span></a>, contains the following ground motion prediction equations:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Abrahamson, Silva &amp; Kamai (2014) <a class="reference internal" href="#abrahamsonsilvakamai2014" id="id17"><span>[AbrahamsonSilvaKamai2014]</span></a></p></li>
+<li><p>Boore, Stewart, Seyhan &amp; Atkinson (2014) <a class="reference internal" href="#booreetal2014" id="id18"><span>[BooreEtal2014]</span></a></p></li>
+<li><p>Campbell &amp; Bozorgnia (2014) <a class="reference internal" href="#campbellbozorgnia2014" id="id19"><span>[CampbellBozorgnia2014]</span></a></p></li>
+<li><p>Chiou &amp; Youngs (2014) <a class="reference internal" href="#chiouyoungs2014" id="id20"><span>[ChiouYoungs2014]</span></a></p></li>
+</ul>
+</div></blockquote>
+<div class="align-center figure" id="id38">
+<span id="fig-r2deqssgmpepane"></span><img alt="../../../../../_images/R2DEQSSGMPEPane.png" src="../../../../../_images/R2DEQSSGMPEPane.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.4.2.1 </span><span class="caption-text">Ground motion prediction equations.</span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="spatial-correlation-models">
+<h4><span class="section-number">3.1.4.3. </span>Spatial Correlation Models<a class="headerlink" href="#spatial-correlation-models" title="Permalink to this headline">¶</a></h4>
+<p>This is where the user selects the spatial correlation models, and where the user defines the minimum and maximum scaling factors that are used in ground motion selection. Shown at the top of <a class="reference internal" href="#fig-r2deqsscorrscalepane"><span class="std std-numref">Fig. 3.1.4.3.1</span></a>, the user has the option to select the Intra- and Inter-event Spatial Correlation Models. Spatial correlation ensures that ground motions at different locations will share similar characteristics. The following Inter-event Spatial Correlation Models are available:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Baker &amp; Jayaram (2008) <a class="reference internal" href="#jayaram08" id="id21"><span>[Jayaram08]</span></a></p></li>
+</ul>
+</div></blockquote>
+<p>and the following Intra-event Spatial Correlation Models are available:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Markhvida et al. (2017) <a class="reference internal" href="#markhvida17" id="id22"><span>[Markhvida17]</span></a></p></li>
+<li><p>Jayaram &amp; Baker (2009) <a class="reference internal" href="#jayaram09" id="id23"><span>[Jayaram09]</span></a></p></li>
+<li><p>Loth &amp; Baker (2013) <a class="reference internal" href="#loth13" id="id24"><span>[Loth13]</span></a></p></li>
+</ul>
+</div></blockquote>
+<p>Special thanks to Dr. Anne Hulsey for sharing the python package <a class="reference external" href="https://github.com/annehulsey/seaturtles">seaturtles</a>, especially for the method of computing the regional ground motion intensity using the Markhvida et al. (2017) and Baker &amp; Jayaram (2008) correlation models.</p>
+<div class="align-center figure" id="id39">
+<span id="fig-r2deqsscorrscalepane"></span><img alt="../../../../../_images/R2DEQSSCorrScalePane.png" src="../../../../../_images/R2DEQSSCorrScalePane.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.4.3.1 </span><span class="caption-text">Spatial correlation and ground motion selection scaling factors.</span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="citation">
+<dt class="label" id="abrahamsonsilvakamai2014"><span class="brackets">AbrahamsonSilvaKamai2014</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id8">2</a>,<a href="#id17">3</a>)</span></dt>
+<dd><p>Abrahamson, N. A., Silva, W. J., &amp; Kamai, R. (2014). Summary of the ASK14 ground motion relation for active crustal regions. Earthquake Spectra, 30(3), 1025-1055.</p>
+</dd>
+<dt class="label" id="booreetal2014"><span class="brackets"><a class="fn-backref" href="#id18">BooreEtal2014</a></span></dt>
+<dd><p>Boore, D. M., Stewart, J. P., Seyhan, E., &amp; Atkinson, G. M. (2014). NGA-West2 equations for predicting PGA, PGV, and 5% damped PSA for shallow crustal earthquakes. Earthquake Spectra, 30(3), 1057-1085.</p>
+</dd>
+<dt class="label" id="campbellbozorgnia2014"><span class="brackets"><a class="fn-backref" href="#id19">CampbellBozorgnia2014</a></span></dt>
+<dd><p>Campbell, K. W., &amp; Bozorgnia, Y. (2014). NGA-West2 ground motion model for the average horizontal components of PGA, PGV, and 5% damped linear acceleration response spectra. Earthquake Spectra, 30(3), 1087-1115.</p>
+</dd>
+<dt class="label" id="chiouyoungs2014"><span class="brackets"><a class="fn-backref" href="#id20">ChiouYoungs2014</a></span></dt>
+<dd><p>Chiou, B. S. J., &amp; Youngs, R. R. (2014). Update of the Chiou and Youngs NGA model for the average horizontal component of peak ground motion and response spectra. Earthquake Spectra, 30(3), 1117-1153.</p>
+</dd>
+<dt class="label" id="jayaram08"><span class="brackets"><a class="fn-backref" href="#id21">Jayaram08</a></span></dt>
+<dd><p>Jayaram N, Baker JW. Statistical tests of the joint distribution of spectral acceleration values. Bulletin of the Seismological Society of America 2008; 98(5):2231–2243.</p>
+</dd>
+<dt class="label" id="jayaram09"><span class="brackets"><a class="fn-backref" href="#id23">Jayaram09</a></span></dt>
+<dd><p>Jayaram, N., &amp; Baker, J. W. (2009). Correlation model for spatially distributed ground‐motion intensities. Earthquake Engineering &amp; Structural Dynamics, 38(15), 1687-1708.</p>
+</dd>
+<dt class="label" id="loth13"><span class="brackets"><a class="fn-backref" href="#id24">Loth13</a></span></dt>
+<dd><p>Loth, C., &amp; Baker, J. W. (2013). A spatial cross‐correlation model of spectral accelerations at multiple periods. Earthquake Engineering &amp; Structural Dynamics, 42(3), 397-417.</p>
+</dd>
+<dt class="label" id="markhvida17"><span class="brackets"><a class="fn-backref" href="#id22">Markhvida17</a></span></dt>
+<dd><p>Markhvida, M., Ceferino, L., &amp; Baker, J. W. (2018). Modeling spatially correlated spectral accelerations at multiple periods using principal component analysis and geostatistics. Earthquake Engineering &amp; Structural Dynamics, 47(5), 1107-1123.</p>
 </dd>
 </dl>
-<div class="align-center figure" id="id20">
-<span id="fig-r2deqssoutput"></span><img alt="../../../../../_images/R2DEQSSOutput.png" src="../../../../../_images/R2DEQSSOutput.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.16 </span><span class="caption-text">Post-processing output and grid visualization.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="ground-motion-record-selection">
+<h3><span class="section-number">3.1.5. </span>Ground Motion Record Selection<a class="headerlink" href="#ground-motion-record-selection" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ground-motion-record-database">
+<h4><span class="section-number">3.1.5.1. </span>Ground Motion Record Database<a class="headerlink" href="#ground-motion-record-database" title="Permalink to this headline">¶</a></h4>
+<p>Ground motion records are selected from a ground motion database. Currently, only the <em>PEER NGA-West2</em> database is available, shown in the <strong>Ground Motion Record Database</strong> combo box in <a class="reference internal" href="#fig-r2deqssgmdbpane"><span class="std std-numref">Fig. 3.1.5.1.1</span></a>. Alternatively, a user can select <em>None</em> to skip ground motion selection altogether. In that case, only the intensity measures will be saved at each location.</p>
+<blockquote>
+<div><div class="align-center figure" id="id40">
+<span id="fig-r2deqssgmdbpane"></span><img alt="../../../../../_images/R2DEQSSGMDBPane.png" src="../../../../../_images/R2DEQSSGMDBPane.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.5.1.1 </span><span class="caption-text">Ground motion records database.</span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p>The <strong>Ground Motion Record Scaling Bounds</strong>, shown in <a class="reference internal" href="#fig-r2deqssgmdbpane"><span class="std std-numref">Fig. 3.1.5.1.1</span></a>, are the minimum and maximum scaling factors that intensity measures can be scaled by during the ground motion selection process.</p>
+</div>
+<div class="section" id="run-hazard-simulation-button">
+<h4><span class="section-number">3.1.5.2. </span>Run Hazard Simulation Button<a class="headerlink" href="#run-hazard-simulation-button" title="Permalink to this headline">¶</a></h4>
+<p>Shown at the bottom of <a class="reference internal" href="#fig-r2deqssgmdbpane"><span class="std std-numref">Fig. 3.1.5.1.1</span></a>, the <strong>Run Hazard Simulation</strong> button starts the ground motion selection application.
+The earthquake scenario simulation is run via a Python script. When the <strong>Run Hazard Simulation</strong> button is pressed,
+text output from the script will appear in the <strong>Program Output</strong> console at the
+bottom of the application. Upon successful completion of the earthquake scenario
+simulation, results from the simulation are in the <strong>HazardSimulation/GroundMotions/Ouput</strong>
+folder of the local working directory that is specified in R2D preferences,
+as shown in <a class="reference internal" href="../../../installation/desktop/install_macOS.html#figui-preferences"><span class="std std-numref">Fig. 1.2.5.7</span></a>.</p>
+<p>The intensity measure outputs are stored in
+the <strong>IMs</strong> folder in <strong>HazardSimulation/GroundMotions/Ouput</strong>. The output is a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file
+called <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> containing the site locations and the names of the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files containing
+the intensity measure samples at each site. The number of intensity measure samples
+at each site is equal to the number of ground motions per site specified in the
+ground motion record selection panel, as shown in <a class="reference internal" href="#fig-r2deqssgmdbpane"><span class="std std-numref">Fig. 3.1.5.1.1</span></a>.
+The output of PGA and SA are in the unit of gravitational acceleration (g).</p>
+<p>If ground motion record selection is performed, the selected records will be saved in
+the <strong>HazardSimulation/GroundMotions/Ouput</strong> folder. The output includes an <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code>
+file, which contains site locations and the names of the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files containing the selected
+ground motion records at each site. Each site is assigned a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file containing
+a list of the selected ground motions at the site and their scaling factors.
+If ground motion record are saved in <code class="docutils literal notranslate"><span class="pre">JSON</span></code> format in the <strong>HazardSimulation/GroundMotions/Ouput</strong> directory.
+The <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> will also be post-processed, and a new layer containing the
+ground motions will be added to the GIS widget. The grid points are represented
+with a cross symbol. Clicking on a grid point will produce a popup with information
+about the ground motions at that point.</p>
+</div>
 </div>
 </div>
 <div class="section" id="openquake-selection-widget">
@@ -517,18 +936,18 @@
 <ol class="arabic simple">
 <li><p>Once you are done with the selection process, you can export the selected sources (highlighted in yellow) by first providing a file path and name. Clicking on the <strong>Browse</strong> button next to the export file box will open a dialog where you can input a directory path and file name, i.e., the name and location where the .xml file containing the selected sources will be saved. Once you have entered a file name and path, clicking on the <strong>Export</strong> button will generate the new .xml file that can be used in OpenQuake. The name and path of the exported file will appear in the program output pane.</p></li>
 </ol>
-<div class="align-center figure" id="id21">
+<div class="align-center figure" id="id41">
 <span id="fig-r2dopenquakepane"></span><img alt="../../../../../_images/R2DOpenQuakePane.png" src="../../../../../_images/R2DOpenQuakePane.png" />
-<p class="caption"><span class="caption-number">Fig. 3.2.1 </span><span class="caption-text">OpenQuake selection pane.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.1 </span><span class="caption-text">OpenQuake selection pane.</span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="hurricane-scenario">
 <span id="hurricane-scenario-tool"></span><h2><span class="section-number">3.3. </span>Hurricane Scenario<a class="headerlink" href="#hurricane-scenario" title="Permalink to this headline">¶</a></h2>
 <p>This tool dialog is where user can enter data for a specific Hurricane and it will generate a wind field for a specific region..</p>
-<p>The <strong>Hurricane Scenario Simulation</strong>, seen in <a class="reference internal" href="#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, is an tool that calculates a wind field over a user defined grid. The application is implemented based on the method proposed by <a class="reference internal" href="HAZ.html#snaikiwu2017a" id="id3"><span>[SnaikiWu2017a]</span></a> and <a class="reference internal" href="HAZ.html#snaikiwu2017b" id="id4"><span>[SnaikiWu2017b]</span></a>. The GIS visualization window, seen at the bottom of <a class="reference internal" href="#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, is used to interactively define hurricane inputs. At a minimum, a user needs to specify a set of hurricane track points, landfall location and parameters, and a wind field grid. The individual input panes are discussed below.</p>
-<div class="align-center figure" id="id22">
+<p>The <strong>Hurricane Scenario Simulation</strong>, seen in <a class="reference internal" href="#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, is an tool that calculates a wind field over a user defined grid. The application is implemented based on the method proposed by <a class="reference internal" href="#snaikiwu2017a" id="id25"><span>[SnaikiWu2017a]</span></a> and <a class="reference internal" href="#snaikiwu2017b" id="id26"><span>[SnaikiWu2017b]</span></a>. The GIS visualization window, seen at the bottom of <a class="reference internal" href="#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, is used to interactively define hurricane inputs. At a minimum, a user needs to specify a set of hurricane track points, landfall location and parameters, and a wind field grid. The individual input panes are discussed below.</p>
+<div class="align-center figure" id="id42">
 <span id="fig-r2dhurricanemainpanel"></span><img alt="../../../../../_images/R2DHurricaneMainPanel.png" src="../../../../../_images/R2DHurricaneMainPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.1 </span><span class="caption-text">Hurricane Scenario Simulation Application.</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.1 </span><span class="caption-text">Hurricane Scenario Simulation Application.</span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Hurricane Definition</strong></p>
 <p>A user has the option to specify a hurricane track and associated landfall parameters, or select a historical hurricane from a built-in database.</p>
@@ -537,14 +956,14 @@
 <li><p><strong>Specify Hurricane Track</strong></p>
 <blockquote>
 <div><p>To manually input a hurricane track, the user needs to supply a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file with rows that contain the latitude and longitude coordinates of the points along the track. To input the hurricane track file, the user needs to specify the file path in the <strong>Path to Hurricane Track File</strong> input shown in <a class="reference internal" href="#fig-r2dhurricanetrackselectpane"><span class="std std-numref">Fig. 3.3.2</span></a>. A successfully loaded track is shown at the top of <a class="reference internal" href="#fig-r2dhurricanetrackselectpane"><span class="std std-numref">Fig. 3.3.2</span></a>. The circles represent a measurement point along the track and the arrow head shows the direction of the hurricane. Clicking on a circle will produce a dialog with the available information at that point.</p>
-<div class="align-center figure" id="id23">
+<div class="align-center figure" id="id43">
 <span id="fig-r2dhurricanetrackselectpane"></span><img alt="../../../../../_images/R2DHurricaneTrackSelectPane.png" src="../../../../../_images/R2DHurricaneTrackSelectPane.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.2 </span><span class="caption-text">Manually defined hurricane track.</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.2 </span><span class="caption-text">Manually defined hurricane track.</span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
 </div>
 <p>An example hurricane track input file is given below in  <a class="reference internal" href="#fig-r2dhurricanetrackselectexdata"><span class="std std-numref">Fig. 3.3.3</span></a>. The track data should be in temporal order, i.e., the first measurement should be in the first row of the input file.</p>
-<div class="align-center figure" id="id24">
+<div class="align-center figure" id="id44">
 <span id="fig-r2dhurricanetrackselectexdata"></span><img alt="../../../../../_images/R2DHurricaneTrackSelectExData.png" src="../../../../../_images/R2DHurricaneTrackSelectExData.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.3 </span><span class="caption-text">Example data for hurricane track input.</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.3 </span><span class="caption-text">Example data for hurricane track input.</span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
 </div>
 <p>Users also have the option to specify a terrain roughness file in the <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> format. Users need to provide the path to the terrain roughness file in the <strong>Path to Terrain Roughness File</strong> input, given in <a class="reference internal" href="#fig-r2dhurricanetrackselectpane"><span class="std std-numref">Fig. 3.3.2</span></a>. When loaded, the terrain roughness file will be visualized in the GIS window, as highlighted at the bottom of <a class="reference internal" href="#fig-r2dhurricanetrackselectpane"><span class="std std-numref">Fig. 3.3.2</span></a>. If a terrain roughness is not specified, a default value of 0.03 m is used (assuming open/flat terrain few isolated obstacles).</p>
 </div></blockquote>
@@ -552,19 +971,19 @@
 <li><p><strong>Select Hurricane from Database</strong></p>
 <blockquote>
 <div><p>The panel to select a historical hurricane is shown in <a class="reference internal" href="#fig-r2dhurricanetrackdb"><span class="std std-numref">Fig. 3.3.4</span></a>. Clicking on the <strong>Load Hurricane Database</strong> button will load the database and all of the hurricanes in the database will appear in the GIS window, as shown at the bottom of <a class="reference internal" href="#fig-r2dhurricanetrackdb"><span class="std std-numref">Fig. 3.3.4</span></a>. The database that is pre-bundled with the application is the International Best Track Archive for Climate Stewardship (IBTrACS) v04r00 database, listing storms that have occurred in the last three years. Users can modify the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> database file, e.g., update it or add their own storm information, if the same header format and file name (ibtracs.last3years.list.v04r00.csv) is retained. Users can find this file in the <code class="docutils literal notranslate"><span class="pre">Databases</span></code> folder that is in the R2D installation directory.</p>
-<div class="align-center figure" id="id25">
+<div class="align-center figure" id="id45">
 <span id="fig-r2dhurricanetrackdb"></span><img alt="../../../../../_images/R2DHurricaneTrackDB.png" src="../../../../../_images/R2DHurricaneTrackDB.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.4 </span><span class="caption-text">Hurricane selection from database.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.4 </span><span class="caption-text">Hurricane selection from database.</span><a class="headerlink" href="#id45" title="Permalink to this image">¶</a></p>
 </div>
 <p>To load a specific hurricane, a user needs to navigate to a hurricane of their choice in the GIS window and click on the hurricane to select it. The selected hurricane will be highlighted, as shown in <a class="reference internal" href="#fig-r2dhurricanetrackdb2"><span class="std std-numref">Fig. 3.3.5</span></a>, and a dialog will appear providing the hurricane track metadata. Clicking on the <strong>Select Hurricane Button</strong> in <a class="reference internal" href="#fig-r2dhurricanetrackdb2"><span class="std std-numref">Fig. 3.3.5</span></a> will finalize the selection. The selected hurricane’s metadata will appear in the box that is given in the middle of <a class="reference internal" href="#fig-r2dhurricanetrackdb"><span class="std std-numref">Fig. 3.3.4</span></a>.</p>
-<div class="align-center figure" id="id26">
+<div class="align-center figure" id="id46">
 <span id="fig-r2dhurricanetrackdb2"></span><img alt="../../../../../_images/R2DHurricaneTrackDB2.png" src="../../../../../_images/R2DHurricaneTrackDB2.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.5 </span><span class="caption-text">Selecting a hurricane from the map.</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.5 </span><span class="caption-text">Selecting a hurricane from the map.</span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
 </div>
 <p>After selecting a hurricane, a user will see the final hurricane track, similar to what is shown in <a class="reference internal" href="#fig-r2dhurricanetrackdb3"><span class="std std-numref">Fig. 3.3.6</span></a>. The circles represent a measurement point along the track. Clicking on a circle will produce a dialog with the available information at that point. The blue diamond represents the first point of hurricane landfall, i.e., the first point at which the distance to land is equal to zero. If a landfall location is found, the landfall parameters are programmatically filled in with the measurements at the landfall location. In the case where a hurricane makes landfall more than once, the user has the option to clear the initial landfall point, and select another landfall point, the procedure of which is described below. Note that if a new landfall location is selected by the user, except for the latitude and longitude which is updated programmatically, users should manually update the landfall parameters to agree with the expected parameter values at new location.</p>
-<div class="align-center figure" id="id27">
+<div class="align-center figure" id="id47">
 <span id="fig-r2dhurricanetrackdb3"></span><img alt="../../../../../_images/R2DHurricaneTrackDB3.png" src="../../../../../_images/R2DHurricaneTrackDB3.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.6 </span><span class="caption-text">Output after hurricane selection.</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.6 </span><span class="caption-text">Output after hurricane selection.</span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
@@ -586,30 +1005,38 @@
 </ul>
 </div></blockquote>
 <p>Note that if a track is selected from the database, the landfall parameters will be automatically filled in based on the first encountered landfall. The <strong>Perturbation</strong> input boxes allow the user to specify uncertainty in the parameter values.</p>
-<div class="align-center figure" id="id28">
+<div class="align-center figure" id="id48">
 <span id="fig-r2dhurricanelandfallparams"></span><img alt="../../../../../_images/R2DHurricaneLandfallParams.png" src="../../../../../_images/R2DHurricaneLandfallParams.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.7 </span><span class="caption-text">Hurricane Landfall Parameters.</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.7 </span><span class="caption-text">Hurricane Landfall Parameters.</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Specify Landfall Location</strong></p>
 <p>The hurricane landfall location is manually defined using the buttons in <a class="reference internal" href="#fig-r2dhurricanelandfallselect"><span class="std std-numref">Fig. 3.3.8</span></a>. Clicking on the <strong>Define Landfall on Map</strong> button causes a blue circle to appear in the GIS window, as seen in the righthand side of the window in <a class="reference internal" href="#fig-r2dhurricanelandfallparams"><span class="std std-numref">Fig. 3.3.7</span></a>. A user can click on and drag this circle to any location on the map. When the user is satisfied with their new landfall location, they need to click on the <strong>Select Landfall</strong> button to finalize the selection. The landfall will then appear as a blue diamond symbol in its own layer in the GIS window. If a user wants to erase an existing landfall location, they need to click on the <strong>Clear Landfall</strong> button and start over.</p>
-<div class="align-center figure" id="id29">
+<div class="align-center figure" id="id49">
 <span id="fig-r2dhurricanelandfallselect"></span><img alt="../../../../../_images/R2DHurricaneLandfallSelect.png" src="../../../../../_images/R2DHurricaneLandfallSelect.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.8 </span><span class="caption-text">Specify Hurricane Landfall.</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.8 </span><span class="caption-text">Specify Hurricane Landfall.</span><a class="headerlink" href="#id49" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Truncate Hurricane Track</strong></p>
 <p>R2D allows users to truncate hurricane tracks to save time in the wind field computations. This is also useful when a user requires only a portion of a hurricane track in their region of interest. The buttons for truncating a hurricane track are shown in <a class="reference internal" href="#fig-r2dhurricanetruncatetrack"><span class="std std-numref">Fig. 3.3.9</span></a>. Clicking on the <strong>Select Area on Map</strong> button in the figure will turn on the selection procedure. Clicking on any point in the GIS window will start the selection process. Continuing the point selection procedure by clicking elsewhere on the map will form the boundary of the selection polygon, an example of which is provided in <a class="reference internal" href="#fig-r2dhurricanetruncatetrack"><span class="std std-numref">Fig. 3.3.9</span></a>. Right-clicking anywhere on the map, or my pressing the escape key, will clear the polygon and select the points within the polygon. The selected points will be highlighted in yellow.The selection points can be cleared at any time by pressing the <strong>Clear</strong> button. Clicking on the <strong>Apply</strong> button will finalize the selection. The yellow-highlighted track points that are selected will be kept and all other points will be discarded. Note that once the <strong>Apply</strong> button is pressed, the procedure cannot be undone. An example truncated track is given in the left-hand side of the GIS window in <a class="reference internal" href="#fig-r2dhurricanetruncatetrack"><span class="std std-numref">Fig. 3.3.9</span></a>.</p>
-<div class="align-center figure" id="id30">
+<div class="align-center figure" id="id50">
 <span id="fig-r2dhurricanetruncatetrack"></span><img alt="../../../../../_images/R2DHurricaneTruncateTrack.png" src="../../../../../_images/R2DHurricaneTruncateTrack.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.9 </span><span class="caption-text">Truncate Hurricane Track.</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.9 </span><span class="caption-text">Truncate Hurricane Track.</span><a class="headerlink" href="#id50" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Specify Wind Field Grid</strong></p>
 <p>To select the wind field grid on a map, the user needs to click on the <strong>Define Grid on Map</strong> button. A new grid will appear in the GIS window, as seen in <a class="reference internal" href="#fig-r2dhurricanedefinegrid"><span class="std std-numref">Fig. 3.3.10</span></a>. A user can click and drag the <strong>Resize</strong> and <strong>Move</strong> handles, shown in <a class="reference internal" href="#fig-r2dhurricanedefinegrid"><span class="std std-numref">Fig. 3.3.10</span></a>, to resize the grid extents and to move the grid. Changing the grid discretization along the latitude and longitude directions will change the number of grid divisions on the map. Once a grid is defined on the map, the user needs to click on the <strong>Select Grid</strong> button to finalize grid selection. When grid selection is finalized, a new layer is added to the GIS widget. Shown on the right-hand side of <a class="reference internal" href="#fig-r2dhurricanedefinegrid"><span class="std std-numref">Fig. 3.3.10</span></a>, the wind field grid points are represented with a cross symbol. Clicking on the <strong>Clear Grid</strong> button will clear the existing grid, allowing for the selection of a new grid.</p>
-<div class="align-center figure" id="id31">
+<div class="align-center figure" id="id51">
 <span id="fig-r2dhurricanedefinegrid"></span><img alt="../../../../../_images/R2DHurricaneDefineGrid.png" src="../../../../../_images/R2DHurricaneDefineGrid.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.10 </span><span class="caption-text">Hurricane Wind Field Grid.</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.10 </span><span class="caption-text">Hurricane Wind Field Grid.</span><a class="headerlink" href="#id51" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Run Simulation Button</strong></p>
 <p>Shown on the right-hand side of <a class="reference internal" href="#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, the <strong>Run Simulation</strong> button starts the hurricane simulation application. The results from the simulation are in the <strong>Output Directory</strong> folder specified in R2D preferences. The final output is a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file called <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code>. The <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file contains the grid point locations and file names. Each grid point is assigned a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file containing a list of the peak wind speeds at the grid point. The <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> is post-processed and the grid points created in the <strong>Specify Wind Field Grid</strong> step will be updated with the Peak Wind Speed values that are calculated in the simulation. Clicking on a grid point will produce a popup listing the wind speeds at that point.</p>
+<dl class="citation">
+<dt class="label" id="snaikiwu2017a"><span class="brackets"><a class="fn-backref" href="#id25">SnaikiWu2017a</a></span></dt>
+<dd><p>Snaiki, R. and Wu, T. (2017a). Modeling tropical cyclone boundary layer: Height-resolving pressure and wind fields. Journal of Wind Engineering and Industrial Aerodynamics, 170, pp. 18-27.</p>
+</dd>
+<dt class="label" id="snaikiwu2017b"><span class="brackets"><a class="fn-backref" href="#id26">SnaikiWu2017b</a></span></dt>
+<dd><p>Snaiki, R. and Wu, T. (2017b). A linear height-resolving wind field model for tropical cyclone boundary layer. Journal of Wind Engineering and Industrial Aerodynamics, 171, pp. 248-260.</p>
+</dd>
+</dl>
 </div>
 <div class="section" id="user-specified-hurricane">
 <h2><span class="section-number">3.4. </span>User-specified Hurricane<a class="headerlink" href="#user-specified-hurricane" title="Permalink to this headline">¶</a></h2>
@@ -694,14 +1121,19 @@
 <li><p>The <strong>Census Block-level GIS File</strong> and <strong>American Community Survey Block Group Level GIS File</strong> box provides the file paths to the respective GIS files. These paths will be populated automatically after the download process described above completes. Alternatively, you can provide your own Census and ACS layers to join to the building inventory. Clicking on the <strong>Browse</strong> button will open a dialog where you can select the respective file.</p></li>
 <li><p>The <strong>Extract Census Data Button</strong> runs the process that extracts the Census and ACS data from the GIS files and appends that information to each asset in the copied asset layer. Users can now save the newly augmented layer by right-clicking on the layer in the layer tree and selecting the <code class="docutils literal notranslate"><span class="pre">Export-&gt;Save</span> <span class="pre">As</span></code> option.</p></li>
 </ol>
-<div class="align-center figure" id="id32">
+<div class="align-center figure" id="id52">
 <span id="fig-r2dhuapanel"></span><img alt="../../../../../_images/R2DHUAPanel.png" src="../../../../../_images/R2DHUAPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 3.5.1 </span><span class="caption-text">Census data allocation input panel.</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.5.1 </span><span class="caption-text">Census data allocation input panel.</span><a class="headerlink" href="#id52" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="brails">
-<h2><span class="section-number">3.6. </span>BRAILS<a class="headerlink" href="#brails" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="brails-buildings">
+<h2><span class="section-number">3.6. </span>BRAILS - Buildings<a class="headerlink" href="#brails-buildings" title="Permalink to this headline">¶</a></h2>
 <p>This tool dialog will create a building asset inventory from images of buildings in a region.</p>
+</div>
+<div class="section" id="brails-transportation">
+<span id="lbl-brailstransportation"></span><h2><span class="section-number">3.7. </span>BRAILS - Transportation<a class="headerlink" href="#brails-transportation" title="Permalink to this headline">¶</a></h2>
+<p>This tool dialog creates a transportation asset inventory from the US Department of Transportation’s <a class="reference external" href="https://geo.dot.gov/mapping/rest/services/NTAD/National_Bridge_Inventory/MapServer">National Bridge Inventory (NBI)</a>, the <a class="reference external" href="https://geo.dot.gov/mapping/rest/services/NTAD/National_Tunnel_Inventory/MapServer">National Tunnel Inventory (NTI)</a>, and the US Census Bureau’s <a class="reference external" href="https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Transportation/MapServer">TIGERweb roadway inventory</a>.</p>
+<p>The output of the inventory is four GeoJSON files. Each contains the asset information of the bridges, tunnels, roads, and railroads in the user-specified region. BRAILS also outputs a JSON file in the format described in <a class="reference internal" href="../../../../developer_manual/architecture/desktop/file-types/Inputs.html#lbltransportationinputoption1"><span class="std std-numref">Section 2.1.1.3</span></a>, which contains all information in the GeoJSON files.</p>
 </div>
 </div>
 
@@ -715,7 +1147,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

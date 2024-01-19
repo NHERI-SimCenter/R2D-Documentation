@@ -314,11 +314,11 @@ the app would direct you to the <strong>RES</strong> panel (<a class="reference 
 <p class="caption"><span class="caption-number">Fig. 3.8.1.9 </span><span class="caption-text">R2D RES panel.</span><a class="headerlink" href="#r2d-res" title="Permalink to this image">¶</a></p>
 </div>
 <p>For simulating the damage and loss for a large region of interest (please remember to reset the building IDs in <strong>ASD</strong>), it would be efficient to submit and run the job
-to <a class="reference external" href="https://www.designsafe-ci.org/">DesignSafe</a> on <a class="reference external" href="https://www.tacc.utexas.edu/systems/stampede2">Stampede2</a>.
+to <a class="reference external" href="https://www.designsafe-ci.org/">DesignSafe</a> on <a class="reference external" href="https://www.tacc.utexas.edu/systems/frontera">Frontera</a>.
 This can be done in R2D by clicking <strong>RUN at DesignSafe</strong> (one would need to have a valid
 <a class="reference external" href="https://www.designsafe-ci.org/account/register/">DesignSafe account</a> for login and access the computing resource).
 <a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-run-ds"><span class="std std-numref">Fig. 4.8.10</span></a> provides an example configuration to run the analysis (and please see <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/usage.html#figremjobpanel">R2D User Guide</a> for detailed descriptions).
-The individual building simulations are paralleled when being conducted on Stampede2 which accelerate the process. It is suggested for the entire building
+The individual building simulations are paralleled when being conducted on Frontera which accelerate the process. It is suggested for the entire building
 inventory in this testbed to use 15 minutes with 96 Skylake (SKX) cores (e.g., 2 nodes with 48 processors per node) to complete
 the simulation. One would receive a job failure message if the specified CPU hours are not sufficient to complete the run.
 Note that the product of node number, processor number per node, and buildings per task should be greater than the
@@ -390,7 +390,7 @@ reconstruction cost.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

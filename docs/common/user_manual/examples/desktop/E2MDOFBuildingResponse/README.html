@@ -135,6 +135,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../E9Tsunami/README.html">4.8. E9 - Tsunami</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E10SiteResponse/README.html">4.9. E10 - Site Response Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E12IstanbulRegionalSeismicRiskAnalysis/README.html">4.10. E12 - Istanbul Regional Seismic Risk Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../E14BasicHAZUSTransportation/README.html">4.11. E14 - Basic HAZUS Transportation Infrastructure</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -241,7 +242,7 @@
 </tr>
 </tbody>
 </table>
-<p>This example uses ground motions from the 2018 earthquake in Anchorage, AK, to characterize the response of buildings with an idealized MDOF building model through story-level Engineering Demand Parameters (EDP). Exploiting the refinement in EDPs, a HAZUS-based story-level assessment is employed to evaluate the performance of 510 buildings.
+<p>This example uses ground motions from the 2018 earthquake in Anchorage, AK, to characterize the response of buildings with an idealized MDOF building model through story-level Engineering Demand Parameters (EDP). Exploiting the refinement in EDPs, a HAZUS-based story-level assessment is employed to evaluate the performance of 5 buildings.
 The results presented herein are only for demonstrating the use of R2DTool and do not serve as an accurate representation of the real losses resulting from the earthquake.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002.png"><img alt="../../../../../_images/r2dt-0002.png" src="../../../../../_images/r2dt-0002.png" style="width: 400px;" /></a>
@@ -257,7 +258,7 @@ The results presented herein are only for demonstrating the use of R2DTool and d
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-GI.png"><img alt="../../../../../_images/r2dt-0002-GI.png" src="../../../../../_images/r2dt-0002-GI.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>HAZ</strong> 12 recorded ground motions cross Anchorage (from the Center for Engineering Strong Motion Data, CESMD) are used as the ground acceleration time history inputs in this example. The PGA values of these 12 records range from 0.12 g to 0.81 g.</p>
+<li><p><strong>HAZ</strong> 12 recorded ground motions across Anchorage (from the Center for Engineering Strong Motion Data, CESMD) are used as the ground acceleration time history inputs in this example. The PGA values of these 12 records range from 0.12 g to 0.81 g.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-HAZ.png"><img alt="../../../../../_images/r2dt-0002-HAZ.png" src="../../../../../_images/r2dt-0002-HAZ.png" style="width: 600px;" /></a>
 </div>
@@ -267,7 +268,7 @@ The results presented herein are only for demonstrating the use of R2DTool and d
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-ASD.png"><img alt="../../../../../_images/r2dt-0002-ASD.png" src="../../../../../_images/r2dt-0002-ASD.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbor</strong> method and the <strong>SimCenterEvent</strong> application, which are configured as show in the following figure with <strong>3</strong> samples in <strong>4</strong> neighbors, i.e., randomly sampling 5 ground motions from the nearest four stations (each station has one ground motion recording specified in the <strong>HAZ</strong>).</p>
+<li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbor</strong> method and the <strong>SimCenterEvent</strong> application, which are configured as shown in the following figure with <strong>4</strong> samples in <strong>4</strong> neighbors, i.e., randomly sampling 4 ground motions from the nearest four stations (each station has one ground motion recording specified in the <strong>HAZ</strong>).</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-HTA.png"><img alt="../../../../../_images/r2dt-0002-HTA.png" src="../../../../../_images/r2dt-0002-HTA.png" style="width: 600px;" /></a>
 </div>
@@ -282,12 +283,12 @@ The results presented herein are only for demonstrating the use of R2DTool and d
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-ANA.png"><img alt="../../../../../_images/r2dt-0002-ANA.png" src="../../../../../_images/r2dt-0002-ANA.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun</strong> backend. The <strong>HAZUS MH EQ</strong> damage and loss method is selected and configured as shown in the following figure:</p>
+<li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun3</strong> backend. The <strong>HAZUS MH EQ Story</strong> damage and loss method is selected and configured as shown in the following figure:</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-DL.png"><img alt="../../../../../_images/r2dt-0002-DL.png" src="../../../../../_images/r2dt-0002-DL.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>UQ</strong> In the <strong>UQ</strong> panel the <strong>Dakota</strong> uncertainty quantification engine is employed to carry out latin hypercube sampling (LHS) with <strong>3</strong> samples and an arbitrary seed for reproducibility.</p>
+<li><p><strong>UQ</strong> In the <strong>UQ</strong> panel the <strong>Dakota</strong> uncertainty quantification engine is employed to carry out Latin Hypercube Sampling (LHS) with <strong>10</strong> samples and an arbitrary seed for reproducibility.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-UQ.png"><img alt="../../../../../_images/r2dt-0002-UQ.png" src="../../../../../_images/r2dt-0002-UQ.png" style="width: 600px;" /></a>
 </div>
@@ -295,7 +296,7 @@ The results presented herein are only for demonstrating the use of R2DTool and d
 <li><p><strong>RV</strong></p>
 <p>The random variable panel will be left empty for this example.</p>
 </li>
-<li><p><strong>RES</strong> The analysis outputs for the selected 50 buildings are show in the figure below. The buildings are mostly likely in moderate damage states (Damage State 2 or 3 per HAZUS) with the non-structural damage would dominate the economic losses. The repair costs range from 1% to 7% of the total replacement costs, and the repair time range from 1 to 20 days.</p>
+<li><p><strong>RES</strong> The analysis outputs for the selected 50 buildings are shown in the figure below.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0002-RES.png"><img alt="../../../../../_images/r2dt-0002-RES.png" src="../../../../../_images/r2dt-0002-RES.png" style="width: 600px;" /></a>
 </div>
@@ -313,7 +314,7 @@ The results presented herein are only for demonstrating the use of R2DTool and d
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

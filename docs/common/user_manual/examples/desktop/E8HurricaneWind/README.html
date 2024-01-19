@@ -135,6 +135,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../E9Tsunami/README.html">4.8. E9 - Tsunami</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E10SiteResponse/README.html">4.9. E10 - Site Response Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E12IstanbulRegionalSeismicRiskAnalysis/README.html">4.10. E12 - Istanbul Regional Seismic Risk Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../E14BasicHAZUSTransportation/README.html">4.11. E14 - Basic HAZUS Transportation Infrastructure</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -254,10 +255,7 @@ is used along with the rulesets developed to map the inventory to HAZUS-type dam
 <p class="caption"><span class="caption-number">Fig. 4.7.1 </span><span class="caption-text">R2D GI setup.</span><a class="headerlink" href="#r2d-gi" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p>Download and unzip the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/02.%20Input:%20HAZ%20-%20Hazard%20Characterization">HurricaneLaura_MappedPWS</a>.
-Set the <strong>Event File Listing Wind Field</strong> in the <strong>HAZ</strong> panel to the “EventGrid.csv” in the unzipped “IMs” folder.
-The app would automatically load the directory (<a class="reference internal" href="../E9Tsunami/README.html#r2d-haz"><span class="std std-numref">Fig. 4.8.2</span></a>). And the <strong>Units of Event Input File</strong> should be
-“Miles per hour”.</p>
+<li><p>The <strong>Raster Defined Hazard</strong> option is used to define the peak gust wind speed field in the region.</p>
 <div class="align-center figure" id="r2d-haz">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0008-HAZ.png"><img alt="../../../../../_images/r2dt-0008-HAZ.png" src="../../../../../_images/r2dt-0008-HAZ.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.7.2 </span><span class="caption-text">R2D HAZ setup.</span><a class="headerlink" href="#r2d-haz" title="Permalink to this image">¶</a></p>
@@ -272,7 +270,7 @@ on a local machine, so it is suggested to first test with a small sample like 1-
 <p class="caption"><span class="caption-number">Fig. 4.7.3 </span><span class="caption-text">R2D ASD setup.</span><a class="headerlink" href="#r2d-asd" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p>Set the <strong>Regional Mapping</strong> and <strong>SimCenterEvent</strong> in the <strong>HTA</strong> panel (e.g., <a class="reference internal" href="../E9Tsunami/README.html#r2d-hta"><span class="std std-numref">Fig. 4.8.4</span></a>).</p>
+<li><p>Select the <strong>Site Specified</strong> option in the <strong>HTA</strong> panel (e.g., <a class="reference internal" href="../E9Tsunami/README.html#r2d-hta"><span class="std std-numref">Fig. 4.8.4</span></a>).</p>
 <div class="align-center figure" id="r2d-hta">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0008-HTA.png"><img alt="../../../../../_images/r2dt-0008-HTA.png" src="../../../../../_images/r2dt-0008-HTA.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.7.4 </span><span class="caption-text">R2D HTA setup.</span><a class="headerlink" href="#r2d-hta" title="Permalink to this image">¶</a></p>
@@ -290,10 +288,10 @@ on a local machine, so it is suggested to first test with a small sample like 1-
 <p class="caption"><span class="caption-number">Fig. 4.7.6 </span><span class="caption-text">R2D ANA setup.</span><a class="headerlink" href="#r2d-ana" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p>Set the “Damage and Loss Method” in <strong>DL</strong> panel to “HAZUS MH HU”. Download the rulset scripts from
+<li><p>Set the “Damage and Loss Method” in <strong>DL</strong> panel to “HAZUS MH HU”. Download the ruleset scripts from
 <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation/scripts">DesignSafe PRJ-3207</a>
 (under <strong>03. Input: DL - Rulesets for Asset Representation/scripts</strong> folder) and
-set the <strong>Auto populate script</strong> to “auto_HU_LA.py” (<a class="reference internal" href="../E9Tsunami/README.html#r2d-dl"><span class="std std-numref">Fig. 4.8.7</span></a>). Note please place the rulset scripts
+set the <strong>Auto populate script</strong> to “auto_HU_LA.py” (<a class="reference internal" href="../E9Tsunami/README.html#r2d-dl"><span class="std std-numref">Fig. 4.8.7</span></a>). Note please place the ruleset scripts
 in an individual folder so that the application could copy and load them later.</p>
 <div class="align-center figure" id="r2d-dl">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0008-DL.png"><img alt="../../../../../_images/r2dt-0008-DL.png" src="../../../../../_images/r2dt-0008-DL.png" style="width: 500px;" /></a>
@@ -307,14 +305,14 @@ in an individual folder so that the application could copy and load them later.<
 </div>
 </li>
 </ol>
-<p>After setting up the simulation, please click the <strong>RUN</strong> to execute the analysis. Once the simulation completed,
+<p>After setting up the simulation, please click the <strong>RUN</strong> to execute the analysis. Once the simulation is completed,
 the app would direct you to the <strong>RES</strong> panel (<a class="reference internal" href="../E9Tsunami/README.html#r2d-res"><span class="std std-numref">Fig. 4.8.9</span></a>) where you could examine and export the results.</p>
 <div class="align-center figure" id="r2d-res">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0008-RES.png"><img alt="../../../../../_images/r2dt-0008-RES.png" src="../../../../../_images/r2dt-0008-RES.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.7.9 </span><span class="caption-text">R2D RES panel.</span><a class="headerlink" href="#r2d-res" title="Permalink to this image">¶</a></p>
 </div>
 <p>For simulating the damage and loss for a large region of interest (please remember to reset the building IDs in <strong>ASD</strong>), it would be efficient to submit and run the job
-to <a class="reference external" href="https://www.designsafe-ci.org/">DesignSafe</a> on <a class="reference external" href="https://www.tacc.utexas.edu/systems/stampede2">Stampede2</a>.
+to <a class="reference external" href="https://www.designsafe-ci.org/">DesignSafe</a> on <a class="reference external" href="https://tacc.utexas.edu/systems/frontera/">Frontera</a>.
 This can be done in R2D by clicking <strong>RUN at DesignSafe</strong> (one would need to have a valid
 <a class="reference external" href="https://www.designsafe-ci.org/account/register/">DesignSafe account</a> for login and access the computing resource).
 <a class="reference internal" href="../E9Tsunami/README.html#r2d-run-ds"><span class="std std-numref">Fig. 4.8.10</span></a> provides an example configuration to run the analysis (and please see <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/usage.html#figremjobpanel">R2D User Guide</a> for detailed descriptions).
@@ -349,7 +347,7 @@ the results from this testbed as an example to discuss more details.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

@@ -279,17 +279,17 @@
 <blockquote>
 <div><div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-number">Listing 2.9.3.2.1 </span><span class="caption-text">Creating binary dataset (row-major, float point) using Matlab</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% RV and QoI are matrices with size of (nsamp x ndim) </span><span class="w"></span>
-<span class="c">% nsamp: number of samples</span><span class="w"></span>
-<span class="c">% ndim : number of RVs or QoIs</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% RV and QoI are matrices with size of (nsamp x ndim) </span>
+<span class="c">% nsamp: number of samples</span>
+<span class="c">% ndim : number of RVs or QoIs</span>
 
-<span class="n">fileID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;RV.bin&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">fwrite</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="n">RV</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;float&#39;</span><span class="p">);</span><span class="w"> </span><span class="c">% RV matrix is transposed because Matlab uses column-major binary</span><span class="w"></span>
-<span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="w"></span>
+<span class="n">fileID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;RV.bin&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span>
+<span class="nb">fwrite</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="n">RV</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;float&#39;</span><span class="p">);</span><span class="w"> </span><span class="c">% RV matrix is transposed because Matlab uses column-major binary</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
 
-<span class="n">fileID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;QoI.bin&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">fwrite</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="n">QoI</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;float&#39;</span><span class="p">);</span><span class="w"> </span><span class="c">% QoI matrix is transposed because Matlab uses column-major binary</span><span class="w"></span>
-<span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="w"></span>
+<span class="n">fileID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;QoI.bin&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span>
+<span class="nb">fwrite</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="n">QoI</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;float&#39;</span><span class="p">);</span><span class="w"> </span><span class="c">% QoI matrix is transposed because Matlab uses column-major binary</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -358,7 +358,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

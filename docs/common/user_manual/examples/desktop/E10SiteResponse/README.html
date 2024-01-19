@@ -135,6 +135,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../E9Tsunami/README.html">4.8. E9 - Tsunami</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4.9. E10 - Site Response Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E12IstanbulRegionalSeismicRiskAnalysis/README.html">4.10. E12 - Istanbul Regional Seismic Risk Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../E14BasicHAZUSTransportation/README.html">4.11. E14 - Basic HAZUS Transportation Infrastructure</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -269,7 +270,7 @@ particular assets will be included in the analysis by entering a valid range in 
 <p class="caption"><span class="caption-number">Fig. 4.9.3 </span><span class="caption-text">R2D ASD setup.</span><a class="headerlink" href="#r2d-asd" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbor</strong> method and the <strong>SimCenterEvent</strong> application, which are configured as show in the following figure with <strong>20</strong> samples in <strong>4</strong> neighbors.</p>
+<li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbor</strong> method, which is configured as shown in the following figure with <strong>4</strong> samples in <strong>4</strong> neighbors.</p>
 <div class="align-center figure" id="r2d-hta">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010-HTA.png"><img alt="../../../../../_images/r2dt-0010-HTA.png" src="../../../../../_images/r2dt-0010-HTA.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.9.4 </span><span class="caption-text">R2D HTA setup.</span><a class="headerlink" href="#r2d-hta" title="Permalink to this image">¶</a></p>
@@ -290,13 +291,13 @@ which is now primarily based on the built year of the structure.</p>
 <p class="caption"><span class="caption-number">Fig. 4.9.6 </span><span class="caption-text">R2D ANA setup.</span><a class="headerlink" href="#r2d-ana" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun</strong> backend. The <strong>HAZUS MH EQ</strong> damage and loss method is selected and configured as shown in the following figure:</p>
+<li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun3</strong> backend. The <strong>HAZUS MH EQ Story</strong> damage and loss method is selected and configured as shown in the following figure:</p>
 <div class="align-center figure" id="r2d-dl">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010-DL.png"><img alt="../../../../../_images/r2dt-0010-DL.png" src="../../../../../_images/r2dt-0010-DL.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.9.7 </span><span class="caption-text">R2D DL setup.</span><a class="headerlink" href="#r2d-dl" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p>Set the “UQ Application” in <strong>UQ</strong> panel to “None”.</p>
+<li><p>Set the “UQ Application” in <strong>UQ</strong> panel to “Dakota”.</p>
 <div class="align-center figure" id="r2d-uq">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010-UQ.png"><img alt="../../../../../_images/r2dt-0010-UQ.png" src="../../../../../_images/r2dt-0010-UQ.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.9.8 </span><span class="caption-text">R2D UQ setup.</span><a class="headerlink" href="#r2d-uq" title="Permalink to this image">¶</a></p>
@@ -310,7 +311,7 @@ the app would direct you to the <strong>RES</strong> panel (<a class="reference 
 <p class="caption"><span class="caption-number">Fig. 4.9.9 </span><span class="caption-text">R2D RES panel.</span><a class="headerlink" href="#r2d-res" title="Permalink to this image">¶</a></p>
 </div>
 <p>For simulating the damage and loss for a large region of interest (please remember to reset the building IDs in <strong>ASD</strong>), it would be efficient to submit and run the job
-to <a class="reference external" href="https://www.designsafe-ci.org/">DesignSafe</a> on <a class="reference external" href="https://www.tacc.utexas.edu/systems/stampede2">Stampede2</a>.
+to <a class="reference external" href="https://www.designsafe-ci.org/">DesignSafe</a> on on <a class="reference external" href="https://tacc.utexas.edu/systems/frontera/">Frontera</a>.
 This can be done in R2D by clicking <strong>RUN at DesignSafe</strong> (one would need to have a valid
 <a class="reference external" href="https://www.designsafe-ci.org/account/register/">DesignSafe account</a> for login and access the computing resource).
 <a class="reference internal" href="../E9Tsunami/README.html#r2d-run-ds"><span class="std std-numref">Fig. 4.8.10</span></a> provides an example configuration to run the analysis (and please see <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/usage.html#figremjobpanel">R2D User Guide</a> for detailed descriptions).
@@ -339,7 +340,7 @@ the results from this testbed as an example to discuss more details.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

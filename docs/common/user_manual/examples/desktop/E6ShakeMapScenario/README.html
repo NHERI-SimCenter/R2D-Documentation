@@ -225,7 +225,7 @@
 </tr>
 </tbody>
 </table>
-<p>This  example demonstrates HAZUS earthquake damage and loss assessment capabilities with a USGS ShakeMap as an input. Building-level Damage and Losses (D&amp;L) are calculated directly from an Intensity Measures (IM) grid for a Mw7.8 Scenario Earthquake - North San Andreas + North Coast + Peninsula + Santa Cruz Mountain scenario earthquake. Approximately 21,000 buildings are considered in the city of San Mateo, CA. The ShakeMap for this example can be downloaded <a class="reference external" href="https://earthquake.usgs.gov/scenarios/eventpage/nclegacynpsanandreassansapsasm7p8_se/shakemap/">here</a>.</p>
+<p>This example demonstrates HAZUS earthquake damage and loss assessment capabilities with a USGS ShakeMap as an input. Building-level Damage and Losses (D&amp;L) are calculated directly from an Intensity Measures (IM) grid for a Mw7.8 Scenario Earthquake - North San Andreas + North Coast + Peninsula + Santa Cruz Mountain scenario earthquake. Approximately 21,000 buildings are considered in the city of San Mateo, CA. The ShakeMap for this example can be downloaded <a class="reference external" href="https://earthquake.usgs.gov/scenarios/eventpage/nclegacynpsanandreassansapsasm7p8_se/shakemap/">here</a>.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0006.png"><img alt="../../../../../_images/r2dt-0006.png" src="../../../../../_images/r2dt-0006.png" style="width: 400px;" /></a>
 </div>
@@ -250,7 +250,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0006-ASD.png"><img alt="../../../../../_images/r2dt-0006-ASD.png" src="../../../../../_images/r2dt-0006-ASD.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbor</strong> method and the <strong>SimCenterEvent</strong> application, which are configured as show in the following figure with <strong>100</strong> samples in <strong>4</strong> neighbors, i.e., randomly sampling 5 ground motions from the nearest four stations (each station has one ground motion recording specified in the <strong>HAZ</strong>).</p>
+<li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbor</strong> method and the <strong>SimCenterEvent</strong> application, which are configured as shown in the following figure with <strong>100</strong> samples in <strong>4</strong> neighbors, i.e., randomly sampling 100 ground motions from the nearest four stations (each station has one ground motion recording specified in the <strong>HAZ</strong>).</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0006-HTA.png"><img alt="../../../../../_images/r2dt-0006-HTA.png" src="../../../../../_images/r2dt-0006-HTA.png" style="width: 600px;" /></a>
 </div>
@@ -265,7 +265,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0006-ANA.png"><img alt="../../../../../_images/r2dt-0006-ANA.png" src="../../../../../_images/r2dt-0006-ANA.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun</strong> backend. The <strong>HAZUS MH EQ</strong> damage and loss method is selected and configured as shown in the following figure:</p>
+<li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun3</strong> backend. The <strong>HAZUS MH EQ</strong> damage and loss method is selected and configured as shown in the following figure:</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0006-DL.png"><img alt="../../../../../_images/r2dt-0006-DL.png" src="../../../../../_images/r2dt-0006-DL.png" style="width: 600px;" /></a>
 </div>
@@ -278,7 +278,7 @@
 <li><p><strong>RV</strong></p>
 <p>The random variable panel will be left empty for this example.</p>
 </li>
-<li><p><strong>RES</strong> The analysis outputs for the selected buildings are show in the figure below. It is important to note that the results are based on an approximate characterization of the ground motions and preliminary buildings data that has not been curated or verified thoroughly yet. The results presented herein are only for demonstrating the use of R2DTool and do not serve as an accurate representation of the real losses resulting from the earthquake.</p>
+<li><p><strong>RES</strong> The analysis outputs for the selected buildings are shown in the figure below. It is important to note that the results are based on an approximate characterization of the ground motions and preliminary buildings data that has not been curated or verified thoroughly yet. The results presented herein are only for demonstrating the use of R2DTool and do not serve as an accurate representation of the real losses resulting from the earthquake.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0006-RES.png"><img alt="../../../../../_images/r2dt-0006-RES.png" src="../../../../../_images/r2dt-0006-RES.png" style="width: 600px;" /></a>
 </div>
@@ -296,7 +296,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

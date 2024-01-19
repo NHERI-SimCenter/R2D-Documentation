@@ -215,7 +215,7 @@
   <div class="section" id="hurricane-scenario">
 <span id="hurricane-scenario-tool"></span><h1>Hurricane Scenario<a class="headerlink" href="#hurricane-scenario" title="Permalink to this headline">¶</a></h1>
 <p>This tool dialog is where user can enter data for a specific Hurricane and it will generate a wind field for a specific region..</p>
-<p>The <strong>Hurricane Scenario Simulation</strong>, seen in <a class="reference internal" href="tools.html#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, is an tool that calculates a wind field over a user defined grid. The application is implemented based on the method proposed by <a class="reference internal" href="HAZ.html#snaikiwu2017a" id="id1"><span>[SnaikiWu2017a]</span></a> and <a class="reference internal" href="HAZ.html#snaikiwu2017b" id="id2"><span>[SnaikiWu2017b]</span></a>. The GIS visualization window, seen at the bottom of <a class="reference internal" href="tools.html#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, is used to interactively define hurricane inputs. At a minimum, a user needs to specify a set of hurricane track points, landfall location and parameters, and a wind field grid. The individual input panes are discussed below.</p>
+<p>The <strong>Hurricane Scenario Simulation</strong>, seen in <a class="reference internal" href="tools.html#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, is an tool that calculates a wind field over a user defined grid. The application is implemented based on the method proposed by <a class="reference internal" href="tools.html#snaikiwu2017a" id="id1"><span>[SnaikiWu2017a]</span></a> and <a class="reference internal" href="tools.html#snaikiwu2017b" id="id2"><span>[SnaikiWu2017b]</span></a>. The GIS visualization window, seen at the bottom of <a class="reference internal" href="tools.html#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, is used to interactively define hurricane inputs. At a minimum, a user needs to specify a set of hurricane track points, landfall location and parameters, and a wind field grid. The individual input panes are discussed below.</p>
 <div class="align-center figure" id="id3">
 <span id="fig-r2dhurricanemainpanel"></span><img alt="../../../../../_images/R2DHurricaneMainPanel.png" src="../../../../../_images/R2DHurricaneMainPanel.png" />
 <p class="caption"><span class="caption-text">Hurricane Scenario Simulation Application.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
@@ -300,6 +300,14 @@
 </div>
 <p><strong>Run Simulation Button</strong></p>
 <p>Shown on the right-hand side of <a class="reference internal" href="tools.html#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, the <strong>Run Simulation</strong> button starts the hurricane simulation application. The results from the simulation are in the <strong>Output Directory</strong> folder specified in R2D preferences. The final output is a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file called <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code>. The <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file contains the grid point locations and file names. Each grid point is assigned a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file containing a list of the peak wind speeds at the grid point. The <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> is post-processed and the grid points created in the <strong>Specify Wind Field Grid</strong> step will be updated with the Peak Wind Speed values that are calculated in the simulation. Clicking on a grid point will produce a popup listing the wind speeds at that point.</p>
+<dl class="citation">
+<dt class="label" id="snaikiwu2017a"><span class="brackets"><a class="fn-backref" href="#id1">SnaikiWu2017a</a></span></dt>
+<dd><p>Snaiki, R. and Wu, T. (2017a). Modeling tropical cyclone boundary layer: Height-resolving pressure and wind fields. Journal of Wind Engineering and Industrial Aerodynamics, 170, pp. 18-27.</p>
+</dd>
+<dt class="label" id="snaikiwu2017b"><span class="brackets"><a class="fn-backref" href="#id2">SnaikiWu2017b</a></span></dt>
+<dd><p>Snaiki, R. and Wu, T. (2017b). A linear height-resolving wind field model for tropical cyclone boundary layer. Journal of Wind Engineering and Industrial Aerodynamics, 171, pp. 248-260.</p>
+</dd>
+</dl>
 </div>
 <div class="section" id="user-specified-hurricane">
 <h1>User-specified Hurricane<a class="headerlink" href="#user-specified-hurricane" title="Permalink to this headline">¶</a></h1>
@@ -319,7 +327,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

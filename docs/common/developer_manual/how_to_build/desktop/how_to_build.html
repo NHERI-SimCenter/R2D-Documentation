@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="2. Software Architecture" href="../../architecture/desktop/architecture.html" />
-    <link rel="prev" title="1.1. Dakota Methods" href="../../../technical_manual/desktop/uqTechnical.html" />
+    <link rel="prev" title="1.4. Hazard Occurrence" href="../../../technical_manual/desktop/hazard_occurrence.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -234,12 +234,21 @@
 <div class="section" id="install-dependencies">
 <h2><span class="section-number">1.1. </span>Install Dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>First, ensure the following dependencies are installed:</p>
-<ul class="simple">
+<ul>
 <li><p><strong>C++17 compliant compiler</strong>: many of the workflow applications included use C++17 features; consequently, they may need a newer C++17 compliant compiler. For Windows users, MSVC in <a class="reference external" href="https://visualstudio.microsoft.com/vs/older-downloads/InstallDependencies">Visual Studio 2019 (Community Edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.</p></li>
 <li><p><strong>OpenSees</strong>: The workflow applications require an installation of <a class="reference external" href="http://opensees.berkeley.edu/">OpenSees</a> to carry out a structural analysis using the finite element method.</p></li>
 <li><p><strong>DAKOTA</strong>: The workflow applications require an installation of <a class="reference external" href="https://dakota.sandia.gov/">DAKOTA</a> to handle and propagate the uncertainties defined in the input files for the workflow applications.</p></li>
 <li><p><strong>Python</strong>: The workflow requires at least Python 3.7.</p></li>
-<li><p><strong>Conan</strong>: This repository uses <a class="reference external" href="https://conan.io/">Conan</a> for dependency management. Conan is a python library and can be installed using the following <a class="reference external" href="https://docs.conan.io/en/latest/installation.html">instructions</a>. Version 1.25 or later is recommended.</p></li>
+<li><p><strong>Conan</strong>: This repository uses <a class="reference external" href="https://conan.io/">Conan</a>, a python library, for dependency management. <strong>Install conan version 1.60.2</strong>, for example, through</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install conan==1.60.2</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">See the <a class="reference external" href="https://docs.conan.io/en/latest/installation.html">instructions</a> if alternative installation methods are needed</div>
+</div>
+</div></blockquote>
+</li>
 <li><p><strong>CMake</strong>: This repository uses <a class="reference external" href="https://cmake.org/download/">CMake</a> for managing the build process. Version 3.15 or later is recommended.</p></li>
 <li><p><strong>Qt</strong>: <a class="reference external" href="https://www.qt.io/download">Qt</a> is free for open source developers. Version 5.15 or later is required. Make sure to include Qt Creator in the installer.</p></li>
 </ul>
@@ -403,7 +412,7 @@ make</pre>
 </div></blockquote>
 <div class="align-center figure" id="id4">
 <span id="figpreferences"></span><img alt="../../../../_images/Preferences.png" src="../../../../_images/Preferences.png" />
-<p class="caption"><span class="caption-number">Fig. 1.4.4 </span><span class="caption-text">Preferences Dialog</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.4.10 </span><span class="caption-text">Preferences Dialog</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -418,7 +427,7 @@ make</pre>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

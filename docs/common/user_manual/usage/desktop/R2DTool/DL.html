@@ -131,7 +131,8 @@
 <li class="toctree-l2"><a class="reference internal" href="MOD.html">2.6. MOD: Asset Modeling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ANA.html">2.7. ANA: Asset Analysis</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.8. DL: Damage and Loss</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pelicun-damage-and-loss">2.8.1. Pelicun Damage and Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pelicun-damage-and-loss-for-buildings">2.8.1. Pelicun Damage and Loss for Buildings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pelicun-damage-and-loss-for-transportation-infrastructure">2.8.2. Pelicun Damage and Loss for Transportation Infrastructure</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.9. UQ: Uncertainty Quantification</a></li>
@@ -237,11 +238,12 @@
 <p>The <strong>Damage and Loss</strong> panel is where the user selects a damage and loss methodology to estimate losses over a region. The following damage and loss applications are available:</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#pelicun-damage-and-loss" id="id3">Pelicun Damage and Loss</a></p></li>
+<li><p><a class="reference internal" href="#pelicun-damage-and-loss-for-buildings" id="id3">Pelicun Damage and Loss for Buildings</a></p></li>
+<li><p><a class="reference internal" href="#pelicun-damage-and-loss-for-transportation-infrastructure" id="id4">Pelicun Damage and Loss for Transportation Infrastructure</a></p></li>
 </ul>
 </div>
-<div class="section" id="pelicun-damage-and-loss">
-<span id="lbl-dlpelicun"></span><h2><a class="toc-backref" href="#id3"><span class="section-number">2.8.1. </span>Pelicun Damage and Loss</a><a class="headerlink" href="#pelicun-damage-and-loss" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pelicun-damage-and-loss-for-buildings">
+<span id="lbl-dlbuildingpelicun"></span><h2><a class="toc-backref" href="#id3"><span class="section-number">2.8.1. </span>Pelicun Damage and Loss for Buildings</a><a class="headerlink" href="#pelicun-damage-and-loss-for-buildings" title="Permalink to this headline">¶</a></h2>
 <p>Shown in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>, the <strong>Pelicun Damage and Loss</strong> application has the following inputs:</p>
 <blockquote>
 <div><ol class="arabic">
@@ -264,7 +266,8 @@
 </dl>
 </li>
 <li><dl class="simple">
-<dt>User-provided Fragilities</dt><dd><p>The <strong>User-provided Fragilities</strong> option allows users to employ their own custom fragility functions in the damage and loss workflow. This option expects the user to provide an auto-populate script and the path to a folder containing the user-defined fragility functions, as seen below in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>.</p>
+<dt>User-provided Fragilities</dt><dd><p>The <strong>User-provided Fragilities</strong> option allows users to employ their own custom fragility functions in the damage and loss workflow. This option expects the user to provide an auto-populate script and the path to a folder containing the user-defined fragility functions, as seen below in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>.
+An example of such practice can be found in Example 9 of <a class="reference internal" href="../../../examples/desktop/examples.html#lbl-examples"><span class="std std-ref">R2D examples</span></a>.</p>
 </dd>
 </dl>
 </li>
@@ -287,6 +290,22 @@
 </div>
 <p>Additional information on Pelicun and descriptions of its output are available at <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/common/user_manual/usage/pelicun/outputs.html">Pelicun Documentation</a>.</p>
 </div>
+<div class="section" id="pelicun-damage-and-loss-for-transportation-infrastructure">
+<span id="lbl-dltransportpelicun"></span><h2><a class="toc-backref" href="#id4"><span class="section-number">2.8.2. </span>Pelicun Damage and Loss for Transportation Infrastructure</a><a class="headerlink" href="#pelicun-damage-and-loss-for-transportation-infrastructure" title="Permalink to this headline">¶</a></h2>
+<p>The Pelicun Damage and Loss for Transportation Infrastructure has the same user
+interface with buildings, as shown in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>. The <strong>damage
+and loss methodology</strong> options supported for transportation infrastructure are
+<strong>Hazus MH EQ IM</strong> and <strong>User-provided Fragilities</strong>.</p>
+<p>The <strong>Hazus MH EQ IM</strong>
+methodology implements the damage and loss model defined in
+<a class="reference external" href="https://www.fema.gov/sites/default/files/documents/fema_hazus-earthquake-model-technical-manual-5-1.pdf">Hazus Earthquake Model Technical Manual</a>.
+For bridges, <strong>Hazus MH EQ IM</strong> expects <cite>SA_0.3</cite> and <cite>SA_1.0</cite> as input for evaluating ground shaking-induced damage for bridges.
+If ground failure is enabled, permanent ground deformation (<cite>PGD_h</cite> and <cite>PGD_v</cite>)
+also need to be provided. For roadways, permanent ground deformation (<cite>PGD_h</cite> and <cite>PGD_v</cite>)
+need to be provided. For tunnels, peak ground acceleration (<cite>PGA</cite>) and permanent ground deformation (<cite>PGD_h</cite> and <cite>PGD_v</cite>) are required.</p>
+<p>The <strong>User-provided Fragilities</strong> option allows users to employ their own custom fragility functions in the damage and loss workflow. This option expects the user to provide an auto-populate script and the path to a folder containing the user-defined fragility functions, as seen below in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>.
+An example of such practice can be found in Example 9 of <a class="reference internal" href="../../../examples/desktop/examples.html#lbl-examples"><span class="std std-ref">R2D examples</span></a>.</p>
+</div>
 </div>
 
 
@@ -299,7 +318,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

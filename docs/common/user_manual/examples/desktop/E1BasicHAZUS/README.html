@@ -135,6 +135,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../E9Tsunami/README.html">4.8. E9 - Tsunami</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E10SiteResponse/README.html">4.9. E10 - Site Response Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E12IstanbulRegionalSeismicRiskAnalysis/README.html">4.10. E12 - Istanbul Regional Seismic Risk Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../E14BasicHAZUSTransportation/README.html">4.11. E14 - Basic HAZUS Transportation Infrastructure</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -241,13 +242,13 @@
 </tr>
 </tbody>
 </table>
-<p>This earthquake example demonstrates rapid analysis capabilities with the HAZUS earthquake damage and loss assessment methodology. Building-level Damage and Losses (D&amp;L) are calculated directly from Intensity Measures (IM) for 100 assets. The IM field that represents peak ground acceleration in the city of San Francisco, CA, from an Mw7.2 event on the San Andreas fault, was obtained from Probabilistic Seismic Hazard Analysis (PSHA).</p>
+<p>This earthquake example demonstrates rapid analysis capabilities with the HAZUS earthquake damage and loss assessment methodology. Building-level Damage and Losses (D&amp;L) are calculated directly from Intensity Measures (IM) for 25 assets. The IM field that represents peak ground acceleration in the city of San Francisco, CA, from an Mw7.2 event on the San Andreas fault, was obtained from Probabilistic Seismic Hazard Analysis (PSHA).</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0001.png"><img alt="../../../../../_images/r2dt-0001.png" src="../../../../../_images/r2dt-0001.png" style="width: 400px;" /></a>
 </div>
 <p>This study will be defined by sequentially traversing the input panels of the <strong>R2D</strong> interface. However, as outlined in the online user’s manual, these procedures can be serialized to and loaded immediately from a JSON file, which for this example may be found <a class="reference external" href="https://github.com/NHERI-SimCenter/R2DExamples/tree/master/E1BasicHAZUS/input.json">here</a>.</p>
 <ol class="arabic">
-<li><p><strong>VIZ</strong> The visualization panel in the following figure shows the location of the assets considered by this example.</p>
+<li><p><strong>VIZ</strong> The visualization panel in the following figure shows the location of the assets considered in this example.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-VIZ.png"><img alt="../../../../../_images/r2dt-0001-VIZ.png" src="../../../../../_images/r2dt-0001-VIZ.png" style="width: 600px;" /></a>
 </div>
@@ -267,7 +268,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-ASD.png"><img alt="../../../../../_images/r2dt-0001-ASD.png" src="../../../../../_images/r2dt-0001-ASD.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbor</strong> method and the <strong>SimCenterEvent</strong> application, which are configured as show in the following figure with <strong>3</strong> samples in <strong>4</strong> neighbors, i.e., randomly sampling 5 ground motions from the nearest four stations (each station has one ground motion recording specified in the <strong>HAZ</strong>).</p>
+<li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbor</strong> method and the <strong>SimCenterEvent</strong> application, which are configured as shown in the following figure with <strong>100</strong> samples in <strong>4</strong> neighbors, i.e., randomly sampling 100 ground motions from the nearest four stations (each station has a large number of ground motion records specified in the <strong>HAZ</strong>).</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-HTA.png"><img alt="../../../../../_images/r2dt-0001-HTA.png" src="../../../../../_images/r2dt-0001-HTA.png" style="width: 600px;" /></a>
 </div>
@@ -282,7 +283,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-ANA.png"><img alt="../../../../../_images/r2dt-0001-ANA.png" src="../../../../../_images/r2dt-0001-ANA.png" style="width: 600px;" /></a>
 </div>
 </li>
-<li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun</strong> backend. The <strong>HAZUS MH EQ IM</strong> damage and loss method is selected and configured as shown in the following figure:</p>
+<li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun3</strong> backend. The <strong>HAZUS MH EQ IM</strong> damage and loss method is selected and configured as shown in the following figure:</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0001-DL.png"><img alt="../../../../../_images/r2dt-0001-DL.png" src="../../../../../_images/r2dt-0001-DL.png" style="width: 600px;" /></a>
 </div>
@@ -308,7 +309,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

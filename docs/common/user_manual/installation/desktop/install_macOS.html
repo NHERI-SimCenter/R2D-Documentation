@@ -256,7 +256,7 @@
 </div>
 </div></blockquote>
 <p><strong>3.</strong> Once Python is installed, you need to extend it by installing a few additional packages. To facilitate this phase of the installation, we created a <strong>nheri_simcenter</strong> python package that automatically installs all other dependencies. Start a Terminal window and type the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install nheri_simcenter --upgrade
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>nheri_simcenter<span class="w"> </span>--upgrade
 </pre></div>
 </div>
 <p>Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.</p>
@@ -268,7 +268,7 @@
 <p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, the up and coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Users can modify this path by editing files that the shell program will read from everytime the program is started.</p>
 <p>When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>Dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.</p>
 <p>To find which shell program you are using when you issue commands inside the terminal window, type the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env <span class="p">|</span> grep SHELL
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>SHELL
 </pre></div>
 </div>
 <p>If the result is <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file or the <code class="docutils literal notranslate"><span class="pre">bash_profile</span></code> file. If the result is <code class="docutils literal notranslate"><span class="pre">/bin/zsh</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code>. Typically, the <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> or the <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code> file is the one to edit as by design these will invoke the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file. If in doubt, look for these files in your home directory and see which of these other installers have modified.</p>
@@ -291,7 +291,7 @@
 </div>
 <div class="section" id="download-the-application">
 <h2><span class="section-number">1.2.4. </span>Download the Application<a class="headerlink" href="#download-the-application" title="Permalink to this headline">¶</a></h2>
-<p>To download the R2D app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt">R2D Download</a> page which should resemble <code class="xref std std-numref docutils literal notranslate"><span class="pre">figDownload-R2D</span></code>. The download page contains a list of downloadable files and directories.</p>
+<p>To download the R2D app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt">R2D Download</a> page which should resemble <a class="reference internal" href="#figdownload-r2d"><span class="std std-numref">Fig. 1.2.4.1</span></a>. The download page contains a list of downloadable files and directories.</p>
 <div class="align-center figure" id="id8">
 <span id="figdownload-r2d"></span><img alt="../../../../_images/R2DDownload.png" src="../../../../_images/R2DDownload.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.4.1 </span><span class="caption-text">R2DTool download page.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
@@ -313,7 +313,7 @@
 <img alt="../../../../_images/AppleSecurity.png" src="../../../../_images/AppleSecurity.png" />
 </div>
 </div>
-<p>Once the application started, you should see the user interface shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUI-R2D</span></code>. We recommend running the example problem <span class="xref std std-ref">r2dt-0006</span> to test the application.</p>
+<p>Once the application started, you should see the user interface shown in <a class="reference internal" href="#figui-r2d"><span class="std std-numref">Fig. 1.2.5.1</span></a>. We recommend running the example problem <span class="xref std std-ref">r2dt-0006</span> to test the application.</p>
 <div class="align-center figure" id="id14">
 <span id="figui-r2d"></span><img alt="../../../../_images/R2D-Startup.png" src="../../../../_images/R2D-Startup.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.5.1 </span><span class="caption-text">R2DTool on startup.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
@@ -321,22 +321,10 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When the R2D app is running, open the app/preferences or File/Preferences and make sure that python3 appears under <strong>External Applications:Python</strong>, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of python3 that you installed can be found by opening the terminal application and executing the <strong>which python3</strong> command. Enter the path shown as a response to the Preferences panel under Python and then press the <strong>Save</strong> button.</p>
-<blockquote>
-<div><blockquote>
-<div><div class="figure align-default">
-<img alt="../../../../_images/pythonPreferences.png" src="../../../../_images/pythonPreferences.png" />
+<div class="align-center figure" id="id20">
+<span id="figui-preferences"></span><img alt="../../../../_images/pythonPreferences.png" src="../../../../_images/pythonPreferences.png" />
+<p class="caption"><span class="caption-number">Fig. 1.2.5.7 </span><span class="caption-text">Set Python Preferences.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">align</dt>
-<dd class="field-odd"><p>center</p>
-</dd>
-<dt class="field-even">figclass</dt>
-<dd class="field-even"><p>align-center</p>
-</dd>
-</dl>
-<p>Set Python Preferences.</p>
-</div></blockquote>
 </div>
 </div>
 </div>
@@ -351,7 +339,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>
