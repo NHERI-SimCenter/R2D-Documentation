@@ -216,7 +216,7 @@
   <div class="section" id="methods-in-simcenteruq-engine">
 <span id="lbluqsimtechnical"></span><h1>Methods in SimCenterUQ Engine<a class="headerlink" href="#methods-in-simcenteruq-engine" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="nataf-transformation">
-<h2>Nataf transformation<a class="headerlink" href="#nataf-transformation" title="Permalink to this headline">¶</a></h2>
+<span id="lbluqsimtechnical-nataf"></span><h2>Nataf transformation<a class="headerlink" href="#nataf-transformation" title="Permalink to this headline">¶</a></h2>
 <p>Nataf transformation is introduced to standardize the interface between UQ methods and Simulation models. Nataf converts the samples in the physical space (X-space) into the standard normal samples (U-space), <span class="math notranslate nohighlight">\(T:\rm{X} \rightarrow \rm{U}\)</span>, and vice versa, during UQ computations <a class="reference internal" href="#liu1986" id="id1"><span>[Liu1986]</span></a>. Specifically, the latter transformation, called inverse Nataf <span class="math notranslate nohighlight">\(T^{-1}\)</span>, is performed each time when UQ engine generates sample points and calls external workflow applications, so that the main UQ algorithms would face only the standard normal random variables. Among various standardization transformations, Nataf is one of the most popular methods which exploits <strong>marginal distributions</strong> of each physical variables and their <strong>correlation coefficients</strong>.</p>
 <div class="align-center figure" id="id25">
 <span id="fignataf1"></span><a class="reference internal image-reference" href="../../../_images/SimCenterNataf1.png"><img alt="../../../_images/SimCenterNataf1.png" src="../../../_images/SimCenterNataf1.png" style="width: 600px;" /></a>
@@ -235,6 +235,12 @@
 </div>
 <div class="section" id="global-sensitivity-analysis">
 <span id="lbluqsimtechnical-sensitivity"></span><h2>Global sensitivity analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="video-resources">
+<h3>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this headline">¶</a></h3>
+<p>Global Sensitivity Analysis: why, what, and how.</p>
+<div style="text-align: center;">
+   <iframe src="https://www.youtube.com/embed/JC8xN5LAo84?start=134" width="560" height="315" frameborder="5" allowfullscreen="allowfullscreen"></iframe>
+</div><p><br>Click to replay the video from <a href="javascript:window.location.reload(true);">2:14</a>. </p></div>
 <div class="section" id="variance-based-global-sensitivity-indices">
 <h3>Variance-based global sensitivity indices<a class="headerlink" href="#variance-based-global-sensitivity-indices" title="Permalink to this headline">¶</a></h3>
 <p>Global sensitivity analysis (GSA) is performed to quantify the contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. GSA helps users to understand the overall impact of different sources of uncertainties, as well as accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables.</p>

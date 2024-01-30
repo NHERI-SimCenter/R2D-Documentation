@@ -246,17 +246,17 @@
 </div>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#buildings" id="id6">Buildings</a></p>
+<li><p><a class="reference internal" href="#buildings" id="id5">Buildings</a></p>
 <ul>
-<li><p><a class="reference internal" href="#mdof-lu-building-model" id="id7">MDOF-LU Building Model</a></p></li>
-<li><p><a class="reference internal" href="#openseespy-building-model" id="id8">OpenSeesPy Building Model</a></p></li>
+<li><p><a class="reference internal" href="#mdof-lu-building-model" id="id6">MDOF-LU Building Model</a></p></li>
+<li><p><a class="reference internal" href="#openseespy-building-model" id="id7">OpenSeesPy Building Model</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#transportation-infrastructure" id="id9">Transportation Infrastructure</a></p></li>
+<li><p><a class="reference internal" href="#transportation-infrastructure" id="id8">Transportation Infrastructure</a></p></li>
 </ul>
 </div>
 <div class="section" id="buildings">
-<span id="lbl-modbuildings"></span><h2><a class="toc-backref" href="#id6"><span class="section-number">2.6.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this headline">¶</a></h2>
+<span id="lbl-modbuildings"></span><h2><a class="toc-backref" href="#id5"><span class="section-number">2.6.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this headline">¶</a></h2>
 <p>The applications available for the modeling of buildings are:</p>
 <blockquote>
 <div><ul class="simple">
@@ -265,7 +265,7 @@
 </ul>
 </div></blockquote>
 <div class="section" id="mdof-lu-building-model">
-<span id="lbl-modmdoflu"></span><h3><a class="toc-backref" href="#id7"><span class="section-number">2.6.1.1. </span>MDOF-LU Building Model</a><a class="headerlink" href="#mdof-lu-building-model" title="Permalink to this headline">¶</a></h3>
+<span id="lbl-modmdoflu"></span><h3><a class="toc-backref" href="#id6"><span class="section-number">2.6.1.1. </span>MDOF-LU Building Model</a><a class="headerlink" href="#mdof-lu-building-model" title="Permalink to this headline">¶</a></h3>
 <p>The <strong>MDOF-LU</strong> building modeling application creates a hysteretic, multi-degree of freedom (MDOF) model from the user-provided high-level building information. The implementation is a variation of work of <a class="reference internal" href="#lu2020" id="id1"><span>[Lu2020]</span></a>. The module essentially takes the building inventory information (construction year, structural type, plan area, and the number of stories) provided by the user in ASD tab, determines the design code level (e.g. high code, low code), and creates an Opensees model of each building. The following are the needed information.</p>
 <div class="align-center figure" id="fig-mdoflumodelingpanel">
 <a class="reference internal image-reference" href="../../../../../_images/R2DMDOFLUBuildingModel.png"><img alt="../../../../../_images/R2DMDOFLUBuildingModel.png" src="../../../../../_images/R2DMDOFLUBuildingModel.png" style="width: 80%;" /></a>
@@ -273,292 +273,7 @@
 <ul>
 <li><p><strong>Hazus Data File:</strong> The path to a file that contains the ruleset that maps the design code-level &amp; structural types to various structural parameters. <a class="reference download internal" download="" href="../../../../../_downloads/a3b5ec0c1377be976ae7d8fc9284583d/MDOF_Lu_HazusData.txt"><code class="xref download docutils literal notranslate"><span class="pre">Here</span></code></a> is an example file, where the columns are in the order of</p>
 <blockquote>
-<div><details class="summary-column-names-of-hazusdata-txt-click">
-<summary>Column names of HazusData.txt (click)</summary><table class="docutils align-center" id="id3">
-<caption><span class="caption-number">Table 2.6.1.1.1 </span><span class="caption-text">Column names of HazusData.txt (showing the first 10 rows for high-code)</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>id</p></th>
-<th class="head"><p>str type</p></th>
-<th class="head"><p>min #story</p></th>
-<th class="head"><p>max #story</p></th>
-<th class="head"><p>height</p></th>
-<th class="head"><p>Sy</p></th>
-<th class="head"><p>eta</p></th>
-<th class="head"><p>C</p></th>
-<th class="head"><p>gamma</p></th>
-<th class="head"><p>eta_soft</p></th>
-<th class="head"><p>alpha</p></th>
-<th class="head"><p>beta</p></th>
-<th class="head"><p>a_k</p></th>
-<th class="head"><p>omega</p></th>
-<th class="head"><p>damage1</p></th>
-<th class="head"><p>dmamge2</p></th>
-<th class="head"><p>damage3</p></th>
-<th class="head"><p>damage4</p></th>
-<th class="head"><p>T1</p></th>
-<th class="head"><p>T2</p></th>
-<th class="head"><p>hos</p></th>
-<th class="head"><p>damp</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>W1</p></td>
-<td><p>1</p></td>
-<td><p>50</p></td>
-<td><p>18.4547</p></td>
-<td><p>0.4</p></td>
-<td><p>0.0870354</p></td>
-<td><p>1000</p></td>
-<td><p>0.8</p></td>
-<td><p>-0.001</p></td>
-<td><p>3</p></td>
-<td><p>1</p></td>
-<td><p>0.1</p></td>
-<td><p>0.2</p></td>
-<td><p>0.004</p></td>
-<td><p>0.012</p></td>
-<td><p>0.04</p></td>
-<td><p>0.1</p></td>
-<td><p>0.35</p></td>
-<td><p>0.33333</p></td>
-<td><p>4.27</p></td>
-<td><p>0.1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>W2</p></td>
-<td><p>1</p></td>
-<td><p>50</p></td>
-<td><p>56.243</p></td>
-<td><p>0.4</p></td>
-<td><p>0.0794118</p></td>
-<td><p>1000</p></td>
-<td><p>0.6</p></td>
-<td><p>-0.001</p></td>
-<td><p>2.5</p></td>
-<td><p>1</p></td>
-<td><p>0.1</p></td>
-<td><p>0.2</p></td>
-<td><p>0.004</p></td>
-<td><p>0.012</p></td>
-<td><p>0.04</p></td>
-<td><p>0.1</p></td>
-<td><p>0.2</p></td>
-<td><p>0.33333</p></td>
-<td><p>3.66</p></td>
-<td><p>0.1</p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>S1L</p></td>
-<td><p>1</p></td>
-<td><p>3</p></td>
-<td><p>38.7247</p></td>
-<td><p>0.25</p></td>
-<td><p>0.0865974</p></td>
-<td><p>1000</p></td>
-<td><p>1</p></td>
-<td><p>-0.001</p></td>
-<td><p>3</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0.2</p></td>
-<td><p>0.006</p></td>
-<td><p>0.012</p></td>
-<td><p>0.03</p></td>
-<td><p>0.08</p></td>
-<td><p>0.25</p></td>
-<td><p>0.33333</p></td>
-<td><p>3.66</p></td>
-<td><p>0.05</p></td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>S1M</p></td>
-<td><p>4</p></td>
-<td><p>7</p></td>
-<td><p>51.7562</p></td>
-<td><p>0.156</p></td>
-<td><p>0.133734</p></td>
-<td><p>1000</p></td>
-<td><p>1</p></td>
-<td><p>-0.001</p></td>
-<td><p>3</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0.2</p></td>
-<td><p>0.004</p></td>
-<td><p>0.008</p></td>
-<td><p>0.02</p></td>
-<td><p>0.0533</p></td>
-<td><p>0.216</p></td>
-<td><p>0.33333</p></td>
-<td><p>3.66</p></td>
-<td><p>0.05</p></td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>S1H</p></td>
-<td><p>8</p></td>
-<td><p>50</p></td>
-<td><p>62.9659</p></td>
-<td><p>0.098</p></td>
-<td><p>0.181032</p></td>
-<td><p>1000</p></td>
-<td><p>1</p></td>
-<td><p>-0.001</p></td>
-<td><p>3</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0.2</p></td>
-<td><p>0.003</p></td>
-<td><p>0.006</p></td>
-<td><p>0.015</p></td>
-<td><p>0.04</p></td>
-<td><p>0.17</p></td>
-<td><p>0.33333</p></td>
-<td><p>3.66</p></td>
-<td><p>0.05</p></td>
-</tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p>S2L</p></td>
-<td><p>1</p></td>
-<td><p>3</p></td>
-<td><p>56.243</p></td>
-<td><p>0.4</p></td>
-<td><p>0.0670927</p></td>
-<td><p>1000</p></td>
-<td><p>0.5</p></td>
-<td><p>-0.001</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0.2</p></td>
-<td><p>0.005</p></td>
-<td><p>0.01</p></td>
-<td><p>0.03</p></td>
-<td><p>0.08</p></td>
-<td><p>0.2</p></td>
-<td><p>0.33333</p></td>
-<td><p>3.66</p></td>
-<td><p>0.05</p></td>
-</tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><p>S2M</p></td>
-<td><p>4</p></td>
-<td><p>7</p></td>
-<td><p>75.8694</p></td>
-<td><p>0.333</p></td>
-<td><p>0.103936</p></td>
-<td><p>1000</p></td>
-<td><p>0.5</p></td>
-<td><p>-0.001</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0.2</p></td>
-<td><p>0.0033</p></td>
-<td><p>0.0067</p></td>
-<td><p>0.02</p></td>
-<td><p>0.0533</p></td>
-<td><p>0.172</p></td>
-<td><p>0.33333</p></td>
-<td><p>3.66</p></td>
-<td><p>0.05</p></td>
-</tr>
-<tr class="row-odd"><td><p>8</p></td>
-<td><p>S2H</p></td>
-<td><p>8</p></td>
-<td><p>50</p></td>
-<td><p>85.0452</p></td>
-<td><p>0.254</p></td>
-<td><p>0.142936</p></td>
-<td><p>1000</p></td>
-<td><p>0.5</p></td>
-<td><p>-0.001</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0.2</p></td>
-<td><p>0.0025</p></td>
-<td><p>0.005</p></td>
-<td><p>0.015</p></td>
-<td><p>0.04</p></td>
-<td><p>0.136154</p></td>
-<td><p>0.33333</p></td>
-<td><p>3.66</p></td>
-<td><p>0.05</p></td>
-</tr>
-<tr class="row-even"><td><p>9</p></td>
-<td><p>S3</p></td>
-<td><p>1</p></td>
-<td><p>50</p></td>
-<td><p>14.0607</p></td>
-<td><p>0.4</p></td>
-<td><p>0.0670927</p></td>
-<td><p>1000</p></td>
-<td><p>1</p></td>
-<td><p>-0.001</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0.2</p></td>
-<td><p>0.004</p></td>
-<td><p>0.008</p></td>
-<td><p>0.024</p></td>
-<td><p>0.07</p></td>
-<td><p>0.4</p></td>
-<td><p>0.33333</p></td>
-<td><p>4.57</p></td>
-<td><p>0.05</p></td>
-</tr>
-<tr class="row-odd"><td><p>10</p></td>
-<td><p>S4L</p></td>
-<td><p>1</p></td>
-<td><p>3</p></td>
-<td><p>74.5959</p></td>
-<td><p>0.32</p></td>
-<td><p>0.0727412</p></td>
-<td><p>1000</p></td>
-<td><p>0.5</p></td>
-<td><p>-0.001</p></td>
-<td><p>2.25</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0.2</p></td>
-<td><p>0.004</p></td>
-<td><p>0.008</p></td>
-<td><p>0.024</p></td>
-<td><p>0.07</p></td>
-<td><p>0.175</p></td>
-<td><p>0.33333</p></td>
-<td><p>3.66</p></td>
-<td><p>0.05</p></td>
-</tr>
-</tbody>
-</table>
-</details></div></blockquote>
+<div></div></blockquote>
 <p>See <a class="reference internal" href="#fig-mdoflumodelinghys"><span class="std std-numref">Fig. 2.6.1.1.1</span></a> for the parameter definitions. Note that not all the parameters are being used.</p>
 </li>
 <li><p><strong>Std deviation Stiffness:</strong> The standard deviation of lateral stiffness of the building model. The randomness will be applied by sampling a multiplication factor with the specified standard deviation and mean of 1. The factor is sampled only once per structure and will be applied to all stories.</p></li>
@@ -567,228 +282,11 @@
 </ul>
 <p>Once the analysis is done, the estimated structural parameters are written in <code class="docutils literal notranslate"><span class="pre">SAM.json</span></code> and the corresponding opensees model is written in <code class="docutils literal notranslate"><span class="pre">example.tcl</span></code> (with  <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Hysteretic_Material">uniaxialMaterial Hysteretic</a> material model) for the downstream analysis. Both files can be found in the local working directory.</p>
 <blockquote>
-<div><details class="summary-example-of-sam-json-click">
-<summary>Example of SAM.json (click)</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Properties&quot;</span><span class="p">:</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;dampingRatio&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09956333887469665</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;uniaxialMaterials&quot;</span><span class="p">:</span>
-<span class="w">        </span><span class="p">[</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;shear&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;K0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">61532397.052015901</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;Sy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2110124.6849974156</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;eta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.087035399999999999</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;C&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1000.0</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;gamma&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.80000000000000004</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;alpha&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;beta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;omega&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.20000000000000001</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;eta_soft&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.001</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;a_k&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.10000000000000001</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;shear&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;K0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">61532397.052015901</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;Sy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1406749.7899982773</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;eta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.087035399999999999</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;C&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1000.0</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;gamma&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.80000000000000004</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;alpha&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;beta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;omega&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.20000000000000001</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;eta_soft&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.001</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;a_k&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.10000000000000001</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">]</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;Geometry&quot;</span><span class="p">:</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;nodes&quot;</span><span class="p">:</span>
-<span class="w">        </span><span class="p">[</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;crd&quot;</span><span class="p">:</span>
-<span class="w">                </span><span class="p">[</span>
-<span class="w">                    </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">                    </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">                    </span><span class="mf">0.0</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;ndf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;constraints&quot;</span><span class="p">:</span>
-<span class="w">                </span><span class="p">[</span>
-<span class="w">                    </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">1</span>
-<span class="w">                </span><span class="p">]</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;mass&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">284190.39936000004</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;crd&quot;</span><span class="p">:</span>
-<span class="w">                </span><span class="p">[</span>
-<span class="w">                    </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">                    </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">                    </span><span class="mf">3.6000000000000001</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;ndf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;constraints&quot;</span><span class="p">:</span>
-<span class="w">                </span><span class="p">[</span>
-<span class="w">                    </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">1</span>
-<span class="w">                </span><span class="p">]</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;mass&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">284190.39936000004</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;crd&quot;</span><span class="p">:</span>
-<span class="w">                </span><span class="p">[</span>
-<span class="w">                    </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">                    </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">                    </span><span class="mf">7.2000000000000002</span>
-<span class="w">                </span><span class="p">],</span>
-<span class="w">                </span><span class="nt">&quot;ndf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;constraints&quot;</span><span class="p">:</span>
-<span class="w">                </span><span class="p">[</span>
-<span class="w">                    </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">1</span>
-<span class="w">                </span><span class="p">]</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">],</span>
-<span class="w">        </span><span class="nt">&quot;elements&quot;</span><span class="p">:</span>
-<span class="w">        </span><span class="p">[</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;shear_beam2d&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;uniaxial_material&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;nodes&quot;</span><span class="p">:</span>
-<span class="w">                </span><span class="p">[</span>
-<span class="w">                    </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">2</span>
-<span class="w">                </span><span class="p">]</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;shear_beam2d&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;uniaxial_material&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;nodes&quot;</span><span class="p">:</span>
-<span class="w">                </span><span class="p">[</span>
-<span class="w">                    </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">                    </span><span class="mi">3</span>
-<span class="w">                </span><span class="p">]</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">]</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;NodeMapping&quot;</span><span class="p">:</span>
-<span class="w">    </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;units&quot;</span><span class="p">:</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;force&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kN&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;length&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;m&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sec&quot;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</details><details class="summary-example-of-opensees-tcl-click">
-<summary>Example of opensees.tcl (click)</summary><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="nv">model</span><span class="w"> </span>BasicBuilder<span class="w"> </span><span class="o">-</span>ndm<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span>ndf<span class="w"> </span><span class="mi">6</span>
-</span><span class="hll"><span class="nv">node</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span>
-</span><span class="hll">fix<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>
-</span><span class="hll">node<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mf">3.6</span><span class="w"> </span><span class="o">-</span>mass<span class="w"> </span><span class="mi">284190</span><span class="w"> </span><span class="mi">284190</span><span class="w">  </span><span class="mf">0.0</span><span class="w">  </span><span class="mf">0.0</span><span class="w">  </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">2.8419</span>e-05<span class="w"> </span>
-</span><span class="hll">fix<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>
-</span><span class="hll">node<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mf">7.2</span><span class="w"> </span><span class="o">-</span>mass<span class="w"> </span><span class="mi">284190</span><span class="w"> </span><span class="mi">284190</span><span class="w">  </span><span class="mf">0.0</span><span class="w">  </span><span class="mf">0.0</span><span class="w">  </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">2.8419</span>e-05<span class="w"> </span>
-</span><span class="hll">fix<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>
-</span><span class="hll">uniaxialMaterial<span class="w"> </span>Hysteretic<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">2.11012</span>e<span class="o">+</span><span class="mo">06</span><span class="w"> </span><span class="mf">0.0342929</span><span class="w"> </span><span class="mf">6.33037</span>e<span class="o">+</span><span class="mo">06</span><span class="w"> </span><span class="mf">0.822315</span><span class="w"> </span><span class="mf">6.33037</span>e<span class="o">+</span><span class="mo">06</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="mf">2.11012</span>e<span class="o">+</span><span class="mo">06</span><span class="w"> </span><span class="o">-</span><span class="mf">0.0342929</span><span class="w"> </span><span class="o">-</span><span class="mf">6.33037</span>e<span class="o">+</span><span class="mo">06</span><span class="w"> </span><span class="o">-</span><span class="mf">0.822315</span><span class="w"> </span><span class="o">-</span><span class="mf">6.33037</span>e<span class="o">+</span><span class="mo">06</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mf">0.1</span>
-</span><span class="hll"><span class="nv">uniaxialMaterial</span><span class="w"> </span>Hysteretic<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mf">1.40675</span>e<span class="o">+</span><span class="mo">06</span><span class="w"> </span><span class="mf">0.0228619</span><span class="w"> </span><span class="mf">4.22025</span>e<span class="o">+</span><span class="mo">06</span><span class="w"> </span><span class="mf">0.54821</span><span class="w"> </span><span class="mf">4.22025</span>e<span class="o">+</span><span class="mo">06</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="mf">1.40675</span>e<span class="o">+</span><span class="mo">06</span><span class="w"> </span><span class="o">-</span><span class="mf">0.0228619</span><span class="w"> </span><span class="o">-</span><span class="mf">4.22025</span>e<span class="o">+</span><span class="mo">06</span><span class="w"> </span><span class="o">-</span><span class="mf">0.54821</span><span class="w"> </span><span class="o">-</span><span class="mf">4.22025</span>e<span class="o">+</span><span class="mo">06</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mf">0.1</span>
-</span><span class="hll"><span class="nv">element</span><span class="w"> </span>zeroLength<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>mat<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>dir<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span>
-</span><span class="hll"><span class="nv">element</span><span class="w"> </span>zeroLength<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span>mat<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>dir<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span>
-</span><span class="nv">loadConst</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="mf">0.0</span>
-<span class="c">#timeSeries Path 101 -dt 0.005 -factor [expr 1 * 1 * 1 ] -values { -1.46509e-05 8.24738e-06 -2.26001e-05 1.46955e-05 -2.63045e-05 ..... -3.42224e-05  }</span>
-<span class="c">#timeSeries Path 102 -dt 0.005 -factor [expr 1 * 1 * 1 ] -values { 7.15223e-06 -2.4271e-05 1.94678e-05 -3.62861e-05 2.96503e-05 ...... -0.000675427  }</span>
-<span class="nv">pattern</span><span class="w"> </span>UniformExcitation<span class="w"> </span><span class="mi">101</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>fact<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>accel<span class="w"> </span><span class="mi">101</span>
-<span class="k">set</span><span class="w"> </span>numStep<span class="w"> </span><span class="mi">60000</span>
-<span class="k">set</span><span class="w"> </span>dt<span class="w"> </span><span class="mf">0.005</span>
-<span class="nv">pattern</span><span class="w"> </span>UniformExcitation<span class="w"> </span><span class="mi">102</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>fact<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>accel<span class="w"> </span><span class="mi">102</span>
-<span class="k">set</span><span class="w"> </span>numStep<span class="w"> </span><span class="mi">60000</span>
-<span class="k">set</span><span class="w"> </span>dt<span class="w"> </span><span class="mf">0.005</span>
-<span class="k">set</span><span class="w"> </span>numberOfStories<span class="w"> </span><span class="mi">2</span>
-<span class="nv">recorder</span><span class="w"> </span>EnvelopeNode<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="mi">1</span><span class="o">-</span>AIM.json0.max_abs_acceleration.response.0.out<span class="w"> </span><span class="o">-</span>timeSeries<span class="w"> </span><span class="mi">101</span><span class="w"> </span><span class="mi">102</span><span class="w">  </span><span class="o">-</span>node<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span>accel
-<span class="nv">recorder</span><span class="w"> </span>EnvelopeNode<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="mi">1</span><span class="o">-</span>AIM.json0.max_abs_acceleration.response.1.out<span class="w"> </span><span class="o">-</span>timeSeries<span class="w"> </span><span class="mi">101</span><span class="w"> </span><span class="mi">102</span><span class="w">  </span><span class="o">-</span>node<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span>accel
-<span class="nv">recorder</span><span class="w"> </span>EnvelopeNode<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="mi">1</span><span class="o">-</span>AIM.json0.max_rel_disp.response.1.out<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span>disp
-<span class="nv">recorder</span><span class="w"> </span>EnvelopeDrift<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="mi">1</span><span class="o">-</span>AIM.json0.max_drift.response.0.1.1.out<span class="w"> </span><span class="o">-</span>iNode<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>jNode<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>perpDirn<span class="w"> </span><span class="mi">3</span>
-<span class="nv">recorder</span><span class="w"> </span>EnvelopeDrift<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="mi">1</span><span class="o">-</span>AIM.json0.max_drift.response.0.1.2.out<span class="w"> </span><span class="o">-</span>iNode<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>jNode<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>perpDirn<span class="w"> </span><span class="mi">3</span>
-<span class="nv">recorder</span><span class="w"> </span>EnvelopeNode<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="mi">1</span><span class="o">-</span>AIM.json0.max_abs_acceleration.response.2.out<span class="w"> </span><span class="o">-</span>timeSeries<span class="w"> </span><span class="mi">101</span><span class="w"> </span><span class="mi">102</span><span class="w">  </span><span class="o">-</span>node<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span>accel
-<span class="nv">recorder</span><span class="w"> </span>EnvelopeNode<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="mi">1</span><span class="o">-</span>AIM.json0.max_rel_disp.response.2.out<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span>disp
-<span class="nv">recorder</span><span class="w"> </span>EnvelopeDrift<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="mi">1</span><span class="o">-</span>AIM.json0.max_drift.response.1.2.1.out<span class="w"> </span><span class="o">-</span>iNode<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>jNode<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>perpDirn<span class="w"> </span><span class="mi">3</span>
-<span class="nv">recorder</span><span class="w"> </span>EnvelopeDrift<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="mi">1</span><span class="o">-</span>AIM.json0.max_drift.response.1.2.2.out<span class="w"> </span><span class="o">-</span>iNode<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>jNode<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>perpDirn<span class="w"> </span><span class="mi">3</span>
-<span class="nv">recorder</span><span class="w"> </span>EnvelopeDrift<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="mi">1</span><span class="o">-</span>AIM.json0.max_roof_drift.response.0.2.1.out<span class="w"> </span><span class="o">-</span>iNode<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>jNode<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>perpDirn<span class="w"> </span><span class="mi">3</span>
-<span class="nv">recorder</span><span class="w"> </span>EnvelopeDrift<span class="w"> </span><span class="o">-</span>file<span class="w"> </span><span class="mi">1</span><span class="o">-</span>AIM.json0.max_roof_drift.response.0.2.2.out<span class="w"> </span><span class="o">-</span>iNode<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span>jNode<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>perpDirn<span class="w"> </span><span class="mi">3</span>
-
-<span class="c"># Perform the analysis</span>
-<span class="nv">numberer</span><span class="w"> </span>RCM
-<span class="nv">constraints</span><span class="w"> </span>Transformation
-<span class="nv">system</span><span class="w"> </span>Umfpack
-<span class="nv">integrator</span><span class="w"> </span>Newmark<span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.25</span>
-<span class="nv">test</span><span class="w"> </span>NormUnbalance<span class="w"> </span><span class="mf">1.0</span>e-2<span class="w"> </span><span class="mi">10</span><span class="w"> </span>
-algorithm<span class="w"> </span>Newton
-<span class="nv">analysis</span><span class="w"> </span>Transient<span class="w"> </span><span class="o">-</span>numSubLevels<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>numSubSteps<span class="w"> </span><span class="mi">10</span>
-<span class="k">set</span><span class="w"> </span>xDamp<span class="w"> </span><span class="mf">0.0995633</span><span class="k">;</span>
-<span class="k">set</span><span class="w"> </span>lambdaN<span class="w"> </span><span class="k">[</span><span class="nv">eigen</span><span class="w"> </span><span class="mi">3</span><span class="k">];</span>
-<span class="k">set</span><span class="w"> </span>lambdaI<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$lambdaN</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="k">]];</span>
-<span class="k">set</span><span class="w"> </span>lambdaJ<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$lambdaN</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="k">]];</span>
-<span class="k">set</span><span class="w"> </span>lambda1<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$lambdaN</span><span class="w"> </span><span class="mi">0</span><span class="k">]</span>
-<span class="k">set</span><span class="w"> </span>omega1<span class="w"> </span><span class="k">[expr</span><span class="w"> </span>pow<span class="k">(</span><span class="nv">$lambda1</span>,0.5<span class="k">)];</span>
-<span class="k">set</span><span class="w"> </span>omegaI<span class="w"> </span><span class="k">[expr</span><span class="w"> </span>pow<span class="k">(</span><span class="nv">$lambdaI</span>,0.5<span class="k">)];</span>
-<span class="k">set</span><span class="w"> </span>omegaJ<span class="w"> </span><span class="k">[expr</span><span class="w"> </span>pow<span class="k">(</span><span class="nv">$lambdaJ</span>,0.5<span class="k">)];</span>
-<span class="k">set</span><span class="w"> </span>alphaM<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$xDamp</span><span class="o">*</span><span class="k">(</span><span class="nv">2</span><span class="o">*</span><span class="nv">$omegaI</span><span class="o">*</span><span class="nv">$omegaJ</span><span class="k">)</span><span class="o">/</span><span class="k">(</span><span class="nv">$omegaI</span><span class="o">+</span><span class="nv">$omegaJ</span><span class="k">)];</span>
-<span class="k">set</span><span class="w"> </span>betaKinit<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">*</span><span class="mf">2.0</span><span class="o">*</span><span class="nv">$xDamp</span><span class="o">/</span><span class="k">(</span><span class="nv">$omegaI</span><span class="o">+</span><span class="nv">$omegaJ</span><span class="k">)];</span>
-<span class="k">set</span><span class="w"> </span>betaKcomm<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">*</span><span class="mf">2.0</span><span class="o">*</span><span class="nv">$xDamp</span><span class="o">/</span><span class="k">(</span><span class="nv">$omegaI</span><span class="o">+</span><span class="nv">$omegaJ</span><span class="k">)];</span>
-<span class="k">set</span><span class="w"> </span>betaKcurr<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="mf">2.0</span><span class="o">*</span><span class="nv">$xDamp</span><span class="o">/</span><span class="k">(</span><span class="nv">$omegaI</span><span class="o">+</span><span class="nv">$omegaJ</span><span class="k">)];</span>
-<span class="nv">rayleigh</span><span class="w"> </span><span class="nv">$alphaM</span><span class="w"> </span><span class="nv">$betaKcurr</span><span class="w"> </span><span class="nv">$betaKinit</span><span class="w"> </span><span class="nv">$betaKcomm</span><span class="k">;</span>
-<span class="k">set</span><span class="w"> </span>lambdaN<span class="w"> </span><span class="k">[</span><span class="nv">eigen</span><span class="w"> </span><span class="mi">1</span><span class="k">];</span>
-<span class="k">set</span><span class="w"> </span>lambda1<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$lambdaN</span><span class="w"> </span><span class="mi">0</span><span class="k">]</span>
-<span class="k">set</span><span class="w"> </span>T1<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="mf">3.14159</span><span class="o">/</span><span class="nv">$lambda1</span><span class="k">]</span>
-<span class="k">set</span><span class="w"> </span>dTana<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$T1</span><span class="o">/</span><span class="mi">20</span>.<span class="k">]</span>
-<span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="nv">$dt</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">$dTana</span><span class="k">}</span><span class="w"> </span><span class="k">{set</span><span class="w"> </span>dTana<span class="w"> </span><span class="nv">$dt</span><span class="k">}</span>
-<span class="nv">analyze</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span>int<span class="k">(</span><span class="nv">$numStep</span><span class="o">*</span><span class="nv">$dt</span><span class="o">/</span><span class="nv">$dTana</span><span class="k">)]</span><span class="w"> </span><span class="nv">$dTana</span><span class="w"> </span>
-remove<span class="w"> </span>recorders<span class="w"> </span>
-</pre></div>
-</div>
-</details></div></blockquote>
+<div></div></blockquote>
 <p>where the keys of <code class="docutils literal notranslate"><span class="pre">SAM.json</span></code> are defined as follows:</p>
-<div class="align-center figure" id="id4">
+<div class="align-center figure" id="id3">
 <span id="fig-mdoflumodelinghys"></span><a class="reference internal image-reference" href="../../../../../_images/R2DMDOFLU_Hysteresis.png"><img alt="../../../../../_images/R2DMDOFLU_Hysteresis.png" src="../../../../../_images/R2DMDOFLU_Hysteresis.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.6.1.1.1 </span><span class="caption-text">MDOF-LU Building model.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.6.1.1.1 </span><span class="caption-text">MDOF-LU Building model.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -801,7 +299,7 @@ remove<span class="w"> </span>recorders<span class="w"> </span>
 </dl>
 </div>
 <div class="section" id="openseespy-building-model">
-<h3><a class="toc-backref" href="#id8"><span class="section-number">2.6.1.2. </span>OpenSeesPy Building Model</a><a class="headerlink" href="#openseespy-building-model" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7"><span class="section-number">2.6.1.2. </span>OpenSeesPy Building Model</a><a class="headerlink" href="#openseespy-building-model" title="Permalink to this headline">¶</a></h3>
 <p>The <strong>OpenSeesPy</strong> building modeling application creates an OpenSeesPy structural model from a user-defined Python script. The input panel, shown in <a class="reference internal" href="#fig-r2dopenseespybuildingmodel"><span class="std std-numref">Fig. 2.6.1.2.1</span></a>, has the following inputs:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -811,14 +309,14 @@ remove<span class="w"> </span>recorders<span class="w"> </span>
 <li><p><strong>Degrees-of-Freedom at Node:</strong> Number of degrees-of-freedom at each node.</p></li>
 </ol>
 </div></blockquote>
-<div class="align-center figure" id="id5">
+<div class="align-center figure" id="id4">
 <span id="fig-r2dopenseespybuildingmodel"></span><img alt="../../../../../_images/R2DOpenSeesPyBuildingModel.png" src="../../../../../_images/R2DOpenSeesPyBuildingModel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.1.2.1 </span><span class="caption-text">OpenSeesPy Building model input panel.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.6.1.2.1 </span><span class="caption-text">OpenSeesPy Building model input panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
 <div class="section" id="transportation-infrastructure">
-<span id="lbl-modtransport"></span><h2><a class="toc-backref" href="#id9"><span class="section-number">2.6.2. </span>Transportation Infrastructure</a><a class="headerlink" href="#transportation-infrastructure" title="Permalink to this headline">¶</a></h2>
+<span id="lbl-modtransport"></span><h2><a class="toc-backref" href="#id8"><span class="section-number">2.6.2. </span>Transportation Infrastructure</a><a class="headerlink" href="#transportation-infrastructure" title="Permalink to this headline">¶</a></h2>
 <p>Only the Intensity Measure as Engineering Demand Parameter (<strong>IMasEDP</strong>) type of analysis is supported for transportation infrastructure analysis now. The asset models should be <strong>None</strong> for <strong>IMasEDP</strong> analyses.</p>
 </div>
 </div>
