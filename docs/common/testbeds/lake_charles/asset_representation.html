@@ -40,6 +40,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -239,7 +240,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="asset-representation">
-<span id="lbl-testbed-lc-asset-representation"></span><h1><span class="section-number">3.4. </span>Asset Representation<a class="headerlink" href="#asset-representation" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-testbed-lc-asset-representation"></span><h1><span class="section-number">3.4. </span>Asset Representation<a class="headerlink" href="#asset-representation" title="Permalink to this heading">¶</a></h1>
 <p>This section discusses the translation of asset descriptions into representations
 of structures suitable for simulation within workflow, in this case consistent with
 the HAZUS description of building classes and associated attributes, which becomes
@@ -262,7 +263,7 @@ This ensures that every asset receives a HAZUS building class and related attrib
 regardless of data sparsity. The sections below detail the ruleset development,
 closing with a table linking the relevant PDFs from DesignSafe and Python scripts from GitHub.</p>
 <div class="section" id="building-classifications">
-<span id="lbl-testbed-lc-asset-representation-building-classification"></span><h2><span class="section-number">3.4.1. </span>Building Classifications<a class="headerlink" href="#building-classifications" title="Permalink to this headline">¶</a></h2>
+<span id="lbl-testbed-lc-asset-representation-building-classification"></span><h2><span class="section-number">3.4.1. </span>Building Classifications<a class="headerlink" href="#building-classifications" title="Permalink to this heading">¶</a></h2>
 <p>HAZUS classifies buildings based on a more nuanced interpretation of Occupancy Class
 (see building inventory field <strong>OccupancyClass</strong>) based on other attributes of relevance
 for a given hazard type.</p>
@@ -330,7 +331,7 @@ later in <a class="reference internal" href="#addinfo-ruleset"><span class="std 
 </table>
 </div>
 <div class="section" id="building-attributes">
-<h2><span class="section-number">3.4.2. </span>Building Attributes<a class="headerlink" href="#building-attributes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.2. </span>Building Attributes<a class="headerlink" href="#building-attributes" title="Permalink to this heading">¶</a></h2>
 <p>Within each of these building classes, e.g., wood single-family homes 1-2+ stories, the HAZUS Hurricane
 Technical Manual (<a class="reference internal" href="uncertainty_quantification.html#fema21" id="id1"><span>[FEMA21]</span></a>) further differentiates buildings based on asset attributes and the hazard type
 (e.g., wind vs. flood) for the purpose of loss estimation. These attributes define key features of the
@@ -440,7 +441,7 @@ assigned in the <a class="reference external" href="https://nheri-simcenter.gith
 in this testbed. See the <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_representation.html">Atlantic County, NJ testbed Asset Representation</a>, the source of these rulesets,
 for additional rulesets guiding attribute assignments for other building classes and hazards.</p>
 <div class="section" id="wind-loss-attributes-for-wood-buildings">
-<h3>Wind Loss Attributes for Wood Buildings<a class="headerlink" href="#wind-loss-attributes-for-wood-buildings" title="Permalink to this headline">¶</a></h3>
+<h3>Wind Loss Attributes for Wood Buildings<a class="headerlink" href="#wind-loss-attributes-for-wood-buildings" title="Permalink to this heading">¶</a></h3>
 <p>The wind loss model in HAZUS classifies wooden buildings into five building classes:</p>
 <ol class="arabic simple">
 <li><p>two for single family homes (WSF1 and WSF2) and</p></li>

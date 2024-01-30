@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -213,7 +214,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="hurricane-scenario">
-<span id="hurricane-scenario-tool"></span><h1>Hurricane Scenario<a class="headerlink" href="#hurricane-scenario" title="Permalink to this headline">¶</a></h1>
+<span id="hurricane-scenario-tool"></span><h1>Hurricane Scenario<a class="headerlink" href="#hurricane-scenario" title="Permalink to this heading">¶</a></h1>
 <p>This tool dialog is where user can enter data for a specific Hurricane and it will generate a wind field for a specific region..</p>
 <p>The <strong>Hurricane Scenario Simulation</strong>, seen in <a class="reference internal" href="tools.html#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, is an tool that calculates a wind field over a user defined grid. The application is implemented based on the method proposed by <a class="reference internal" href="tools.html#snaikiwu2017a" id="id1"><span>[SnaikiWu2017a]</span></a> and <a class="reference internal" href="tools.html#snaikiwu2017b" id="id2"><span>[SnaikiWu2017b]</span></a>. The GIS visualization window, seen at the bottom of <a class="reference internal" href="tools.html#fig-r2dhurricanemainpanel"><span class="std std-numref">Fig. 3.3.1</span></a>, is used to interactively define hurricane inputs. At a minimum, a user needs to specify a set of hurricane track points, landfall location and parameters, and a wind field grid. The individual input panes are discussed below.</p>
 <div class="align-center figure" id="id3">
@@ -310,7 +311,7 @@
 </dl>
 </div>
 <div class="section" id="user-specified-hurricane">
-<h1>User-specified Hurricane<a class="headerlink" href="#user-specified-hurricane" title="Permalink to this headline">¶</a></h1>
+<h1>User-specified Hurricane<a class="headerlink" href="#user-specified-hurricane" title="Permalink to this heading">¶</a></h1>
 <p>The <strong>User-specified Hurricane</strong> application loads the results of a <strong>Hurricane Scenario Simulation</strong> that was shown previously. The <strong>User-specified Hurricanes</strong> application input pane is given in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-R2DUserSelectWindField</span></code>. As seen in the figure, the user is required to input the file path to the <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file. If the wind and/or inundation field stations are not in the same folder as the <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file, then the user needs to input the directory path to the folder containing the wind and/or inundation field station files. The user also needs to specify the units of the intensity measure field.</p>
 <div class="align-center figure" id="fig-r2duserselectwindfield">
 <img alt="../../../../../_images/R2DUserSelectWindField.png" src="../../../../../_images/R2DUserSelectWindField.png" />

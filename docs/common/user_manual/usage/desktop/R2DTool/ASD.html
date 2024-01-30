@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -248,7 +249,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="asd-asset-definition">
-<h1><span class="section-number">2.4. </span>ASD: Asset Definition<a class="headerlink" href="#asd-asset-definition" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.4. </span>ASD: Asset Definition<a class="headerlink" href="#asd-asset-definition" title="Permalink to this heading">¶</a></h1>
 <p>In this panel the user can import the databases of different asset classes. The user can select the type of asset from the <strong>Asset Selection Ribbon</strong>, e.g., Buildings and Gas Network, as shown on the left-hand side of <a class="reference internal" href="#fig-buildinginputpanel"><span class="std std-numref">Fig. 2.4.1.1.2</span></a>. The <strong>Asset Selection Ribbon</strong> appears when more than one type of asset is selected in the <strong>GI: General Information</strong> panel. Moreover, only the assets that are checked in the <strong>GI: General Information</strong> panel will appear in the <strong>Asset Selection Ribbon</strong>. As the user switches between assets, the main panel changes to reflect the applications available for the import of each type of asset.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -274,10 +275,10 @@
 </ul>
 </div>
 <div class="section" id="buildings">
-<span id="lbl-asdbuildings"></span><h2><a class="toc-backref" href="#id13"><span class="section-number">2.4.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this headline">¶</a></h2>
+<span id="lbl-asdbuildings"></span><h2><a class="toc-backref" href="#id13"><span class="section-number">2.4.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this heading">¶</a></h2>
 <p>The buildings input panel, as shown in <a class="reference internal" href="#fig-buildinginputpanel"><span class="std std-numref">Fig. 2.4.1.1.2</span></a>, allows a user to input a building inventory database. The <strong>Building Import Selection</strong> combo box is where the user selects the application for the import of buildings, and for the generation of a asset information model (AIM).</p>
 <div class="section" id="csv-to-aim">
-<h3><a class="toc-backref" href="#id14"><span class="section-number">2.4.1.1. </span>CSV to AIM</a><a class="headerlink" href="#csv-to-aim" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14"><span class="section-number">2.4.1.1. </span>CSV to AIM</a><a class="headerlink" href="#csv-to-aim" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>CSV to AIM</strong> application imports a building inventory database from a user provided .csv file.</p>
 <ol class="arabic">
 <li><p>The <strong>Path to Buildings Database</strong> box is where the user supplies the file path to the .csv file that contains the building inventory. At a minimum, the .csv file must contain columns providing the building identification numbers (ID), in sequential order, and the latitudes and the longitudes of the locations of the buildings. Any number of columns can be added to the file to provide information required by other applications in the workflow.</p></li>
@@ -302,7 +303,7 @@
 </div>
 </div>
 <div class="section" id="gis-to-aim">
-<h3><a class="toc-backref" href="#id15"><span class="section-number">2.4.1.2. </span>GIS to AIM</a><a class="headerlink" href="#gis-to-aim" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id15"><span class="section-number">2.4.1.2. </span>GIS to AIM</a><a class="headerlink" href="#gis-to-aim" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>GIS to AIM</strong> application imports a building inventory database from a user-provided GIS file (e.g., shapefile, geodatabase). The input panel is shown in <a class="reference internal" href="#fig-r2dgisbuildingsinputpanel"><span class="std std-numref">Fig. 2.4.1.2.1</span></a>.</p>
 <ol class="arabic">
 <li><p>The <strong>GIS Input File</strong> box is where the user supplies the file path to the GIS file that contains the building inventory. Clicking on the <strong>Browse</strong> button will open a dialog where you can select the appropriate file.</p></li>
@@ -322,7 +323,7 @@
 </div>
 </div>
 <div class="section" id="geojson-to-asset">
-<h3><a class="toc-backref" href="#id16"><span class="section-number">2.4.1.3. </span>GeoJSON to Asset</a><a class="headerlink" href="#geojson-to-asset" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id16"><span class="section-number">2.4.1.3. </span>GeoJSON to Asset</a><a class="headerlink" href="#geojson-to-asset" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>GeoJSON to Asset</strong> application, shown in <a class="reference internal" href="#fig-r2dgeojsoninputbeforeload"><span class="std std-numref">Fig. 2.4.1.3.1</span></a>, is SimCenter’s preferred method to load regional infrastructure inventory.
 <a class="reference internal" href="#fig-r2dgeojsoninputexamplebuilding"><span class="std std-numref">Listing 2.4.1.3.1</span></a> is an example of a <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> formatted database for buildings.
 It follows the format convention of the official <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> structure as described <a class="reference external" href="https://geojson.org/">here</a>.
@@ -389,10 +390,10 @@ The selected buildings can be visualized in the <strong>VIZ</strong> panel.</p>
 </div>
 </div>
 <div class="section" id="regional-water-distribution-networks">
-<h2><a class="toc-backref" href="#id17"><span class="section-number">2.4.2. </span>Regional Water Distribution Networks</a><a class="headerlink" href="#regional-water-distribution-networks" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id17"><span class="section-number">2.4.2. </span>Regional Water Distribution Networks</a><a class="headerlink" href="#regional-water-distribution-networks" title="Permalink to this heading">¶</a></h2>
 <p>The water distribution network input panel, as shown in <a class="reference internal" href="#fig-wdninputpanel"><span class="std std-numref">Fig. 2.4.2.1.1</span></a>, allows a user to input the nodes and pipelines of a water distribution network. The <strong>Regional Water Network Selection</strong> combo box is where the user selects the application for the import of water distribution networks, and for the generation of a asset information model (AIM).</p>
 <div class="section" id="csv-to-regional-water-network">
-<h3><a class="toc-backref" href="#id18"><span class="section-number">2.4.2.1. </span>CSV to Regional Water Network</a><a class="headerlink" href="#csv-to-regional-water-network" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id18"><span class="section-number">2.4.2.1. </span>CSV to Regional Water Network</a><a class="headerlink" href="#csv-to-regional-water-network" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>CSV to Water Network</strong> application imports a water distribution network from a set of user provided .csv files that represent the nodes and pipelines of the network.</p>
 <ol class="arabic simple">
 <li><p>The <strong>Path to Nodes</strong> box is where the user supplies the file path to the .csv file that contains the nodes of the water distribution network. At a minimum, the .csv file must contain columns providing the node identification numbers (ID), in sequential order, and the latitudes and the longitudes of the locations of each node. Any number of columns can be added to the file to provide information that may be required by other applications in the workflow.</p></li>
@@ -417,7 +418,7 @@ The selected buildings can be visualized in the <strong>VIZ</strong> panel.</p>
 </div>
 </div>
 <div class="section" id="gis-to-regional-water-network">
-<h3><a class="toc-backref" href="#id19"><span class="section-number">2.4.2.2. </span>GIS to Regional Water Network</a><a class="headerlink" href="#gis-to-regional-water-network" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id19"><span class="section-number">2.4.2.2. </span>GIS to Regional Water Network</a><a class="headerlink" href="#gis-to-regional-water-network" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>GIS to Regional Water Network</strong> application imports a water distribution network from a set of user provided GIS files that represent the nodes and pipelines of the network.  The input panel is shown in <a class="reference internal" href="#fig-r2dwdngisinputpanel"><span class="std std-numref">Fig. 2.4.2.2.1</span></a>. The GIS files can be in one of many common GIS file formats, e.g., shp, gdb, etc.</p>
 <ol class="arabic simple">
 <li><p>The <strong>Path to Nodes</strong> box is where the user supplies the file path to the GIS file that contains the nodes of the water distribution network. At a minimum, the GIS file must contain a field providing the node identification numbers (id), in sequential order. Any number of attributes can be added to the node features to provide information that may be required by other applications in the workflow. R2D will load all feature attributes as columns in the <strong>Node Information</strong> table.</p></li>
@@ -434,10 +435,10 @@ The selected buildings can be visualized in the <strong>VIZ</strong> panel.</p>
 </div>
 </div>
 <div class="section" id="regional-transportation-infrastructure">
-<span id="lbl-asdtransport"></span><h2><a class="toc-backref" href="#id20"><span class="section-number">2.4.3. </span>Regional Transportation Infrastructure</a><a class="headerlink" href="#regional-transportation-infrastructure" title="Permalink to this headline">¶</a></h2>
+<span id="lbl-asdtransport"></span><h2><a class="toc-backref" href="#id20"><span class="section-number">2.4.3. </span>Regional Transportation Infrastructure</a><a class="headerlink" href="#regional-transportation-infrastructure" title="Permalink to this heading">¶</a></h2>
 <p>The transportation infrastructure input panel allows users to input the inventory of a transportation network. The <strong>Transportation Network Selection</strong> combo box is where users select the application for importing transportation network inventory generating asset information models (AIM).</p>
 <div class="section" id="id1">
-<h3><a class="toc-backref" href="#id21"><span class="section-number">2.4.3.1. </span>GeoJSON to Asset</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id21"><span class="section-number">2.4.3.1. </span>GeoJSON to Asset</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>GeoJSON to Asset</strong> application, shown in <a class="reference internal" href="#fig-r2dgeojsoninputbeforeload"><span class="std std-numref">Fig. 2.4.1.3.1</span></a>, is SimCenter’s preferred method to load regional infrastructure inventory.
 <a class="reference internal" href="#fig-r2dgeojsoninputexamplebuilding"><span class="std std-numref">Listing 2.4.1.3.1</span></a> is an example of a <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> formatted database for transportation infrastructure.
 It follows the format convention of the official <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> structure as described <a class="reference external" href="https://geojson.org/">here</a>.
@@ -545,7 +546,7 @@ The selected assets can be visualized in the <strong>VIZ</strong> panel.</p>
 </div>
 </div>
 <div class="section" id="gis-to-transportation-network-aim">
-<h3><a class="toc-backref" href="#id22"><span class="section-number">2.4.3.2. </span>GIS to Transportation Network AIM</a><a class="headerlink" href="#gis-to-transportation-network-aim" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22"><span class="section-number">2.4.3.2. </span>GIS to Transportation Network AIM</a><a class="headerlink" href="#gis-to-transportation-network-aim" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>GIS to Transportation Network AIM</strong> application imports a transportation network from user-provided GIS files that contain information on highway bridges, tunnels, and/or roadways.  The input panel is shown in <a class="reference internal" href="#fig-r2dtransportgisinputpanel"><span class="std std-numref">Fig. 2.4.3.2.1</span></a>. The GIS files can be in one of many common GIS file formats, e.g., shp, gdb, etc.</p>
 <p>The Path to Roadways/Bridges/Tunnels box is where the user supplies the file path to the GIS file that contains the roadways/bridges/tunnels features in the transportation network. At a minimum, the GIS file must contain a field providing the identification numbers (id), in <strong>sequential order</strong>. Any number of attributes can be added to the features to provide information that may be required by other applications in the workflow. R2D will load all feature attributes as columns in a table in a similar way to <a class="reference internal" href="#fig-r2dwdngisinputpanel"><span class="std std-numref">Fig. 2.4.2.2.1</span></a>. Only the Roadways/Bridges/Tunnels selected in the corresponding selection box will be analyzed in the later part of the workflow.</p>
 <p>Example GIS files for roadways, bridges, and tunnels that can be loaded to R2D with <strong>GIS to Transportation Network AIM</strong> can

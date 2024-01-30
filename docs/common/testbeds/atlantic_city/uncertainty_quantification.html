@@ -40,6 +40,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -237,13 +238,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="uncertainty-quantification">
-<span id="lbl-testbed-ac-uncertainty-quantification"></span><h1><span class="section-number">2.7. </span>Uncertainty Quantification<a class="headerlink" href="#uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-testbed-ac-uncertainty-quantification"></span><h1><span class="section-number">2.7. </span>Uncertainty Quantification<a class="headerlink" href="#uncertainty-quantification" title="Permalink to this heading">¶</a></h1>
 <p>Multiple sources of uncertainty are considered in this testbed including: the uncertainty in
 asset representation, hazard characterization, and damage and loss assessment. For these uncertainty
 sources, different strategies were implemented in the workflow to quantify their influence. THe following
 sections will introduce the details about each component.</p>
 <div class="section" id="in-asset-representation">
-<h2><span class="section-number">2.7.1. </span>In Asset Representation<a class="headerlink" href="#in-asset-representation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7.1. </span>In Asset Representation<a class="headerlink" href="#in-asset-representation" title="Permalink to this heading">¶</a></h2>
 <p>As discussed in <a class="reference internal" href="asset_representation.html#lbl-testbed-ac-asset-representation"><span class="std std-ref">Asset Representation</span></a>, the HAZUS Hurricane Technical Manual differentiates
 buildings based on asset attibutes for the subjected hazard type (wind or storm surge). These attributes
 are the buildings properties or structure features that would influence the
@@ -286,7 +287,7 @@ are randomly generated in this testbed.</p>
 </table>
 </div>
 <div class="section" id="in-hazard-characterization">
-<h2><span class="section-number">2.7.2. </span>In Hazard Characterization<a class="headerlink" href="#in-hazard-characterization" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7.2. </span>In Hazard Characterization<a class="headerlink" href="#in-hazard-characterization" title="Permalink to this heading">¶</a></h2>
 <p>Given a specific category of hurricane, there are two different sources of uncertainty for site peak wind speed
 and storm surge values: (1) the uncertainty induced by possible different storm tracks, storm radii, storm
 translational speeds, central pressures, or handing angles (which is usually termed as epistemic uncertainty);
@@ -311,7 +312,7 @@ two uncertainty sources are considered simultaneously.</p>
 </div>
 </div>
 <div class="section" id="in-damage-and-loss-assessment">
-<h2><span class="section-number">2.7.3. </span>In Damage and Loss Assessment<a class="headerlink" href="#in-damage-and-loss-assessment" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7.3. </span>In Damage and Loss Assessment<a class="headerlink" href="#in-damage-and-loss-assessment" title="Permalink to this heading">¶</a></h2>
 <p>The testbed implemented <span class="xref std std-ref">pelicun</span> (Probabilistic Estimation of Losses, Injuries, and Community resilience Under
 Natural disasters) to quantify damage (damage states) and loss (in the form of decision variables, e.g., loss ratio).
 Uncertainty from the hazard characterization step is first considered by the random sampling module in pelicun to

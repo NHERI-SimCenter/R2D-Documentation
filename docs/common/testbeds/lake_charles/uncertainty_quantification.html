@@ -40,6 +40,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -237,13 +238,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="uncertainty-quantification">
-<span id="lbl-testbed-lc-uncertainty-quantification"></span><h1><span class="section-number">3.7. </span>Uncertainty Quantification<a class="headerlink" href="#uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-testbed-lc-uncertainty-quantification"></span><h1><span class="section-number">3.7. </span>Uncertainty Quantification<a class="headerlink" href="#uncertainty-quantification" title="Permalink to this heading">¶</a></h1>
 <p>Multiple sources of uncertainty are considered in this testbed including: the uncertainty in
 asset representation, hazard characterization, and damage and loss assessment. For these uncertainty
 sources, different strategies were implemented in the workflow to quantify their influence. The following
 sections will introduce the details about each component.</p>
 <div class="section" id="in-asset-representation">
-<h2><span class="section-number">3.7.1. </span>In Asset Representation<a class="headerlink" href="#in-asset-representation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.1. </span>In Asset Representation<a class="headerlink" href="#in-asset-representation" title="Permalink to this heading">¶</a></h2>
 <p>As discussed in <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>, the HAZUS Hurricane Technical Manual (<a class="reference internal" href="#fema21" id="id1"><span>[FEMA21]</span></a>) differentiates
 buildings based on asset attributes for the subjected hazard type (wind or storm surge). These attributes
 are the buildings properties or structure features that would influence the
@@ -287,7 +288,7 @@ random variables may change.</p>
 </table>
 </div>
 <div class="section" id="in-hazard-characterization">
-<h2><span class="section-number">3.7.2. </span>In Hazard Characterization<a class="headerlink" href="#in-hazard-characterization" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.2. </span>In Hazard Characterization<a class="headerlink" href="#in-hazard-characterization" title="Permalink to this heading">¶</a></h2>
 <p>Given a specific category of hurricane, the uncertainty of site peak wind speed
 is considered with the inherent variation in observing the random events at the site (which is usually termed as aleatory
 uncertainty). For the aleatory uncertainty, as discussed in <a class="reference internal" href="hazard_characterization.html#lbl-testbed-lc-hazard-characterization"><span class="std std-ref">Hazard Characterization</span></a>, this workflow
@@ -304,7 +305,7 @@ two uncertainty sources are considered simultaneously.</p>
 </div>
 </div>
 <div class="section" id="in-damage-and-loss-assessment">
-<h2><span class="section-number">3.7.3. </span>In Damage and Loss Assessment<a class="headerlink" href="#in-damage-and-loss-assessment" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.3. </span>In Damage and Loss Assessment<a class="headerlink" href="#in-damage-and-loss-assessment" title="Permalink to this heading">¶</a></h2>
 <p>As discussed in <a class="reference internal" href="damage_and_loss.html#lbl-testbed-lc-damage-and-loss"><span class="std std-ref">Damage and Loss Estimation</span></a>, the testbed implemented <span class="xref std std-ref">PELICUN</span>
 (Probabilistic Estimation of Losses, Injuries, and Community resilience Under
 Natural disasters) to quantify damage (damage states) and loss (in the form of decision variables, e.g., loss ratio).

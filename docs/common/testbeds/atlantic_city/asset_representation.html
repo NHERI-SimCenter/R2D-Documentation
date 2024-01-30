@@ -40,6 +40,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -245,7 +246,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="asset-representation">
-<span id="lbl-testbed-ac-asset-representation"></span><h1><span class="section-number">2.4. </span>Asset Representation<a class="headerlink" href="#asset-representation" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-testbed-ac-asset-representation"></span><h1><span class="section-number">2.4. </span>Asset Representation<a class="headerlink" href="#asset-representation" title="Permalink to this heading">¶</a></h1>
 <p>This section discusses the translation of asset descriptions into representations
 of structures suitable for simulation within workflow, in this case consistent with
 the HAZUS description of building classes and associated attributes, which becomes
@@ -267,7 +268,7 @@ a default value for its building classification or a given attribute based on th
 rule. This ensures that every asset receives a HAZUS building class and related attribute
 assignments, regardless of data sparsity.</p>
 <div class="section" id="building-classifications">
-<span id="lbl-testbed-ac-asset-representation-building-classification"></span><h2><span class="section-number">2.4.1. </span>Building Classifications<a class="headerlink" href="#building-classifications" title="Permalink to this headline">¶</a></h2>
+<span id="lbl-testbed-ac-asset-representation-building-classification"></span><h2><span class="section-number">2.4.1. </span>Building Classifications<a class="headerlink" href="#building-classifications" title="Permalink to this heading">¶</a></h2>
 <p>HAZUS classifies buildings based on a more nuanced interpretation of Occupancy Class
 (see building inventory field <strong>OccupancyClass</strong>) based on other attributes of relevance
 for a given hazard type.</p>
@@ -791,7 +792,7 @@ rulesets (PDFs and Python scripts) are cross-referenced in <a class="reference i
 </table>
 </div>
 <div class="section" id="building-attributes">
-<h2><span class="section-number">2.4.2. </span>Building Attributes<a class="headerlink" href="#building-attributes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.2. </span>Building Attributes<a class="headerlink" href="#building-attributes" title="Permalink to this heading">¶</a></h2>
 <p>Within each of these building classes, e.g., wood single-family homes 1-2+ stories, the HAZUS Hurricane
 Technical Manual (HHTM) further differentiates buildings based on asset attributes and the hazard type
 (e.g., wind vs. flood) for the purpose of loss estimation. These attributes define key features of the
@@ -1000,7 +1001,7 @@ the appropriate Hazus fragility description. The following sections summarize th
 attribute assignments for specific classes of buildings. Additional attributes assigned to assets are
 discussed in the following subsections, organized by hazard and building class, where applicable.</p>
 <div class="section" id="wind-loss-attributes-for-wood-buildings">
-<h3>Wind Loss Attributes for Wood Buildings<a class="headerlink" href="#wind-loss-attributes-for-wood-buildings" title="Permalink to this headline">¶</a></h3>
+<h3>Wind Loss Attributes for Wood Buildings<a class="headerlink" href="#wind-loss-attributes-for-wood-buildings" title="Permalink to this heading">¶</a></h3>
 <p>The wind loss model in HAZUS classifies wooden buildings into five building classes:</p>
 <ol class="arabic simple">
 <li><p>two single family homes (WSF1 and WSF2) and</p></li>
@@ -1159,7 +1160,7 @@ ELSEIF RoofShape=(Gable or Hip) &amp; RoofSlope &gt;= 0.33, SWR=no</p></td>
 </table>
 </div>
 <div class="section" id="wind-loss-attributes-for-masonry-buildings">
-<h3>Wind Loss Attributes for Masonry Buildings<a class="headerlink" href="#wind-loss-attributes-for-masonry-buildings" title="Permalink to this headline">¶</a></h3>
+<h3>Wind Loss Attributes for Masonry Buildings<a class="headerlink" href="#wind-loss-attributes-for-masonry-buildings" title="Permalink to this heading">¶</a></h3>
 <p>The masonry buildings have 14 building classes: Their key attributes that influence the fragility
 functions are listed in <a class="reference internal" href="#msf-attri"><span class="std std-numref">Table 2.4.2.8</span></a>, <a class="reference internal" href="#mmuh-attri"><span class="std std-numref">Table 2.4.2.9</span></a>, <a class="reference internal" href="#mlrm-attri"><span class="std std-numref">Table 2.4.2.10</span></a>,
 <a class="reference internal" href="#merb-attri"><span class="std std-numref">Table 2.4.2.11</span></a>, <a class="reference internal" href="#mecb-attri"><span class="std std-numref">Table 2.4.2.12</span></a>, and <a class="reference internal" href="#mlri-attri"><span class="std std-numref">Table 2.4.2.13</span></a>.</p>
@@ -1511,7 +1512,7 @@ Exceptions: Wood structural panels with a minimum thickness of 7/16 of an inch a
 </table>
 </div>
 <div class="section" id="wind-loss-attributes-for-steel-buildings">
-<h3>Wind Loss Attributes for Steel Buildings<a class="headerlink" href="#wind-loss-attributes-for-steel-buildings" title="Permalink to this headline">¶</a></h3>
+<h3>Wind Loss Attributes for Steel Buildings<a class="headerlink" href="#wind-loss-attributes-for-steel-buildings" title="Permalink to this heading">¶</a></h3>
 <p>The wind loss model in HAZUS classifies steel buildings into nine building classes:
 1. three steel engineered residential building classes (SERBL, SERBM, and SERBH)
 2. three steel engineered commercial building classes (SECBL, SECBM, and SECBH) and
@@ -1693,7 +1694,7 @@ High: WWR &lt;= 50%</p>
 </table>
 </div>
 <div class="section" id="wind-loss-attributes-for-concrete-buildings">
-<h3>Wind Loss Attributes for Concrete Buildings<a class="headerlink" href="#wind-loss-attributes-for-concrete-buildings" title="Permalink to this headline">¶</a></h3>
+<h3>Wind Loss Attributes for Concrete Buildings<a class="headerlink" href="#wind-loss-attributes-for-concrete-buildings" title="Permalink to this heading">¶</a></h3>
 <p>The wind loss model in HAZUS classifies steel buildings into 6 building classes:
 1. three concrete engineered residential building classes (CERBL, CERBM, and CERBH) and
 2. three concrete engineered commercial building classes (CECBL, CECBM, and CECBH).</p>
@@ -1841,7 +1842,7 @@ SPMs were developed in the 1960s, and considering that there is a time lag to st
 </table>
 </div>
 <div class="section" id="wind-loss-attributes-for-manufactured-homes">
-<h3>Wind Loss Attributes for Manufactured Homes<a class="headerlink" href="#wind-loss-attributes-for-manufactured-homes" title="Permalink to this headline">¶</a></h3>
+<h3>Wind Loss Attributes for Manufactured Homes<a class="headerlink" href="#wind-loss-attributes-for-manufactured-homes" title="Permalink to this heading">¶</a></h3>
 <p>The wind loss model in HAZUS classifies manufactured homes (MH) into five building classes that are organized
 into three groupings, based on phasing of revisions to Housing and Urban Development (HUD) guidelines:
 1. manufactured homes built before 1976 (MHPHUD)
@@ -1941,7 +1942,7 @@ The HUD Code was amended in 1994 with requirements that manufactured homes meet 
 </table>
 </div>
 <div class="section" id="wind-loss-attributes-for-essential-facilities">
-<h3>Wind Loss Attributes for Essential Facilities<a class="headerlink" href="#wind-loss-attributes-for-essential-facilities" title="Permalink to this headline">¶</a></h3>
+<h3>Wind Loss Attributes for Essential Facilities<a class="headerlink" href="#wind-loss-attributes-for-essential-facilities" title="Permalink to this heading">¶</a></h3>
 <p>The wind loss model in HAZUS futher classifies several groupings of essential facilities:
 1. Fire Staions and Elementary Schools (HUEFFS, HUEFSS)
 2. High Schools: 2-story and 3-story (HUEFSM, HUEFSL)
@@ -2150,7 +2151,7 @@ in <a class="reference internal" href="#ef-attri"><span class="std std-numref">T
 </table>
 </div>
 <div class="section" id="flood-loss-attributes">
-<h3>Flood Loss Attributes<a class="headerlink" href="#flood-loss-attributes" title="Permalink to this headline">¶</a></h3>
+<h3>Flood Loss Attributes<a class="headerlink" href="#flood-loss-attributes" title="Permalink to this heading">¶</a></h3>
 <p>The flood loss model in HAZUS focuses on a collection of attributes, some of which are already defined in
 the building inventory (number of stories and occupancy type as defined in <a class="reference internal" href="#lbl-testbed-ac-asset-representation-building-classification"><span class="std std-ref">Building Classifications</span></a>),
 while other building inventory fields like first floor elevation require adjustment. The new or adjusted

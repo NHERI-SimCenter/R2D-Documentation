@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -213,7 +214,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="earthquake-scenario-simulation">
-<span id="ground-motion-tool"></span><h1>Earthquake Scenario Simulation<a class="headerlink" href="#earthquake-scenario-simulation" title="Permalink to this headline">¶</a></h1>
+<span id="ground-motion-tool"></span><h1>Earthquake Scenario Simulation<a class="headerlink" href="#earthquake-scenario-simulation" title="Permalink to this heading">¶</a></h1>
 <p>This tool dialog is where users can enter data on an earthquake scenario, and the
 tool will generate a series of ground motions for a series of points in the area.
 The application employs OpenSHA, determining which records to select from a ground
@@ -221,7 +222,7 @@ motion database. The individual input panels in the <strong>Earthquake Scenario 
 are discussed below. The typical use cases of this tool is described in the
 <a class="reference internal" href="../../../../technical_manual/desktop/HazardSimulationTool_useCase.html#lbleqsimulationusecases"><span class="std std-ref">technical manual</span></a>.</p>
 <div class="section" id="site-definition-panel">
-<h2>Site Definition Panel<a class="headerlink" href="#site-definition-panel" title="Permalink to this headline">¶</a></h2>
+<h2>Site Definition Panel<a class="headerlink" href="#site-definition-panel" title="Permalink to this heading">¶</a></h2>
 <p>The <strong>Site Definition Panel</strong> is shown in <a class="reference internal" href="tools.html#fig-r2deqssitepanel"><span class="std std-numref">Fig. 3.1.1.1</span></a>.
 This is where a user defines the geographical locations and seismic site conditions
 of the sites where ground motion selection will occur.</p>
@@ -230,7 +231,7 @@ of the sites where ground motion selection will occur.</p>
 <p class="caption"><span class="caption-text">Earthquake Scenario Simulation Site Definition Input panel.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="site-definition-options">
-<h3>Site Definition Options<a class="headerlink" href="#site-definition-options" title="Permalink to this headline">¶</a></h3>
+<h3>Site Definition Options<a class="headerlink" href="#site-definition-options" title="Permalink to this heading">¶</a></h3>
 <p>To input site locations, users can select to input a single location,
 multiple locations on a grid, or a collection of scattering sites, as seen in the
 <strong>Site Location Definition</strong> box at the top of <a class="reference internal" href="tools.html#fig-r2deqssitepanel"><span class="std std-numref">Fig. 3.1.1.1</span></a>.
@@ -309,7 +310,7 @@ The following inputs are needed:</p>
 </div></blockquote>
 </div>
 <div class="section" id="shear-wave-velocity">
-<span id="lbl-shearwavevelocity"></span><h3>Shear Wave Velocity<a class="headerlink" href="#shear-wave-velocity" title="Permalink to this headline">¶</a></h3>
+<span id="lbl-shearwavevelocity"></span><h3>Shear Wave Velocity<a class="headerlink" href="#shear-wave-velocity" title="Permalink to this heading">¶</a></h3>
 <p>In seismic hazard analysis, the <strong>Shear Wave Velocity</strong> at a site is of interest
 because it gives an indication of whether the expected shaking in response to an
 Earthquake Rupture may be higher. For instance, at a bedrock site (high shear-wave
@@ -432,7 +433,7 @@ Otherwise, the value specified in the <strong>Z2pt5</strong> pane will be applie
 </div></blockquote>
 </div>
 <div class="section" id="site-file-csv-definition-and-simcentersitemodel-csv">
-<span id="lbl-sitefileandscsitemodel"></span><h3>Site File (.csv) Definition and SimCenterSiteModel.csv<a class="headerlink" href="#site-file-csv-definition-and-simcentersitemodel-csv" title="Permalink to this headline">¶</a></h3>
+<span id="lbl-sitefileandscsitemodel"></span><h3>Site File (.csv) Definition and SimCenterSiteModel.csv<a class="headerlink" href="#site-file-csv-definition-and-simcentersitemodel-csv" title="Permalink to this heading">¶</a></h3>
 <p>The Site File (.csv) is the user-provided file, in <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format, that contains the list of sites and corresponding site data.
 At a minimum, the Site File (.csv) must contain the station ID, latitude, and longitude of each site.
 If the “User-specified” option is selected in the <strong>Vs30 Model</strong>, <strong>Depth to Z1pt0</strong>, or <strong>Depth to Z2pt5</strong> panes,
@@ -474,7 +475,7 @@ the values specified in the edited <strong>SimCenterSiteModel.csv</strong> will 
 </div>
 </div>
 <div class="section" id="earthquake-rupture-panel">
-<h2>Earthquake Rupture Panel<a class="headerlink" href="#earthquake-rupture-panel" title="Permalink to this headline">¶</a></h2>
+<h2>Earthquake Rupture Panel<a class="headerlink" href="#earthquake-rupture-panel" title="Permalink to this heading">¶</a></h2>
 <p>The <strong>Earthquake Rupture Panel</strong> is shown in <a class="reference internal" href="tools.html#fig-r2deqserpane"><span class="std std-numref">Fig. 3.1.2.1</span></a>.
 This is where a user defines the earthquake rupture(s) in the regional hazard analysis.
 The available Earthquake Rupture definition methods are OpenSHA ERF, Point Source,
@@ -484,7 +485,7 @@ and OpenQuake ERF. The details of each method are described below.</p>
 <p class="caption"><span class="caption-text">Earthquake Rupture Panel</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="opensha-erf">
-<h3>OpenSHA ERF<a class="headerlink" href="#opensha-erf" title="Permalink to this headline">¶</a></h3>
+<h3>OpenSHA ERF<a class="headerlink" href="#opensha-erf" title="Permalink to this heading">¶</a></h3>
 <p>This method allows users to define earthquake ruptures from two Earthquake Rupture
 Forecasting (ERF) models for California, which are implemented in OpenSHA.
 The two ERF models are “WGCEP (2007) UCERF2 - Single Branch” (<a class="reference internal" href="tools.html#field2009" id="id10"><span>[Field2009]</span></a>)
@@ -541,7 +542,7 @@ for inquiries and feature requests.</p>
 </div>
 </div>
 <div class="section" id="point-source">
-<h3>Point Source<a class="headerlink" href="#point-source" title="Permalink to this headline">¶</a></h3>
+<h3>Point Source<a class="headerlink" href="#point-source" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>Point Source</strong> pane, shown in <a class="reference internal" href="tools.html#fig-r2deqssseqruppointpane"><span class="std std-numref">Fig. 3.1.2.2.1</span></a>, defines a single
 earthquake rupture. The point source may not accurately reflect real fault geometry but it
 may be useful for educational and/or academic use.</p>
@@ -559,7 +560,7 @@ may be useful for educational and/or academic use.</p>
 </div>
 </div>
 <div class="section" id="openquake-earthquake-rupture-forecasting">
-<span id="lbl-erfopenquake"></span><h3>OpenQuake Earthquake Rupture Forecasting<a class="headerlink" href="#openquake-earthquake-rupture-forecasting" title="Permalink to this headline">¶</a></h3>
+<span id="lbl-erfopenquake"></span><h3>OpenQuake Earthquake Rupture Forecasting<a class="headerlink" href="#openquake-earthquake-rupture-forecasting" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>The OpenQuake Earthquake Rupture Forecasting (<strong>OpenQuake ERF</strong>) option uses
 the Global Earthquake Model Foundation’s <a class="reference external" href="https://www.globalquakemodel.org/product/openquake-engine">OpenQuake Engine</a>
@@ -599,7 +600,7 @@ of OpenQuake’s GitHub repo</a>.
 </dl>
 </div>
 <div class="section" id="forecast-rupture-scenarios-button">
-<h3>Forecast Rupture Scenarios Button<a class="headerlink" href="#forecast-rupture-scenarios-button" title="Permalink to this headline">¶</a></h3>
+<h3>Forecast Rupture Scenarios Button<a class="headerlink" href="#forecast-rupture-scenarios-button" title="Permalink to this heading">¶</a></h3>
 <p>By clicking this button, R2D will clear the “HazardSimulation” folder in the local
 working directory of R2D. R2D will then create a SimCenterSiteModel.csv in the “Input”
 folder of the “HazardSimulation” folder. The SimCenterSiteModel.csv contains the location
@@ -613,11 +614,11 @@ rupture forecasting.</p>
 </div>
 </div>
 <div class="section" id="scenario-selection-panel">
-<h2>Scenario Selection Panel<a class="headerlink" href="#scenario-selection-panel" title="Permalink to this headline">¶</a></h2>
+<h2>Scenario Selection Panel<a class="headerlink" href="#scenario-selection-panel" title="Permalink to this heading">¶</a></h2>
 <p>The Scenario Selection Panel allows users to select which scenario(s) to consider
 in the generation of ground motion maps. Current available options are:</p>
 <div class="section" id="scenario-specific">
-<h3>Scenario-specific<a class="headerlink" href="#scenario-specific" title="Permalink to this headline">¶</a></h3>
+<h3>Scenario-specific<a class="headerlink" href="#scenario-specific" title="Permalink to this heading">¶</a></h3>
 <p>This option selects a single earthquake scenario from the results of the Earthquake
 Rupture Forecasting to generate corresponding ground motion maps to be used in regional seismic
 analysis. Note that many ground motion maps can be generated from a single scenario
@@ -642,7 +643,7 @@ and source ID will be filled automatically.</p>
 </div></blockquote>
 </div>
 <div class="section" id="conventional-monte-carlo">
-<h3>Conventional Monte Carlo<a class="headerlink" href="#conventional-monte-carlo" title="Permalink to this headline">¶</a></h3>
+<h3>Conventional Monte Carlo<a class="headerlink" href="#conventional-monte-carlo" title="Permalink to this heading">¶</a></h3>
 <p>This option selects a series of earthquake scenarios from the results of the Earthquake
 Rupture Forecasting to generate a series of ground motion maps to be used in regional seismic
 risk analysis. Similar to the scenario-specific option, users can visualize the
@@ -666,7 +667,7 @@ synchronize if a user reorders or edits the attribute table (e.g., by sorting th
 attribute table based on source-site distance).</p>
 </div>
 <div class="section" id="hazard-consistent-downsampling">
-<h3>Hazard Consistent Downsampling<a class="headerlink" href="#hazard-consistent-downsampling" title="Permalink to this headline">¶</a></h3>
+<h3>Hazard Consistent Downsampling<a class="headerlink" href="#hazard-consistent-downsampling" title="Permalink to this heading">¶</a></h3>
 <p>Because the number of earthquake scenarios is usually very big in conventional
 Monte Carlo method, there are algorithms to select a subset of all relevant earthquake
 scenarios with a scaled occurrence rate to achieve a similar hazard level with the full set of
@@ -743,9 +744,9 @@ measures defined in the <strong>Ground Motion Models</strong> panel to compute t
 </div>
 </div>
 <div class="section" id="ground-motion-models">
-<span id="lbl-groundmotionmodels"></span><h2>Ground Motion Models<a class="headerlink" href="#ground-motion-models" title="Permalink to this headline">¶</a></h2>
+<span id="lbl-groundmotionmodels"></span><h2>Ground Motion Models<a class="headerlink" href="#ground-motion-models" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="intensity-measure-and-period-points">
-<h3>Intensity Measure and Period Points<a class="headerlink" href="#intensity-measure-and-period-points" title="Permalink to this headline">¶</a></h3>
+<h3>Intensity Measure and Period Points<a class="headerlink" href="#intensity-measure-and-period-points" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>Intensity Measure and Period Points</strong> pane, shown in <a class="reference internal" href="tools.html#fig-r2deqssimpane"><span class="std std-numref">Fig. 3.1.4.1.1</span></a>, requires the following inputs:</p>
 <blockquote>
 <div><ul class="simple">
@@ -759,7 +760,7 @@ measures defined in the <strong>Ground Motion Models</strong> panel to compute t
 </div>
 </div>
 <div class="section" id="ground-motion-prediction-equations">
-<h3>Ground Motion Prediction Equations<a class="headerlink" href="#ground-motion-prediction-equations" title="Permalink to this headline">¶</a></h3>
+<h3>Ground Motion Prediction Equations<a class="headerlink" href="#ground-motion-prediction-equations" title="Permalink to this heading">¶</a></h3>
 <p>Ground motion prediction equations estimate the intensity of ground shaking that may occur at a site. The <strong>Ground Motion Prediction Equation</strong> combo box, shown in <a class="reference internal" href="tools.html#fig-r2deqssgmpepane"><span class="std std-numref">Fig. 3.1.4.2.1</span></a>, contains the following ground motion prediction equations:</p>
 <blockquote>
 <div><ul class="simple">
@@ -775,7 +776,7 @@ measures defined in the <strong>Ground Motion Models</strong> panel to compute t
 </div>
 </div>
 <div class="section" id="spatial-correlation-models">
-<h3>Spatial Correlation Models<a class="headerlink" href="#spatial-correlation-models" title="Permalink to this headline">¶</a></h3>
+<h3>Spatial Correlation Models<a class="headerlink" href="#spatial-correlation-models" title="Permalink to this heading">¶</a></h3>
 <p>This is where the user selects the spatial correlation models, and where the user defines the minimum and maximum scaling factors that are used in ground motion selection. Shown at the top of <a class="reference internal" href="tools.html#fig-r2deqsscorrscalepane"><span class="std std-numref">Fig. 3.1.4.3.1</span></a>, the user has the option to select the Intra- and Inter-event Spatial Correlation Models. Spatial correlation ensures that ground motions at different locations will share similar characteristics. The following Inter-event Spatial Correlation Models are available:</p>
 <blockquote>
 <div><ul class="simple">
@@ -824,9 +825,9 @@ measures defined in the <strong>Ground Motion Models</strong> panel to compute t
 </div>
 </div>
 <div class="section" id="ground-motion-record-selection">
-<h2>Ground Motion Record Selection<a class="headerlink" href="#ground-motion-record-selection" title="Permalink to this headline">¶</a></h2>
+<h2>Ground Motion Record Selection<a class="headerlink" href="#ground-motion-record-selection" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="ground-motion-record-database">
-<h3>Ground Motion Record Database<a class="headerlink" href="#ground-motion-record-database" title="Permalink to this headline">¶</a></h3>
+<h3>Ground Motion Record Database<a class="headerlink" href="#ground-motion-record-database" title="Permalink to this heading">¶</a></h3>
 <p>Ground motion records are selected from a ground motion database. Currently, only the <em>PEER NGA-West2</em> database is available, shown in the <strong>Ground Motion Record Database</strong> combo box in <a class="reference internal" href="tools.html#fig-r2deqssgmdbpane"><span class="std std-numref">Fig. 3.1.5.1.1</span></a>. Alternatively, a user can select <em>None</em> to skip ground motion selection altogether. In that case, only the intensity measures will be saved at each location.</p>
 <blockquote>
 <div><div class="align-center figure" id="id38">
@@ -837,7 +838,7 @@ measures defined in the <strong>Ground Motion Models</strong> panel to compute t
 <p>The <strong>Ground Motion Record Scaling Bounds</strong>, shown in <a class="reference internal" href="tools.html#fig-r2deqssgmdbpane"><span class="std std-numref">Fig. 3.1.5.1.1</span></a>, are the minimum and maximum scaling factors that intensity measures can be scaled by during the ground motion selection process.</p>
 </div>
 <div class="section" id="run-hazard-simulation-button">
-<h3>Run Hazard Simulation Button<a class="headerlink" href="#run-hazard-simulation-button" title="Permalink to this headline">¶</a></h3>
+<h3>Run Hazard Simulation Button<a class="headerlink" href="#run-hazard-simulation-button" title="Permalink to this heading">¶</a></h3>
 <p>Shown at the bottom of <a class="reference internal" href="tools.html#fig-r2deqssgmdbpane"><span class="std std-numref">Fig. 3.1.5.1.1</span></a>, the <strong>Run Hazard Simulation</strong> button starts the ground motion selection application.
 The earthquake scenario simulation is run via a Python script. When the <strong>Run Hazard Simulation</strong> button is pressed,
 text output from the script will appear in the <strong>Program Output</strong> console at the
