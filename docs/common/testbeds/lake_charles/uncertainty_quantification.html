@@ -157,15 +157,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -308,14 +312,14 @@ two uncertainty sources are considered simultaneously.</p>
 (Probabilistic Estimation of Losses, Injuries, and Community resilience Under
 Natural disasters) to quantify damage (damage states) and loss (in the form of decision variables, e.g., loss ratio).
 Uncertainty from the hazard characterization step is first considered by the random sampling module in PELICUN to
-numerically sample the distribution of intensity measures (which are treated as engineering parameters, EDPs in the HAZUS method).
+numerically sample the distribution of intensity measures (which are treated as engineering demand parameters, EDPs in the HAZUS method).
 Specifically, 1000 samples of combined wind speeds are generated
 for each asset in this testbed. Second, the corresponding damage and loss models are populated for each asset from HAZUS
 based on the <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>. As described
 in <a class="reference internal" href="damage_and_loss.html#lbl-testbed-lc-damage-and-loss"><span class="std std-ref">Damage and Loss Estimation</span></a>, the damage models are continuous functions (normal or lognormal distribution
 functions) fit to the synthetic data by maximizing the likelihood of the observations assuming a Binomial distribution of
 outcomes at each intensity level in the HAZUS database. Hence, at a given intensity level (a certain wind speed), the damage state and corresponding loss ratio of an asset follow probabilistic distributions, considering all
-uncertainty in the key properties that can influence the building performance.</p>
+uncertainty in the key properties that can influence the building’s performance.</p>
 <dl class="citation">
 <dt class="label" id="fema21"><span class="brackets"><a class="fn-backref" href="#id1">FEMA21</a></span></dt>
 <dd><p>FEMA (2021), Hazus Hurricane Technical Manual. Hazus 4.2 Service Pack 3. Federal Emergency Management Agency, Washington D.C.

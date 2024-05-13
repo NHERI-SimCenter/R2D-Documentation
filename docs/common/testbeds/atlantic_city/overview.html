@@ -158,15 +158,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -244,18 +248,18 @@ scaffolding upon which community developers can progressively contribute refinem
 and capacities of the backend regional resilience assessment workflow. This documentation specifically demonstrates
 the process of: (1) asset description, (2) hazard characterization, (3) asset representation, (4) damage and loss
 modeling for the Atlantic County inventory. This inventory is partitioned into two different versions to provide
-users greater flexibility in balancing computational demands with their research interests. Sample results are
+users with greater flexibility in balancing computational demands with their research interests. Sample results are
 presented to verify the workflow and demonstrate its usage.</p>
 <div class="section" id="rationale">
 <h2><span class="section-number">2.1.1. </span>Rationale<a class="headerlink" href="#rationale" title="Permalink to this heading">¶</a></h2>
 <p>This testbed builds upon existing relationships between SimCenter personnel and the State of New Jersey through
 the NJcoast project (<a class="reference internal" href="#kijewskicorrea19" id="id1"><span>[KijewskiCorrea19]</span></a>, <a class="reference internal" href="#njcoast20" id="id2"><span>[NJCoast20]</span></a>), which made available various inventory data and high-fidelity
-characterizations of wind, storm surge and wave action. Notably, the State of New Jersey has made sizable
+characterizations of wind, storm surge, and wave action. Notably, the State of New Jersey has made sizable
 investments in open data and resilience planning tools in recent years, enabling a demonstration of how to leverage
 these data for inventory development.</p>
-<p>The selection of Atlantic County, NJ and specifically Atlantic City and its
-surrounding municipalities offers a well-defined metro area with a blend of low-rise commercial (1-3 stories),
-industrial, high-rise hotels/casinos (over 20 stories), and single/multi-family residences. Thus a single testbed
+<p>The selection of Atlantic County, NJ, and specifically Atlantic City and its
+surrounding municipalities, offers a well-defined metro area with a blend of low-rise commercial (1-3 stories),
+industrial, high-rise hotels/casinos (over 20 stories), and single/multi-family residences. Thus, a single testbed
 encompasses two extremes in building typologies with known vulnerabilities to wind: wood frame single-family homes
 and tall flexible structures more susceptible to dynamic wind effects. From the perspective of hazard exposure,
 this region is also characterized by beachfront communities exposed to storm surge and breaking waves on the
@@ -271,70 +275,82 @@ should consider hurricane risk.</p>
 assess the damage to individual buildings under multiple hurricane-induced hazards: wind and storm surge. Water
 penetration due to the breach of building envelopes and/or wind-borne debris impact are also captured in the
 damage and loss modeling, though the physics of these phenomena themselves are not explicitly modeled.
-Similarly, other hydrologic hazards related to accumulated rainfall, inland flooding, overland flow and
-riverline flooding, are not capture.
+Similarly, other hydrologic hazards related to accumulated rainfall, inland flooding, overland flow, and
+riveline flooding, are not captured.
 Supported building classes include residential, commercial and industrial construction, critical facilities,
-and manufactured homes, constructed of wood, steel, reinforced concrete and masonry. The adoption of HAZUS
+and manufactured homes, constructed of wood, steel, reinforced concrete, and masonry. The adoption of HAZUS
 loss estimation frameworks constrains the current testbed to buildings 6 stories and under and only the
 building classes currently supported by HAZUS (<a class="reference internal" href="../lake_charles/damage_and_loss.html#fema18a" id="id3"><span>[FEMA18a]</span></a>, <a class="reference internal" href="../lake_charles/damage_and_loss.html#fema18b" id="id4"><span>[FEMA18b]</span></a>).</p>
 </div>
 <div class="section" id="current-implementation">
 <h2><span class="section-number">2.1.3. </span>Current Implementation<a class="headerlink" href="#current-implementation" title="Permalink to this heading">¶</a></h2>
-<p>For the initial implementation of the backend workflow, asset description adopts an augmented parcel approach
-that enriches tax assessor data. High-fidelity computational simulations are employed to simulate the wind and
+<p>For the initial implementation of the backend workflow, the asset description adopts an augmented parcel approach
+that enriches tax assessor data. High-fidelity computational simulations are employed to simulate wind and
 surge hazards, characterized by two intensity measures: the Peak Wind Speed (PWS) and Peak Water Depth (PWD),
 for specific scenarios. In lieu of a structural analysis model, assets are assigned attributes associated with
-various HAZUS-consistent building classifications. The adoption of HAZUS damage and loss assessment methodology
-for hurricane and flood thus enables these intensity measures to be related to probabilities of damage and loss,
+various HAZUS-consistent building classifications. The adoption of the HAZUS damage and loss assessment methodology
+for hurricanes and floods thus enables these intensity measures to be related to probabilities of damage and loss,
 based on the building class and assigned attributes.</p>
 </div>
 <div class="section" id="available-inventories">
 <h2><span class="section-number">2.1.4. </span>Available Inventories<a class="headerlink" href="#available-inventories" title="Permalink to this heading">¶</a></h2>
 <p>Two different building inventories have been developed for the Atlantic County testbed and can be accessed on DesignSafe.</p>
-<p><strong>Atlantic County Inventory</strong>: Full inventory of 100,721 buildings in the 23 municipalities of Atlantic County,
-described based on a variety of data sources (<a class="reference internal" href="#fig-buildingclassaci"><span class="std std-numref">Fig. 2.1.4.1</span></a>). The buildings in this inventory are exposed to wind
-only OR the combination of wind and floodplain hazards.</p>
+<p><strong>Atlantic County Inventory</strong>: A full inventory of 100,721 buildings in the 23 municipalities of Atlantic County,
+described based on a variety of data sources (<a class="reference internal" href="#fig-buildingclassaci"><span class="std std-numref">Fig. 2.1.4.1</span></a>). The buildings in this inventory are exposed to either wind
+only or the combination of wind and floodplain hazards.</p>
 <div class="align-center figure" id="id5">
 <span id="fig-buildingclassaci"></span><a class="reference internal image-reference" href="../../../_images/BuildingClass_atlanticall.png"><img alt="../../../_images/BuildingClass_atlanticall.png" src="../../../_images/BuildingClass_atlanticall.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.1 </span><span class="caption-text">Geospatial visualization of subclasses of buildings in Atlantic County Inventory.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.1 </span><span class="caption-text">Geospatial visualization of subclasses of buildings in the Atlantic County Inventory.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong>Flood-Exposed Inventory</strong>: This subset of the Atlantic County inventory is confined to 32,828 buildings in
+<p><strong>Flood-Exposed Inventory</strong>: This subset of the Atlantic County inventory includes 32,828 buildings in
 FEMA Special Flood Hazard Areas (SFHAs) (<a class="reference internal" href="#fig-buildingclassfei"><span class="std std-numref">Fig. 2.1.4.2</span></a>), as identified by the New Jersey Department of Environmental
-Protection (NJDEP). This includes all buildings in (or within 200-foot buffer of) the 1% annual chance (AC)
+Protection (NJDEP). This includes all buildings in (or within a 200-foot buffer of) the 1% annual chance (AC)
 floodplain, as defined by FEMA Flood Insurance Rate Maps (FIRMs). The buildings in this inventory are exposed
-to the combination of wind and floodplain hazards, and includes some of the most populated municipalities in the
-county: Atlantic City, Margate City, and Ventor City which contribute to about 50% of the entire building inventory
+to the combination of wind and floodplain hazards, and include some of the most populated municipalities in the
+county: Atlantic City, Margate City, and Ventnor City, which contribute to about 50% of the entire building inventory
 in Atlantic County.</p>
 <div class="align-center figure" id="id6">
 <span id="fig-buildingclassfei"></span><a class="reference internal image-reference" href="../../../_images/new_inventory_map.png"><img alt="../../../_images/new_inventory_map.png" src="../../../_images/new_inventory_map.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.2 </span><span class="caption-text">Geospatial visualization of subclasses of buildings in Flood-Exposed Inventory.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.2 </span><span class="caption-text">Geospatial visualization of subclasses of buildings in the Flood-Exposed Inventory.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-<p>The following figures summarize characteristics of these inventories, including distribution by municipality
-(<a class="reference internal" href="#fig-distassetmunicipality"><span class="std std-numref">Fig. 2.1.4.3</span></a>), by year built (<a class="reference internal" href="../sf_bay_area/overview.html#fig-distbuiltyear"><span class="std std-numref">Fig. 1.1.4.8</span></a>), by occupancy (<a class="reference internal" href="../sf_bay_area/overview.html#fig-occupancytype"><span class="std std-numref">Fig. 1.1.4.9</span></a>),
-by number of stories (<a class="reference internal" href="../sf_bay_area/overview.html#fig-numstory"><span class="std std-numref">Fig. 1.1.4.10</span></a>) and by primary construction material (<a class="reference internal" href="../sf_bay_area/overview.html#fig-constrmaterial"><span class="std std-numref">Fig. 1.1.4.11</span></a>).
+<p><strong>Exploration Inventory</strong>: A subset of 1000 buildings drawn from the Flood-Exposed Inventory is intended to provide
+a less computationally demanding implementation for new users or for those wishing to test the development of new
+contributions to the workflow (<a class="reference internal" href="#fig-buildingclassei"><span class="std std-numref">Fig. 2.1.4.3</span></a>). This inventory encompasses the five coastal municipalities
+experiencing the most damage under the synthetic storm scenario described later in <a class="reference internal" href="hazard_characterization.html#lbl-testbed-ac-hazard-characterization-synthetic"><span class="std std-ref">Synthetic Storm Scenario</span></a>.
+From each of these municipalities, properties are randomly sampled, proportional to the total number of buildings
+in that municipality and ensuring that the distribution of construction material of buildings in the sample is
+representative of the underlying distribution for the full population. The buildings in this inventory are exposed to the combination of
+wind and floodplain hazards.</p>
+<div class="align-center figure" id="id7">
+<span id="fig-buildingclassei"></span><a class="reference internal image-reference" href="../../../_images/new_inventory_map_expl.png"><img alt="../../../_images/new_inventory_map_expl.png" src="../../../_images/new_inventory_map_expl.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.3 </span><span class="caption-text">Geospatial visualization of subclasses of buildings in the Flood-Exposed Inventory.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>The following figures summarize the characteristics of these inventories, including distribution by municipality
+(<a class="reference internal" href="#fig-distassetmunicipality"><span class="std std-numref">Fig. 2.1.4.4</span></a>), by year built (<a class="reference internal" href="../sf_bay_area/overview.html#fig-distbuiltyear"><span class="std std-numref">Fig. 1.1.4.8</span></a>), by occupancy (<a class="reference internal" href="../sf_bay_area/overview.html#fig-occupancytype"><span class="std std-numref">Fig. 1.1.4.9</span></a>),
+by number of stories (<a class="reference internal" href="../sf_bay_area/overview.html#fig-numstory"><span class="std std-numref">Fig. 1.1.4.10</span></a>), and by primary construction material (<a class="reference internal" href="../sf_bay_area/overview.html#fig-constrmaterial"><span class="std std-numref">Fig. 1.1.4.11</span></a>).
 Notably, these inventories are typified by older vintages of construction (79% of Atlantic County buildings were constructed
 before 1980), with a dominance of low-rise (1-2 stories), residential, wood frame construction (approximately
 90% of Atlantic County buildings). Steel and reinforced concrete construction is more prevalent in downtown
 Atlantic City.</p>
-<div class="align-center figure" id="id7">
-<span id="fig-distassetmunicipality"></span><a class="reference internal image-reference" href="../../../_images/num_building_city_twoset.png"><img alt="../../../_images/num_building_city_twoset.png" src="../../../_images/num_building_city_twoset.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.3 </span><span class="caption-text">Distribution of number of buildings by municipality.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
-</div>
 <div class="align-center figure" id="id8">
-<span id="fig-distbuiltyear"></span><a class="reference internal image-reference" href="../../../_images/built_year_allset.png"><img alt="../../../_images/built_year_allset.png" src="../../../_images/built_year_allset.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.4 </span><span class="caption-text">Distribution of year built for buildings.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<span id="fig-distassetmunicipality"></span><a class="reference internal image-reference" href="../../../_images/num_building_city_twoset.png"><img alt="../../../_images/num_building_city_twoset.png" src="../../../_images/num_building_city_twoset.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.4 </span><span class="caption-text">Distribution of the number of buildings by municipality.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id9">
-<span id="fig-occupancytype"></span><a class="reference internal image-reference" href="../../../_images/occupancy_type_allset.png"><img alt="../../../_images/occupancy_type_allset.png" src="../../../_images/occupancy_type_allset.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.5 </span><span class="caption-text">Distribution of occupancy types.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<span id="fig-distbuiltyear"></span><a class="reference internal image-reference" href="../../../_images/built_year_allset.png"><img alt="../../../_images/built_year_allset.png" src="../../../_images/built_year_allset.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.5 </span><span class="caption-text">Distribution of buildings by year built.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id10">
-<span id="fig-numstory"></span><a class="reference internal image-reference" href="../../../_images/story_number_allset.png"><img alt="../../../_images/story_number_allset.png" src="../../../_images/story_number_allset.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.6 </span><span class="caption-text">Distribution of total story numbers for buildings.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<span id="fig-occupancytype"></span><a class="reference internal image-reference" href="../../../_images/occupancy_type_allset.png"><img alt="../../../_images/occupancy_type_allset.png" src="../../../_images/occupancy_type_allset.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.6 </span><span class="caption-text">Distribution of buildings by occupancy type.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id11">
+<span id="fig-numstory"></span><a class="reference internal image-reference" href="../../../_images/story_number_allset.png"><img alt="../../../_images/story_number_allset.png" src="../../../_images/story_number_allset.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.7 </span><span class="caption-text">Distribution of buildings by total number of stories.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id12">
 <span id="fig-constrmaterial"></span><a class="reference internal image-reference" href="../../../_images/building_type_allset.png"><img alt="../../../_images/building_type_allset.png" src="../../../_images/building_type_allset.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.7 </span><span class="caption-text">Distribution of primary construction material types.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.8 </span><span class="caption-text">Distribution of primary construction material types.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="fema18a"><span class="brackets"><a class="fn-backref" href="#id3">FEMA18a</a></span></dt>

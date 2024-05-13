@@ -49,7 +49,7 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.9. UQ: Uncertainty Quantification" href="../UQ.html" />
+    <link rel="next" title="2.9. SP: System Performance" href="SP.html" />
     <link rel="prev" title="2.7. ANA: Asset Analysis" href="ANA.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -135,9 +135,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#pelicun-damage-and-loss-for-transportation-infrastructure">2.8.2. Pelicun Damage and Loss for Transportation Infrastructure</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.9. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.10. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RES.html">2.11. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SP.html">2.9. SP: System Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.10. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.11. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RES.html">2.12. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
@@ -154,15 +155,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -234,7 +239,7 @@
             
   <div class="section" id="dl-damage-and-loss">
 <h1><span class="section-number">2.8. </span>DL: Damage and Loss<a class="headerlink" href="#dl-damage-and-loss" title="Permalink to this heading">¶</a></h1>
-<p>The <strong>Damage and Loss</strong> panel is where the user selects a damage and loss methodology to estimate losses over a region. The following damage and loss applications are available:</p>
+<p>The <strong>Damage and Loss</strong> panel enables users to select a damage and loss methodology for estimating losses across a region. It supports various applications:</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#pelicun-damage-and-loss-for-buildings" id="id3">Pelicun Damage and Loss for Buildings</a></p></li>
@@ -243,67 +248,40 @@
 </div>
 <div class="section" id="pelicun-damage-and-loss-for-buildings">
 <span id="lbl-dlbuildingpelicun"></span><h2><a class="toc-backref" href="#id3"><span class="section-number">2.8.1. </span>Pelicun Damage and Loss for Buildings</a><a class="headerlink" href="#pelicun-damage-and-loss-for-buildings" title="Permalink to this heading">¶</a></h2>
-<p>Shown in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>, the <strong>Pelicun Damage and Loss</strong> application has the following inputs:</p>
+<p>As depicted in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>, the <strong>Pelicun Damage and Loss</strong> application offers these inputs:</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p><strong>Damage and Loss Methodology:</strong> The type of damage and loss methodology to use. Currently, the following damage and loss methodologies are available:</p>
+<li><p><strong>Damage and Loss Methodology:</strong> Choose a methodology from the following options:</p>
 <blockquote>
 <div><ul class="simple">
-<li><dl class="simple">
-<dt>Hazus MH EQ</dt><dd><p>The <strong>Hazus MH EQ</strong> option, expects the inputs to include standard engineering demand parameters (EDPs) for earthquakes such as peak interstory drift ratio (PID), peak floor acceleration (PFA), peak roof drift (PRD), and peak floor displacement (PFD). Use this option if performing a building response analysis.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Hazus MH EQ IM</dt><dd><p>The <strong>Hazus MH EQ IM</strong> option is more rudimentary, and only expects an intensity measure (IM) as an input, e.g., peak ground acceleration (PGA). Use this option if you are NOT performing a building response analysis, i.e., the Building Modeling type is set to <strong>None</strong> in the <strong>MOD</strong> tab. Also, in the <strong>ANA</strong> tab, the Building Analysis Engine type should be <strong>IMasEDP</strong> when using this option.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Hazus MH HU</dt><dd><p>The <strong>Hazus MH HU</strong> option is for the prediction of damage and loss to buildings subjected to hurricanes. This option expects a wind intensity measure (IM) as an input, e.g., peak wind speed (PWS).</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>User-provided Fragilities</dt><dd><p>The <strong>User-provided Fragilities</strong> option allows users to employ their own custom fragility functions in the damage and loss workflow. This option expects the user to provide an auto-populate script and the path to a folder containing the user-defined fragility functions, as seen below in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>.
-An example of such practice can be found in Example 9 of <a class="reference internal" href="../../../examples/desktop/examples.html#lbl-examples"><span class="std std-ref">R2D examples</span></a>.</p>
-</dd>
-</dl>
-</li>
+<li><p><strong>Hazus MH EQ:</strong> For earthquake scenarios, requiring engineering demand parameters (EDPs) like peak inter-story drift ratio (PID), peak floor acceleration (PFA), peak roof drift (PRD), and peak floor displacement (PFD). Suitable for building response analysis.</p></li>
+<li><p><strong>Hazus MH EQ IM:</strong> A simpler option requiring only an intensity measure (IM), such as peak ground acceleration (PGA), for scenarios not involving building response analysis. Use this option when the Building Modeling type is set to <strong>None</strong> in the <strong>MOD</strong> tab and the Building Analysis Engine type to <strong>IMasEDP</strong> in the <strong>ANA</strong> tab.</p></li>
+<li><p><strong>Hazus MH HU:</strong> For the prediction of damage and loss to buildings subjected to hurricanes. This option requires a wind intensity measure (IM) as an input, e.g., peak wind speed (PWS).</p></li>
+<li><p><strong>User-provided Fragilities:</strong> Allows for custom fragility functions. Users must provide a script for auto-population and the path to a folder with the fragility functions, as shown in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>. Refer to Example 9 in <a class="reference internal" href="../../../examples/desktop/examples.html#lbl-examples"><span class="std std-ref">R2D examples</span></a> for implementation.</p></li>
 </ul>
-<p>The HAZUS options employ data from the <em>Hazards U.S. Multi-Hazard project</em> (HAZUS-MH). The <strong>Hazus MH EQ</strong> and the <strong>Hazus MH EQ IM</strong> options are intended for damage and loss analysis of buildings subjected to earthquakes. The <strong>Hazus MH HU</strong> option is intended for damage and loss analysis of buildings subjected to hurricanes.</p>
+<p>The HAZUS options utilize data from the Hazards U.S. Multi-Hazard project (HAZUS-MH), with <strong>Hazus MH EQ</strong> and <strong>Hazus MH EQ IM</strong> tailored for earthquakes, and <strong>Hazus MH HU</strong> for hurricanes.</p>
 </div></blockquote>
 </li>
-<li><p><strong>Event Time:</strong> Select event time ‘on’ or ‘off’. Selecting the event time to ‘on’ defines the time of the event in YYYY-MM-DD:HH format. ‘off’ turns all time-effects off.</p></li>
-<li><p><strong>Number of Realizations:</strong> The number of loss realizations to generate in an analysis.</p></li>
-<li><p><strong>Output Detailed Results:</strong> Checking this box will output detailed results.</p></li>
-<li><p><strong>Create Log File:</strong> Checking this box will create a log file of the analysis.</p></li>
+<li><p><strong>Event Time:</strong> Toggle ‘on’ to set the event time in YYYY-MM-DD:HH format, or ‘off’ to disable time-effects.</p></li>
+<li><p><strong>Number of Realizations:</strong> Set the number of loss realizations for the analysis.</p></li>
+<li><p><strong>Output Detailed Results:</strong> Enable to output detailed results.</p></li>
+<li><p><strong>Create Log File:</strong> Enable to generate a log file of the analysis.</p></li>
 <li><p><strong>Include Ground Failure:</strong> Checking this box will include ground failure in the analysis. If ground failure is included, fragility groups associated with ground failure are added in the auto-population phase. Note that such analysis requires peak ground displacement (PGD) values as inputs.</p></li>
-<li><p><strong>Auto-populate Script:</strong> A path to a Python script that is user-provided. The auto-populate script is employed to link or map assets to their respective fragility functions.</p></li>
-<li><p><strong>User-defined Fragility Function Folder:</strong> A path to a folder that contains any user-defined fragility functions.</p></li>
+<li><p><strong>Auto-populate Script:</strong> Path to a user-provided Python script for mapping assets to their respective fragility functions.</p></li>
+<li><p><strong>User-defined Fragility Function Folder:</strong> Path to a folder containing user-defined fragility functions.</p></li>
 </ol>
 </div></blockquote>
 <div class="align-center figure" id="id2">
 <span id="fig-r2dpelicundlpanel"></span><img alt="../../../../../_images/R2DPelicunDLPanel.png" src="../../../../../_images/R2DPelicunDLPanel.png" />
 <p class="caption"><span class="caption-number">Fig. 2.8.1.1 </span><span class="caption-text">Pelicun Damage and Loss Input panel.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>Additional information on Pelicun and descriptions of its output are available at <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/common/user_manual/usage/pelicun/outputs.html">Pelicun Documentation</a>.</p>
+<p>For more on Pelicun, including output descriptions, visit the <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/common/user_manual/usage/pelicun/outputs.html">Pelicun Documentation</a>.</p>
 </div>
 <div class="section" id="pelicun-damage-and-loss-for-transportation-infrastructure">
 <span id="lbl-dltransportpelicun"></span><h2><a class="toc-backref" href="#id4"><span class="section-number">2.8.2. </span>Pelicun Damage and Loss for Transportation Infrastructure</a><a class="headerlink" href="#pelicun-damage-and-loss-for-transportation-infrastructure" title="Permalink to this heading">¶</a></h2>
-<p>The Pelicun Damage and Loss for Transportation Infrastructure has the same user
-interface with buildings, as shown in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>. The <strong>damage
-and loss methodology</strong> options supported for transportation infrastructure are
-<strong>Hazus MH EQ IM</strong> and <strong>User-provided Fragilities</strong>.</p>
-<p>The <strong>Hazus MH EQ IM</strong>
-methodology implements the damage and loss model defined in
-<a class="reference external" href="https://www.fema.gov/sites/default/files/documents/fema_hazus-earthquake-model-technical-manual-5-1.pdf">Hazus Earthquake Model Technical Manual</a>.
-For bridges, <strong>Hazus MH EQ IM</strong> expects <cite>SA_0.3</cite> and <cite>SA_1.0</cite> as input for evaluating ground shaking-induced damage for bridges.
-If ground failure is enabled, permanent ground deformation (<cite>PGD_h</cite> and <cite>PGD_v</cite>)
-also need to be provided. For roadways, permanent ground deformation (<cite>PGD_h</cite> and <cite>PGD_v</cite>)
-need to be provided. For tunnels, peak ground acceleration (<cite>PGA</cite>) and permanent ground deformation (<cite>PGD_h</cite> and <cite>PGD_v</cite>) are required.</p>
-<p>The <strong>User-provided Fragilities</strong> option allows users to employ their own custom fragility functions in the damage and loss workflow. This option expects the user to provide an auto-populate script and the path to a folder containing the user-defined fragility functions, as seen below in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>.
-An example of such practice can be found in Example 9 of <a class="reference internal" href="../../../examples/desktop/examples.html#lbl-examples"><span class="std std-ref">R2D examples</span></a>.</p>
+<p>The interface for Transportation Infrastructure damage and loss in Pelicun mirrors that of buildings, as shown in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>. Supported <strong>damage and loss methodology</strong> options include <strong>Hazus MH EQ IM</strong> and <strong>User-provided Fragilities</strong>.</p>
+<p><strong>Hazus MH EQ IM</strong> follows the damage and loss model from the <a class="reference external" href="https://www.fema.gov/sites/default/files/documents/fema_hazus-earthquake-model-technical-manual-5-1.pdf">Hazus Earthquake Model Technical Manual</a>. For bridges, it requires <cite>SA_0.3</cite> and <cite>SA_1.0</cite> for ground shaking-induced damage assessment. Ground failure considerations require permanent ground deformation (<cite>PGD_h</cite> and <cite>PGD_v</cite>) inputs for bridges and roadways, while tunnels need peak ground acceleration (<cite>PGA</cite>) and permanent ground deformation (<cite>PGD_h</cite> and <cite>PGD_v</cite>).</p>
+<p>The <strong>User-provided Fragilities</strong> option allows for custom fragility functions, necessitating an auto-populate script and a folder path for the fragility functions, as detailed in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>. See Example 9 in <a class="reference internal" href="../../../examples/desktop/examples.html#lbl-examples"><span class="std std-ref">R2D examples</span></a> for an example.</p>
 </div>
 </div>
 

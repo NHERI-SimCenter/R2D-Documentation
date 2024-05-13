@@ -156,15 +156,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -238,11 +242,11 @@
 <span id="lbl-testbed-ac-example-outputs"></span><h1><span class="section-number">2.8. </span>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="r2d-interface">
 <h2><span class="section-number">2.8.1. </span>R2D Interface<a class="headerlink" href="#r2d-interface" title="Permalink to this heading">¶</a></h2>
-<p>One approach to run the testbed simulation is via the
+<p>One approach to running the testbed simulation is via the
 <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt">R2D application</a>.
 After successfully downloading and launching, the major steps for setting up the run are listed as follows:</p>
 <ol class="arabic">
-<li><p>Set the <strong>Units</strong> in the <strong>GI</strong> panel as shown in <a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-gi"><span class="std std-numref">Fig. 4.8.1</span></a> and check interested output files.</p>
+<li><p>Set the <strong>Units</strong> in the <strong>GI</strong> panel as shown in <a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-gi"><span class="std std-numref">Fig. 4.8.1</span></a> and check the desired output files.</p>
 <div class="align-center figure" id="r2d-gi">
 <a class="reference internal image-reference" href="../../../_images/R2D_GI.png"><img alt="../../../_images/R2D_GI.png" src="../../../_images/R2D_GI.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.8.1.2 </span><span class="caption-text">R2D GI setup.</span><a class="headerlink" href="#r2d-gi" title="Permalink to this image">¶</a></p>
@@ -250,7 +254,7 @@ After successfully downloading and launching, the major steps for setting up the
 </li>
 <li><p>Download and unzip the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/02.%20Input:%20HAZ%20-%20Hazard%20Characterization">HurricaneLaura_MappedPWS</a>.
 Set the <strong>Event File Listing Wind Field</strong> in the <strong>HAZ</strong> panel to the “EventGrid.csv” in the unzipped “IMs” folder.
-The app would automatically load the directory (<a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-haz"><span class="std std-numref">Fig. 4.8.2</span></a>). And the <strong>Units of Event Input File</strong> should be
+The app will automatically load the directory (<a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-haz"><span class="std std-numref">Fig. 4.8.2</span></a>). The <strong>Units of Event Input File</strong> should be
 “Miles per hour”.</p>
 <div class="align-center figure" id="r2d-haz">
 <a class="reference internal image-reference" href="../../../_images/R2D_HAZ.png"><img alt="../../../_images/R2D_HAZ.png" src="../../../_images/R2D_HAZ.png" style="width: 500px;" /></a>
@@ -259,7 +263,7 @@ The app would automatically load the directory (<a class="reference internal" hr
 </li>
 <li><p>Download the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/01.%20Input:%20BIM%20-%20Building%20Inventory%20Data">BIM_LakeCharles_Full.csv</a> (under <strong>01. Input: BIM - Building Inventory Data</strong> folder).
 Select <strong>CSV to BIM</strong> in the <strong>ASD</strong> panel and set the <strong>Import Path</strong> to “BIM_LakeCharles_Full.csv” (<a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-asd"><span class="std std-numref">Fig. 4.8.3</span></a>).
-Specify the building IDs that you would like to include in the simulation.</p>
+Specify the building IDs that you want to include in the simulation.</p>
 <div class="align-center figure" id="r2d-asd">
 <a class="reference internal image-reference" href="../../../_images/R2D_ASD.png"><img alt="../../../_images/R2D_ASD.png" src="../../../_images/R2D_ASD.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.8.1.4 </span><span class="caption-text">R2D ASD setup.</span><a class="headerlink" href="#r2d-asd" title="Permalink to this image">¶</a></p>
@@ -271,64 +275,65 @@ Specify the building IDs that you would like to include in the simulation.</p>
 <p class="caption"><span class="caption-number">Fig. 2.8.1.5 </span><span class="caption-text">R2D HTA setup.</span><a class="headerlink" href="#r2d-hta" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p>Set the “Building Modeling” in <strong>MOD</strong> panel to “None”.</p>
+<li><p>Set the “Building Modeling” in the <strong>MOD</strong> panel to “None”.</p></li>
+</ol>
 <div class="align-center figure" id="r2d-mod">
 <a class="reference internal image-reference" href="../../../_images/R2D_MOD.png"><img alt="../../../_images/R2D_MOD.png" src="../../../_images/R2D_MOD.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.8.1.6 </span><span class="caption-text">R2D MOD setup.</span><a class="headerlink" href="#r2d-mod" title="Permalink to this image">¶</a></p>
 </div>
-</li>
-<li><p>Set the “Building Analysis Engine” in <strong>ANA</strong> panel to “IMasEDP”.</p>
+<ol class="arabic">
+<li><p>Set the “Building Analysis Engine” in the <strong>ANA</strong> panel to “IMasEDP”.</p>
 <div class="align-center figure" id="r2d-ana">
 <a class="reference internal image-reference" href="../../../_images/R2D_ANA.png"><img alt="../../../_images/R2D_ANA.png" src="../../../_images/R2D_ANA.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.8.1.7 </span><span class="caption-text">R2D ANA setup.</span><a class="headerlink" href="#r2d-ana" title="Permalink to this image">¶</a></p>
 </div>
+<p>R2D ANA setup.</p>
 </li>
-<li><p>Set the “Damage and Loss Method” in <strong>DL</strong> panel to “HAZUS MH HU”. Download the rulset scripts from
+<li><p>Set the “Damage and Loss Method” in the <strong>DL</strong> panel to “HAZUS MH HU”. Download the ruleset scripts from
 <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation/scripts">DesignSafe PRJ-3207</a>
-(under <strong>03. Input: DL - Rulesets for Asset Representation/scripts</strong> folder) and
-set the <strong>Auto populate script</strong> to “auto_HU_LA.py” (<a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-dl"><span class="std std-numref">Fig. 4.8.7</span></a>). Note please place the rulset scripts
-in an individual folder so that the application could copy and load them later.</p>
+(under the <strong>03. Input: DL - Rulesets for Asset Representation/scripts</strong> folder) and
+set the <strong>Auto populate script</strong> to “auto_HU_LA.py” (<a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-dl"><span class="std std-numref">Fig. 4.8.7</span></a>). Please note, place the ruleset scripts
+in an individual folder so that the application can copy and load them later.</p>
 <div class="align-center figure" id="r2d-dl">
 <a class="reference internal image-reference" href="../../../_images/R2D_DL.png"><img alt="../../../_images/R2D_DL.png" src="../../../_images/R2D_DL.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.8.1.8 </span><span class="caption-text">R2D DL setup.</span><a class="headerlink" href="#r2d-dl" title="Permalink to this image">¶</a></p>
 </div>
+<p>R2D DL setup.</p>
 </li>
-<li><p>Set the “UQ Application” in <strong>UQ</strong> panel to “None”.</p>
+<li><p>Set the “UQ Application” in the <strong>UQ</strong> panel to “None”.</p>
 <div class="align-center figure" id="r2d-uq">
 <a class="reference internal image-reference" href="../../../_images/R2D_UQ.png"><img alt="../../../_images/R2D_UQ.png" src="../../../_images/R2D_UQ.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.8.1.9 </span><span class="caption-text">R2D UQ setup.</span><a class="headerlink" href="#r2d-uq" title="Permalink to this image">¶</a></p>
 </div>
+<p>R2D UQ setup.</p>
 </li>
 </ol>
-<p>After setting up the simulation, please click the <strong>RUN</strong> to execute the analysis. Once the simulation completed,
-the app would direct you to the <strong>RES</strong> panel (<a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-res"><span class="std std-numref">Fig. 4.8.9</span></a>) where you could examine and export the results.</p>
+<p>After setting up the simulation, click <strong>RUN</strong> to execute the analysis. Once the simulation is completed,
+the app will direct you to the <strong>RES</strong> panel (<a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-res"><span class="std std-numref">Fig. 4.8.9</span></a>) where you can examine and export the results.</p>
 <div class="align-center figure" id="r2d-res">
 <a class="reference internal image-reference" href="../../../_images/R2D_RES.png"><img alt="../../../_images/R2D_RES.png" src="../../../_images/R2D_RES.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.8.1.10 </span><span class="caption-text">R2D RES panel.</span><a class="headerlink" href="#r2d-res" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.8.1.7 </span><span class="caption-text">R2D RES panel.</span><a class="headerlink" href="#r2d-res" title="Permalink to this image">¶</a></p>
 </div>
-<p>For simulating the damage and loss for a large region of interest (please remember to reset the building IDs in <strong>ASD</strong>), it would be efficient to submit and run the job
+<p>For simulating the damage and loss for a large region of interest (remember to reset the building IDs in <strong>ASD</strong>), it is efficient to submit and run the job
 to <a class="reference external" href="https://www.designsafe-ci.org/">DesignSafe</a> on <a class="reference external" href="https://www.tacc.utexas.edu/systems/frontera">Frontera</a>.
-This can be done in R2D by clicking <strong>RUN at DesignSafe</strong> (one would need to have a valid
-<a class="reference external" href="https://www.designsafe-ci.org/account/register/">DesignSafe account</a> for login and access the computing resource).
-<a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-run-ds"><span class="std std-numref">Fig. 4.8.10</span></a> provides an example configuration to run the analysis (and please see <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/usage.html#figremjobpanel">R2D User Guide</a> for detailed descriptions).
-The individual building simulations are paralleled when being conducted on Frontera which accelerate the process. It is suggested for the entire building
+This can be done in R2D by clicking <strong>RUN at DesignSafe</strong> (you will need to have a valid
+<a class="reference external" href="https://www.designsafe-ci.org/account/register/">DesignSafe account</a> for login and access to the computing resource).
+<a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-run-ds"><span class="std std-numref">Fig. 4.8.10</span></a> provides an example configuration to run the analysis (see <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/usage.html#figremjobpanel">R2D User Guide</a> for detailed descriptions).
+The individual building simulations are parallelized when conducted on Frontera, which accelerates the process. It is suggested for the entire building
 inventory in this testbed to use 20 minutes with 96 Skylake (SKX) cores (e.g., 2 nodes with 48 processors per node) to complete
-the simulation. One would receive a job failure message if the specified CPU hours are not sufficient to complete the run.
-Note that the product of node number, processor number per node, and buildings per task should be greater than the
+the simulation. You will receive a job failure message if the specified CPU hours are not sufficient to complete the run.
+Note that the product of the node number, processor number per node, and buildings per task should be greater than the
 total number of buildings in the inventory to be analyzed.</p>
-<div class="align-center figure" id="r2d-run-ds">
-<a class="reference internal image-reference" href="../../../_images/R2D_RUN.png"><img alt="../../../_images/R2D_RUN.png" src="../../../_images/R2D_RUN.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.8.1.11 </span><span class="caption-text">R2D - Run at DesignSafe (configuration).</span><a class="headerlink" href="#r2d-run-ds" title="Permalink to this image">¶</a></p>
+<div class="align-center figure" id="id2">
+<a class="reference internal image-reference" href="../../../_images/R2D_MOD.png"><img alt="../../../_images/R2D_MOD.png" src="../../../_images/R2D_MOD.png" style="width: 500px;" /></a>
 </div>
-<p>Users could monitor the job status and retrieve result data by <strong>GET from DesignSafe</strong> button (<a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-get-ds"><span class="std std-numref">Fig. 4.8.11</span></a>). The retrieved data include
-four major result files, i.e., <em>BIM.hdf</em>, <em>EDP.hdf</em>, <em>DM.hdf</em>, and <em>DV.hdf</em>. R2D also automatically converts the hdf files to csv files that are easier to work with.
-While R2D provides basic visualization functionalities (<a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-res"><span class="std std-numref">Fig. 4.8.9</span></a>), users could access the data which are downloaded under the remote work directory, e.g.,
-<em>/Documents/R2D/RemoteWorkDir</em> (this directory is machine specific and can be found in <strong>File-&gt;Preferences-&gt;Remote Jobs Directory</strong>).
-Once having these result files, users could extract and process interested information - the next section will use
+<p>R2D - Run at DesignSafe (Configuration)</p>
+<p>Users can monitor the job status and retrieve result data by clicking the <strong>GET from DesignSafe</strong> button (<a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-get-ds"><span class="std std-numref">Fig. 4.8.11</span></a>). The retrieved data includes
+four major result files, namely, <em>BIM.hdf</em>, <em>EDP.hdf</em>, <em>DM.hdf</em>, and <em>DV.hdf</em>. R2D also automatically converts the hdf files to csv files for easier manipulation.
+While R2D provides basic visualization functionalities (<a class="reference internal" href="../../user_manual/examples/desktop/E9Tsunami/README.html#r2d-res"><span class="std std-numref">Fig. 4.8.9</span></a>), users can access the data downloaded under the remote work directory, e.g.,
+<em>/Documents/R2D/RemoteWorkDir</em> (this directory is machine-specific and can be found in <strong>File-&gt;Preferences-&gt;Remote Jobs Directory</strong>).
+Upon obtaining these result files, users can extract and process the information of interest - the next section will use
 the results from this testbed as an example to discuss more details.</p>
 <div class="align-center figure" id="r2d-get-ds">
 <a class="reference internal image-reference" href="../../../_images/get_from_designsafe.png"><img alt="../../../_images/get_from_designsafe.png" src="../../../_images/get_from_designsafe.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.8.1.12 </span><span class="caption-text">R2D GET from DesignSafe.</span><a class="headerlink" href="#r2d-get-ds" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.8.1.8 </span><span class="caption-text">R2D GET from DesignSafe.</span><a class="headerlink" href="#r2d-get-ds" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="sample-results">
@@ -352,7 +357,7 @@ scenarios (<a class="reference internal" href="hazard_characterization.html#hurr
 <p class="caption"><span class="caption-number">Fig. 2.8.2.4 </span><span class="caption-text">Estimated regional loss maps for the <strong>Category 5</strong> hurricane.</span><a class="headerlink" href="#dl-c5" title="Permalink to this image">¶</a></p>
 </div>
 <p>Average expected loss ratios are also computed for individual cities, which are
-summarized in <a class="reference internal" href="#cl-c2"><span class="std std-numref">Fig. 2.8.2.5</span></a> to <a class="reference internal" href="#cl-c5"><span class="std std-numref">Fig. 2.8.2.8</span></a></p>
+summarized in <a class="reference internal" href="#cl-c2"><span class="std std-numref">Fig. 2.8.2.5</span></a> to <a class="reference internal" href="#cl-c5"><span class="std std-numref">Fig. 2.8.2.8</span></a>.</p>
 <div class="align-center figure" id="cl-c2">
 <a class="reference internal image-reference" href="../../../_images/city_loss_c2.png"><img alt="../../../_images/city_loss_c2.png" src="../../../_images/city_loss_c2.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.8.2.5 </span><span class="caption-text">City-wise average expected loss ratios (<strong>Category 2</strong> hurricane).</span><a class="headerlink" href="#cl-c2" title="Permalink to this image">¶</a></p>
@@ -369,11 +374,11 @@ summarized in <a class="reference internal" href="#cl-c2"><span class="std std-n
 <a class="reference internal image-reference" href="../../../_images/city_loss_c5.png"><img alt="../../../_images/city_loss_c5.png" src="../../../_images/city_loss_c5.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.8.2.8 </span><span class="caption-text">City-wise average expected loss ratios (<strong>Category 5</strong> hurricane).</span><a class="headerlink" href="#cl-c5" title="Permalink to this image">¶</a></p>
 </div>
-<p>For the top five cities with most assets in the building inventory, the average
-expected wind losses are computed for different built eras. Buildings before 1980s generally
-have relatively higher wind loss ratios where 1970s is found to be the worst decade for
-Atlantic City, Brigantine, and Galloway. Since 1980, the building performance is improved
-where the post-2000 buildings are found to behave much better than buildings in the other groups.</p>
+<p>For the top five cities with the most assets in the building inventory, the average
+expected wind losses are computed for different construction eras. Buildings built before the 1980s generally
+have relatively higher wind loss ratios, with the 1970s found to be the worst decade for
+Atlantic City, Brigantine, and Galloway. Since 1980, building performance has improved,
+with post-2000 buildings found to perform much better than buildings from other periods.</p>
 <div class="align-center figure" id="wl-atlantic">
 <a class="reference internal image-reference" href="../../../_images/atlantic_wind_loss.png"><img alt="../../../_images/atlantic_wind_loss.png" src="../../../_images/atlantic_wind_loss.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.8.2.9 </span><span class="caption-text">Average expected wind loss ratios (Atlantic City).</span><a class="headerlink" href="#wl-atlantic" title="Permalink to this image">¶</a></p>

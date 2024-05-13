@@ -135,15 +135,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -213,20 +217,20 @@
             
   <div class="section" id="anchorage-ak">
 <span id="lbl-testbed-anchorage"></span><h1>Anchorage, AK<a class="headerlink" href="#anchorage-ak" title="Permalink to this heading">¶</a></h1>
-<p>On November 30th 2018 at 8.29am local time, a magnitude 7.1 earthquake occurred near Anchorage, Alaska. Originally the earthquake was estimated to be a magnitude 7.0, but was later on revised to magnitude 7.1. The epicenter of the earthquake was 10 miles away from the Anchorage metro area and the depth of the earthquake was 29 miles. For more details visit the <a class="reference external" href="https://earthquake.usgs.gov/earthquakes/eventpage/ak20419010/executive">USGS event page</a>. A <a class="reference external" href="https://www.youtube.com/watch?v=faK6magPCJU">short Youtube video</a> shows the shaking and images of the damage. As of July 11, FEMA’s Individuals and Households program has approved more than <a class="reference external" href="https://www.fema.gov/press-release/20200827/state-and-federal-disaster-assistance-2018-alaska-earthquake-tops-100">$21 million to repair disaster-damaged homes and pay for temporary housing. Additionally, the U.S. Small Business Administration has approved more than $70.3 million for 1,772 homeowners and renters; and more than $7.89 million for 112 businesses.</a>.</p>
-<p>In the few weeks following the earthquake, the NHERI SimCenter team collected and processed building exposure data from the publicly available parcels tax data from the Municipality of Anchorage tax assessor’s website. The tax data for approximately 97,000 parcels was processed, resulting in buildings data in 85,000 parcels. In addition the SimCenter collected a number of recorded motions for the event that were made available online.</p>
-<p>Subsequently the SimCenter created a workflow to estimate the effect of the earthquake using the software created by the center for performing assessment of damage associated with natural events at the regional scale. This section describes the steps involved to collect the data, steps that a user would take to repeat the simulations performed by SimCenter, and finally the results obtained.</p>
+<p>On November 30th, 2018, at 8:29 am local time, a magnitude 7.1 earthquake occurred near Anchorage, Alaska. Originally, the earthquake was estimated to be a magnitude 7.0, but was later revised to magnitude 7.1. The epicenter of the earthquake was 10 miles away from the Anchorage metro area, and the depth of the earthquake was 29 miles. For more details, visit the <a class="reference external" href="https://earthquake.usgs.gov/earthquakes/eventpage/ak20419010/executive">USGS event page</a>. A <a class="reference external" href="https://www.youtube.com/watch?v=faK6magPCJU">short Youtube video</a> shows the shaking and images of the damage. As of July 11, FEMA’s Individuals and Households program has approved more than <a class="reference external" href="https://www.fema.gov/press-release/20200827/state-and-federal-disaster-assistance-2018-alaska-earthquake-tops-100">$21 million to repair disaster-damaged homes and pay for temporary housing. Additionally, the U.S. Small Business Administration has approved more than $70.3 million for 1,772 homeowners and renters; and more than $7.89 million for 112 businesses.</a>.</p>
+<p>In the few weeks following the earthquake, the NHERI SimCenter team collected and processed building exposure data from the publicly available parcels tax data from the Municipality of Anchorage tax assessor’s website. The tax data for approximately 97,000 parcels was processed, resulting in building data in 85,000 parcels. In addition, the SimCenter collected a number of recorded motions for the event that were made available online.</p>
+<p>Subsequently, the SimCenter created a workflow to estimate the effect of the earthquake using the software created by the center for performing assessment of damage associated with natural events at the regional scale. This section describes the steps involved to collect the data, steps that a user would take to repeat the simulations performed by SimCenter, and finally the results obtained.</p>
 <p>A video <a class="reference external" href="https://www.youtube.com/watch?v=VH-slcnmTJc">presenting the work</a> was presented by Wael Elhadded of SimCenter (now with NVIDIA).</p>
 <div class="section" id="anchorage-data-gathering">
 <h2>Anchorage Data Gathering<a class="headerlink" href="#anchorage-data-gathering" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="building-data">
 <h3>Building Data<a class="headerlink" href="#building-data" title="Permalink to this heading">¶</a></h3>
-<p>The NHERI SimCenter team collected and processed building exposure data from the publicly available parcels tax data from the <a class="reference external" href="https://www.muni.org/pages/default.aspx">Municipality of Anchorage tax assessor’s website</a>. The tax data for approximately 97,000 parcels was processed, resulting in buildings data in 85,000 parcels, which can be broken down into two regions as follows:</p>
+<p>The NHERI SimCenter team collected and processed building exposure data from the publicly available parcels tax data from the <a class="reference external" href="https://www.muni.org/pages/default.aspx">Municipality of Anchorage tax assessor’s website</a>. The tax data for approximately 97,000 parcels was processed, resulting in building data in 85,000 parcels, which can be broken down into two regions as follows:</p>
 <ul class="simple">
 <li><p>73,000 parcels in Anchorage</p></li>
 <li><p>12,000 parcels in Eagle River</p></li>
 </ul>
-<p>The building data is provided online at DesignSafe <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Datasets/AnchorageM7">AnchorageBuildings.zip</a>. The zip file contains a single comma separated file. The first line contains the column headings, the subsequent lines the information for each building.</p>
+<p>The building data is provided online at DesignSafe <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Datasets/AnchorageM7">AnchorageBuildings.zip</a>. The zip file contains a single comma-separated file. The first line contains the column headings, the subsequent lines the information for each building.</p>
 <ol class="arabic simple">
 <li><p>Id - an integer id</p></li>
 <li><p>Area - floor plan area of building.</p></li>
@@ -236,9 +240,9 @@
 <li><p>Latitude - latitude of building</p></li>
 <li><p>Longitude - longitude of building</p></li>
 <li><p>Occupancy - occupancy class of building</p></li>
-<li><p>ParcelId - assessors parcel id.</p></li>
+<li><p>ParcelId - assessor’s parcel id.</p></li>
 </ol>
-<p>The data was collected by a python program utilizing <a class="reference external" href="https://www.selenium.dev/">selenium</a>, which provides a set of tools for automating web browsers. The program used to generate the data is as shown in figure below:</p>
+<p>The data was collected by a Python program utilizing <a class="reference external" href="https://www.selenium.dev/">selenium</a>, which provides a set of tools for automating web browsers. The program used to generate the data is as shown in the figure below:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">geocoder</span>
@@ -514,7 +518,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>the code uses a python model named <code class="docutils literal notranslate"><span class="pre">geocoder</span></code> to geoencode the latitudes and longitudes from the street addresses. geocoder can be set up to use a <a class="reference external" href="https://github.com/DenisCarriere/geocoder">number of provideres</a>. The code shown above uses Open Street Maps, which is free but might not be efficient. The difference in service providers is in speed of service, some may be rate limited, and all can result in minor differences in lat and long values returned.</p>
+<p>The code uses a Python model named <code class="docutils literal notranslate"><span class="pre">geocoder</span></code> to geoencode the latitudes and longitudes from the street addresses. Geocoder can be set up to use a <a class="reference external" href="https://github.com/DenisCarriere/geocoder">number of providers</a>. The code shown above uses Open Street Maps, which is free but might not be efficient. The difference in service providers is in speed of service, some may be rate limited, and all can result in minor differences in lat and long values returned.</p>
 </div>
 </div>
 <div class="section" id="ground-motion-data">
@@ -531,7 +535,7 @@
 <p>Average building loss ratio is 14.5%
 Total repair cost of $7.5 billion
 3800 Red Tagged Buildings</p>
-<p>Researchers interested in reproducing the same results are able to access rWHALE through DeisgnSafe-CI Workspace (requires logging in). Detailed steps needed to run a large scale regional simulation were presented in a NHERI SimCenter online webinar, and a recorded version is available online. Additional documentation and details are available in the SimCenter website.</p>
+<p>Researchers interested in reproducing the same results are able to access rWHALE through DesignSafe-CI Workspace (requires logging in). Detailed steps needed to run a large-scale regional simulation were presented in a NHERI SimCenter online webinar, and a recorded version is available online. Additional documentation and details are available on the SimCenter website.</p>
 </div>
 </div>
 

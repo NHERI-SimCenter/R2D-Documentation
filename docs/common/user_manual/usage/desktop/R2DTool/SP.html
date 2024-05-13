@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.9. SP: System Performance &mdash; Regional Resilience Determination Tool  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.10. UQ: Uncertainty Quantification" href="../UQ.html" />
+    <link rel="prev" title="2.8. DL: Damage and Loss" href="DL.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dPlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dReleaseNotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="VIZ.html">2.1. VIZ: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HAZ.html">2.3. HAZ: Hazards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ASD.html">2.4. ASD: Asset Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HTA.html">2.5. HTA: Hazard to Asset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOD.html">2.6. MOD: Asset Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ANA.html">2.7. ANA: Asset Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DL.html">2.8. DL: Damage and Loss</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.9. SP: System Performance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rewet">2.9.1. REWET</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.10. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.11. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RES.html">2.12. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/R2D.html">6. R2D Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/lake_charles/index.html">3. Lake Charles, LA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Regional Resilience Determination Tool</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
+        
+      <li><span class="section-number">2.9. </span>SP: System Performance</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/R2DTool/SP.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sp-system-performance">
+<h1><span class="section-number">2.9. </span>SP: System Performance<a class="headerlink" href="#sp-system-performance" title="Permalink to this heading">¶</a></h1>
+<p>The <strong>System Performance</strong> panel is where the user selects a system performance methodology to perform a system (i.e., network) performance functionality assessment. The following system performance applications are available:</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#rewet" id="id2">REWET</a></p></li>
+</ul>
+</div>
+<div class="section" id="rewet">
+<span id="lbl-sprewet"></span><h2><a class="toc-backref" href="#id2"><span class="section-number">2.9.1. </span>REWET</a><a class="headerlink" href="#rewet" title="Permalink to this heading">¶</a></h2>
+<p>Shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-R2DREWETSYMPanel</span></code>, the <strong>REWET System Performance</strong> assessment application has three  tabs:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p><strong>Simulation:</strong> This tab refer to the input required for simulating the Water Distortion Network (WDN) service restoration after an event. The following inputs are require for in REWET’s simulation tab</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Event Time</p></li>
+</ul>
+<p>This refers to the time of the event after the simulation starts. For instance, if the time in the example INP file is 12 AM, an event time equal to 7200 corresponds to 2 AM.</p>
+<ul class="simple">
+<li><p>Simulation End Time</p></li>
+</ul>
+<p>This specifies the time at which the simulation ends.</p>
+<ul class="simple">
+<li><p>Terminate Simulation after the Last Job Sequence Is Done</p></li>
+</ul>
+<p>This option, if selected, allows the simulation to be ended before the simulation end time is reached if all the jobs defined for recovery are completed.</p>
+<ul class="simple">
+<li><p>Terminate Simulation after the Demand Is Met</p></li>
+</ul>
+<p>This option, if selected, allows the simulation to be ended before the simulation end time is reached if the ratio of demand after the event to the demand before the event meets or exceeds a given threshold for all demand nodes.</p>
+<ul class="simple">
+<li><p>Demand Checking Time Window</p></li>
+</ul>
+<p>This parameter defines the time window for checking demand after selecting “Terminate Simulation after the Demand.”</p>
+<ul class="simple">
+<li><p>Demand Checking Criteria</p></li>
+</ul>
+<p>This shows the ratio of demand after to demand before, which determines when the simulation ends when “Terminate Simulation after the Demand” is selected.</p>
+<div class="align-center figure" id="fig-r2drewetsympanel">
+<img alt="../../../../../_images/R2DSPREWETSim.png" src="../../../../../_images/R2DSPREWETSim.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Hydraulic:</strong> This tab refers to the input required for hydraulics of the Water Distortion Network (WDN) and damage simulation. The following inputs are require for in REWET’s hydraulics tab.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Hydraulic Solver Selection</p></li>
+</ul>
+<p>Users can specify their preferred hydraulic solver for their hydraulic simulation based on the available versions of REWET in R2D. The Modified EPANET V2.2 is a customized version of EPANET V2.2 that handles flow from negative pressure scenarios.</p>
+<ul class="simple">
+<li><p>Minimum Pressure Override and Required Pressure Override</p></li>
+</ul>
+<p>These options allow users to override the minimum and required pressure values specified in the INP file. Since the minimum and required pressure values in the example are correct, we leave them unchanged (set as -1 so that they will be ignored).</p>
+<ul class="simple">
+<li><p>Pipe Damage Modeling</p></li>
+</ul>
+<p>In pipe damage modeling, the relationship between the pipe’s diameter and the equivalent orifice diameter - similar to the approach proposed by Shi and O’Rourke (2008) - for each pipe material (or damage type) is defined. The default value is set to Cast Iron, with average values derived from Shi and O’Rourke (2008). If the user does not provide a material (or damage subtype) name list in the asset, R2D assumes the default value to be Cast Iron.</p>
+<div class="align-center figure" id="fig-r2drewethydpanel">
+<img alt="../../../../../_images/R2DSPREWETHyd.png" src="../../../../../_images/R2DSPREWETHyd.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>REWET System-Performance Hydraulic Input panel.</p>
+<ol class="arabic">
+<li><dl>
+<dt><strong>Restoration:</strong>     This tab refers to the input required for Restoration of the Water Distortion Network (WDN) that pursuits after the damages after an event. The following inputs are require for in REWET’s restoration tab.</dt><dd><ul class="simple">
+<li><p>Hydraulic Solver Selection</p></li>
+</ul>
+<p>The user can specify their preferred hydraulic solver for their hydraulic simulation based on the available versions of REWET in R2D. The Modified EPANET V2.2 is a customized version of EPANET V2.2 that handles flow from negative pressure scenarios.</p>
+<ul class="simple">
+<li><p>Minimum Pressure Override and Required Pressure Override</p></li>
+</ul>
+<p>These options allow users to override the minimum and required pressure values specified in the INP file. set as <strong>-1</strong> so that they will be ignored.</p>
+<blockquote>
+<div><p>..Note: This is a an overwrite option for the ease of user’s uage. The user can modify the inp file using EPANET’s interface or just use a text editor to edit the pressure just like other inputs.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Pipe Damage Modeling</p></li>
+</ul>
+<p>In pipe damage modeling, the relationship between the pipe’s diameter and the equivalent orifice diameter - similar to the approach proposed by Shi and O’Rourke (2008) - for each pipe material (or damage type) is defined. The default value is set to Cast Iron, with average values derived from Shi and O’Rourke (2008). If the user does not provide a material (or damage subtype) name list in the asset, R2D assumes the default value to be Cast Iron.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="align-center figure" id="id1">
+<img alt="../../../../../_images/R2DSPREWETRes.png" src="../../../../../_images/R2DSPREWETRes.png" />
+</div>
+</div></blockquote>
+<p>Additional information on REWET and descriptions of its output are available at Naeimi Dafchahi, S., &amp; Davidson, R. A. (2023), titled “Post-event restoration simulation of water distribution systems: a generally applicable approach.”</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

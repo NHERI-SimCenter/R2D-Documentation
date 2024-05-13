@@ -139,10 +139,10 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Asset Description</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#phase-i-attribute-definition">3.2.1. Phase I: Attribute Definition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#phase-ii-inventory-generation">3.2.2. Phase II: Inventory Generation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ai-ml-techniques-combined-with-computer-vision">AI/ML Techniques combined with Computer Vision</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ai-ml-techniques-combined-with-computer-vision">AI/ML Techniques Combined with Computer Vision</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#phase-iii-augmentation-using-third-party-data-site-specific-observations-and-existing-knowledge">3.2.3. Phase III: Augmentation Using Third-Party Data, Site-specific Observations, and Existing Knowledge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#phase-iii-augmentation-using-third-party-data-site-specific-observations-and-existing-knowledge">3.2.3. Phase III: Augmentation Using Third-Party Data, Site-Specific Observations, and Existing Knowledge</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#attribute-dws-ii">Attribute: DWS II</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#attribute-lulc">Attribute: LULC</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#attribute-yearbuilt">Attribute: YearBuilt</a></li>
@@ -170,15 +170,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -250,21 +254,22 @@
             
   <div class="section" id="asset-description">
 <span id="lbl-testbed-lc-asset-description"></span><h1><span class="section-number">3.2. </span>Asset Description<a class="headerlink" href="#asset-description" title="Permalink to this heading">¶</a></h1>
-<p>This section describes how a large-scale building inventory was constructed in two phases. The initial
-phase of this work involved identifying the attributes needed. The second phase involved work to
-obtain these attributes for each building using machine learning and
-techniques from computer vision to create an initial set of attributes. The remaining attributes were
-then obtained using other data sources as discussed below.</p>
+<p>This section describes the construction of a large-scale building inventory in two phases. The initial
+phase involved identifying the necessary attributes. The second phase involved using machine learning and computer vision techniques to</p>
+<blockquote>
+<div><p>obtain these attributes for each building, creating an initial set of attributes. The remaining attributes were
+then obtained using other data sources, as discussed below.</p>
+</div></blockquote>
 <div class="section" id="phase-i-attribute-definition">
 <h2><span class="section-number">3.2.1. </span>Phase I: Attribute Definition<a class="headerlink" href="#phase-i-attribute-definition" title="Permalink to this heading">¶</a></h2>
 <p>All the attributes required for loss estimation were first identified to develop the Building Inventory
-data model. This Building Inventory data model presented in <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>
+data model. This Building Inventory data model, presented in <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>,
 provides a set of attributes that will be assigned to each asset to form the building inventory file
-serving as input to the workflow. For each attribute a
-row in the table is provided. Each row has a number of columns: the attribute name, description,
-format (alphanumeric, floating point number, etc.), the data source used to define that attribute.
+serving as input to the workflow. For each attribute, a row in the table is provided. Each
+row has several columns: the attribute name, description,
+format (alphanumeric, floating point number, etc.), and the data source used to define that attribute.
 An expanded version of <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a> with the full details of this data
-model are available on <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/01.%20Input:%20BIM%20-%20Building%20Inventory%20Data">DesignSafe PRJ-3207</a>.</p>
+model is available on <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/01.%20Input:%20BIM%20-%20Building%20Inventory%20Data">DesignSafe PRJ-3207</a>.</p>
 <table class="colwidths-given docutils align-center" id="tab-bldg-inv-data-model-lc">
 <caption><span class="caption-number">Table 3.2.1.1 </span><span class="caption-text">Building inventory data model, detailed for Lake Charles Inventory.</span><a class="headerlink" href="#tab-bldg-inv-data-model-lc" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -451,51 +456,54 @@ model are available on <a class="reference external" href="https://www.designsaf
 </div>
 <div class="section" id="phase-ii-inventory-generation">
 <h2><span class="section-number">3.2.2. </span>Phase II: Inventory Generation<a class="headerlink" href="#phase-ii-inventory-generation" title="Permalink to this heading">¶</a></h2>
-<p>This section describes how the large-scale building inventory was constructed for Lake Charles using
-a phased approach that used machine learning, computer vision algorithm and data distributions to
-generate all attributes required for
+<p>This section describes the construction of the large-scale building inventory for Lake Charles using
+a phased approach that utilized machine learning, computer vision algorithms, and data distributions to
+generate all required attributes for
 the corresponding loss assessment. It is emphasized that the intent is to demonstrate how an
-inventory could be constructed and not to address potential errors, omissions or inaccuracies in
-the source data, i.e., source data are assumed to be accurate and no additional quality assurance
+inventory could be constructed, not to address potential errors, omissions, or inaccuracies in
+the source data. In other words, source data are assumed to be accurate, and no additional quality assurance
 was conducted outside of addressing glaring omissions or errors.</p>
 <p>For each of the attributes identified in <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>,
-a description of the attribute and information on how the data was identified and validated is presented.</p>
+a description of the attribute and information on how the data was identified and validated are presented.</p>
 <div class="section" id="ai-ml-techniques-combined-with-computer-vision">
-<h3>AI/ML Techniques combined with Computer Vision<a class="headerlink" href="#ai-ml-techniques-combined-with-computer-vision" title="Permalink to this heading">¶</a></h3>
-<p>Many of those attributes were generated with the SimCenter’s
+<h3>AI/ML Techniques Combined with Computer Vision<a class="headerlink" href="#ai-ml-techniques-combined-with-computer-vision" title="Permalink to this heading">¶</a></h3>
+<p>Many of these attributes were generated with the SimCenter’s
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/index.html">BRAILS</a> CityBuilder application.
-To avoid replication in the text, the following describes how those attributes
+To avoid repetition in the text, the following describes how these attributes
 were obtained. The sections below will present the validation of the data.</p>
-<p>CityBuilder is a python application that incorporates different AI/ML modules from BRAILS for performing
-specific tasks. The user creates a python script importing City Builder, constructing a CityBuilder
-object and then asking that object to build the inventory. The example script shown below, albeit
-our GoogleMapAPIKey removed, will create a building inventory file for use in the workflow.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module from BRAILS</span>
-<span class="kn">from</span> <span class="nn">brails.CityBuilder</span> <span class="kn">import</span> <span class="n">CityBuilder</span>
-<span class="c1"># Initialize the CityBuilder</span>
-<span class="n">cityBuilder</span> <span class="o">=</span> <span class="n">CityBuilder</span><span class="p">(</span><span class="n">attributes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;occupancy&#39;</span><span class="p">,</span><span class="s1">&#39;roofshape&#39;</span><span class="p">],</span>
-                  <span class="n">numBldg</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">place</span><span class="o">=</span><span class="s1">&#39;Lake Charles, Louisiana&#39;</span><span class="p">,</span>
-                  <span class="n">GoogleMapAPIKey</span><span class="o">=</span><span class="s1">&#39;REMOVED GOOGLE API KEY&#39;</span><span class="p">)</span>
-<span class="c1"># create the city-scale BIM file</span>
-<span class="n">BIM</span> <span class="o">=</span> <span class="n">cityBuilder</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+<p>CityBuilder is a Python application that incorporates different AI/ML modules from BRAILS for performing
+specific tasks. The user creates a Python script importing City Builder, constructs a CityBuilder
+object, and then asks that object to build the inventory. The example script shown below, albeit
+with our GoogleMapAPIKey removed, will create a building inventory file for use in the workflow.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
+<p># Import the module from BRAILS
+from brails.CityBuilder import CityBuilder
+# Initialize the CityBuilder
+cityBuilder = CityBuilder(attributes=[‘occupancy’, ‘roofshape’],</p>
+<blockquote>
+<div><p>numBldg=10, random=True, place=’Lake Charles, Louisiana’,
+GoogleMapAPIKey=’REMOVED GOOGLE API KEY’)</p>
+</div></blockquote>
+<p># Create the city-scale BIM file
+BIM = cityBuilder.build()</p>
 <p>Upon execution, CityBuilder will:</p>
 <ol class="arabic simple">
-<li><p>Download footprints for all buildings in the interested region, Lake Charles, from the
+<li><p>Download footprints for all buildings in the specified region, Lake Charles, from the
 <a class="reference external" href="https://github.com/microsoft/USBuildingFootprints">Microsoft Footprint Dataset</a> (<a class="reference internal" href="#microsoft18" id="id2"><span>[Microsoft18]</span></a>).</p></li>
-<li><p>Calculates the coordinate (Latitude, Longitude) for each building’s centroid, based on the footprint information.</p></li>
-<li><p>Download both a satellite image and a street view image for each building using Google API’s and the extracted coordinates.</p></li>
-<li><p>Perform computations on the images to obtain the interested building attributes using a series of pre-trained AI models.</p></li>
+<li><p>Calculate the coordinates (Latitude, Longitude) for the centroid of each building, based on the footprint information.</p></li>
+<li><p>Download both a satellite image and a street view image for each building using Google APIs and the calculated coordinates.</p></li>
+<li><p>Perform computations on the images to obtain the desired building attributes using a series of pre-trained AI models.</p></li>
 </ol>
 <div class="section" id="attribute-roofshape">
 <h4>Attribute: RoofShape<a class="headerlink" href="#attribute-roofshape" title="Permalink to this heading">¶</a></h4>
-<p>The RoofShape is obtained by CityBuilder using the BRAILS Roof shape module. The roof shape module
-determines roof shape based on a satellite image obtained for the building. The module uses machine
-learning, specifically it utilizes a convolutional neural network that has been trained on satellite
-images. In AI/ML terminology the Roof Shape module is an image classifier: it takes an image and
+<p>The RoofShape is obtained by CityBuilder using the BRAILS Roof Shape module. This module
+determines the roof shape based on a satellite image obtained for the building. It uses machine
+learning, specifically, it utilizes a convolutional neural network that has been trained on satellite
+images. In AI/ML terminology, the Roof Shape module is an image classifier: it takes an image and
 classifies it into one of three categories used in HAZUS: gable, hip, or flat as shown in
-<a class="reference internal" href="#roof-shape"><span class="std std-numref">Fig. 3.2.2.1</span></a>. The original training of the AI model utilized 6,000 images obtained from google
+<a class="reference internal" href="#roof-shape"><span class="std std-numref">Fig. 3.2.2.1</span></a>. The original training of the AI model utilized 6,000 images obtained from Google
 satellite imagery in conjunction with roof labels obtained from
 <a class="reference external" href="https://www.openstreetmap.org/">Open Street Maps</a>. As many roofs have more complex shapes, a
 similitude measure is used to determine which of these roof geometries is the best match to a given roof.
@@ -523,12 +531,12 @@ if the classification is perfect, affirming the accuracy of the classification b
 </div>
 <div class="section" id="attribute-occupancyclass">
 <h4>Attribute: OccupancyClass<a class="headerlink" href="#attribute-occupancyclass" title="Permalink to this heading">¶</a></h4>
-<p>The occupancy class attribute is also determined by CityBuilder using the occupancy class classifier
-module in BRAILS. The occupancy classifier is also a convolutional neural network. This network trained
-using 15,743 google street view images with labels derived from OpenStreetMaps and the NJDEP dataset in
+<p>The occupancy class attribute is determined by CityBuilder using the occupancy class classifier
+module in BRAILS. The occupancy classifier is a convolutional neural network. This network was trained
+using 15,743 Google Street View images with labels derived from OpenStreetMaps and the NJDEP dataset in
 the <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_description.html">Atlantic County, NJ testbed Asset Description</a>.
-This classifier labels buildings as one of: RES1 (single family building), RES3
-(multi-family building), COM1 (Commercial building). More details of the classifier can be found
+This classifier labels buildings as one of: RES1 (single-family building), RES3
+(multi-family building), COM1 (Commercial building). More details about the classifier can be found
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/occupancyClassifier.html">here</a>.</p>
 <p>The performance of the classifier was validated against a ground truth dataset that contains 293 street
 view images from the United States with unobstructed views of the buildings (cleaned data). The full
@@ -643,12 +651,12 @@ which is in line with the general intuition.</p>
 </div>
 <div class="section" id="attribute-roofslope">
 <h4>Attribute: RoofSlope<a class="headerlink" href="#attribute-roofslope" title="Permalink to this heading">¶</a></h4>
-<p>RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained
+<p>RoofSlope is calculated as the ratio between the roof height and the roof run. The roof height is obtained
 by determining the difference between the bottom plane and apex elevations of the roof as defined in the
 <a class="reference internal" href="#lbl-testbed-lc-asset-description-meanroofht"><span class="std std-ref">Attribute: MeanRoofHt</span></a>
-section. Roof run is determined as half the smaller dimension of the building, as determined from
+section. The roof run is determined as half the smaller dimension of the building, as determined from
 the dimensions of the building footprint. <a class="reference internal" href="#mean-slope-app"><span class="std std-numref">Fig. 3.2.2.9</span></a> displays the AI-predicted mean roof height versus the
-AI-precited roof pitch ratios. As expected, very little correlation between these two parameters are observed.</p>
+AI-predicted roof pitch ratios. As expected, very little correlation between these two parameters is observed.</p>
 <div class="align-center figure" id="mean-slope-app">
 <a class="reference internal image-reference" href="../../../_images/RoofSlopeApp1.png"><img alt="../../../_images/RoofSlopeApp1.png" src="../../../_images/RoofSlopeApp1.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.2.9 </span><span class="caption-text">AI-predicted RoofSlope versus mean roof height.</span><a class="headerlink" href="#mean-slope-app" title="Permalink to this image">¶</a></p>
@@ -657,35 +665,35 @@ AI-precited roof pitch ratios. As expected, very little correlation between thes
 </div>
 </div>
 <div class="section" id="phase-iii-augmentation-using-third-party-data-site-specific-observations-and-existing-knowledge">
-<h2><span class="section-number">3.2.3. </span>Phase III: Augmentation Using Third-Party Data, Site-specific Observations, and Existing Knowledge<a class="headerlink" href="#phase-iii-augmentation-using-third-party-data-site-specific-observations-and-existing-knowledge" title="Permalink to this heading">¶</a></h2>
-<p>The AI-generated building inventory is further augmented with multiple sources of information, including the
+<h2><span class="section-number">3.2.3. </span>Phase III: Augmentation Using Third-Party Data, Site-Specific Observations, and Existing Knowledge<a class="headerlink" href="#phase-iii-augmentation-using-third-party-data-site-specific-observations-and-existing-knowledge" title="Permalink to this heading">¶</a></h2>
+<p>The AI-generated building inventory is further augmented with multiple sources of information, including
 third-party datasets, site-specific statistics summarized from observations, and existing knowledge and
-engineering judgement. The following attributes are obtained or derived from third-party data.</p>
+engineering judgment. The following attributes are obtained or derived from third-party data.</p>
 <div class="section" id="attribute-dws-ii">
 <h3>Attribute: DWS II<a class="headerlink" href="#attribute-dws-ii" title="Permalink to this heading">¶</a></h3>
-<p>Design Wind Speed for Risk Category II construction in mph (ASCE 7-16), was obtained by queries to the
+<p>Design Wind Speed for Risk Category II construction in mph (ASCE 7-16) was obtained by queries to the
 <a class="reference external" href="https://hazards.atcouncil.org/">ATC Hazards by Location API</a> (<a class="reference internal" href="#atc20" id="id7"><span>[ATC20]</span></a>).</p>
 </div>
 <div class="section" id="attribute-lulc">
 <h3>Attribute: LULC<a class="headerlink" href="#attribute-lulc" title="Permalink to this heading">¶</a></h3>
 <p>Land use code is downloaded from <a class="reference external" href="http://www.webgis.com/terr_pages/LA/lulcutm/calcasieu.html">WebGIS</a>.
-Each land use class is represented by a integer as listed in <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a></p>
+Each land use class is represented by an integer as listed in <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>.</p>
 </div>
 <div class="section" id="attribute-yearbuilt">
 <h3>Attribute: YearBuilt<a class="headerlink" href="#attribute-yearbuilt" title="Permalink to this heading">¶</a></h3>
-<p>We initially derived the year built information based on the National Structure Inventory (NSI), which contains year
+<p>We initially derived the year built information from the National Structure Inventory (NSI), which contains year
 built information for geocoded addresses in the region of interest. It should be noted that not all buildings
-are included in the NSI dataset and the geocodes of the addresses do not match perfectly with building locations,
+are included in the NSI dataset and the geocodes of the addresses do not perfectly match with building locations,
 as shown in <a class="reference internal" href="#year-built-nsi"><span class="std std-numref">Fig. 3.2.3.1</span></a>.</p>
 <div class="align-center figure" id="year-built-nsi">
 <a class="reference internal image-reference" href="../../../_images/YearBuiltNSI.png"><img alt="../../../_images/YearBuiltNSI.png" src="../../../_images/YearBuiltNSI.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.3.1 </span><span class="caption-text">National Structure Inventory data points.</span><a class="headerlink" href="#year-built-nsi" title="Permalink to this image">¶</a></p>
 </div>
 <p>To address this issue, <a class="reference external" href="https://github.com/NHERI-SimCenter/SURF">SURF</a> (<a class="reference internal" href="#wang19" id="id9"><span>[Wang19]</span></a>) is employed to construct and train a neural
-network on the year built information from
+network on the year built information from the
 National Structure Inventory (NSI). The neural network is then used to predict the year built
 information for each building based on the spatial patterns it learned from the NSI dataset.
-The theory of using neural networks to learn the spatial patterns in data and to predict for
+The theory of using neural networks to learn the spatial patterns in data and to predict
 missing values is detailed <a class="reference external" href="https://doi.org/10.1016/j.autcon.2020.103474">here</a>.
 The result is shown in <a class="reference internal" href="#year-built-comp"><span class="std std-numref">Fig. 3.2.3.2</span></a>.</p>
 <div class="align-center figure" id="year-built-comp">
@@ -693,19 +701,19 @@ The result is shown in <a class="reference internal" href="#year-built-comp"><sp
 <p class="caption"><span class="caption-number">Fig. 3.2.3.2 </span><span class="caption-text">Comparison of year built between NSI and SURF.</span><a class="headerlink" href="#year-built-comp" title="Permalink to this image">¶</a></p>
 </div>
 <p>In parallel to this exploration, <a class="reference external" href="https://www.zillow.com/">Zillow</a> also provides the year built information for
-many of the residual buildings in the studied region.</p>
-<p>Similar to the implementation of NSI dataset, the 1182 data points of year built from Zillow are used to train a
-neural network, <a class="reference internal" href="#surf-yb-test"><span class="std std-numref">Fig. 3.2.3.3</span></a> shows the verification of the trained neural network (predicted vs. true values,
-Zillow dataset). More than <span class="math notranslate nohighlight">\(85%\)</span> buildings have prediction errors less than 20 years.</p>
+many of the residential buildings in the studied region.</p>
+<p>Similar to the implementation of the NSI dataset, the 1182 data points of year built from Zillow are used to train a
+neural network. <a class="reference internal" href="#surf-yb-test"><span class="std std-numref">Fig. 3.2.3.3</span></a> shows the verification of the trained neural network (predicted vs. true values,
+Zillow dataset). More than <span class="math notranslate nohighlight">\(85%\)</span> of buildings have prediction errors less than 20 years.</p>
 <div class="align-center figure" id="surf-yb-test">
 <a class="reference internal image-reference" href="../../../_images/SURF_YearBuiltTest.png"><img alt="../../../_images/SURF_YearBuiltTest.png" src="../../../_images/SURF_YearBuiltTest.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.3.3 </span><span class="caption-text">SURF-predicted vs. original year built from Zillow dataset.</span><a class="headerlink" href="#surf-yb-test" title="Permalink to this image">¶</a></p>
 </div>
 <p>The neural network is used to predict the year built information for the entire Lake Charles inventory. <a class="reference internal" href="#surf-yb-comp"><span class="std std-numref">Fig. 3.2.3.4</span></a>
-contrast the resulting SURF-Zillow and the SURF-NSI year built spatial distribution. The difference in year built is relatively
-small for the downtown buildings (~1960s) but increases at the bounds with a maximum of 80 years.
+contrasts the resulting SURF-Zillow and the SURF-NSI year built spatial distribution. The difference in year built is relatively
+small for the downtown buildings (~1960s) but increases at the outskirts with a maximum of 80 years.
 The Zillow-trained classifier is undergoing continued improvements and will be released with the next version of this testbed.
-The current version of the testbed will thus use the NSI data as the basis for the Year Built Attribute</p>
+The current version of the testbed will thus use the NSI data as the basis for the Year Built Attribute.</p>
 <div class="align-center figure" id="surf-yb-comp">
 <a class="reference internal image-reference" href="../../../_images/YearBuilt_NSI_SURFZS.png"><img alt="../../../_images/YearBuilt_NSI_SURFZS.png" src="../../../_images/YearBuilt_NSI_SURFZS.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.3.4 </span><span class="caption-text">SURF-NSI vs. SURF-Zillow: year built information.</span><a class="headerlink" href="#surf-yb-comp" title="Permalink to this image">¶</a></p>
@@ -713,13 +721,13 @@ The current version of the testbed will thus use the NSI data as the basis for t
 </div>
 <div class="section" id="attribute-garage">
 <h3>Attribute: Garage<a class="headerlink" href="#attribute-garage" title="Permalink to this heading">¶</a></h3>
-<p>A garage detector utilizing EfficienDet object detection architecture was trained to identify the
-existence of attached garage and carport structures in street-level imagery of the buildings
-included in the Lake Charles inventory. Properties are either classified as having an attached garage
-or not having an attached garage (which includes both detached garages and homes with no garage)
+<p>A garage detector utilizing the EfficienDet object detection architecture was trained to identify the
+existence of attached garages and carport structures in street-level imagery of the buildings
+included in the Lake Charles inventory. Properties are classified as either having an attached garage
+or not having an attached garage (which includes both detached garages and homes with no garage).
 The model was trained on the <a class="reference external" href="https://arxiv.org/abs/1911.09070">EfficientDet-D4 architecture</a> with
-dataset of 1,887 images, using 80% for training, 10% for validation, and 10% for testing of the model.
-Similar to the number of floors detector model, initial weights of this model were set to model weights
+a dataset of 1,887 images, using 80% for training, 10% for validation, and 10% for testing.
+Similar to the number of floors detector model, the initial weights of this model were set to the model weights
 of the (pretrained) object detection model that, at the time, achieved state-of-the-art performance on
 the <a class="reference external" href="https://cocodataset.org/#download">2017 COCO Detection set</a>. For this task, the peak detector
 performance was attained using the <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam optimizer</a>
@@ -730,7 +738,7 @@ garage detections performed by the model.</p>
 <p class="caption"><span class="caption-number">Fig. 3.2.3.5 </span><span class="caption-text">Samples of the garage detection model showing successful identification of attached garages and carports.</span><a class="headerlink" href="#garage-eg" title="Permalink to this image">¶</a></p>
 </div>
 <p>On the test set, the model achieves an accuracy of 92%. <a class="reference internal" href="#garage-cm"><span class="std std-numref">Fig. 3.2.3.6</span></a> shows the confusion matrix of the
-model classifications on the test set. On a seperate test set consisting of images from only Lake Charles,
+model classifications on the test set. On a separate test set consisting of images from only Lake Charles,
 model performance is lower at 71%. <a class="reference internal" href="#garage-cm"><span class="std std-numref">Fig. 3.2.3.6</span></a> (b) shows the confusion matrix for model predictions on this
 latter dataset.</p>
 <div class="align-center figure" id="garage-cm">
@@ -741,23 +749,23 @@ latter dataset.</p>
 <div class="section" id="attribute-buildingtype">
 <h3>Attribute: BuildingType<a class="headerlink" href="#attribute-buildingtype" title="Permalink to this heading">¶</a></h3>
 <p>Based on information found in the National Structure Inventory, 89% of residential buildings
-(single-family and multi-family) are wood, the rest are masonry. In the analysis, we conservatively
+(single-family and multi-family) are wood, while the rest are masonry. In the analysis, we conservatively
 assume all residential buildings are wood.</p>
 </div>
 <div class="section" id="attribute-avgjantemp">
 <h3>Attribute: AvgJanTemp<a class="headerlink" href="#attribute-avgjantemp" title="Permalink to this heading">¶</a></h3>
 <p>The average temperature in Lake Charles in January is above the critical value of 25F,
-based on NOAA average daily temperature. Referring <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>, we used
+based on NOAA average daily temperature data. Referring to <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>, we used
 “Above” for the buildings in the studied inventory.</p>
 </div>
 </div>
 <div class="section" id="populated-inventories">
 <h2><span class="section-number">3.2.4. </span>Populated Inventories<a class="headerlink" href="#populated-inventories" title="Permalink to this heading">¶</a></h2>
 <p>Executing this three-phase process resulted in the assignment of all required attributes at the asset description
-stage of the workflow for the Lake Charles building inventory, and <a class="reference internal" href="#bldg-inv-lc"><span class="std std-numref">Table 3.2.4.1</span></a> shows example data samples.
+stage of the workflow for the Lake Charles building inventory. <a class="reference internal" href="#bldg-inv-lc"><span class="std std-numref">Table 3.2.4.1</span></a> shows example data samples.
 The entire inventory can be accessed <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3207v4">here</a>.</p>
 <table class="colwidths-given docutils align-center" id="bldg-inv-lc">
-<caption><span class="caption-number">Table 3.2.4.1 </span><span class="caption-text">Illustrative sample of building in Lake Charles Inventory.</span><a class="headerlink" href="#bldg-inv-lc" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.2.4.1 </span><span class="caption-text">Illustrative sample of buildings in Lake Charles Inventory.</span><a class="headerlink" href="#bldg-inv-lc" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 5%" />
 <col style="width: 7%" />

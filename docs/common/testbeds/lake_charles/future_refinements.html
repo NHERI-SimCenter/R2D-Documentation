@@ -152,15 +152,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -232,30 +236,30 @@
             
   <div class="section" id="research-opportunities">
 <span id="lbl-testbed-lc-future-refinements"></span><h1><span class="section-number">3.11. </span>Research Opportunities<a class="headerlink" href="#research-opportunities" title="Permalink to this heading">¶</a></h1>
-<p>This testbed and its backing workflows should be viewed as a sandbox and scaffold,
+<p>This testbed and its supporting workflows should be viewed as a sandbox and scaffold,
 respectively, within which the community can explore different scenarios and develop
-new capabilities. The following list itemizes some areas where contribution from the
-community is especially welcome:</p>
+new capabilities. The following list itemizes some areas where contributions from the
+community are especially welcome:</p>
 <ol class="arabic simple">
 <li><p>The current use of HAZUS for damage and loss modeling limits the buildings under
-consideration to 6 stories and under. Thus the user community is invited to support
+consideration to 6 stories and under. Therefore, the user community is invited to support
 the extension of PELICUN to buildings taller than 6 stories.</p></li>
 <li><p>Extensions to taller buildings will require further expansion of the building
 inventory’s fields to capture attributes relevant to those classes of construction.
-Methods to mine relevant data from imagery or other third party data sources, e.g.,
+Methods to mine relevant data from imagery or other third-party data sources, e.g.,
 Emporis, will provide welcome extensions to the Asset Description approaches described herein.</p></li>
 <li><p>The testbed will benefit from continued validation efforts, mining larger cross-sections
 of data assembled by StEER and others and spanning a wider range of vintages of construction,
 i.e., YearBuilt.</p></li>
-<li><p>Currently the workflow calculates damage and monetary loss; coupling the workflow with other
-social, societal or economic models, will provide opportunities to more robustly explore the
-impacts of hazard events, mitigation investments and development decisions on community resilience.
-The creation of techniques to automatically scrape and fuse data from the social, human and behavioral
+<li><p>Currently, the workflow calculates damage and monetary loss; coupling the workflow with other
+social, societal, or economic models will provide opportunities to more robustly explore the
+impacts of hazard events, mitigation investments, and development decisions on community resilience.
+The creation of techniques to automatically scrape and fuse data from the social, human, and behavioral
 sciences will ensure those datasets can be generated in a manner similar to those used for the
 building inventory itself.</p></li>
 <li><p>A number of approximations and assumptions were made in the generation of the building inventory
-(see <a class="reference internal" href="asset_description.html#lbl-testbed-lc-asset-description"><span class="std std-ref">Asset Description</span></a>)
-There is considerable opportunity to expand, enrich and improve upon
+(see <a class="reference internal" href="asset_description.html#lbl-testbed-lc-asset-description"><span class="std std-ref">Asset Description</span></a>).
+There is considerable opportunity to expand, enrich, and improve upon
 methodologies for automated inventory generation, particularly to generate other attributes necessary
 as the workflow advances to include other classes of construction and eventually component-level
 damage quantification.</p></li>
@@ -265,28 +269,28 @@ more faithful comparison with the multi-hazard assessments conducted by StEER an
 <li><p>The current implementation considers only wood residential construction and thus would benefit from
 extension to other building classes in a manner similar to that exercised in the
 <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html">Atlantic County, NJ</a> testbed.</p></li>
-<li><p>The current pre-trained BRAILS models could be extended to new regions where construction practices may differ.
+<li><p>The current pre-trained BRAILS models can be extended to new regions where construction practices may differ.
 Please refer to the discussion on the <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/understand.html">generalization of BRAILS models</a></p></li>
-<li><p>More importantly, the rulesets used to demonstrate how a hindcast testbed could be swiftly implemented
-were ported over from New Jersey. The rulesets warrant updating to match the regulatory environment in
-Louisiana and also to capture the behaviors and norms in this region, e.g., the low rates of window
+<li><p>Importantly, the rulesets used to demonstrate how a hindcast testbed could be swiftly implemented
+were ported over from New Jersey. These rulesets need updating to match the regulatory environment in
+Louisiana and to capture the behaviors and norms in this region, such as the low rates of window
 protection observed by StEER (<a class="reference internal" href="validation_results.html#roueche21" id="id2"><span>[Roueche21]</span></a>).</p></li>
-<li><p>The SimCenter aspires to incorporate increasing levels of fidelity in its characterization of hazards,
-modeling of buildings (to support application of pressures/loads and structural analysis), and ability
+<li><p>The SimCenter aims to incorporate increasing levels of fidelity in its characterization of hazards,
+modeling of buildings (to support the application of pressures/loads and structural analysis), and the ability
 to describe damage at the component level, with fault-trees that capture cascading damage sequences
-resulting from breaches of the building envelope. Thus there is considerable need for community
+resulting from breaches of the building envelope. Thus, there is a considerable need for community
 research contributions such as libraries of fragilities, archetype building models, and catalogs
 of high-fidelity hazard simulations (hindcasts of historical events or synthetic storm data).
-This is especially the case of coastal hazards. With aspirations to replicate this workflow in other
-regions, these contributions need not be confined to Lousiana/Gulf Coast. Their integration into
+This is particularly the case for coastal hazards. With aspirations to replicate this workflow in other
+regions, these contributions are not confined to the Louisiana/Gulf Coast. Their integration into
 the testbed can demonstrate how the contributions of individual researchers can aggregate to evaluate
 impact on much larger scales.</p></li>
-<li><p>The testbed does not explicitly treat the effects of debris (wind-borne or surge-transported), nor
+<li><p>The testbed does not explicitly address the effects of debris (wind-borne or surge-transported), nor
 are any of the flow fields translated into pressures acting on individual buildings to enable the
-execution of structural analyses. Extending the workflow to tall buildings creates opportunities for
+execution of structural analyses. Extending the workflow to tall buildings provides opportunities for
 response simulation to estimate drifts or other EDPs for more dynamically sensitive structures under
 wind. However, similar opportunities to translate geospatially varying hazards into loads on a given
-structure can be seized to increase the workflow’s overall fidelity.</p></li>
+structure can be leveraged to increase the workflow’s overall fidelity.</p></li>
 </ol>
 <dl class="citation">
 <dt class="label" id="roueche21"><span class="brackets"><a class="fn-backref" href="#id2">Roueche21</a></span></dt>

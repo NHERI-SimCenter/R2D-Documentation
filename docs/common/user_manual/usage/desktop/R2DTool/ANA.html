@@ -134,16 +134,21 @@
 <li class="toctree-l3"><a class="reference internal" href="#buildings">2.7.1. Buildings</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#opensees-analysis-model">2.7.1.1. OpenSees Analysis Model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#openseespy-analysis-model">2.7.1.2. OpenSeesPy Analysis Model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#im-as-edp-analysis-model">2.7.1.3. IM as EDP Analysis Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#imasedp-analysis-model">2.7.1.3. IMasEDP Analysis Model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pre-trained-surrogate-models">2.7.1.4. Pre-trained surrogate models</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#transportation-infrastructure-analysis">2.7.2. Transportation Infrastructure Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">2.7.2.1. IMasEDP Analysis Model</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="DL.html">2.8. DL: Damage and Loss</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.9. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.10. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RES.html">2.11. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SP.html">2.9. SP: System Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.10. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.11. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RES.html">2.12. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
@@ -160,15 +165,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -240,37 +249,44 @@
             
   <div class="section" id="ana-asset-analysis">
 <h1><span class="section-number">2.7. </span>ANA: Asset Analysis<a class="headerlink" href="#ana-asset-analysis" title="Permalink to this heading">¶</a></h1>
-<p>In this panel, the user can select the applications that will be employed in the analysis of each asset class. The user can select the type of asset from the <strong>Asset Selection Ribbon</strong>, e.g., Buildings and Gas Network, as shown on the left-hand side of <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-R2DANAInputPanel</span></code>. The <strong>Asset Selection Ribbon</strong> is hidden by default, and appears when more than one type of asset is selected in the <strong>GI: General Information</strong> panel. Additionally, only the assets that are checked in the <strong>GI: General Information</strong> panel will appear in the <strong>Asset Selection Ribbon</strong>. As the user switches between assets, the <strong>Input Panel</strong> in <a class="reference internal" href="MOD.html#fig-buildingmodelingpanel"><span class="std std-numref">Fig. 2.6.1</span></a> will change to reflect the applications that are available for analyzing each type of asset.</p>
-<div class="align-center figure" id="id2">
-<span id="fig-r2danainputpanel"></span><img alt="../../../../../_images/R2DANAInputPanel.png" src="../../../../../_images/R2DANAInputPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.7.1 </span><span class="caption-text">Buildings analysis input panel.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<p>In this panel, users can select specific applications for analyzing different asset classes. To choose an asset type, such as Buildings or Transportation Network, users interact with the <strong>Asset Selection Ribbon</strong> on the left side of the interface as depicted in <a class="reference internal" href="#fig-r2danainputpanel"><span class="std std-numref">Fig. 2.7.1</span></a>. This ribbon is initially hidden and becomes visible when multiple asset types are selected in the <strong>GI: General Information</strong> panel. Only assets marked in the <strong>GI</strong> panel will be listed in the <strong>Asset Selection Ribbon</strong>. Switching between assets updates the <strong>Input Panel</strong> to display the relevant analysis applications for the selected asset type.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#buildings" id="id8">Buildings</a></p>
 <ul>
 <li><p><a class="reference internal" href="#opensees-analysis-model" id="id9">OpenSees Analysis Model</a></p></li>
 <li><p><a class="reference internal" href="#openseespy-analysis-model" id="id10">OpenSeesPy Analysis Model</a></p></li>
-<li><p><a class="reference internal" href="#im-as-edp-analysis-model" id="id11">IM as EDP Analysis Model</a></p></li>
+<li><p><a class="reference internal" href="#imasedp-analysis-model" id="id11">IMasEDP Analysis Model</a></p></li>
 <li><p><a class="reference internal" href="#pre-trained-surrogate-models" id="id12">Pre-trained surrogate models</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#transportation-infrastructure-analysis" id="id13">Transportation Infrastructure Analysis</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1" id="id14">IMasEDP Analysis Model</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
+<div class="align-center figure" id="id2">
+<span id="fig-r2danainputpanel"></span><img alt="../../../../../_images/R2DANAInputPanel.png" src="../../../../../_images/R2DANAInputPanel.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.1 </span><span class="caption-text">Buildings analysis input panel.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 <div class="section" id="buildings">
-<h2><a class="toc-backref" href="#id8"><span class="section-number">2.7.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this heading">¶</a></h2>
-<p>The applications available for the modeling of buildings are:</p>
+<span id="lbl-anabuildings"></span><h2><a class="toc-backref" href="#id8"><span class="section-number">2.7.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this heading">¶</a></h2>
+<p>For building analysis, the following applications are supported:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>OpenSees</p></li>
 <li><p>OpenSeesPy</p></li>
-<li><p>IM as EDP</p></li>
+<li><p>IMasEDP</p></li>
+<li><p>PreTrained Surrogate Models</p></li>
+<li><p>CustomPy-Simulation</p></li>
+<li><p>None</p></li>
 </ul>
 </div></blockquote>
-<p>Currently, the inputs, scripts, commands, etc., for the analysis applications are provided by the modeling applications. Future implementation will allow for the user to customize the analysis applications, e.g., specify the type of solver and convergence test in an OpenSees analysis.</p>
 <div class="section" id="opensees-analysis-model">
 <h3><a class="toc-backref" href="#id9"><span class="section-number">2.7.1.1. </span>OpenSees Analysis Model</a><a class="headerlink" href="#opensees-analysis-model" title="Permalink to this heading">¶</a></h3>
-<p>The <strong>OpenSees</strong> analysis application employs OpenSees to conduct the structural analysis. Note that when the optional argument “Analysis Script” is provided, the quantities above will be ignored.</p>
+<p>The <strong>OpenSees</strong> option performs structural analysis using OpenSees. If an “Analysis Script” argument is provided, the quantities defined with the graphical user interface will be ignored.</p>
 <div class="align-center figure" id="id3">
 <span id="fig-r2danaopensees"></span><a class="reference internal image-reference" href="../../../../../_images/R2DANAOpenSees.png"><img alt="../../../../../_images/R2DANAOpenSees.png" src="../../../../../_images/R2DANAOpenSees.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.7.1.1.1 </span><span class="caption-text">OpenSees analysis option</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
@@ -300,23 +316,23 @@ remove<span class="w"> </span>recorders<span class="w"> </span>
 </div>
 <div class="section" id="openseespy-analysis-model">
 <h3><a class="toc-backref" href="#id10"><span class="section-number">2.7.1.2. </span>OpenSeesPy Analysis Model</a><a class="headerlink" href="#openseespy-analysis-model" title="Permalink to this heading">¶</a></h3>
-<p>The <strong>OpenSeesPy</strong> analysis application employs OpenSeesPy to conduct the structural analysis.</p>
+<p>The <strong>OpenSeesPy</strong> application utilizes OpenSeesPy for structural analysis.</p>
 </div>
-<div class="section" id="im-as-edp-analysis-model">
-<h3><a class="toc-backref" href="#id11"><span class="section-number">2.7.1.3. </span>IM as EDP Analysis Model</a><a class="headerlink" href="#im-as-edp-analysis-model" title="Permalink to this heading">¶</a></h3>
-<p>The <strong>IM as EDP</strong> application forgoes a structural analysis altogether. In this case, the hazard intensity measure (IM) is considered the engineering demand parameter (EDP).</p>
+<div class="section" id="imasedp-analysis-model">
+<h3><a class="toc-backref" href="#id11"><span class="section-number">2.7.1.3. </span>IMasEDP Analysis Model</a><a class="headerlink" href="#imasedp-analysis-model" title="Permalink to this heading">¶</a></h3>
+<p>The IMasEDP application directly uses the hazard intensity measure (IM) as the engineering demand parameter (EDP), bypassing structural analysis.</p>
 </div>
 <div class="section" id="pre-trained-surrogate-models">
 <h3><a class="toc-backref" href="#id12"><span class="section-number">2.7.1.4. </span>Pre-trained surrogate models</a><a class="headerlink" href="#pre-trained-surrogate-models" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>Pre-trained surrogate model</strong> is used to import the surrogate models trained using <a class="reference external" href="https://simcenter.designsafe-ci.org/research-tools/overview/">EE-UQ</a>. The surrogate model can take the parameters of structure (e.g. initial stiffness, post-yield stiffness, yield drift, construction year etc) and the intensity measures of recorded or stochastically generated ground motions (e.g. peak ground acceleration, peak spectral acceleration, significant duration etc.) as its input.</p>
-<p>Step 2 is covered below and <a class="reference external" href="https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html">Step 1</a> can be found in EE-UQ documentation. The user needs to fill in two tabs: <em>Surrogate Models</em> and <em>Default Analysis</em>.</p>
+<p>Refer to <a class="reference external" href="https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html">Step 1</a> in the EE-UQ documentation for initial steps. Users must complete the <em>Surrogate Models</em> and <em>Default Analysis</em> tabs to use pre-trained surrogate models.</p>
 <div class="align-center figure" id="id4">
-<span id="id1"></span><img alt="../../../../../_images/R2DANASurrogateInput.png" src="../../../../../_images/R2DANASurrogateInput.png" />
+<span id="fig-r2danasurrogateinputpanel"></span><img alt="../../../../../_images/R2DANASurrogateInput.png" src="../../../../../_images/R2DANASurrogateInput.png" />
 <p class="caption"><span class="caption-number">Fig. 2.7.1.4.1 </span><span class="caption-text">Buildings analysis input panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p><span class="uqblue">Surrogate Models</span></p>
 <ul>
-<li><p><strong>Filter script</strong>: a user-provided python script used to assign the surrogate model to individual buildings when multiple surrogate models representing different building types are available. In the script, the user needs to provide a python function named <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">distributor</span></code> that takes two dictionary variables, general information (<code class="docutils literal notranslate"><span class="pre">GI</span></code>) and structural analysis model parameters (<code class="docutils literal notranslate"><span class="pre">SAM</span></code>), as inputs. The function should return either the name of the surrogate model (the name is defined in the user interface) or the string “Default”. Below is an example of the filter script.</p>
+<li><p><strong>Filter script</strong>: A Python script provided by the user to assign surrogate models to buildings when multiple surrogate models representing different building types are provided. The script should contain a function named <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">distributor</span></code> that processes dictionary inputs for general information (<code class="docutils literal notranslate"><span class="pre">GI</span></code>) and structural analysis model parameters (<code class="docutils literal notranslate"><span class="pre">SAM</span></code>), returning the surrogate model name or “Default”. Below is an example of the filter script.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 <span class="k">def</span> <span class="nf">model_distributor</span><span class="p">(</span><span class="n">GI</span><span class="p">,</span><span class="n">SAM</span><span class="p">):</span>
 
@@ -566,7 +582,7 @@ remove<span class="w"> </span>recorders<span class="w"> </span>
 </tbody>
 </table>
 </li>
-<li><p>Structural properties - the variables created in the modeling (MOD) application (an example of MDOF-LU module for 2 story building)</p>
+<li><p>Structural properties - variables from the modeling (MOD) application (example for a 2-story building using MDOF-LU)</p>
 <table class="colwidths-given docutils align-center" id="id6">
 <caption><span class="caption-number">Table 2.7.1.4.2 </span><span class="caption-text">Structural parameters estimated by structural modeling app (specified in the MOD tab)</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -670,8 +686,14 @@ remove<span class="w"> </span>recorders<span class="w"> </span>
 </tr>
 </tbody>
 </table>
-<p>See <a class="reference internal" href="MOD.html#lbl-modmdoflu"><span class="std std-ref">MDOF-LU Building Model</span></a> for details. If other custom modeling apps (other than MDOF-LU) are used, “SAM.json” should be manually created by the user with the specified format. See <a class="reference download internal" download="" href="../../../../../_downloads/415027a9658f4c7d0d60b9e16197f057/ANA_SAM.json"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> for an example of SAM.json file.</p>
 </li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+<p>Refer to <a class="reference internal" href="MOD.html#lbl-modmdoflu"><span class="std std-ref">MDOF-LU Building Model</span></a> for more details. Custom modeling apps should follow the specified format for “SAM.json”. See <a class="reference download internal" download="" href="../../../../../_downloads/415027a9658f4c7d0d60b9e16197f057/ANA_SAM.json"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> for an example of SAM.json file.</p>
+<blockquote>
+<div><ol class="arabic" start="3">
 <li><p>Ground motion parameters (automatically named internally both in EE-UQ and R2D)</p>
 <table class="colwidths-given docutils align-center" id="id7">
 <caption><span class="caption-number">Table 2.7.1.4.3 </span><span class="caption-text">Ground motion parameters</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
@@ -728,14 +750,19 @@ remove<span class="w"> </span>recorders<span class="w"> </span>
 </table>
 </li>
 </ol>
-<p>In R2D workflow, only the intensity measures that were specified when <strong>training</strong> the surrogate model (in EE-UQ) will be automatically computed and passed on to the surrogate model.</p>
 </div></blockquote>
-</li>
-</ul>
+<p>R2D ensures only the intensity measures specified during the training of the surrogate model are computed and utilized.</p>
 <dl class="simple">
-<dt><span class="uqblue">Default Analysis</span></dt><dd><p>Select the engine that will be used when “Default” is returned from the <strong>filter script.</strong></p>
+<dt><span class="uqblue">Default Analysis</span></dt><dd><p>Choose the analysis engine for cases where the <strong>filter script</strong> returns “Default”.</p>
 </dd>
 </dl>
+</div>
+</div>
+<div class="section" id="transportation-infrastructure-analysis">
+<h2><a class="toc-backref" href="#id13"><span class="section-number">2.7.2. </span>Transportation Infrastructure Analysis</a><a class="headerlink" href="#transportation-infrastructure-analysis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id1">
+<h3><a class="toc-backref" href="#id14"><span class="section-number">2.7.2.1. </span>IMasEDP Analysis Model</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>Similar to buildings, the IMasEDP application for transportation infrastructure uses the hazard intensity measure (IM) directly as the engineering demand parameter (EDP), bypassing structural analysis.</p>
 </div>
 </div>
 </div>

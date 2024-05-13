@@ -153,15 +153,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -233,24 +237,24 @@
             
   <div class="section" id="uncertainty-quantification">
 <span id="lbl-testbed-ac-uncertainty-quantification"></span><h1><span class="section-number">1.6. </span>Uncertainty Quantification<a class="headerlink" href="#uncertainty-quantification" title="Permalink to this heading">¶</a></h1>
-<p>Multiple sources of uncertainty are considered in this testbed including: the uncertainty in
+<p>Multiple sources of uncertainty are considered in this testbed, including: the uncertainty in
 asset representation, hazard characterization, and damage and loss assessment. For these uncertainty
-sources, different strategies were implemented in the workflow to quantify their influence. THe following
+sources, different strategies were implemented in the workflow to quantify their influence. The following
 sections will introduce the details about each component.</p>
 <div class="section" id="in-hazard-characterization">
 <h2><span class="section-number">1.6.1. </span>In Hazard Characterization<a class="headerlink" href="#in-hazard-characterization" title="Permalink to this heading">¶</a></h2>
 <p>Given a specific category of hurricane, there are two different sources of uncertainty for site peak wind speed
-and storm surge values: (1) the uncertainty induced by possible different epicentors, rupture propogations, soil velocity models,
+and storm surge values: (1) the uncertainty induced by possible different epicenters, rupture propagations, soil velocity models,
 or local soil properties (which is usually termed as epistemic uncertainty);
 and (2) the inherent variation in observing the random events at the site (which is usually termed as aleatory
-uncertainty). Both these two uncertainty sources can be taken into account for in the introduced workflow.</p>
+uncertainty). Both these two uncertainty sources can be taken into account in the introduced workflow.</p>
 <p>For the epistemic uncertainty, multiple scenarios can be simulated for a given earthquake scenario. For the aleatory uncertainty,
 this workflow adapts a nearest-neighbors method to propagate uncertainty through the workflow, as
 illustrated in <a class="reference internal" href="#nearestneighbors"><span class="std std-numref">Fig. 1.6.1.1</span></a>. The ground motions are processed from SW4
-on a prescribed grid, and for each selected asset location (red square dot), the workflow  randomly selects 25 samples of
+on a prescribed grid, and for each selected asset location (red square dot), the workflow randomly selects 25 samples of
 the ground motions from the 4 nearest neighbors (yellow circles). Note this random
 sampling is performed along with the multiple realizations from the epistemic uncertainty quantification, so the
-two uncertainty sources are considered simultaneously.  Note the ground motions at one building site from nearest
+two uncertainty sources are considered simultaneously. Note the ground motions at one building site from nearest
 grid points can be repeated as these 25 samples are also intended for considering the structural modeling uncertainty
 (i.e., stiffness and damping parameters in the next section).</p>
 <div class="align-center figure" id="nearestneighbors" style="width: 800px">
@@ -270,8 +274,8 @@ and damping parameters for each of the 25 non-linear dynamic analyses for each b
 <p>The testbed implemented <span class="xref std std-ref">pelicun</span> (Probabilistic Estimation of Losses, Injuries, and Community resilience Under
 Natural disasters) to quantify damage (damage states) and loss (in the form of decision variables, e.g., loss ratio).
 The dispersion in the simulated drift and acceleration demands is inflated by 0.22 to account for additional modeling uncertainties
-not considered in the non-linear dynamic analyses. In specific, 20,000 realizations of damage and
-losses for each building. As described in <a class="reference internal" href="damage_and_loss.html#lbl-testbed-sf-damage-and-loss"><span class="std std-ref">Damage and Loss Estimation</span></a>, the damage models are continuous functions (lognormal distribution
+not considered in the non-linear dynamic analyses. Specifically, 20,000 realizations of damage and
+losses for each building are calculated. As described in <a class="reference internal" href="damage_and_loss.html#lbl-testbed-sf-damage-and-loss"><span class="std std-ref">Damage and Loss Estimation</span></a>, the damage models are continuous functions (lognormal distribution
 functions) conditional on EDP. Hence, the damage state and corresponding loss ratio of an asset follow probabilistic distributions, considering all
 uncertainty as discussed above that can influence the building performance.</p>
 </div>

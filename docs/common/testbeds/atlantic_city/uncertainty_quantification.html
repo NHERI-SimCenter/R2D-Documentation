@@ -157,15 +157,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -237,24 +241,26 @@
             
   <div class="section" id="uncertainty-quantification">
 <span id="lbl-testbed-ac-uncertainty-quantification"></span><h1><span class="section-number">2.7. </span>Uncertainty Quantification<a class="headerlink" href="#uncertainty-quantification" title="Permalink to this heading">¶</a></h1>
-<p>Multiple sources of uncertainty are considered in this testbed including: the uncertainty in
+<p>Multiple sources of uncertainty are considered in this testbed, including: the uncertainty in
 asset representation, hazard characterization, and damage and loss assessment. For these uncertainty
-sources, different strategies were implemented in the workflow to quantify their influence. THe following
+sources, different strategies were implemented in the workflow to quantify their influence. The following
 sections will introduce the details about each component.</p>
 <div class="section" id="in-asset-representation">
 <h2><span class="section-number">2.7.1. </span>In Asset Representation<a class="headerlink" href="#in-asset-representation" title="Permalink to this heading">¶</a></h2>
 <p>As discussed in <a class="reference internal" href="asset_representation.html#lbl-testbed-ac-asset-representation"><span class="std std-ref">Asset Representation</span></a>, the HAZUS Hurricane Technical Manual differentiates
-buildings based on asset attibutes for the subjected hazard type (wind or storm surge). These attributes
-are the buildings properties or structure features that would influence the
+buildings based on asset attributes for the subjected hazard type (wind or storm surge). These attributes
+are the building properties or structural features that would influence the
 resulting damage and loss of the asset under the given hazard. Among these key attributes, some are
-determined by developed rulesets with more basic building information.  These rules are based on the statistics
+determined by developed rulesets with more basic building information. These rules are based on the statistics
 in the available data. Taking the shutters of assets that were built before 2000, the Human Subjects Data
-indicates that roughly 45% of house owners were likely to apply shutters on some or all of their windows before a hurricane makes landfall.  Accordingly, in the
-asset representation (ruleset), a pre-2000 house has 45% probability to be assigned to have shutters, and 55%
+indicates that roughly 45% of house owners were likely to apply shutters on some or all of their windows before a hurricane makes landfall. Accordingly, in the
+asset representation (ruleset), a pre-2000 house has a 45% probability to be assigned to have shutters, and a 55%
 probability to be assigned with no shutter. Note that the resulting HAZUS building type is deterministic for
-each individual sample while the uncertainty induced by different possible attribute options are evaluted
-via multiple random realizations. <a class="reference internal" href="../lake_charles/uncertainty_quantification.html#uq-rulesets"><span class="std std-numref">Table 3.7.1.1</span></a> summarizes the three building attributes whose values
-are randomly generated in this testbed.</p>
+each individual sample while the uncertainty induced by different possible attribute options are evaluated
+via multiple random realizations. <a class="reference internal" href="../lake_charles/uncertainty_quantification.html#uq-rulesets"><span class="std std-numref">Table 3.7.1.1</span></a> summarizes the three building attributes whose values</p>
+<blockquote>
+<div><p>are randomly generated in this testbed.</p>
+</div></blockquote>
 <table class="docutils align-center" id="uq-rulesets">
 <caption><span class="caption-number">Table 2.7.1.1 </span><span class="caption-text">Random sampling in the rulesets.</span><a class="headerlink" href="#uq-rulesets" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -288,7 +294,7 @@ are randomly generated in this testbed.</p>
 <h2><span class="section-number">2.7.2. </span>In Hazard Characterization<a class="headerlink" href="#in-hazard-characterization" title="Permalink to this heading">¶</a></h2>
 <p>Given a specific category of hurricane, there are two different sources of uncertainty for site peak wind speed
 and storm surge values: (1) the uncertainty induced by possible different storm tracks, storm radii, storm
-translational speeds, central pressures, or handing angles (which is usually termed as epistemic uncertainty);
+translational speeds, central pressures, or heading angles (which is usually termed as epistemic uncertainty);
 and (2) the inherent variation in observing the random events at the site (which is usually termed as aleatory
 uncertainty). Both these two uncertainty sources can be taken into account for in the introduced workflow.</p>
 <p>For the epistemic uncertainty, multiple scenarios can be simulated using the synthetic simulation methods as
@@ -298,12 +304,14 @@ for the boundary layer winds (<a class="reference internal" href="hazard_charact
 These multiple realizations are then randomly sampled and used as the EDP in simulating the damage and loss
 assessment (more details in the next section).</p>
 <p>For the aleatory uncertainty, this workflow adapts a nearest-neighbors method to propagate uncertainty through the workflow, as
-illustrated in <a class="reference internal" href="../sf_bay_area/uncertainty_quantification.html#nearestneighbors"><span class="std std-numref">Fig. 1.6.1.1</span></a>. The peak wind speed and storm surge values are simulated
-on a prescribed grid (wind fields) or pre-selected save points (storm surge) (blue round dots), and for each selected asset location (red square dot),
-the workflow  randomly selects 5 samples of
-the intensity measure (wind speed and storm surge) from the 4 nearest neighbors (yellow circles). Note this random
+illustrated in <a class="reference internal" href="../sf_bay_area/uncertainty_quantification.html#nearestneighbors"><span class="std std-numref">Fig. 1.6.1.1</span></a>. The peak wind speed and storm surge values are simulated</p>
+<blockquote>
+<div><p>a prescribed grid (wind fields) or pre-selected save points (storm surge) (blue round dots), and for each selected asset location (red square dot),
+the workflow randomly selects 5 samples of
+the intensity measure (wind speed and storm surge) from the 4 nearest neighbors (yellow circles). Note that this random
 sampling is performed along with the multiple realizations from the epistemic uncertainty quantification, so the
 two uncertainty sources are considered simultaneously.</p>
+</div></blockquote>
 <div class="align-center figure" id="nearestneighbors">
 <a class="reference internal image-reference" href="../../../_images/nn.png"><img alt="../../../_images/nn.png" src="../../../_images/nn.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.7.2.1 </span><span class="caption-text">Nearest-neighbors method for sampling site hazard uncertainty.</span><a class="headerlink" href="#nearestneighbors" title="Permalink to this image">¶</a></p>
@@ -315,12 +323,12 @@ two uncertainty sources are considered simultaneously.</p>
 Natural disasters) to quantify damage (damage states) and loss (in the form of decision variables, e.g., loss ratio).
 Uncertainty from the hazard characterization step is first considered by the random sampling module in pelicun to
 numerically sample the (joint) distribution of intensity measures (which are treated as engineering parameter
-demands, EDPs in the HAZUS method). In specific, 1000 samples of combined wind speed and storm surge pairs are generated
+demands, EDPs in the HAZUS method). Specifically, 1000 samples of combined wind speed and storm surge pairs are generated
 for each asset in this testbed. Second, the corresponding damage and loss models are populated for each asset from HAZUS
 based on the <a class="reference internal" href="asset_representation.html#lbl-testbed-ac-asset-representation"><span class="std std-ref">Asset Representation</span></a>. As described
 in <a class="reference internal" href="damage_and_loss.html#lbl-testbed-ac-damage-and-loss"><span class="std std-ref">Damage and Loss Estimation</span></a>, the damage models are continuous functions (normal or lognormal distribution
 functions) fit to the synthetic data by maximizing the likelihood of the observations assuming a Binomial distribution of
-outcomes at each intensity level in the HAZUS database. Hence, at a given intensity level (a certain wind peed or storm
+outcomes at each intensity level in the HAZUS database. Hence, at a given intensity level (a certain wind speed or storm
 surge), the damage state and corresponding loss ratio of an asset follow probabilistic distributions, considering all
 uncertainty in the key properties that can influence the building performance.</p>
 </div>

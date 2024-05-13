@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Earthquake Scenario Simulation &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>Earthquake Event Simulation &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -135,15 +135,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -192,7 +196,7 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Earthquake Scenario Simulation</li>
+      <li>Earthquake Event Simulation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,19 +215,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="earthquake-scenario-simulation">
-<span id="ground-motion-tool"></span><h1>Earthquake Scenario Simulation<a class="headerlink" href="#earthquake-scenario-simulation" title="Permalink to this heading">¶</a></h1>
-<p>This tool dialog is where users can enter data on an earthquake scenario, and the
-tool will generate a series of ground motions for a series of points in the area.
-The application employs OpenSHA, determining which records to select from a ground
-motion database. The individual input panels in the <strong>Earthquake Scenario Simulation</strong>
-are discussed below. The typical use cases of this tool is described in the
-<a class="reference internal" href="../../../../technical_manual/desktop/HazardSimulationTool_useCase.html#lbleqsimulationusecases"><span class="std std-ref">technical manual</span></a>.</p>
+  <div class="section" id="earthquake-event-simulation">
+<span id="ground-motion-tool"></span><h1>Earthquake Event Simulation<a class="headerlink" href="#earthquake-event-simulation" title="Permalink to this heading">¶</a></h1>
+<p>This tool allows users to input earthquake scenario data, generating ground motions for specified points within an area. The <strong>Earthquake Scenario Simulation</strong> tool’s input panels are detailed below, with use cases described in the <a class="reference internal" href="../../../../technical_manual/desktop/HazardSimulationTool_useCase.html#lbleqsimulationusecases"><span class="std std-ref">technical manual</span></a>.</p>
 <div class="section" id="site-definition-panel">
 <h2>Site Definition Panel<a class="headerlink" href="#site-definition-panel" title="Permalink to this heading">¶</a></h2>
-<p>The <strong>Site Definition Panel</strong> is shown in <a class="reference internal" href="tools.html#fig-r2deqssitepanel"><span class="std std-numref">Fig. 3.1.1.1</span></a>.
-This is where a user defines the geographical locations and seismic site conditions
-of the sites where ground motion selection will occur.</p>
+<p>The <strong>Site Definition Panel</strong> (<a class="reference internal" href="tools.html#fig-r2deqssitepanel"><span class="std std-numref">Fig. 3.1.1.1</span></a>) enables users to specify geographical locations and seismic characteristics for ground motion models.</p>
 <div class="align-center figure" id="id43">
 <span id="fig-r2deqssitepanel"></span><img alt="../../../../../_images/R2DEQSSitePanel.png" src="../../../../../_images/R2DEQSSitePanel.png" />
 <p class="caption"><span class="caption-text">Earthquake Scenario Simulation Site Definition Input panel.</span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
