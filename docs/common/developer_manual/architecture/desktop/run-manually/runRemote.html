@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4.2. Run Remotely on DesignSafe &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>2.2.6.2. Run Remotely on DesignSafe &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.3. Troubleshooting Errors" href="troubleshooting.html" />
-    <link rel="prev" title="2.4.1. Run Locally on Your Desktop" href="runLocal.html" />
+    <link rel="next" title="2.2.6.3. Troubleshooting Errors" href="troubleshooting.html" />
+    <link rel="prev" title="2.2.6.1. Run Locally on Your Desktop" href="runLocal.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -145,29 +145,27 @@
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../architecture.html">2. Software Architecture</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../file-types.html">2.1. File Types and Schemas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../backendApplications.html">2.2. Backend Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../workflows.html">2.3. Creating Workflows</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../run-manually.html">2.4. Running Manually</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="runLocal.html">2.4.1. Run Locally on Your Desktop</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.2. Run Remotely on DesignSafe</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#prepare-input-files">2.4.2.1. Prepare Input Files</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#run-job-through-jupyter">2.4.2.2. Run Job Through Jupyter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#submit-job-through-tapis">2.4.2.3. Submit Job Through Tapis</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../how_to_extend.html">2. How to Extend</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">2.1. Coding Style</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../architecture.html">2.2. Software Architecture</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../overview.html">2.2.1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#r2d-workflows">2.2.2. R2D Workflows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../file-types.html">2.2.3. File Types and Schemas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../backendApplications.html">2.2.4. Backend Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../workflows.html">2.2.5. Creating Workflows</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../run-manually.html">2.2.6. Running Manually</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="runLocal.html">2.2.6.1. Run Locally on Your Desktop</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.2.6.2. Run Remotely on DesignSafe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html">2.2.6.3. Troubleshooting Errors</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html">2.4.3. Troubleshooting Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c4model.html">2.2.7. C4 Model of Software Architecture</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../c4model.html">2.5. C4 Model of Software Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../architecture.html#overview">2.6. Overview</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
 </ul>
 
             
@@ -216,11 +214,13 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../architecture.html"><span class="section-number">2. </span>Software Architecture</a> &raquo;</li>
+          <li><a href="../../../how_to_extend.html"><span class="section-number">2. </span>How to Extend</a> &raquo;</li>
         
-          <li><a href="../run-manually.html"><span class="section-number">2.4. </span>Running Manually</a> &raquo;</li>
+          <li><a href="../architecture.html"><span class="section-number">2.2. </span>Software Architecture</a> &raquo;</li>
         
-      <li><span class="section-number">2.4.2. </span>Run Remotely on DesignSafe</li>
+          <li><a href="../run-manually.html"><span class="section-number">2.2.6. </span>Running Manually</a> &raquo;</li>
+        
+      <li><span class="section-number">2.2.6.2. </span>Run Remotely on DesignSafe</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -240,10 +240,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="run-remotely-on-designsafe">
-<span id="lblrunremote"></span><h1><span class="section-number">2.4.2. </span>Run Remotely on DesignSafe<a class="headerlink" href="#run-remotely-on-designsafe" title="Permalink to this heading">¶</a></h1>
+<span id="lblrunremote"></span><h1><span class="section-number">2.2.6.2. </span>Run Remotely on DesignSafe<a class="headerlink" href="#run-remotely-on-designsafe" title="Permalink to this heading">¶</a></h1>
 <p>There are two ways to run the applications remotely on DesignSafe: one is through the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/">Data Depot</a> user interface on DesignSafe, where job details are submitted through a Jupyter notebook. The other is by calling on Tapis CLI directly through Ubuntu.</p>
 <div class="section" id="prepare-input-files">
-<h2><span class="section-number">2.4.2.1. </span>Prepare Input Files<a class="headerlink" href="#prepare-input-files" title="Permalink to this heading">¶</a></h2>
+<h2>Prepare Input Files<a class="headerlink" href="#prepare-input-files" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>Prepare the input files in a folder called <code class="docutils literal notranslate"><span class="pre">input_data</span></code>, then zip the folder. You may use this example input file set (<code class="xref download docutils literal notranslate"><span class="pre">input_data_eq.zip</span></code>) as a template.</p></li>
 <li><p>Prepare workflow settings in the configuration file. You may use the example configuration file (<code class="xref download docutils literal notranslate"><span class="pre">rWHALE_config_remote.json</span></code>) as a template.</p>
@@ -264,7 +264,7 @@
 </div>
 </div>
 <div class="section" id="run-job-through-jupyter">
-<h2><span class="section-number">2.4.2.2. </span>Run Job Through Jupyter<a class="headerlink" href="#run-job-through-jupyter" title="Permalink to this heading">¶</a></h2>
+<h2>Run Job Through Jupyter<a class="headerlink" href="#run-job-through-jupyter" title="Permalink to this heading">¶</a></h2>
 <p>This method uses Jupyter Notebook to run the job, accessing Tapis CLI in the backend.</p>
 <ol class="arabic simple" start="5">
 <li><p>Click on the <code class="docutils literal notranslate"><span class="pre">run_rWHALE.ipynb</span></code> notebook, then click <strong>Open in Jupyter</strong>. You will be taken to a new page for editing the Jupyter Notebook.</p></li>
@@ -297,7 +297,7 @@
 </div>
 </div>
 <div class="section" id="submit-job-through-tapis">
-<h2><span class="section-number">2.4.2.3. </span>Submit Job Through Tapis<a class="headerlink" href="#submit-job-through-tapis" title="Permalink to this heading">¶</a></h2>
+<h2>Submit Job Through Tapis<a class="headerlink" href="#submit-job-through-tapis" title="Permalink to this heading">¶</a></h2>
 <p>This method submits the job using Tapis CLI directly. If using Windows,  this is executed in the Ubuntu subsystem. Please refer to Chapter 9 of the <a class="reference external" href="https://www.designsafe-ci.org/media/filer_public/90/d5/90d5ff98-3ca1-40a5-a2cb-2ead8f51ecb9/tapis-cli-how-to-guide-readthedocs-io-en-latest.pdf">Tapis How-To Guide</a>  for more details.</p>
 <ol class="arabic" start="5">
 <li><p>First, ensure that Tapis CLI is installed on your computer. Open a Ubuntu window and install Tapis CLI using <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>

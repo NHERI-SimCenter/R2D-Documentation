@@ -143,11 +143,9 @@
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">4. Examples</a></li>
 </ul>
 
             
@@ -221,9 +219,9 @@
 <div class="section" id="site-definition-panel">
 <h2>Site Definition Panel<a class="headerlink" href="#site-definition-panel" title="Permalink to this heading">¶</a></h2>
 <p>The <strong>Site Definition Panel</strong> (<a class="reference internal" href="tools.html#fig-r2deqssitepanel"><span class="std std-numref">Fig. 3.1.1.1</span></a>) enables users to specify geographical locations and seismic characteristics for ground motion models.</p>
-<div class="align-center figure" id="id43">
+<div class="align-center figure" id="id45">
 <span id="fig-r2deqssitepanel"></span><img alt="../../../../../_images/R2DEQSSitePanel.png" src="../../../../../_images/R2DEQSSitePanel.png" />
-<p class="caption"><span class="caption-text">Earthquake Scenario Simulation Site Definition Input panel.</span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Earthquake Scenario Simulation Site Definition Input panel.</span><a class="headerlink" href="#id45" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="site-definition-options">
 <h3>Site Definition Options<a class="headerlink" href="#site-definition-options" title="Permalink to this heading">¶</a></h3>
@@ -247,9 +245,9 @@ The following inputs are needed:</p>
 <li><p>The details of the available Vs30, Z1pt0, and Z2pt5 models in R2D are described <a class="reference internal" href="tools.html#lbl-shearwavevelocity"><span class="std std-ref">here</span></a></p></li>
 </ul>
 </div></blockquote>
-<div class="align-center figure" id="id44">
+<div class="align-center figure" id="id46">
 <span id="fig-r2deqsssitesinglepane"></span><img alt="../../../../../_images/R2DEQSSSiteSinglePane.png" src="../../../../../_images/R2DEQSSSiteSinglePane.png" />
-<p class="caption"><span class="caption-text">Single location site definition.</span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Single location site definition.</span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
@@ -257,7 +255,7 @@ The following inputs are needed:</p>
 <blockquote>
 <div><dl class="simple">
 <dt>In the <strong>Grid of Locations</strong> input pane, given in <a class="reference internal" href="tools.html#fig-r2deqsssitegridpane"><span class="std std-numref">Fig. 3.1.1.1.2</span></a>, the user can either manually define a grid, or select a grid on a map. To manually define a grid, the user needs to provide the following input parameters:</dt><dd><ul class="simple">
-<li><p><strong>Latitude Extents:</strong>  The minimum and maximum latitude values that the grid will span.</p></li>
+<li><p><strong>Latitude Extents:</strong> The minimum and maximum latitude values that the grid will span.</p></li>
 <li><p><strong>Longitude Extents:</strong> The minimum and maximum longitude values that the grid will span.</p></li>
 <li><p><strong>Latitude Discretization:</strong> The number of divisions along the latitude direction.</p></li>
 <li><p><strong>Longitude Discretization:</strong> The number of divisions along the longitude direction.</p></li>
@@ -271,14 +269,14 @@ The following inputs are needed:</p>
 </ul>
 </dd>
 </dl>
-<div class="align-center figure" id="id45">
+<div class="align-center figure" id="id47">
 <span id="fig-r2deqsssitegridpane"></span><img alt="../../../../../_images/R2DEQSSSiteGridPane.png" src="../../../../../_images/R2DEQSSSiteGridPane.png" />
-<p class="caption"><span class="caption-text">Grid of locations site definition pane.</span><a class="headerlink" href="#id45" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Grid of locations site definition pane.</span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
 </div>
-<p>To select a grid on a map, the user needs to click on the <strong>Define Grid on Map</strong> button and a new <strong>Grid Selection Window</strong> will appear with the grid, as seen in <a class="reference internal" href="tools.html#fig-r2deqssgridselection"><span class="std std-numref">Fig. 3.1.1.1.3</span></a>. A user can click and drag the <strong>Resize</strong> and <strong>Move</strong> handles, shown in <a class="reference internal" href="tools.html#fig-r2deqssgridselection"><span class="std std-numref">Fig. 3.1.1.1.3</span></a> as blue circles, to resize the grid extents and to move the grid. Changing the grid discretization along the latitude and longitude directions will change the number of grid divisions on the map. Once a grid is defined on the map, the window can be closed and the grid information will be updated in the input pane. To view or modify the grid again, press the <strong>Define Grid on Map</strong> button and the <strong>Grid Selection Window</strong> displaying the grid will reappear.</p>
-<div class="align-center figure" id="id46">
+<p>To select a grid on a map, the user needs to click on the <strong>Define Grid on Map</strong> button, and a new <strong>Grid Selection Window</strong> will appear with the grid, as seen in <a class="reference internal" href="tools.html#fig-r2deqssgridselection"><span class="std std-numref">Fig. 3.1.1.1.3</span></a>. A user can click and drag the <strong>Resize</strong> and <strong>Move</strong> handles, shown in <a class="reference internal" href="tools.html#fig-r2deqssgridselection"><span class="std std-numref">Fig. 3.1.1.1.3</span></a> as blue circles, to resize the grid extents and to move the grid. Changing the grid discretization along the latitude and longitude directions will change the number of grid divisions on the map. Once a grid is defined on the map, the window can be closed and the grid information will be updated in the input pane. To view or modify the grid again, press the <strong>Define Grid on Map</strong> button and the <strong>Grid Selection Window</strong> displaying the grid will reappear.</p>
+<div class="align-center figure" id="id48">
 <span id="fig-r2deqssgridselection"></span><img alt="../../../../../_images/R2DEQSSGridSelection.png" src="../../../../../_images/R2DEQSSGridSelection.png" />
-<p class="caption"><span class="caption-text">Selection of grid on map.</span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Selection of grid on the map.</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
@@ -287,17 +285,17 @@ The following inputs are needed:</p>
 <div><p>In the <strong>Scattering Locations</strong> input pane, given in <a class="reference internal" href="tools.html#fig-r2deqsssitescatterpane"><span class="std std-numref">Fig. 3.1.1.1.4</span></a>, the user provides a custom list of sites. The following inputs are required:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><strong>Site File (.csv):</strong> The user-provided file, in <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format, containing the list of sites and corresponding site data. Users can provide user-specified Vs30, Z1pt0 and Z2pt5 values. The conventions to define such <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file is described <a class="reference internal" href="tools.html#lbl-sitefileandscsitemodel"><span class="std std-ref">here</span></a></p></li>
+<li><p><strong>Site File (.csv):</strong> The user-provided file, in <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format, which contains the list of sites and corresponding site data. Users can provide user-specified Vs30, Z1pt0 and Z2pt5 values. The conventions to define such <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file is described <a class="reference internal" href="tools.html#lbl-sitefileandscsitemodel"><span class="std std-ref">here</span></a></p></li>
 <li><p><strong>Sites to Analyze Filter:</strong> A filter to select a subset of the sites in the loaded Site File to analyze. All sites will be analyzed if this field is left empty.</p></li>
 <li><p><strong>Vs30 model:</strong> The model of the average shear-wave velocity (m/s) between 0 and 30 meters depth (Vs30). A “User-specified” option is available and the Vs30 models at each site should be provided in the Site File (.csv) as described in <a class="reference internal" href="tools.html#lbl-sitefileandscsitemodel"><span class="std std-ref">Site File (.csv) definition</span></a></p></li>
-<li><p><strong>Z1pt0 model:</strong> The model of depth (m) to where shear-wave velocity = 1.0 km/sec. If the “User-specified” option is selected, R2D will check if a “z1pt0” column exits in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used. Otherwise, the value specified in the <strong>Z1pt0</strong> pane will be applied to all sites.</p></li>
-<li><p><strong>Z2pt5 model:</strong> The model of depth (m) to where shear-wave velocity = 2.5 km/sec. If the “User-specified” option is selected, R2D will check if a “z2pt5” column exits in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used. Otherwise, the value specified in the <strong>Z2pt5</strong> pane will be applied to all sites.</p></li>
+<li><p><strong>Z1pt0 model:</strong> The model of depth (m) to where shear-wave velocity = 1.0 km/sec. If the “User-specified” option is selected, R2D will check if a “z1pt0” column exists in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used. Otherwise, the value specified in the <strong>Z1pt0</strong> pane will be applied to all sites.</p></li>
+<li><p><strong>Z2pt5 model:</strong> The model of depth (m) to where shear-wave velocity = 2.5 km/sec. If the “User-specified” option is selected, R2D will check if a “z2pt5” column exists in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used. Otherwise, the value specified in the <strong>Z2pt5</strong> pane will be applied to all sites.</p></li>
 <li><p>The details of the available Vs30, Z1pt0, and Z2pt5 models in R2D are described <a class="reference internal" href="tools.html#lbl-shearwavevelocity"><span class="std std-ref">here</span></a></p></li>
 </ul>
 </div></blockquote>
-<div class="align-center figure" id="id47">
+<div class="align-center figure" id="id49">
 <span id="fig-r2deqsssitescatterpane"></span><img alt="../../../../../_images/R2DEQSSSiteScatterPane.png" src="../../../../../_images/R2DEQSSSiteScatterPane.png" />
-<p class="caption"><span class="caption-text">Scattering sites input pane.</span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Scattering sites input pane.</span><a class="headerlink" href="#id49" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
@@ -326,10 +324,10 @@ specify measured Vs30 values. The unit of Vs30 in R2D is meter per second.</p>
 <blockquote>
 <div><ul class="simple">
 <li><dl class="simple">
-<dt>CGS/Wills Vs30 (Wills et al., 2015) <a class="reference internal" href="tools.html#willsetal2015" id="id3"><span>[willsetal2015]</span></a></dt><dd><p>This model is applicable to California, US and is created based on
+<dt>CGS/Wills Vs30 (Wills et al., 2015) <a class="reference internal" href="tools.html#willsetal2015" id="id3"><span>[willsetal2015]</span></a></dt><dd><p>This model is applicable to California, US, and is created based on
 correlations of Vs30 with geologic units and surface slope. The database
 is obtained by interfacing the <a class="reference external" href="https://github.com/opensha/opensha/blob/master/src/main/java/org/opensha/commons/data/siteData/impl/WillsMap2015.java">WillsMap2015</a> class in <strong>openSHA</strong>, which
-inturn obtained the database from the the electronic supplements of <a class="reference internal" href="tools.html#willsetal2015" id="id4"><span>[willsetal2015]</span></a>.</p>
+obtained the database from the electronic supplements of <a class="reference internal" href="tools.html#willsetal2015" id="id4"><span>[willsetal2015]</span></a>.</p>
 </dd>
 </dl>
 </li>
@@ -347,9 +345,9 @@ The raw data can be obtained from the <a class="reference external" href="https:
 </dl>
 </li>
 <li><dl class="simple">
-<dt>user-specified</dt><dd><p>This method allows user to input user-specified Vs30 values. This option
+<dt>User-specified</dt><dd><p>This method allows the user to input user-specified Vs30 values. This option
 is only available if <strong>Scattering Locations</strong> is used to define site locations.
-The user-specified values should be included in the user provided <code class="docutils literal notranslate"><span class="pre">.csv</span></code>
+The user-specified values should be included in the user-provided <code class="docutils literal notranslate"><span class="pre">.csv</span></code>
 file with a column named (“vs30”). If the user-specified option is
 selected, users need also specify if the provided “vs30” values are
 measured or inferred by providing a “vsInferred” column in the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file
@@ -376,7 +374,7 @@ SCEC CCA, Iteration 6, Basin Depth, SCEC Community Velocity Model Version 4 Basi
 SCEC/Harvard Community Velocity Model Version 11.9.x Basin Depth, and USGS Bay Area Velocity Model Release 8.3.0
 model to get the value of Z1pt0. The models are accessed by calling the class <a class="reference external" href="https://github.com/opensha/opensha/blob/ba07dd44cb1b11448a88b142382d3a129df24df1/src/main/java/org/opensha/commons/data/siteData/OrderedSiteDataProviderList.java#L365">OrderedSiteDataProviderList</a>
 in <strong>openSHA</strong>. If a NaN value is obtained from the interpolation, the prediction equation (Eq.1) in
-[ChiouYoungs2014] will be used to infer Z1pt0 value from Vs30.</p>
+<a class="reference internal" href="tools.html#chiouyoungs2014" id="id9"><span>[ChiouYoungs2014]</span></a> will be used to infer Z1pt0 value from Vs30.</p>
 </dd>
 </dl>
 </li>
@@ -406,7 +404,7 @@ SCEC CCA, Iteration 6, Basin Depth, SCEC Community Velocity Model Version 4 Basi
 SCEC/Harvard Community Velocity Model Version 11.9.x Basin Depth, and USGS Bay Area Velocity Model Release 8.3.0
 model to get the value of Z2pt5. The models are accessed by calling the class <a class="reference external" href="https://github.com/opensha/opensha/blob/ba07dd44cb1b11448a88b142382d3a129df24df1/src/main/java/org/opensha/commons/data/siteData/OrderedSiteDataProviderList.java#L365">OrderedSiteDataProviderList</a>
 in <strong>openSHA</strong>. If a NaN value is obtained from the interpolation, the prediction equation (Eq.33) in
-[CampbellBozorgnia2014] will be used to infer Z2pt5 value from Vs30.</p>
+<a class="reference internal" href="tools.html#campbellbozorgnia2014" id="id11"><span>[CampbellBozorgnia2014]</span></a> will be used to infer Z2pt5 value from Vs30.</p>
 </dd>
 </dl>
 </li>
@@ -450,7 +448,7 @@ R2D preferences.</p>
 <p class="admonition-title">Note</p>
 <p>Users can check the correctness of the defined Site Model by reading the <strong>SimCenterSiteModel.csv</strong> file. If a user
 would like to overwrite a value in the <strong>SimCenterSiteModel.csv</strong>, they can edit the <strong>SimCenterSiteModel.csv</strong> and load it back
-to R2D as a Site File (.csv). Afterward, please select the “User-specified” option for the <strong>Vs30</strong>, <strong>Z1pt0</strong> and <strong>Z2pt5 Model</strong> and
+to R2D as a Site File (.csv). Afterward, please select the “User-specified” option for the <strong>Vs30</strong>, <strong>Z1pt0</strong>, and <strong>Z2pt5 Model</strong>, and
 the values specified in the edited <strong>SimCenterSiteModel.csv</strong> will be used in the subsequent earthquake hazard simulation workflow.</p>
 </div>
 <dl class="citation">
@@ -475,20 +473,20 @@ the values specified in the edited <strong>SimCenterSiteModel.csv</strong> will 
 This is where a user defines the earthquake rupture(s) in the regional hazard analysis.
 The available Earthquake Rupture definition methods are OpenSHA ERF, Point Source,
 and OpenQuake ERF. The details of each method are described below.</p>
-<div class="align-center figure" id="id48">
+<div class="align-center figure" id="id50">
 <span id="fig-r2deqserpane"></span><img alt="../../../../../_images/R2DEQSERPane.png" src="../../../../../_images/R2DEQSERPane.png" />
-<p class="caption"><span class="caption-text">Earthquake Rupture Panel</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Earthquake Rupture Panel</span><a class="headerlink" href="#id50" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="opensha-erf">
 <h3>OpenSHA ERF<a class="headerlink" href="#opensha-erf" title="Permalink to this heading">¶</a></h3>
 <p>This method allows users to define earthquake ruptures from two Earthquake Rupture
 Forecasting (ERF) models for California, which are implemented in OpenSHA.
-The two ERF models are “WGCEP (2007) UCERF2 - Single Branch” (<a class="reference internal" href="tools.html#field2009" id="id10"><span>[Field2009]</span></a>)
-and “Mean UCERF3” (<a class="reference internal" href="tools.html#field2017" id="id11"><span>[Field2017]</span></a>)</p>
+The two ERF models are “WGCEP (2007) UCERF2 - Single Branch” (<a class="reference internal" href="tools.html#field2009" id="id12"><span>[Field2009]</span></a>)
+and “Mean UCERF3” (<a class="reference internal" href="tools.html#field2017" id="id13"><span>[Field2017]</span></a>)</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
-<dt>WGCEP (2007) UCERF2 - Single Branch (<a class="reference internal" href="tools.html#field2009" id="id12"><span>[Field2009]</span></a>)</dt><dd><p>This ERF model selects a single branch from UCERF2’s logic tree based on the Floater Type,
+<dt>WGCEP (2007) UCERF2 - Single Branch (<a class="reference internal" href="tools.html#field2009" id="id14"><span>[Field2009]</span></a>)</dt><dd><p>This ERF model selects a single branch from UCERF2’s logic tree based on the Floater Type,
 Background Seismicity, Treat Background Seismicity As, and Probability Model options.
 The ERF model is obtained by interfacing the <a class="reference external" href="https://github.com/opensha/opensha/blob/master/src/main/java/org/opensha/sha/earthquake/rupForecastImpl/WGCEP_UCERF_2_Final/MeanUCERF2/MeanUCERF2.java">MeanUCERF2</a>
 class in OpenSHA.</p>
@@ -496,7 +494,7 @@ class in OpenSHA.</p>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Mean UCERF3 (<a class="reference internal" href="tools.html#field2017" id="id13"><span>[Field2017]</span></a>)</dt><dd><p>Three most commonly used logic trees (named presets in OpenSHA) are available in R2D.
+<dt>Mean UCERF3 (<a class="reference internal" href="tools.html#field2017" id="id15"><span>[Field2017]</span></a>)</dt><dd><p>Three of the most commonly used logic trees (named presets in OpenSHA) are available in R2D.
 The presets can be selected in the “Mean UCERF3 Presets” combo box. The available presets
 are “FM3.1 Branch Averaged”, “FM3.2 Branch Averaged”, and “(POISSON ONLY) Both FM Branch Averaged”.
 For each preset, there are more options to specify how to treat background seismicity,
@@ -515,15 +513,15 @@ these three criteria will be selected.</p>
 <p>After the ERF model parameters are set up, users should click the <strong>Forecast Rupture Scenarios</strong> button.
 R2D will run the user-specified ERF models implemented in OpenSHA.
 The generated earthquake ruptures will be saved as a <code class="docutils literal notranslate"><span class="pre">.geojson</span></code>
-file named <code class="docutils literal notranslate"><span class="pre">RupFile.geojson</span></code> in the “/HazardSimulation/GroundMotions/Output” folder in
+file named <code class="docutils literal notranslate"><span class="pre">RupFile.geojson</span></code> in the “HazardSimulation/GroundMotions/Output” folder in
 the local work directory of R2D. The <code class="docutils literal notranslate"><span class="pre">RupFile.geojson</span></code> will be loaded to R2D and visualized
 in the lower part of the Earthquake Rupture Panel.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The number of ruptures generated by the UCERFs depends on the Fault Grid Spacing,
 if background seismicity is included, maximum and minimum considered rupture scenarios.
-A large number of scenarios (over tens of thousands) may be generated if the Mean UCERF3
-model is used. Generating, saving and visualizing such a large number of ruptures can be slow in R2D.
+Numerous scenarios (over tens of thousands) may be generated if the Mean UCERF3
+model is used. Generating, saving, and visualizing such a large number of ruptures can be slow in R2D.
 If Scenario-Based ground motion simulation is desired after the earthquake rupture
 forecasting, users are recommended to look for their scenarios in OpenSHA’s Deterministic
 calculation type and identify their scenario. Afterward, a narrow selection criteria can be specified
@@ -549,9 +547,9 @@ may be useful for educational and/or academic use.</p>
 <li><p><strong>Rupture Geometry:</strong> Average dip and rake of rupture.</p></li>
 </ul>
 </div></blockquote>
-<div class="align-center figure" id="id49">
+<div class="align-center figure" id="id51">
 <span id="fig-r2deqssseqruppointpane"></span><img alt="../../../../../_images/R2DEQSSSEQRupPointPane.png" src="../../../../../_images/R2DEQSSSEQRupPointPane.png" />
-<p class="caption"><span class="caption-text">Point source earthquake rupture.</span><a class="headerlink" href="#id49" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Point source earthquake rupture.</span><a class="headerlink" href="#id51" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="openquake-earthquake-rupture-forecasting">
@@ -569,27 +567,25 @@ source logic trees is not supported now.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><strong>OpenQuake Version:</strong> Version of OpenQuake (currently available is 3.17).</p></li>
-<li><p><strong>Source Model File:</strong> A <code class="docutils literal notranslate"><span class="pre">.xml</span></code> file (NRML format) defining an earthquake source geometry, magnitude scaling relationship,</p></li>
+<li><p><strong>Source Model File:</strong> A <code class="docutils literal notranslate"><span class="pre">.xml</span></code> file (NRML format) defining an earthquake source geometry, magnitude scaling relationship, rupture aspect ratio, and magnitude frequency distribution. Examples of the rupture files can be found in the <a class="reference external" href="https://github.com/gem/oq-engine/tree/master/demos">demos folder of OpenQuake’s GitHub repo</a>.</p></li>
+<li><p><strong>Rupture Meshsize:</strong> Mesh size for line sources.</p></li>
+<li><p><strong>Area Meshsize:</strong> Mesh size for area sources.</p></li>
+<li><p><strong>Maximum Distance:</strong> Maximum considered distance from source to site.</p></li>
+<li><p><strong>Maximum Magnitude:</strong> Maximum considered earthquake magnitude.</p></li>
+<li><p><strong>Minimum Magnitude:</strong> Minimum considered earthquake magnitude.</p></li>
+<li><p><strong>Magnitude-Frequency Distribution Bin Width</strong> Bin width to discretize the Magnitude-Frequency Distribution defined in the Source Model File.</p></li>
 </ul>
-<p>rupture aspect ratio, and magnitude frequency distribution. Examples of the rupture files can be found in the <a class="reference external" href="https://github.com/gem/oq-engine/tree/master/demos">demos folder
-of OpenQuake’s GitHub repo</a>.
-- <strong>Rupture Meshsize:</strong> Mesh size for line sources.
-- <strong>Area Meshsize:</strong> Mesh size for area sources.
-- <strong>Maximum Distance:</strong> Maximum considered distance from source to site.
-- <strong>Maximum Magnitude:</strong> Maximum considered earthquake magnitude.
-- <strong>Minimum Magnitude:</strong> Minimum considered earthquake magnitude.
-- <strong>Magnitude-Frequency Distribution Bin Width</strong> Bin width to discretize the Magnitude-Frequency Distribution defined in the Source Model File.</p>
 </div></blockquote>
-<div class="align-center figure" id="id50">
+<div class="align-center figure" id="id52">
 <span id="fig-r2deqsopenquakeerf"></span><img alt="../../../../../_images/R2DEQSOpenQuakeERF.png" src="../../../../../_images/R2DEQSOpenQuakeERF.png" />
-<p class="caption"><span class="caption-text">OpenQuake Scenario-Based Input.</span><a class="headerlink" href="#id50" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">OpenQuake Scenario-Based Input.</span><a class="headerlink" href="#id52" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <dl class="citation">
-<dt class="label" id="field2009"><span class="brackets">Field2009</span><span class="fn-backref">(<a href="#id10">1</a>,<a href="#id12">2</a>)</span></dt>
+<dt class="label" id="field2009"><span class="brackets">Field2009</span><span class="fn-backref">(<a href="#id12">1</a>,<a href="#id14">2</a>)</span></dt>
 <dd><p>Field, E. H., Dawson, T. E., Felzer, K. R., Frankel, A. D., Gupta, V., Jordan, T. H., … &amp; Wills, C. J. (2009). Uniform California earthquake rupture forecast, version 2 (UCERF 2). Bulletin of the Seismological Society of America, 99(4), 2053-2107.</p>
 </dd>
-<dt class="label" id="field2017"><span class="brackets">Field2017</span><span class="fn-backref">(<a href="#id11">1</a>,<a href="#id13">2</a>)</span></dt>
+<dt class="label" id="field2017"><span class="brackets">Field2017</span><span class="fn-backref">(<a href="#id13">1</a>,<a href="#id15">2</a>)</span></dt>
 <dd><p>Field, E. H., Jordan, T. H., Page, M. T., Milner, K. R., Shaw, B. E., Dawson, T. E., … &amp; Thatcher, W. R. (2017). A synoptic view of the third Uniform California Earthquake Rupture Forecast (UCERF3). Seismological Research Letters, 88(5), 1259-1267.</p>
 </dd>
 </dl>
@@ -601,7 +597,7 @@ working directory of R2D. R2D will then create a SimCenterSiteModel.csv in the �
 folder of the “HazardSimulation” folder. The SimCenterSiteModel.csv contains the location
 and site classification information defined in the Site Definition Panel.</p>
 <p>R2D will then run the earthquake rupture forecasting models defined in the earthquake rupture
-panel. A file “RupFile.geojson” will be created in the “Ouput” folder of the “HazardSimulation”
+panel. A file “RupFile.geojson” will be created in the “Output” folder of the “HazardSimulation”
 folder. The “RupFile.geojson” contains the basic information of the rupture scenarios
 generated by the earthquake rupture forecasting models. Users could inspect the
 SimCenterSiteModel.csv and RupFile.geojson files to check the results from earthquake
@@ -611,7 +607,7 @@ rupture forecasting.</p>
 <div class="section" id="scenario-selection-panel">
 <h2>Scenario Selection Panel<a class="headerlink" href="#scenario-selection-panel" title="Permalink to this heading">¶</a></h2>
 <p>The Scenario Selection Panel allows users to select which scenario(s) to consider
-in the generation of ground motion maps. Current available options are:</p>
+in the generation of ground motion maps. Currently available options are:</p>
 <div class="section" id="scenario-specific">
 <h3>Scenario-specific<a class="headerlink" href="#scenario-specific" title="Permalink to this heading">¶</a></h3>
 <p>This option selects a single earthquake scenario from the results of the Earthquake
@@ -622,18 +618,18 @@ Users need to identify the source ID and the rupture ID of the scenario they wou
 analyze and input them into the Scenario-specific selection pane. To identify the source
 and rupture IDs, users can visualize in the scenario selection panel as shown in
 <a class="reference internal" href="tools.html#fig-r2deqsrupviztableview"><span class="std std-numref">Fig. 3.1.3.1.1</span></a> or visualize the earthquake rupture scenarios created in ERF by
-write click the <strong>Earthquake Rupturtes – RupFile</strong> layer in the visualization pane
+right-clicking the <strong>Earthquake Ruptures – RupFile</strong> layer in the visualization pane
 in <strong>Earthquake Rupture</strong> pane and open the attribute table as shown in <a class="reference internal" href="tools.html#fig-r2deqsrupvizattributetable"><span class="std std-numref">Fig. 3.1.3.1.2</span></a>.
 Then users click on each row in the rupture table on the scenario selection panel, the rupture ID,
 and source ID will be filled automatically.</p>
 <blockquote>
-<div><div class="align-center figure" id="id51">
+<div><div class="align-center figure" id="id53">
 <span id="fig-r2deqsrupviztableview"></span><img alt="../../../../../_images/R2DEQSRupVizTableView.png" src="../../../../../_images/R2DEQSRupVizTableView.png" />
-<p class="caption"><span class="caption-text">Rupture visualization in the scenario selection panel.</span><a class="headerlink" href="#id51" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Rupture visualization in the scenario selection panel.</span><a class="headerlink" href="#id53" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id52">
+<div class="align-center figure" id="id54">
 <span id="fig-r2deqsrupvizattributetable"></span><img alt="../../../../../_images/R2DEQSRupVizAttributeTable.png" src="../../../../../_images/R2DEQSRupVizAttributeTable.png" />
-<p class="caption"><span class="caption-text">Rupture visualization using QGIS attribute table.</span><a class="headerlink" href="#id52" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Rupture visualization using QGIS attribute table.</span><a class="headerlink" href="#id54" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </div>
@@ -667,19 +663,19 @@ attribute table based on source-site distance).</p>
 Monte Carlo method, there are algorithms to select a subset of all relevant earthquake
 scenarios with a scaled occurrence rate to achieve a similar hazard level with the full set of
 earthquake scenarios. R2D implemented one of such algorithms developed by Manzour &amp;
-Davidson (2016) <a class="reference internal" href="tools.html#manzour2016" id="id14"><span>[Manzour2016]</span></a>.
+Davidson (2016) <a class="reference internal" href="tools.html#manzour2016" id="id16"><span>[Manzour2016]</span></a>.
 To apply the algorithms, users need to define:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><strong>Hazard Curve Input</strong> The hazard curve(s) presenting the true hazard level that the downsampled earthquake scenarios aim to match. Users can select from <strong>inferred</strong> hazard curves from the full set of earthquake ruptures forecasted from the ERF model, <strong>National Seismic Hazard Map</strong> <a class="reference internal" href="tools.html#peterson2020" id="id15"><span>[Peterson2020]</span></a> hazard curves, or <strong>User-defined</strong> hazard curves. An example of the format of user-defined hazard curves is shown in <a class="reference internal" href="tools.html#fig-userspecifiedhazardcurve"><span class="std std-numref">Listing 3.1.3.3.1</span></a>.</p></li>
+<li><p><strong>Hazard Curve Input</strong> The hazard curve(s) presenting the true hazard level that the downsampled earthquake scenarios aim to match. Users can select from <strong>inferred</strong> hazard curves from the full set of earthquake ruptures forecasted from the ERF model, <strong>National Seismic Hazard Map</strong> <a class="reference internal" href="tools.html#peterson2020" id="id17"><span>[Peterson2020]</span></a> hazard curves, or <strong>User-defined</strong> hazard curves. An example of the format of user-defined hazard curves is shown in <a class="reference internal" href="tools.html#fig-userspecifiedhazardcurve"><span class="std std-numref">Listing 3.1.3.3.1</span></a>.</p></li>
 <li><p><strong>Intensity measure</strong> The intensity measure used to calculate the hazard level. The intensity measure defined here has to be included in the specified <a class="reference internal" href="tools.html#lbl-groundmotionmodels"><span class="std std-ref">Ground Motion Model</span></a>.</p></li>
 <li><p><strong>Earthquake scenario sample size</strong> The earthquake scenario sample size limit in the downsampled earthquake scenario subset.</p></li>
 <li><p><strong>Ground motion map sample size</strong> The ground motion map sample size limit in the downsample earthquake suite.</p></li>
 <li><p><strong>Hazard curve Sa period:</strong> Period of the response acceleration Sa if the intensity measure type is Sa.</p></li>
-<li><p><strong>Return periods (yr):</strong> A list of return periods in years used in minimizing the difference between recovered and reference hazard curves (seperated by “,”).</p></li>
+<li><p><strong>Return periods (yr):</strong> A list of return periods in years used in minimizing the difference between recovered and reference hazard curves (separated by “,”).</p></li>
 </ul>
 </div></blockquote>
-<p>Users are encouraged to read the original paper <a class="reference internal" href="tools.html#manzour2016" id="id16"><span>[Manzour2016]</span></a> to better understand how to select parameters used in the algorithm.</p>
+<p>Users are encouraged to read the original paper <a class="reference internal" href="tools.html#manzour2016" id="id18"><span>[Manzour2016]</span></a> to better understand how to select parameters used in the algorithm.</p>
 <div class="literal-block-wrapper docutils container" id="fig-userspecifiedhazardcurve">
 <div class="code-block-caption"><span class="caption-text">An example of user-defined hazard curves.</span><a class="headerlink" href="#fig-userspecifiedhazardcurve" title="Permalink to this code">¶</a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">[</span>
@@ -729,10 +725,10 @@ This is because the Hazard Consistent Downsampling makes use of one of the compu
 measures defined in the <strong>Ground Motion Models</strong> panel to compute the hazard level at each site.</p>
 </div>
 <dl class="citation">
-<dt class="label" id="manzour2016"><span class="brackets">Manzour2016</span><span class="fn-backref">(<a href="#id14">1</a>,<a href="#id16">2</a>)</span></dt>
+<dt class="label" id="manzour2016"><span class="brackets">Manzour2016</span><span class="fn-backref">(<a href="#id16">1</a>,<a href="#id18">2</a>)</span></dt>
 <dd><p>Manzour, H., Davidson, R. A., Horspool, N., &amp; Nozick, L. K. (2016). Seismic hazard and loss analysis for spatially distributed infrastructure in Christchurch, New Zealand. Earthquake Spectra, 32(2), 697-712.</p>
 </dd>
-<dt class="label" id="peterson2020"><span class="brackets"><a class="fn-backref" href="#id15">Peterson2020</a></span></dt>
+<dt class="label" id="peterson2020"><span class="brackets"><a class="fn-backref" href="#id17">Peterson2020</a></span></dt>
 <dd><p>Petersen, M. D., Shumway, A. M., Powers, P. M., Mueller, C. S., Moschetti, M. P., Frankel, A. D., … &amp; Zeng, Y. (2020). The 2018 update of the US National Seismic Hazard Model: Overview of model and implications. Earthquake Spectra, 36(1), 5-41.</p>
 </dd>
 </dl>
@@ -742,18 +738,17 @@ measures defined in the <strong>Ground Motion Models</strong> panel to compute t
 <span id="lbl-groundmotionmodels"></span><h2>Ground Motion Models<a class="headerlink" href="#ground-motion-models" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="intensity-measure-and-period-points">
 <h3>Intensity Measure and Period Points<a class="headerlink" href="#intensity-measure-and-period-points" title="Permalink to this heading">¶</a></h3>
-<p>The <strong>Intensity Measure and Period Points</strong> pane, shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-R2DEQSSIMPane</span></code>, requires the following inputs:</p>
+<p>The <strong>Intensity Measure and Period Points</strong> pane, shown in <a class="reference internal" href="tools.html#fig-r2deqssimpane"><span class="std std-numref">Fig. 3.1.4.1.1</span></a>, requires the following inputs:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><strong>Intensity Measure Type:</strong> Type of intensity measure. The Spectral Acceleration (SA) and Peak Ground Acceleration (PGA) intensity measures are available.</p></li>
 <li><p><strong>Period Points:</strong> List of periods, in seconds, that are used in the ground motion selection procedure.</p></li>
 </ul>
 </div></blockquote>
-<p>The units of the PGA and SA estimated in R2D are the gravitational constant (g) and the unit of PGV is centimeter per second (cm/s).
-.. _fig-R2DEQSSIMPane:</p>
-<div class="align-center figure" id="id53">
-<img alt="../../../../../_images/R2DEQSSIMPane.png" src="../../../../../_images/R2DEQSSIMPane.png" />
-<p class="caption"><span class="caption-text">Intensity measure and period.</span><a class="headerlink" href="#id53" title="Permalink to this image">¶</a></p>
+<p>The units of the PGA and SA estimated in R2D are the gravitational constant (g) and the unit of PGV is centimeter per second (cm/s).</p>
+<div class="align-center figure" id="id55">
+<span id="fig-r2deqssimpane"></span><img alt="../../../../../_images/R2DEQSSIMPane.png" src="../../../../../_images/R2DEQSSIMPane.png" />
+<p class="caption"><span class="caption-text">Intensity measure and period.</span><a class="headerlink" href="#id55" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="ground-motion-prediction-equations">
@@ -761,15 +756,15 @@ measures defined in the <strong>Ground Motion Models</strong> panel to compute t
 <p>Ground motion prediction equations estimate the intensity of ground shaking that may occur at a site. The <strong>Ground Motion Prediction Equation</strong> combo box, shown in <a class="reference internal" href="tools.html#fig-r2deqssgmpepane"><span class="std std-numref">Fig. 3.1.4.2.1</span></a>, contains the following ground motion prediction equations:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Abrahamson, Silva &amp; Kamai (2014) <a class="reference internal" href="tools.html#abrahamsonsilvakamai2014" id="id17"><span>[AbrahamsonSilvaKamai2014]</span></a></p></li>
-<li><p>Boore, Stewart, Seyhan &amp; Atkinson (2014) <a class="reference internal" href="tools.html#booreetal2014" id="id18"><span>[BooreEtal2014]</span></a></p></li>
-<li><p>Campbell &amp; Bozorgnia (2014) <a class="reference internal" href="tools.html#campbellbozorgnia2014" id="id19"><span>[CampbellBozorgnia2014]</span></a></p></li>
-<li><p>Chiou &amp; Youngs (2014) <a class="reference internal" href="tools.html#chiouyoungs2014" id="id20"><span>[ChiouYoungs2014]</span></a></p></li>
+<li><p>Abrahamson, Silva &amp; Kamai (2014) <a class="reference internal" href="tools.html#abrahamsonsilvakamai2014" id="id19"><span>[AbrahamsonSilvaKamai2014]</span></a></p></li>
+<li><p>Boore, Stewart, Seyhan &amp; Atkinson (2014) <a class="reference internal" href="tools.html#booreetal2014" id="id20"><span>[BooreEtal2014]</span></a></p></li>
+<li><p>Campbell &amp; Bozorgnia (2014) <a class="reference internal" href="tools.html#campbellbozorgnia2014" id="id21"><span>[CampbellBozorgnia2014]</span></a></p></li>
+<li><p>Chiou &amp; Youngs (2014) <a class="reference internal" href="tools.html#chiouyoungs2014" id="id22"><span>[ChiouYoungs2014]</span></a></p></li>
 </ul>
 </div></blockquote>
-<div class="align-center figure" id="id54">
+<div class="align-center figure" id="id56">
 <span id="fig-r2deqssgmpepane"></span><img alt="../../../../../_images/R2DEQSSGMPEPane.png" src="../../../../../_images/R2DEQSSGMPEPane.png" />
-<p class="caption"><span class="caption-text">Ground motion prediction equations.</span><a class="headerlink" href="#id54" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Ground motion prediction equations.</span><a class="headerlink" href="#id56" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="spatial-correlation-models">
@@ -777,53 +772,53 @@ measures defined in the <strong>Ground Motion Models</strong> panel to compute t
 <p>This is where the user selects the spatial correlation models, and where the user defines the minimum and maximum scaling factors that are used in ground motion selection. Shown at the top of <a class="reference internal" href="tools.html#fig-r2deqsscorrscalepane"><span class="std std-numref">Fig. 3.1.4.3.1</span></a>, the user has the option to select the Intra- and Inter-event Spatial Correlation Models. Spatial correlation ensures that ground motions at different locations will share similar characteristics. The following Inter-event Spatial Correlation Models are available:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Baker &amp; Jayaram (2008) <a class="reference internal" href="tools.html#jayaram08" id="id21"><span>[Jayaram08]</span></a></p></li>
-<li><p>Baker &amp; Bradley (2017) <a class="reference internal" href="tools.html#bakerbradley17" id="id22"><span>[BakerBradley17]</span></a></p></li>
+<li><p>Baker &amp; Jayaram (2008) <a class="reference internal" href="tools.html#jayaram08" id="id23"><span>[Jayaram08]</span></a></p></li>
+<li><p>Baker &amp; Bradley (2017) <a class="reference internal" href="tools.html#bakerbradley17" id="id24"><span>[BakerBradley17]</span></a></p></li>
 </ul>
 </div></blockquote>
 <p>and the following Intra-event Spatial Correlation Models are available:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Markhvida et al. (2017) <a class="reference internal" href="tools.html#markhvida17" id="id23"><span>[Markhvida17]</span></a></p></li>
-<li><p>Jayaram &amp; Baker (2009) <a class="reference internal" href="tools.html#jayaram09" id="id24"><span>[Jayaram09]</span></a></p></li>
-<li><p>Loth &amp; Baker (2013) <a class="reference internal" href="tools.html#loth13" id="id25"><span>[Loth13]</span></a></p></li>
-<li><p>Du &amp; Ning (2021) <a class="reference internal" href="tools.html#duning2021" id="id26"><span>[DuNing2021]</span></a></p></li>
+<li><p>Markhvida et al. (2017) <a class="reference internal" href="tools.html#markhvida17" id="id25"><span>[Markhvida17]</span></a></p></li>
+<li><p>Jayaram &amp; Baker (2009) <a class="reference internal" href="tools.html#jayaram09" id="id26"><span>[Jayaram09]</span></a></p></li>
+<li><p>Loth &amp; Baker (2013) <a class="reference internal" href="tools.html#loth13" id="id27"><span>[Loth13]</span></a></p></li>
+<li><p>Du &amp; Ning (2021) <a class="reference internal" href="tools.html#duning2021" id="id28"><span>[DuNing2021]</span></a></p></li>
 </ul>
 </div></blockquote>
 <p>Special thanks to Dr. Anne Hulsey for sharing the python package <a class="reference external" href="https://github.com/annehulsey/seaturtles">seaturtles</a>, especially for the method of computing the regional ground motion intensity using the Markhvida et al. (2017) and Baker &amp; Jayaram (2008) correlation models.</p>
-<div class="align-center figure" id="id55">
+<div class="align-center figure" id="id57">
 <span id="fig-r2deqsscorrscalepane"></span><img alt="../../../../../_images/R2DEQSSCorrScalePane.png" src="../../../../../_images/R2DEQSSCorrScalePane.png" />
-<p class="caption"><span class="caption-text">Spatial correlation and ground motion selection scaling factors.</span><a class="headerlink" href="#id55" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Spatial correlation and ground motion selection scaling factors.</span><a class="headerlink" href="#id57" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
-<dt class="label" id="abrahamsonsilvakamai2014"><span class="brackets">AbrahamsonSilvaKamai2014</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id8">2</a>,<a href="#id17">3</a>)</span></dt>
+<dt class="label" id="abrahamsonsilvakamai2014"><span class="brackets">AbrahamsonSilvaKamai2014</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id8">2</a>,<a href="#id19">3</a>)</span></dt>
 <dd><p>Abrahamson, N. A., Silva, W. J., &amp; Kamai, R. (2014). Summary of the ASK14 ground motion relation for active crustal regions. Earthquake Spectra, 30(3), 1025-1055.</p>
 </dd>
-<dt class="label" id="booreetal2014"><span class="brackets"><a class="fn-backref" href="#id18">BooreEtal2014</a></span></dt>
+<dt class="label" id="booreetal2014"><span class="brackets"><a class="fn-backref" href="#id20">BooreEtal2014</a></span></dt>
 <dd><p>Boore, D. M., Stewart, J. P., Seyhan, E., &amp; Atkinson, G. M. (2014). NGA-West2 equations for predicting PGA, PGV, and 5% damped PSA for shallow crustal earthquakes. Earthquake Spectra, 30(3), 1057-1085.</p>
 </dd>
-<dt class="label" id="campbellbozorgnia2014"><span class="brackets"><a class="fn-backref" href="#id19">CampbellBozorgnia2014</a></span></dt>
+<dt class="label" id="campbellbozorgnia2014"><span class="brackets">CampbellBozorgnia2014</span><span class="fn-backref">(<a href="#id11">1</a>,<a href="#id21">2</a>)</span></dt>
 <dd><p>Campbell, K. W., &amp; Bozorgnia, Y. (2014). NGA-West2 ground motion model for the average horizontal components of PGA, PGV, and 5% damped linear acceleration response spectra. Earthquake Spectra, 30(3), 1087-1115.</p>
 </dd>
-<dt class="label" id="chiouyoungs2014"><span class="brackets"><a class="fn-backref" href="#id20">ChiouYoungs2014</a></span></dt>
+<dt class="label" id="chiouyoungs2014"><span class="brackets">ChiouYoungs2014</span><span class="fn-backref">(<a href="#id9">1</a>,<a href="#id22">2</a>)</span></dt>
 <dd><p>Chiou, B. S. J., &amp; Youngs, R. R. (2014). Update of the Chiou and Youngs NGA model for the average horizontal component of peak ground motion and response spectra. Earthquake Spectra, 30(3), 1117-1153.</p>
 </dd>
-<dt class="label" id="jayaram08"><span class="brackets"><a class="fn-backref" href="#id21">Jayaram08</a></span></dt>
+<dt class="label" id="jayaram08"><span class="brackets"><a class="fn-backref" href="#id23">Jayaram08</a></span></dt>
 <dd><p>Jayaram N, Baker JW. Statistical tests of the joint distribution of spectral acceleration values. Bulletin of the Seismological Society of America 2008; 98(5):2231–2243.</p>
 </dd>
-<dt class="label" id="jayaram09"><span class="brackets"><a class="fn-backref" href="#id24">Jayaram09</a></span></dt>
+<dt class="label" id="jayaram09"><span class="brackets"><a class="fn-backref" href="#id26">Jayaram09</a></span></dt>
 <dd><p>Jayaram, N., &amp; Baker, J. W. (2009). Correlation model for spatially distributed ground‐motion intensities. Earthquake Engineering &amp; Structural Dynamics, 38(15), 1687-1708.</p>
 </dd>
-<dt class="label" id="loth13"><span class="brackets"><a class="fn-backref" href="#id25">Loth13</a></span></dt>
+<dt class="label" id="loth13"><span class="brackets"><a class="fn-backref" href="#id27">Loth13</a></span></dt>
 <dd><p>Loth, C., &amp; Baker, J. W. (2013). A spatial cross‐correlation model of spectral accelerations at multiple periods. Earthquake Engineering &amp; Structural Dynamics, 42(3), 397-417.</p>
 </dd>
-<dt class="label" id="markhvida17"><span class="brackets"><a class="fn-backref" href="#id23">Markhvida17</a></span></dt>
+<dt class="label" id="markhvida17"><span class="brackets"><a class="fn-backref" href="#id25">Markhvida17</a></span></dt>
 <dd><p>Markhvida, M., Ceferino, L., &amp; Baker, J. W. (2018). Modeling spatially correlated spectral accelerations at multiple periods using principal component analysis and geostatistics. Earthquake Engineering &amp; Structural Dynamics, 47(5), 1107-1123.</p>
 </dd>
-<dt class="label" id="bakerbradley17"><span class="brackets"><a class="fn-backref" href="#id22">BakerBradley17</a></span></dt>
+<dt class="label" id="bakerbradley17"><span class="brackets"><a class="fn-backref" href="#id24">BakerBradley17</a></span></dt>
 <dd><p>Baker, J. W., &amp; Bradley, B. A. (2017). Intensity measure correlations observed in the NGA-West2 database, and dependence of correlations on rupture and site parameters. Earthquake Spectra, 33(1), 145-156.</p>
 </dd>
-<dt class="label" id="duning2021"><span class="brackets"><a class="fn-backref" href="#id26">DuNing2021</a></span></dt>
+<dt class="label" id="duning2021"><span class="brackets"><a class="fn-backref" href="#id28">DuNing2021</a></span></dt>
 <dd><p>Du, W., &amp; Ning, C. L. (2021). Modeling spatial cross-correlation of multiple ground motion intensity measures (SAs, PGA, PGV, Ia, CAV, and significant durations) based on principal component and geostatistical analyses. Earthquake Spectra, 37(1), 486-504.</p>
 </dd>
 </dl>
@@ -834,50 +829,50 @@ measures defined in the <strong>Ground Motion Models</strong> panel to compute t
 <p>Ground failure models are selected in this tab. Fig. <a class="reference internal" href="tools.html#fig-r2deqsgroundfailurepanel"><span class="std std-numref">Fig. 3.1.5.1</span></a>
 is the user interface of the ground failure models panel. Users select the ground failure sources with the
 ground failure source checkboxes. When a checkbox is checked, a ground failure tab
-(e.g., Fig. <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-R2DEQSLiquefactionPanel</span></code> for liquefaction) will be displayed.
+(e.g., Fig. <a class="reference internal" href="tools.html#fig-r2deqsliquefactionpanel"><span class="std std-numref">Fig. 3.1.5.1.1</span></a> for liquefaction) will be displayed.
 The ground failure models require geospatial data input. For example, distance to water bodies and
 groundwater depth are required for several liquefaction trigging models. These geospatial
 data may be large and are not distributed with R2D by default. When any of the liquefaction
 source checkboxes are checked, R2D will check if the geospatial data exits in the R2D package.
 If they do not exist, a window like Fig. <a class="reference internal" href="tools.html#fig-r2deqgroundfailuredownloadwindow"><span class="std std-numref">Fig. 3.1.5.2</span></a> will pop up.
 If you would like to use the R2D default database, please click “Yes” and wait until
-the download completes to continue analyses. If you do not plan to use the R2D
+the download completes to continue the analysis. If you do not plan to use the R2D
 the default database, you can click “Cancel” and provide the database with custom
 GIS files or define the geospatial values in the Site File loaded Site Definition Panel.</p>
 <p>Currently, only the permanent ground
 deformation (PGD) induced by liquefaction can be estimated. The PGD induced by landslide and earthquake fault displacement will be added in future releases.
 The estimated horizontal ground deformation (PGD_h) and vertical ground deformation (PGD_v) are in the units of meter (m).</p>
 <blockquote>
-<div><div class="align-center figure" id="id56">
+<div><div class="align-center figure" id="id58">
 <span id="fig-r2deqsgroundfailurepanel"></span><img alt="../../../../../_images/R2DEQSGroundFailurePanel.png" src="../../../../../_images/R2DEQSGroundFailurePanel.png" />
-<p class="caption"><span class="caption-text">Ground Failure Models Panel.</span><a class="headerlink" href="#id56" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Ground Failure Models Panel.</span><a class="headerlink" href="#id58" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id57">
+<div class="align-center figure" id="id59">
 <span id="fig-r2deqgroundfailuredownloadwindow"></span><a class="reference internal image-reference" href="../../../../../_images/R2DEQGroundFailureDownloadWindow.png"><img alt="../../../../../_images/R2DEQGroundFailureDownloadWindow.png" src="../../../../../_images/R2DEQGroundFailureDownloadWindow.png" style="width: 532.0px; height: 357.0px;" /></a>
-<p class="caption"><span class="caption-text">Ground Failure Data Download Dialog.</span><a class="headerlink" href="#id57" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Ground Failure Data Download Dialog.</span><a class="headerlink" href="#id59" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <div class="section" id="liquefaction-induced-ground-failure">
 <h3>Liquefaction-induced Ground Failure<a class="headerlink" href="#liquefaction-induced-ground-failure" title="Permalink to this heading">¶</a></h3>
 <p><strong>Liquefaction Triggering Models</strong> <br>
 To estimate liquefaction-induced PGD_h and PGD_v, a triggering model, a lateral spreading model, and a settlement model need to be selected.
-The triggering, lateral spreading and settlement suitable for regional-scale liquefaction are summarized and
+The triggering, lateral spreading, and settlement suitable for regional-scale liquefaction are summarized and
 implemented in the <a class="reference external" href="https://peer.berkeley.edu/opensra">OpenSRA project</a>. The OpenSRA Project is a multi-year study to develop open-source seismic risk assessment tools for natural gas infrastructure.
 The theories of the ground failure models are described in detail in the <a class="reference external" href="https://peer.berkeley.edu/sites/default/files/cec_opensra_task-b_liquefaction-landslide_final_clean_web.pdf">OpenSRA report</a>.</p>
 <p>The liquefaction triggering model estimates the liquefaction susceptibility (liq_susc) and liquefaction probability (liq_prob)
 at the sites defined in the <strong>Site Definition Panel</strong>. The following liquefaction-triggering models are available:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Zhu et al. (2017) <a class="reference internal" href="tools.html#zhu2017" id="id27"><span>[Zhu2017]</span></a></p></li>
-<li><p>Hazus (2020) <a class="reference internal" href="tools.html#hazus2020" id="id28"><span>[Hazus2020]</span></a></p></li>
-<li><p>Zhu et al. (2017) <a class="reference internal" href="tools.html#zhu2017" id="id29"><span>[Zhu2017]</span></a> susceptibility and Hazus (2020) <a class="reference internal" href="tools.html#hazus2020" id="id30"><span>[Hazus2020]</span></a> probability</p></li>
+<li><p>Zhu et al. (2017) <a class="reference internal" href="tools.html#zhu2017" id="id29"><span>[Zhu2017]</span></a></p></li>
+<li><p>Hazus (2020) <a class="reference internal" href="tools.html#hazus2020" id="id30"><span>[Hazus2020]</span></a></p></li>
+<li><p>Zhu et al. (2017) <a class="reference internal" href="tools.html#zhu2017" id="id31"><span>[Zhu2017]</span></a> susceptibility and Hazus (2020) <a class="reference internal" href="tools.html#hazus2020" id="id32"><span>[Hazus2020]</span></a> probability</p></li>
 </ul>
 </div></blockquote>
-<p>The <a class="reference internal" href="tools.html#zhu2017" id="id31"><span>[Zhu2017]</span></a> triggering model uses geospatial proxies (e.g., distance to water body, groundwater depth) to estimate
-liquefaction susceptibility and liquefaction probability. The <a class="reference internal" href="tools.html#hazus2020" id="id32"><span>[Hazus2020]</span></a> uses geologic unit information to define liquefaction susceptibility. The liquefaction probability
-is then calculated based on the liquefaction susceptibility and ground shaking intensities as suggested in section 4.2.2.1.2 of <a class="reference internal" href="tools.html#hazus2020" id="id33"><span>[Hazus2020]</span></a>.
-The Zhu et al. (2017) <a class="reference internal" href="tools.html#zhu2017" id="id34"><span>[Zhu2017]</span></a> susceptibility and Hazus (2020) <a class="reference internal" href="tools.html#hazus2020" id="id35"><span>[Hazus2020]</span></a> probability method uses the liquefaction susceptibility
-derived from geospatial proxies as suggested in <a class="reference internal" href="tools.html#zhu2017" id="id36"><span>[Zhu2017]</span></a> and then use the equations in <a class="reference internal" href="tools.html#hazus2020" id="id37"><span>[Hazus2020]</span></a> to evaluate liquefaction probability.</p>
+<p>The <a class="reference internal" href="tools.html#zhu2017" id="id33"><span>[Zhu2017]</span></a> triggering model uses geospatial proxies (e.g., distance to water body, groundwater depth) to estimate
+liquefaction susceptibility and liquefaction probability. The <a class="reference internal" href="tools.html#hazus2020" id="id34"><span>[Hazus2020]</span></a> uses geologic unit information to define liquefaction susceptibility. The liquefaction probability
+is then calculated based on the liquefaction susceptibility and ground shaking intensities as suggested in section 4.2.2.1.2 of <a class="reference internal" href="tools.html#hazus2020" id="id35"><span>[Hazus2020]</span></a>.
+The Zhu et al. (2017) <a class="reference internal" href="tools.html#zhu2017" id="id36"><span>[Zhu2017]</span></a> susceptibility and Hazus (2020) <a class="reference internal" href="tools.html#hazus2020" id="id37"><span>[Hazus2020]</span></a> probability method uses the liquefaction susceptibility
+derived from geospatial proxies as suggested in <a class="reference internal" href="tools.html#zhu2017" id="id38"><span>[Zhu2017]</span></a> and then use the equations in <a class="reference internal" href="tools.html#hazus2020" id="id39"><span>[Hazus2020]</span></a> to evaluate liquefaction probability.</p>
 <p>To use the liquefaction triggering models, GIS raster or vector files are required as inputs.
 R2D provides several default files that can be used as baselines to estimate liquefaction triggering
 in California. The GIS files are produced and published by the <a class="reference external" href="https://peer.berkeley.edu/opensra">OpenSRA project</a>.
@@ -885,7 +880,7 @@ They are on state-wide scales and may introduce uncertainties due to limited res
 Users can provide other raster files, or define the proxy values in the Site File (.csv) if
 preferred.</p>
 <p>The output of the triggering model is the liquefaction susceptibility (liq_susc) and liquefaction
-probability (liq_prob). The liq_susc is defined in section 4.2.2.1.1 of <a class="reference internal" href="tools.html#hazus2020" id="id39"><span>[Hazus2020]</span></a> and is
+probability (liq_prob). The liq_susc is defined in section 4.2.2.1.1 of <a class="reference internal" href="tools.html#hazus2020" id="id41"><span>[Hazus2020]</span></a> and is
 encoded with integer numbers, with 0 standing for “None” and 5 standing for “Very High”. liq_susc and liq_prob
 will only be saved in the final output if the checkboxes at the bottom of the triggering model selection are checked.</p>
 <div class="admonition note">
@@ -901,28 +896,26 @@ will be printed.</p>
 The liquefaction lateral spreading and settlement model available in R2D is:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Hazus (2020) <a class="reference internal" href="tools.html#hazus2020" id="id40"><span>[Hazus2020]</span></a></p></li>
+<li><p>Hazus (2020) <a class="reference internal" href="tools.html#hazus2020" id="id42"><span>[Hazus2020]</span></a></p></li>
 </ul>
 </div></blockquote>
-<p>The details of the models are described in 4.2.2.1.3.1 of <a class="reference internal" href="tools.html#hazus2020" id="id41"><span>[Hazus2020]</span></a> and <a class="reference external" href="https://peer.berkeley.edu/sites/default/files/cec_opensra_task-b_liquefaction-landslide_final_clean_web.pdf">OpenSRA report</a>.</p>
+<p>The details of the models are described in 4.2.2.1.3.1 of <a class="reference internal" href="tools.html#hazus2020" id="id43"><span>[Hazus2020]</span></a> and <a class="reference external" href="https://peer.berkeley.edu/sites/default/files/cec_opensra_task-b_liquefaction-landslide_final_clean_web.pdf">OpenSRA report</a>.</p>
 <p>The units of the lateral spreading ground deformation (liq_PGD_h) and settlement ground deformation (liq_PGD_v) estimated with R2D is meter (m).
 liq_PGD_h and liq_PGD_v will be saved in the final output if the checkboxes below the lateral spreading and settlement selection combo box are checked.</p>
 <p>The output will also contain fields of “PGD_h” and “PGD_v”. Currently, they are equal to “liq_PGD_h” and “liq_PGD_v” and they will be
 the aggregated PGD induced by liquefaction, landslide, and fault displacement in future releases.</p>
 <dl class="citation">
-<dt class="label" id="zhu2017"><span class="brackets">Zhu2017</span><span class="fn-backref">(<a href="#id27">1</a>,<a href="#id29">2</a>,<a href="#id31">3</a>,<a href="#id34">4</a>,<a href="#id36">5</a>)</span></dt>
+<dt class="label" id="zhu2017"><span class="brackets">Zhu2017</span><span class="fn-backref">(<a href="#id29">1</a>,<a href="#id31">2</a>,<a href="#id33">3</a>,<a href="#id36">4</a>,<a href="#id38">5</a>)</span></dt>
 <dd><p>Zhu, J., Baise, L. G., &amp; Thompson, E. M. (2017). An updated geospatial liquefaction model for global application. Bulletin of the Seismological Society of America, 107(3), 1365-1385.</p>
 </dd>
-<dt class="label" id="hazus2020"><span class="brackets">Hazus2020</span><span class="fn-backref">(<a href="#id28">1</a>,<a href="#id30">2</a>,<a href="#id32">3</a>,<a href="#id33">4</a>,<a href="#id35">5</a>,<a href="#id37">6</a>,<a href="#id39">7</a>,<a href="#id40">8</a>,<a href="#id41">9</a>)</span></dt>
+<dt class="label" id="hazus2020"><span class="brackets">Hazus2020</span><span class="fn-backref">(<a href="#id30">1</a>,<a href="#id32">2</a>,<a href="#id34">3</a>,<a href="#id35">4</a>,<a href="#id37">5</a>,<a href="#id39">6</a>,<a href="#id41">7</a>,<a href="#id42">8</a>,<a href="#id43">9</a>)</span></dt>
 <dd><p>FEMA (2020). Hazus Earthquake Model Technical Manual.</p>
 </dd>
 </dl>
-<blockquote id="fig-r2deqsliquefactionpanel">
-<div><div class="align-center figure" id="id58">
-<img alt="../../../../../_images/R2DEQSLiquefactionPanel.png" src="../../../../../_images/R2DEQSLiquefactionPanel.png" />
-<p class="caption"><span class="caption-text">Ground Failure Models Panel.</span><a class="headerlink" href="#id58" title="Permalink to this image">¶</a></p>
+<div class="align-center figure" id="id60">
+<span id="fig-r2deqsliquefactionpanel"></span><img alt="../../../../../_images/R2DEQSLiquefactionPanel.png" src="../../../../../_images/R2DEQSLiquefactionPanel.png" />
+<p class="caption"><span class="caption-text">Ground Failure Models Panel.</span><a class="headerlink" href="#id60" title="Permalink to this image">¶</a></p>
 </div>
-</div></blockquote>
 </div>
 </div>
 <div class="section" id="ground-motion-record-selection">
@@ -931,9 +924,9 @@ the aggregated PGD induced by liquefaction, landslide, and fault displacement in
 <h3>Ground Motion Record Database<a class="headerlink" href="#ground-motion-record-database" title="Permalink to this heading">¶</a></h3>
 <p>Ground motion records are selected from a ground motion database. Currently, only the <em>PEER NGA-West2</em> database is available, shown in the <strong>Ground Motion Record Database</strong> combo box in <a class="reference internal" href="tools.html#fig-r2deqssgmdbpane"><span class="std std-numref">Fig. 3.1.6.1.1</span></a>. Alternatively, a user can select <em>None</em> to skip ground motion selection altogether. In that case, only the intensity measures will be saved at each location.</p>
 <blockquote>
-<div><div class="align-center figure" id="id59">
+<div><div class="align-center figure" id="id61">
 <span id="fig-r2deqssgmdbpane"></span><img alt="../../../../../_images/R2DEQSSGMDBPane.png" src="../../../../../_images/R2DEQSSGMDBPane.png" />
-<p class="caption"><span class="caption-text">Ground motion records database.</span><a class="headerlink" href="#id59" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Ground motion records database.</span><a class="headerlink" href="#id61" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>The <strong>Ground Motion Record Scaling Bounds</strong>, shown in <a class="reference internal" href="tools.html#fig-r2deqssgmdbpane"><span class="std std-numref">Fig. 3.1.6.1.1</span></a>, are the minimum and maximum scaling factors that intensity measures can be scaled by during the ground motion selection process.</p>
@@ -944,7 +937,7 @@ the aggregated PGD induced by liquefaction, landslide, and fault displacement in
 The earthquake scenario simulation is run via a Python script. When the <strong>Run Hazard Simulation</strong> button is pressed,
 text output from the script will appear in the <strong>Program Output</strong> console at the
 bottom of the application. Upon successful completion of the earthquake scenario
-simulation, results from the simulation are in the <strong>HazardSimulation/GroundMotions/Ouput</strong>
+simulation, results from the simulation are in the <strong>HazardSimulation/GroundMotions/Output</strong>
 folder of the local working directory that is specified in R2D preferences,
 as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUI-preferences</span></code>.</p>
 <p>The intensity measure outputs are stored in
@@ -959,7 +952,7 @@ the <strong>HazardSimulation/GroundMotions/Ouput</strong> folder. The output inc
 file, which contains site locations and the names of the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files containing the selected
 ground motion records at each site. Each site is assigned a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file containing
 a list of the selected ground motions at the site and their scaling factors.
-If ground motion record are saved in <code class="docutils literal notranslate"><span class="pre">JSON</span></code> format in the <strong>HazardSimulation/GroundMotions/Ouput</strong> directory.
+If ground motion records are saved in <code class="docutils literal notranslate"><span class="pre">JSON</span></code> format in the <strong>HazardSimulation/GroundMotions/Ouput</strong> directory.
 The <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> will also be post-processed, and a new layer containing the
 ground motions will be added to the GIS widget. The grid points are represented
 with a cross symbol. Clicking on a grid point will produce a popup with information
