@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -133,6 +133,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.8. DL: Damage and Loss</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pelicun-damage-and-loss-for-buildings">2.8.1. Pelicun Damage and Loss for Buildings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pelicun-damage-and-loss-for-transportation-infrastructure">2.8.2. Pelicun Damage and Loss for Transportation Infrastructure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pelicun-damage-and-loss-for-water-distribution-infrastructure">2.8.3. Pelicun Damage and Loss for Water Distribution Infrastructure</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="SP.html">2.9. SP: System Performance</a></li>
@@ -240,12 +241,13 @@
 <p>The <strong>Damage and Loss</strong> panel enables users to select a damage and loss methodology for estimating losses across a region. It supports various applications:</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#pelicun-damage-and-loss-for-buildings" id="id3">Pelicun Damage and Loss for Buildings</a></p></li>
-<li><p><a class="reference internal" href="#pelicun-damage-and-loss-for-transportation-infrastructure" id="id4">Pelicun Damage and Loss for Transportation Infrastructure</a></p></li>
+<li><p><a class="reference internal" href="#pelicun-damage-and-loss-for-buildings" id="id4">Pelicun Damage and Loss for Buildings</a></p></li>
+<li><p><a class="reference internal" href="#pelicun-damage-and-loss-for-transportation-infrastructure" id="id5">Pelicun Damage and Loss for Transportation Infrastructure</a></p></li>
+<li><p><a class="reference internal" href="#pelicun-damage-and-loss-for-water-distribution-infrastructure" id="id6">Pelicun Damage and Loss for Water Distribution Infrastructure</a></p></li>
 </ul>
 </div>
 <div class="section" id="pelicun-damage-and-loss-for-buildings">
-<span id="lbl-dlbuildingpelicun"></span><h2><a class="toc-backref" href="#id3"><span class="section-number">2.8.1. </span>Pelicun Damage and Loss for Buildings</a><a class="headerlink" href="#pelicun-damage-and-loss-for-buildings" title="Permalink to this heading">¶</a></h2>
+<span id="lbl-dlbuildingpelicun"></span><h2><a class="toc-backref" href="#id4"><span class="section-number">2.8.1. </span>Pelicun Damage and Loss for Buildings</a><a class="headerlink" href="#pelicun-damage-and-loss-for-buildings" title="Permalink to this heading">¶</a></h2>
 <p>As depicted in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>, the <strong>Pelicun Damage and Loss</strong> application offers these inputs:</p>
 <blockquote>
 <div><ol class="arabic">
@@ -269,16 +271,23 @@
 <li><p><strong>User-defined Fragility Function Folder:</strong> Path to a folder containing user-defined fragility functions.</p></li>
 </ol>
 </div></blockquote>
-<div class="align-center figure" id="id2">
+<div class="align-center figure" id="id3">
 <span id="fig-r2dpelicundlpanel"></span><img alt="../../../../../_images/R2DPelicunDLPanel.png" src="../../../../../_images/R2DPelicunDLPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.8.1.1 </span><span class="caption-text">Pelicun Damage and Loss Input panel.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.8.1.1 </span><span class="caption-text">Pelicun Damage and Loss Input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>For more on Pelicun, including output descriptions, visit the <a class="reference external" href="https://nheri-simcenter.github.io/pelicun/common/user_manual/usage/pelicun/outputs.html">Pelicun Documentation</a>.</p>
 </div>
 <div class="section" id="pelicun-damage-and-loss-for-transportation-infrastructure">
-<span id="lbl-dltransportpelicun"></span><h2><a class="toc-backref" href="#id4"><span class="section-number">2.8.2. </span>Pelicun Damage and Loss for Transportation Infrastructure</a><a class="headerlink" href="#pelicun-damage-and-loss-for-transportation-infrastructure" title="Permalink to this heading">¶</a></h2>
+<span id="lbl-dltransportpelicun"></span><h2><a class="toc-backref" href="#id5"><span class="section-number">2.8.2. </span>Pelicun Damage and Loss for Transportation Infrastructure</a><a class="headerlink" href="#pelicun-damage-and-loss-for-transportation-infrastructure" title="Permalink to this heading">¶</a></h2>
 <p>The interface for Transportation Infrastructure damage and loss in Pelicun mirrors that of buildings, as shown in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>. Supported <strong>damage and loss methodology</strong> options include <strong>Hazus MH EQ IM</strong> and <strong>User-provided Fragilities</strong>.</p>
 <p><strong>Hazus MH EQ IM</strong> follows the damage and loss model from the <a class="reference external" href="https://www.fema.gov/sites/default/files/documents/fema_hazus-earthquake-model-technical-manual-5-1.pdf">Hazus Earthquake Model Technical Manual</a>. For bridges, it requires <cite>SA_0.3</cite> and <cite>SA_1.0</cite> for ground shaking-induced damage assessment. Ground failure considerations require permanent ground deformation (<cite>PGD_h</cite> and <cite>PGD_v</cite>) inputs for bridges and roadways, while tunnels need peak ground acceleration (<cite>PGA</cite>) and permanent ground deformation (<cite>PGD_h</cite> and <cite>PGD_v</cite>).</p>
+<p>The <strong>User-provided Fragilities</strong> option allows for custom fragility functions, necessitating an auto-populate script and a folder path for the fragility functions, as detailed in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>. See Example 9 in <a class="reference internal" href="../../../examples/desktop/examples.html#lbl-examples"><span class="std std-ref">R2D examples</span></a> for an example.</p>
+</div>
+<div class="section" id="pelicun-damage-and-loss-for-water-distribution-infrastructure">
+<span id="lbl-dlwaterdistributionnetworkpelicun"></span><h2><a class="toc-backref" href="#id6"><span class="section-number">2.8.3. </span>Pelicun Damage and Loss for Water Distribution Infrastructure</a><a class="headerlink" href="#pelicun-damage-and-loss-for-water-distribution-infrastructure" title="Permalink to this heading">¶</a></h2>
+<p>Similar to Transportation infrastructure, the interface for Water Distribution Infrastructure damage and loss in Pelicun mirrors that of buildings, as shown in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>. Supported <strong>damage and loss methodology</strong> options include <strong>Hazus MH EQ IM</strong> and <strong>User-provided Fragilities</strong>.</p>
+<p>Currently, <strong>Hazus MH EQ IM</strong> follows the damage and loss model from the <a class="reference external" href="https://www.fema.gov/sites/default/files/documents/fema_hazus-earthquake-model-technical-manual-5-1.pdf">Hazus Earthquake Model Technical Manual</a>. The Damages are calculated based on peak ground acceleration (<cite>PGA</cite>) and permanent ground deformation. Since pipelines can sometimes be very long, each pipe is segmented into many smaller segments internally in Pelicun and then the damage is estimated for each segment. Damaged states are: 1- undamaged, 2- leak, and 3- break.</p>
+<p>Damages for tank, pumps stations are not estimated.</p>
 <p>The <strong>User-provided Fragilities</strong> option allows for custom fragility functions, necessitating an auto-populate script and a folder path for the fragility functions, as detailed in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>. See Example 9 in <a class="reference internal" href="../../../examples/desktop/examples.html#lbl-examples"><span class="std std-ref">R2D examples</span></a> for an example.</p>
 </div>
 </div>

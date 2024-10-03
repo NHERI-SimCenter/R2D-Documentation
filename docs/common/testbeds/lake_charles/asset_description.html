@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -253,11 +253,8 @@
   <div class="section" id="asset-description">
 <span id="lbl-testbed-lc-asset-description"></span><h1><span class="section-number">3.2. </span>Asset Description<a class="headerlink" href="#asset-description" title="Permalink to this heading">¶</a></h1>
 <p>This section describes the construction of a large-scale building inventory in two phases. The initial
-phase involved identifying the necessary attributes. The second phase involved using machine learning and computer vision techniques to</p>
-<blockquote>
-<div><p>obtain these attributes for each building, creating an initial set of attributes. The remaining attributes were
-then obtained using other data sources, as discussed below.</p>
-</div></blockquote>
+phase involved identifying the necessary attributes. The second phase involved using machine learning and computer vision techniques to
+obtain these attributes for each building, creating an initial set of attributes. The remaining attributes were then obtained using other data sources, as discussed below.</p>
 <div class="section" id="phase-i-attribute-definition">
 <h2><span class="section-number">3.2.1. </span>Phase I: Attribute Definition<a class="headerlink" href="#phase-i-attribute-definition" title="Permalink to this heading">¶</a></h2>
 <p>All the attributes required for loss estimation were first identified to develop the Building Inventory
@@ -473,19 +470,16 @@ were obtained. The sections below will present the validation of the data.</p>
 specific tasks. The user creates a Python script importing City Builder, constructs a CityBuilder
 object, and then asks that object to build the inventory. The example script shown below, albeit
 with our GoogleMapAPIKey removed, will create a building inventory file for use in the workflow.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module from BRAILS</span>
+<span class="kn">from</span> <span class="nn">brails.CityBuilder</span> <span class="kn">import</span> <span class="n">CityBuilder</span>
+<span class="c1"># Initialize the CityBuilder</span>
+<span class="n">cityBuilder</span> <span class="o">=</span> <span class="n">CityBuilder</span><span class="p">(</span><span class="n">attributes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;occupancy&#39;</span><span class="p">,</span> <span class="s1">&#39;roofshape&#39;</span><span class="p">],</span>
+                        <span class="n">numBldg</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">place</span><span class="o">=</span><span class="s1">&#39;Lake Charles, Louisiana&#39;</span><span class="p">,</span>
+                        <span class="n">GoogleMapAPIKey</span><span class="o">=</span><span class="s1">&#39;REMOVED GOOGLE API KEY&#39;</span><span class="p">)</span>
+<span class="c1"># Create the city-scale BIM file</span>
+<span class="n">BIM</span> <span class="o">=</span> <span class="n">cityBuilder</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 </pre></div>
 </div>
-<p># Import the module from BRAILS
-from brails.CityBuilder import CityBuilder
-# Initialize the CityBuilder
-cityBuilder = CityBuilder(attributes=[‘occupancy’, ‘roofshape’],</p>
-<blockquote>
-<div><p>numBldg=10, random=True, place=’Lake Charles, Louisiana’,
-GoogleMapAPIKey=’REMOVED GOOGLE API KEY’)</p>
-</div></blockquote>
-<p># Create the city-scale BIM file
-BIM = cityBuilder.build()</p>
 <p>Upon execution, CityBuilder will:</p>
 <ol class="arabic simple">
 <li><p>Download footprints for all buildings in the specified region, Lake Charles, from the
@@ -503,17 +497,17 @@ images. In AI/ML terminology, the Roof Shape module is an image classifier: it t
 classifies it into one of three categories used in HAZUS: gable, hip, or flat as shown in
 <a class="reference internal" href="#roof-shape"><span class="std std-numref">Fig. 3.2.2.1</span></a>. The original training of the AI model utilized 6,000 images obtained from Google
 satellite imagery in conjunction with roof labels obtained from
-<a class="reference external" href="https://www.openstreetmap.org/">Open Street Maps</a>. As many roofs have more complex shapes, a
+<a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap</a>. As many roofs have more complex shapes, a
 similitude measure is used to determine which of these roof geometries is the best match to a given roof.
 More details of the classifier can be found
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/roofClassifier.html">here</a>.
 The trained classifier was employed here to classify the roof information for Lake Charles.</p>
 <div class="align-center figure" id="roof-shape">
 <a class="reference internal image-reference" href="../../../_images/RoofShape1.png"><img alt="../../../_images/RoofShape1.png" src="../../../_images/RoofShape1.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.2.1 </span><span class="caption-text">Roof type classification with examples of aerial images (a-f) and simplified archetypes (d-f) used by Hazus.</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.2.1 </span><span class="caption-text">Roof type classification with examples of aerial images (a-f) and simplified archetypes (d-f) used by HAZUS.</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
 </div>
 <p>The performance of the roof shape classifier was validated against two ground truth datasets.
-The first is comprised of 125 manually labeled satellite images sampled from OpenStreetMap from
+The first comprises 125 manually labeled satellite images sampled from OpenStreetMap from
 across the US, retaining only those with unobstructed views of building roofs (a cleaned dataset).
 The second is 56 residences assessed by StEER for which roof types were one of the three HAZUS classes,
 e.g., removing all roofs labeled as “Complex” according to StEER’s distinct image labeling standards.
@@ -540,7 +534,7 @@ This classifier labels buildings as one of: RES1 (single-family building), RES3
 view images from the United States with unobstructed views of the buildings (cleaned data). The full
 validation was documented <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/occupancy.html">here</a>.
 The confusion matrix, which presents visually the predictions versus actual data from the original
-293 image validation set, is as shown in <a class="reference internal" href="#occ-class-vali"><span class="std std-numref">Fig. 3.2.2.3</span></a> for OpenStreetMaps (see plot a), and
+293 image validation set, is as shown in <a class="reference internal" href="#occ-class-vali"><span class="std std-numref">Fig. 3.2.2.3</span></a> for OpenStreetMap (see plot a), and
 the NJDEP dataset (see plot b). <a class="reference internal" href="#occ-class-pred"><span class="std std-numref">Fig. 3.2.2.4</span></a> displays the BRAILS occupancy predictions for
 Lake Charles for a selected region. Note that only those classified as RES1 or RES3 are retained in
 this testbed focused on residential construction (and the COM1 is assigned to the buildings that are classified
@@ -561,7 +555,7 @@ can automatically detect rows of building windows was established to generate th
 of visible floor locations from street-level images. The model was trained on the
 <a class="reference external" href="https://arxiv.org/abs/1911.09070">EfficientDet-D7 architecture</a> with a dataset of 60,000 images,
 using 80% for training, 15% for validation, and 5% testing of the model. In order to ensure faster model
-convergence, initial weights of the model were set to model weights of the (pretrained) object detection
+convergence, initial weights of the model were set to model weights of the (pre-trained) object detection
 model that, at the time, achieved state-of-the-art performance on the
 <a class="reference external" href="https://cocodataset.org/#download">2017 COCO Detection set</a>. For this
 specific implementation, the peak model performance was achieved using the <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam optimizer</a> at a learning
@@ -569,7 +563,7 @@ rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" h
 floor detections performed by the model.</p>
 <div class="align-center figure" id="num-stories-detection">
 <a class="reference internal image-reference" href="../../../_images/NumOfStoriesDetection1.png"><img alt="../../../_images/NumOfStoriesDetection1.png" src="../../../_images/NumOfStoriesDetection1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.2.5 </span><span class="caption-text">Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates model confidence level associated with that prediction.</span><a class="headerlink" href="#num-stories-detection" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.2.5 </span><span class="caption-text">Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown in the top right corner of a bounding box indicates model confidence level associated with that prediction.</span><a class="headerlink" href="#num-stories-detection" title="Permalink to this image">¶</a></p>
 </div>
 <p>For an image, the described floor detection model generates the bounding box output for its
 detections and calculates the confidence level associated with each detection
@@ -719,14 +713,14 @@ The current version of the testbed will thus use the NSI data as the basis for t
 </div>
 <div class="section" id="attribute-garage">
 <h3>Attribute: Garage<a class="headerlink" href="#attribute-garage" title="Permalink to this heading">¶</a></h3>
-<p>A garage detector utilizing the EfficienDet object detection architecture was trained to identify the
+<p>A garage detector utilizing the EfficientDet object detection architecture was trained to identify the
 existence of attached garages and carport structures in street-level imagery of the buildings
 included in the Lake Charles inventory. Properties are classified as either having an attached garage
 or not having an attached garage (which includes both detached garages and homes with no garage).
 The model was trained on the <a class="reference external" href="https://arxiv.org/abs/1911.09070">EfficientDet-D4 architecture</a> with
 a dataset of 1,887 images, using 80% for training, 10% for validation, and 10% for testing.
 Similar to the number of floors detector model, the initial weights of this model were set to the model weights
-of the (pretrained) object detection model that, at the time, achieved state-of-the-art performance on
+of the (pre-trained) object detection model that, at the time, achieved state-of-the-art performance on
 the <a class="reference external" href="https://cocodataset.org/#download">2017 COCO Detection set</a>. For this task, the peak detector
 performance was attained using the <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam optimizer</a>
 at a learning rate of 0.0001 (batch size: 2) after 25 epochs. <a class="reference internal" href="#garage-eg"><span class="std std-numref">Fig. 3.2.3.5</span></a> shows sample

@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -43,6 +43,7 @@
         <script src="../../../../../_static/design-tabs.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
@@ -131,7 +132,8 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.6. MOD: Asset Modeling</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#buildings">2.6.1. Buildings</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#mdof-lu-building-model">2.6.1.1. MDOF-LU Building Model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#openseespy-building-model">2.6.1.2. OpenSeesPy Building Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#high-fidelity-models-and-mdof-lu">2.6.1.2. High-Fidelity Models and MDOF-LU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#openseespy-building-model">2.6.1.3. OpenSeesPy Building Model</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#transportation-infrastructure">2.6.2. Transportation Infrastructure</a></li>
@@ -248,17 +250,18 @@
 </div>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#buildings" id="id6">Buildings</a></p>
+<li><p><a class="reference internal" href="#buildings" id="id9">Buildings</a></p>
 <ul>
-<li><p><a class="reference internal" href="#mdof-lu-building-model" id="id7">MDOF-LU Building Model</a></p></li>
-<li><p><a class="reference internal" href="#openseespy-building-model" id="id8">OpenSeesPy Building Model</a></p></li>
+<li><p><a class="reference internal" href="#mdof-lu-building-model" id="id10">MDOF-LU Building Model</a></p></li>
+<li><p><a class="reference internal" href="#high-fidelity-models-and-mdof-lu" id="id11">High-Fidelity Models and MDOF-LU</a></p></li>
+<li><p><a class="reference internal" href="#openseespy-building-model" id="id12">OpenSeesPy Building Model</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#transportation-infrastructure" id="id9">Transportation Infrastructure</a></p></li>
+<li><p><a class="reference internal" href="#transportation-infrastructure" id="id13">Transportation Infrastructure</a></p></li>
 </ul>
 </div>
 <div class="section" id="buildings">
-<span id="lbl-modbuildings"></span><h2><a class="toc-backref" href="#id6"><span class="section-number">2.6.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this heading">¶</a></h2>
+<span id="lbl-modbuildings"></span><h2><a class="toc-backref" href="#id9"><span class="section-number">2.6.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this heading">¶</a></h2>
 <p>For building modeling, the following applications are available:</p>
 <blockquote>
 <div><ul class="simple">
@@ -267,7 +270,7 @@
 </ul>
 </div></blockquote>
 <div class="section" id="mdof-lu-building-model">
-<span id="lbl-modmdoflu"></span><h3><a class="toc-backref" href="#id7"><span class="section-number">2.6.1.1. </span>MDOF-LU Building Model</a><a class="headerlink" href="#mdof-lu-building-model" title="Permalink to this heading">¶</a></h3>
+<span id="lbl-modmdoflu"></span><h3><a class="toc-backref" href="#id10"><span class="section-number">2.6.1.1. </span>MDOF-LU Building Model</a><a class="headerlink" href="#mdof-lu-building-model" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>MDOF-LU</strong> application generates a hysteretic, multi-degree of freedom (MDOF) model based on high-level building information provided by the user. This approach is adapted from <a class="reference internal" href="#lu2020" id="id1"><span>[Lu2020]</span></a>. It processes building inventory data (e.g., construction year, structural type, plan area, number of stories) provided by the user in the ASD tab to determine the design code level and generates an OpenSees model for each building. Required information includes:</p>
 <div class="align-center figure" id="fig-mdoflumodelingpanel">
 <a class="reference internal image-reference" href="../../../../../_images/R2DMDOFLUBuildingModel.png"><img alt="../../../../../_images/R2DMDOFLUBuildingModel.png" src="../../../../../_images/R2DMDOFLUBuildingModel.png" style="width: 80%;" /></a>
@@ -802,9 +805,263 @@ remove<span class="w"> </span>recorders<span class="w"> </span>
 </dd>
 </dl>
 </div>
+<div class="section" id="high-fidelity-models-and-mdof-lu">
+<span id="lbl-multifidelity"></span><h3><a class="toc-backref" href="#id11"><span class="section-number">2.6.1.2. </span>High-Fidelity Models and MDOF-LU</a><a class="headerlink" href="#high-fidelity-models-and-mdof-lu" title="Permalink to this heading">¶</a></h3>
+<p>This option allows to import either high- or low-fidelity OpenSees models for each assets:</p>
+<ul>
+<li><p><strong>High-fidelity model</strong>: For a subset of building in a region, the users can import the opensees models. The model pathes and the corresponding asset ids should be specified through the database file, which is formated as a JSON array. Each element in the array represents a building model. Below is an example of the database file:</p>
+<details class="summary-an-example-of-highfidelity-database-file-click">
+<summary>An example of highfidelity database file (click)</summary><p>Given the database file below, R2D will evaluate the user-provided high-fidelity OpenSees models to obtain the responses for assets 1, 2, 3, 10, and 12, while low-fidelity models will be used for all other assets.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;mainScript&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./model1/Ex5.Frame2D.build.ElasticSection.tcl&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenSeesInput&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;NodeMapping&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;numStory&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ndm&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ndf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dampingRatio&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;mainScript&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./model2/MRF_2Story_Concentrated.tcl&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenSeesInput&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;NodeMapping&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;numStory&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ndm&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ndf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dampingRatio&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;mainScript&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./model3/Alt_ROM_Simulation_BoucWen_Drift.tcl&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenSeesInput&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;NodeMapping&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;numStory&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ndm&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ndf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dampingRatio&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;mainScript&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./model4/ShearBuilding3.tcl&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenSeesInput&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;NodeMapping&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;response&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;floor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;numStory&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ndm&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ndf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dampingRatio&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>The file system corresponding to the json looks like below. Note that only the main files are explicitly specified to represent the entire directory.</p>
+</details><details class="summary-the-file-structure-corresponding-to-the-example-database-file-click">
+<summary>The file structure corresponding to the example database file (click)</summary><div class="align-center figure" id="id5">
+<a class="reference internal image-reference" href="../../../../../_images/R2DMultiFidelityBuildings.png"><img alt="../../../../../_images/R2DMultiFidelityBuildings.png" src="../../../../../_images/R2DMultiFidelityBuildings.png" style="width: 30%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.6.1.2.1 </span><span class="caption-text">The file structure corresponding to the database file.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</details><p>The required keys are listed below. Please ensure that your database (.json) file includes all necessary information.</p>
+<table class="colwidths-given docutils align-default" id="id6">
+<caption><span class="caption-number">Table 2.6.1.2.1 </span><span class="caption-text">High-fidelity model database (.json)</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 25%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>array or integer</p></td>
+<td><p>The asset ids that will be mapped to this model</p></td>
+</tr>
+<tr class="row-odd"><td><p>mainScript</p></td>
+<td><p>string</p></td>
+<td><p>Path to the main analysis script. Locate any additional scripts in the same directory.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>string</p></td>
+<td><p>Always use “OpenSeesInput”. This is for sanity check.</p></td>
+</tr>
+<tr class="row-odd"><td><p>NodeMapping</p></td>
+<td><p>array of json object</p></td>
+<td><p>Specify the nodes that will represent each story. See the below table.</p></td>
+</tr>
+<tr class="row-even"><td><p>numStory</p></td>
+<td><p>integer</p></td>
+<td><p>Number of stories</p></td>
+</tr>
+<tr class="row-odd"><td><p>ndm</p></td>
+<td><p>integer</p></td>
+<td><p>Dimenion size</p></td>
+</tr>
+<tr class="row-even"><td><p>ndf</p></td>
+<td><p>integer</p></td>
+<td><p>Degree of freedom per node</p></td>
+</tr>
+<tr class="row-odd"><td><p>dampingRatio</p></td>
+<td><p>float</p></td>
+<td><p>Damping ratio for dynamic analysis</p></td>
+</tr>
+</tbody>
+</table>
+<p>The key <code class="docutils literal notranslate"><span class="pre">NodeMapping</span></code> should contain an array with a size <span class="math notranslate nohighlight">\(N_f+1\)</span>, where <span class="math notranslate nohighlight">\(N_f\)</span> is the number of floors. Each element of array must include the following three keys.</p>
+</li>
+</ul>
+<table class="colwidths-given docutils align-default" id="id7">
+<caption><span class="caption-number">Table 2.6.1.2.2 </span><span class="caption-text">High-fidelity model database (.json)</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>node</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>cline</p></td>
+<td><p>string (always use “response”)</p></td>
+</tr>
+<tr class="row-even"><td><p>floor</p></td>
+<td><p>string</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><strong>Low-fidelity model</strong>: By default, we use MDOF-Lu model to evaluate the dynamic response of assets that are not specified in the high-fidelity database file. MDOF-Lu model takes the basic asset information (e.g. number of stories, structural types, etc.) provided in the ASD tab and automatically generates a simplified multi-degree of freedom nonlinear OpenSees model. See <a class="reference internal" href="#lbl-modmdoflu"><span class="std std-ref">MDOF-LU Building Model</span></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure the asset inventory specified in the ASD tab has consistent story numbers, structural types, and other attributes with the user-provided OpenSees (high-fidelity) model, in order to ensure correct evaluation of damage and loss.</p>
+</div>
+</div>
 <div class="section" id="openseespy-building-model">
-<h3><a class="toc-backref" href="#id8"><span class="section-number">2.6.1.2. </span>OpenSeesPy Building Model</a><a class="headerlink" href="#openseespy-building-model" title="Permalink to this heading">¶</a></h3>
-<p>The <strong>OpenSeesPy</strong> application allows for the creation of structural models using a user-defined Python script. The input panel (<a class="reference internal" href="#fig-r2dopenseespybuildingmodel"><span class="std std-numref">Fig. 2.6.1.2.1</span></a>) provides fields for:</p>
+<h3><a class="toc-backref" href="#id12"><span class="section-number">2.6.1.3. </span>OpenSeesPy Building Model</a><a class="headerlink" href="#openseespy-building-model" title="Permalink to this heading">¶</a></h3>
+<p>The <strong>OpenSeesPy</strong> application allows for the creation of structural models using a user-defined Python script. The input panel (<a class="reference internal" href="#fig-r2dopenseespybuildingmodel"><span class="std std-numref">Fig. 2.6.1.3.1</span></a>) provides fields for:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p><strong>OpenSeesPy Script:</strong> Script containing the code to create the building model.</p></li>
@@ -813,14 +1070,14 @@ remove<span class="w"> </span>recorders<span class="w"> </span>
 <li><p><strong>Degrees-of-Freedom at Node:</strong> Number of degrees-of-freedom at each node.</p></li>
 </ol>
 </div></blockquote>
-<div class="align-center figure" id="id5">
+<div class="align-center figure" id="id8">
 <span id="fig-r2dopenseespybuildingmodel"></span><img alt="../../../../../_images/R2DOpenSeesPyBuildingModel.png" src="../../../../../_images/R2DOpenSeesPyBuildingModel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.1.2.1 </span><span class="caption-text">OpenSeesPy Building model input panel.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.6.1.3.1 </span><span class="caption-text">OpenSeesPy Building model input panel.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
 <div class="section" id="transportation-infrastructure">
-<span id="lbl-modtransport"></span><h2><a class="toc-backref" href="#id9"><span class="section-number">2.6.2. </span>Transportation Infrastructure</a><a class="headerlink" href="#transportation-infrastructure" title="Permalink to this heading">¶</a></h2>
+<span id="lbl-modtransport"></span><h2><a class="toc-backref" href="#id13"><span class="section-number">2.6.2. </span>Transportation Infrastructure</a><a class="headerlink" href="#transportation-infrastructure" title="Permalink to this heading">¶</a></h2>
 <p>Currently, only Intensity Measure as Engineering Demand Parameter (<strong>IMasEDP</strong>) analysis is supported for transportation infrastructure. The asset models should be <strong>None</strong> for <strong>IMasEDP</strong> analyses.</p>
 </div>
 </div>

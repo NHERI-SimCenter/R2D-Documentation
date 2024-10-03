@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -134,8 +134,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#regional-water-distribution-networks">2.4.2. Regional Water Distribution Networks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#csv-to-regional-water-network">2.4.2.1. CSV to Regional Water Network</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gis-to-regional-water-network">2.4.2.2. GIS to Regional Water Network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inp-to-water-distribution-network">2.4.2.1. INP to Water Distribution Network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#csv-to-regional-water-network">2.4.2.2. CSV to Regional Water Network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gis-to-regional-water-network">2.4.2.3. GIS to Regional Water Network</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#regional-transportation-infrastructure">2.4.3. Regional Transportation Infrastructure</a><ul>
@@ -254,32 +255,33 @@
 <p>This section guides users through importing databases for various asset classes. Users can select asset types, such as Buildings and Transportation Networks, from the <strong>Asset Selection Ribbon</strong> on the left-hand side of <a class="reference internal" href="#fig-buildinginputpanel"><span class="std std-numref">Fig. 2.4.1.1.2</span></a>. This ribbon appears when multiple asset types are selected in the <strong>GI: General Information</strong> panel, displaying only the assets checked in the <strong>GI</strong> panel. Switching between assets updates the main panel to show relevant import options for each asset type.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#buildings" id="id12">Buildings</a></p>
+<li><p><a class="reference internal" href="#buildings" id="id13">Buildings</a></p>
 <ul>
-<li><p><a class="reference internal" href="#csv-to-aim" id="id13">CSV to AIM</a></p></li>
-<li><p><a class="reference internal" href="#gis-to-aim" id="id14">GIS to AIM</a></p></li>
-<li><p><a class="reference internal" href="#geojson-to-asset" id="id15">GeoJSON to Asset</a></p></li>
+<li><p><a class="reference internal" href="#csv-to-aim" id="id14">CSV to AIM</a></p></li>
+<li><p><a class="reference internal" href="#gis-to-aim" id="id15">GIS to AIM</a></p></li>
+<li><p><a class="reference internal" href="#geojson-to-asset" id="id16">GeoJSON to Asset</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#regional-water-distribution-networks" id="id16">Regional Water Distribution Networks</a></p>
+<li><p><a class="reference internal" href="#regional-water-distribution-networks" id="id17">Regional Water Distribution Networks</a></p>
 <ul>
-<li><p><a class="reference internal" href="#csv-to-regional-water-network" id="id17">CSV to Regional Water Network</a></p></li>
-<li><p><a class="reference internal" href="#gis-to-regional-water-network" id="id18">GIS to Regional Water Network</a></p></li>
+<li><p><a class="reference internal" href="#inp-to-water-distribution-network" id="id18">INP to Water Distribution Network</a></p></li>
+<li><p><a class="reference internal" href="#csv-to-regional-water-network" id="id19">CSV to Regional Water Network</a></p></li>
+<li><p><a class="reference internal" href="#gis-to-regional-water-network" id="id20">GIS to Regional Water Network</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#regional-transportation-infrastructure" id="id19">Regional Transportation Infrastructure</a></p>
+<li><p><a class="reference internal" href="#regional-transportation-infrastructure" id="id21">Regional Transportation Infrastructure</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id1" id="id20">GeoJSON to Asset</a></p></li>
-<li><p><a class="reference internal" href="#gis-to-transportation-network-aim" id="id21">GIS to Transportation Network AIM</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id22">GeoJSON to Asset</a></p></li>
+<li><p><a class="reference internal" href="#gis-to-transportation-network-aim" id="id23">GIS to Transportation Network AIM</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="buildings">
-<span id="lbl-asdbuildings"></span><h2><a class="toc-backref" href="#id12"><span class="section-number">2.4.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this heading">¶</a></h2>
+<span id="lbl-asdbuildings"></span><h2><a class="toc-backref" href="#id13"><span class="section-number">2.4.1. </span>Buildings</a><a class="headerlink" href="#buildings" title="Permalink to this heading">¶</a></h2>
 <p>The buildings input panel (<a class="reference internal" href="#fig-buildinginputpanel"><span class="std std-numref">Fig. 2.4.1.1.2</span></a>) enables users to import a building inventory database. Selection of the import application is done via the <strong>Building Import Selection</strong> combo box, facilitating the creation of an asset information model (AIM).</p>
 <div class="section" id="csv-to-aim">
-<h3><a class="toc-backref" href="#id13"><span class="section-number">2.4.1.1. </span>CSV to AIM</a><a class="headerlink" href="#csv-to-aim" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id14"><span class="section-number">2.4.1.1. </span>CSV to AIM</a><a class="headerlink" href="#csv-to-aim" title="Permalink to this heading">¶</a></h3>
 <p>This application imports a building inventory from a .csv file provided by the user.</p>
 <ol class="arabic simple">
 <li><p><strong>Path to Buildings Database</strong>: Users specify the .csv file path here. The file must at least contain columns for building IDs (id, in sequence), and the latitudes (Latitude) and longitudes (Longitude) of building locations. Additional columns should be included to supply information needed by other workflow applications.</p></li>
@@ -296,7 +298,7 @@
 </div>
 </div>
 <div class="section" id="gis-to-aim">
-<h3><a class="toc-backref" href="#id14"><span class="section-number">2.4.1.2. </span>GIS to AIM</a><a class="headerlink" href="#gis-to-aim" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id15"><span class="section-number">2.4.1.2. </span>GIS to AIM</a><a class="headerlink" href="#gis-to-aim" title="Permalink to this heading">¶</a></h3>
 <p>This application imports a building inventory from a GIS file (e.g., shapefile, geodatabase) specified by the user, as shown in <a class="reference internal" href="#fig-r2dgisbuildingsinputpanel"><span class="std std-numref">Fig. 2.4.1.2.1</span></a>.</p>
 <ol class="arabic simple">
 <li><p><strong>GIS Input File</strong>: Users provide the GIS file path here. Selecting the file is facilitated by a dialog box opened via the <strong>Browse</strong> button.</p></li>
@@ -309,7 +311,7 @@
 </div>
 </div>
 <div class="section" id="geojson-to-asset">
-<h3><a class="toc-backref" href="#id15"><span class="section-number">2.4.1.3. </span>GeoJSON to Asset</a><a class="headerlink" href="#geojson-to-asset" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id16"><span class="section-number">2.4.1.3. </span>GeoJSON to Asset</a><a class="headerlink" href="#geojson-to-asset" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>GeoJSON to Asset</strong> application (<a class="reference internal" href="#fig-r2dgeojsoninputbeforeload"><span class="std std-numref">Fig. 2.4.1.3.1</span></a>) is the preferred method for loading regional infrastructure inventories in SimCenter. It requires a <cite>.geojson</cite> file conforming to the official <cite>.geojson</cite> format described <a class="reference external" href="https://geojson.org/">here</a>. The file must include a “CRS” key-item pair for the coordinate reference system and describe building stock information in the <cite>“features”</cite> array. Each feature represents an asset and must include <cite>{“type”:”Feature”}</cite>, <cite>“id”</cite>, <cite>“geometry”</cite>, and <cite>“properties”</cite> items.  The value of <cite>“id”</cite> should be an integer in string format for asset selection.</p>
 <p>The <cite>“properties”</cite> item should contain all information necessary for subsequent workflow analyses. A <strong>“type”</strong> attribute within <cite>“properties”</cite> is necessary, and it specifies the component type (e.g., <strong>“Building”</strong> for building inventory). This affects how assets are managed in later simulation workflows.</p>
 <div class="align-center figure" id="id6">
@@ -359,38 +361,49 @@
 </div>
 </div>
 <div class="section" id="regional-water-distribution-networks">
-<h2><a class="toc-backref" href="#id16"><span class="section-number">2.4.2. </span>Regional Water Distribution Networks</a><a class="headerlink" href="#regional-water-distribution-networks" title="Permalink to this heading">¶</a></h2>
-<p>The water distribution network panel (<a class="reference internal" href="#fig-wdninputpanel"><span class="std std-numref">Fig. 2.4.2.1.1</span></a>) allows for the input of nodes and pipelines. Users select the import application via the <strong>Regional Water Network Selection</strong> combo box.</p>
+<span id="lbl-asdwaterdistributionnetwork"></span><h2><a class="toc-backref" href="#id17"><span class="section-number">2.4.2. </span>Regional Water Distribution Networks</a><a class="headerlink" href="#regional-water-distribution-networks" title="Permalink to this heading">¶</a></h2>
+<p>The water distribution network panel (<a class="reference internal" href="#fig-wdninpasd"><span class="std std-numref">Fig. 2.4.2.1.1</span></a>) allows for the input of nodes and pipelines. Users select the import application via the <strong>Regional Water Network Selection</strong> combo box.</p>
+<div class="section" id="inp-to-water-distribution-network">
+<h3><a class="toc-backref" href="#id18"><span class="section-number">2.4.2.1. </span>INP to Water Distribution Network</a><a class="headerlink" href="#inp-to-water-distribution-network" title="Permalink to this heading">¶</a></h3>
+<p>This application imports water distribution networks from the EPANET INP format. The INP file contains many features and is widely used in the industry. Although the INP file includes coordinates, the coordinate reference system must be defined within this application.</p>
+<p>For more information, please refer to <a class="reference external" href="https://epanet22.readthedocs.io/en/latest/back_matter.html">EPANET’s Document</a>.</p>
+<p>Please note that this is the preferred input method for using REWET in R2D.</p>
+<div class="align-center figure" id="id8">
+<span id="fig-wdninpasd"></span><img alt="../../../../../_images/R2DWDNASDINP.png" src="../../../../../_images/R2DWDNASDINP.png" />
+<p class="caption"><span class="caption-number">Fig. 2.4.2.1.1 </span><span class="caption-text">INP network distribution network input panel.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>This application imports a water distribution network from .csv files representing nodes and pipelines.</p>
+</div>
 <div class="section" id="csv-to-regional-water-network">
-<h3><a class="toc-backref" href="#id17"><span class="section-number">2.4.2.1. </span>CSV to Regional Water Network</a><a class="headerlink" href="#csv-to-regional-water-network" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id19"><span class="section-number">2.4.2.2. </span>CSV to Regional Water Network</a><a class="headerlink" href="#csv-to-regional-water-network" title="Permalink to this heading">¶</a></h3>
 <p>This application imports a water distribution network from .csv files representing nodes and pipelines.</p>
 <ol class="arabic simple">
 <li><p><strong>Path to Nodes/Pipelines</strong>: Users specify the file paths for nodes and pipelines. The nodes file must include columns for node IDs (in sequence) and their latitudes and longitudes. The pipelines file requires columns for pipe IDs (in sequence) and node IDs for the start and end points.</p></li>
 <li><p>The <strong>Node and Pipeline Information</strong> table displays the imported data in a user-editable spreadsheet. Subset selection for analysis is available through direct ID input or advanced filtering.</p></li>
 </ol>
-<div class="align-center figure" id="id8">
+<div class="align-center figure" id="id9">
 <span id="fig-wdninputpanel"></span><img alt="../../../../../_images/R2DWDNcsvInputPanel.png" src="../../../../../_images/R2DWDNcsvInputPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.2.1.1 </span><span class="caption-text">CSV to regional water network input panel.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.2.2.1 </span><span class="caption-text">CSV to regional water network input panel.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="gis-to-regional-water-network">
-<h3><a class="toc-backref" href="#id18"><span class="section-number">2.4.2.2. </span>GIS to Regional Water Network</a><a class="headerlink" href="#gis-to-regional-water-network" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id20"><span class="section-number">2.4.2.3. </span>GIS to Regional Water Network</a><a class="headerlink" href="#gis-to-regional-water-network" title="Permalink to this heading">¶</a></h3>
 <p>This application imports a water distribution network from GIS files representing nodes and pipelines.</p>
 <ol class="arabic simple">
 <li><p><strong>Path to Nodes/Pipelines</strong>: Users provide the GIS file paths here. The files must include identification numbers (id) for nodes and pipelines, with additional attributes as needed.</p></li>
 <li><p>The <strong>Node and Pipeline Information</strong> table displays imported data, with CRS specification required for correct feature placement.</p></li>
 </ol>
-<div class="align-center figure" id="id9">
+<div class="align-center figure" id="id10">
 <span id="fig-r2dwdngisinputpanel"></span><img alt="../../../../../_images/R2DWDNgisInputPanel.png" src="../../../../../_images/R2DWDNgisInputPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.2.2.1 </span><span class="caption-text">GIS to regional water network input panel.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.2.3.1 </span><span class="caption-text">GIS to regional water network input panel.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
 <div class="section" id="regional-transportation-infrastructure">
-<span id="lbl-asdtransport"></span><h2><a class="toc-backref" href="#id19"><span class="section-number">2.4.3. </span>Regional Transportation Infrastructure</a><a class="headerlink" href="#regional-transportation-infrastructure" title="Permalink to this heading">¶</a></h2>
+<span id="lbl-asdtransport"></span><h2><a class="toc-backref" href="#id21"><span class="section-number">2.4.3. </span>Regional Transportation Infrastructure</a><a class="headerlink" href="#regional-transportation-infrastructure" title="Permalink to this heading">¶</a></h2>
 <p>This section covers the import of transportation network inventories. The <strong>Transportation Network Selection</strong> combo box allows for application selection.</p>
 <div class="section" id="id1">
-<h3><a class="toc-backref" href="#id20"><span class="section-number">2.4.3.1. </span>GeoJSON to Asset</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id22"><span class="section-number">2.4.3.1. </span>GeoJSON to Asset</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>GeoJSON to Asset</strong> application (<a class="reference internal" href="#fig-r2dgeojsoninputbeforeload"><span class="std std-numref">Fig. 2.4.1.3.1</span></a>), is SimCenter’s preferred method to load regional infrastructure inventory.
 <a class="reference internal" href="#fig-r2dgeojsoninputexamplebuilding"><span class="std std-numref">Listing 2.4.1.3.1</span></a> is an example of a <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> formatted database for transportation infrastructure.
 It follows the format convention of the official <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> structure as described <a class="reference external" href="https://geojson.org/">here</a>.
@@ -495,19 +508,19 @@ The selected assets can be visualized in the <strong>VIZ</strong> panel.</p>
 </pre></div>
 </div>
 </div>
-<div class="align-center figure" id="id10">
+<div class="align-center figure" id="id11">
 <span id="fig-r2dgeojsoninputafterloadtransport"></span><img alt="../../../../../_images/R2DGeoJsonInputAfterLoadTransport.png" src="../../../../../_images/R2DGeoJsonInputAfterLoadTransport.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.3.1.1 </span><span class="caption-text">GeoJSON to Asset input panel after loading a transportation infrastructure <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> database.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.3.1.1 </span><span class="caption-text">GeoJSON to Asset input panel after loading a transportation infrastructure <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> database.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="gis-to-transportation-network-aim">
-<h3><a class="toc-backref" href="#id21"><span class="section-number">2.4.3.2. </span>GIS to Transportation Network AIM</a><a class="headerlink" href="#gis-to-transportation-network-aim" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id23"><span class="section-number">2.4.3.2. </span>GIS to Transportation Network AIM</a><a class="headerlink" href="#gis-to-transportation-network-aim" title="Permalink to this heading">¶</a></h3>
 <p>This application (<a class="reference internal" href="#fig-r2dtransportgisinputpanel"><span class="std std-numref">Fig. 2.4.3.2.1</span></a>) imports transportation networks from GIS files containing highway bridges, tunnels, and roadways. Users specify file paths for each feature type, with the GIS files containing identification numbers and additional attributes as needed.
 Example GIS files for roadways, bridges, and tunnels that can be loaded to R2D with <strong>GIS to Transportation Network AIM</strong> can
 be found in the <a class="reference external" href="https://github.com/NHERI-SimCenter/R2DExamples">GitHub data repository</a> of example 14 of <a class="reference internal" href="../../../examples/desktop/examples.html#lbl-examples"><span class="std std-ref">R2D examples</span></a></p>
-<div class="align-center figure" id="id11">
+<div class="align-center figure" id="id12">
 <span id="fig-r2dtransportgisinputpanel"></span><img alt="../../../../../_images/R2DTransportGISInputPanel.png" src="../../../../../_images/R2DTransportGISInputPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.3.2.1 </span><span class="caption-text">GIS to regional transportation network input panel.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.3.2.1 </span><span class="caption-text">GIS to regional transportation network input panel.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

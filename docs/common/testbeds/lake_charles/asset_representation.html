@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -338,9 +338,8 @@ Technical Manual (<a class="reference internal" href="uncertainty_quantification
 load path and components (e.g., roof shape, secondary water resistance, roof deck attachment, roof-wall
 connection, shutters, garage), and the number of attributes necessary to describe a given building varies.</p>
 <p>As these attributes are beyond what is typically encompassed in a building inventory, a library of rulesets
-to infer the HAZUS-required attributes was developed and implemented for the <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html">Atlantic County, NJ</a> testbed,</p>
-<blockquote>
-<div><p>based upon the fields available in the building inventory, legacy building codes in New Jersey, local
+to infer the HAZUS-required attributes was developed and implemented for the <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html">Atlantic County, NJ</a> testbed,
+based upon the fields available in the building inventory, legacy building codes in New Jersey, local
 construction practices/norms, surveys capturing owner-driven mitigation actions (e.g., <a class="reference internal" href="#javeline19" id="id3"><span>[Javeline19]</span></a>)
 and market/industry data. Where possible, the rulesets are time-evolving, considering the age of
 construction to determine the governing code edition and availability of specific mitigation measures
@@ -349,14 +348,11 @@ detailed notes cross-referencing the various documents and practices that govern
 and thus informed the ruleset formation. In cases where engineering judgment was required, rules were assigned
 based on what was understood to be the most common construction practice. In cases where that was not clear,
 the ruleset assigned the most vulnerable configuration for a more conservative approach to loss estimation.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>The rulesets from the <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html">Atlantic County, NJ</a> testbed are applied here, without modification, as the purpose</dt><dd><p>herein is solely to demonstrate the workflow. It is acknowledged that, while also grounded in the
+<p>The rulesets from the <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html">Atlantic County, NJ</a> testbed are applied here, without modification, as the purpose
+herein is solely to demonstrate the workflow. It is acknowledged that, while also grounded in the
 International Residential Code and International Building Code, Louisiana has a different regulatory
 framework and code eras that would require adaptation of the rulesets. Such adaptations are encouraged
 as part of the community’s use and adaptation of this workflow in its research.</p>
-</dd>
-</dl>
 <table class="colwidths-given docutils align-center" id="wind-bldg-attri">
 <caption><span class="caption-number">Table 3.4.2.1 </span><span class="caption-text">Building attributes for wind loss assessment for WSF and WMUH.</span><a class="headerlink" href="#wind-bldg-attri" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -415,7 +411,7 @@ as part of the community’s use and adaptation of this workflow in its research
 </table>
 <p>Note that the rulesets for assigning wind loss attributes call upon two meta-variables relevant to wind losses
 for any building: “Hazard Prone Region” and “Wind Borne Debris,” which are assigned based on the design wind
-speed at the asset location (Building Inventory field “DWSII”) and the flood zone (building inventory field
+speed at the asset location (building inventory field <strong>DWSII</strong>) and the flood zone (building inventory field
 <strong>FloodZone</strong>). The rules used to assign these meta-variables are provided in
 <a class="reference internal" href="#addinfo-ruleset-metavar"><span class="std std-numref">Table 3.4.2.2</span></a>. Also note that the roof shape (building inventory field <strong>RoofShape</strong>),
 derived from aerial imagery, and terrain roughness (building inventory field <strong>Terrain</strong>), derived from

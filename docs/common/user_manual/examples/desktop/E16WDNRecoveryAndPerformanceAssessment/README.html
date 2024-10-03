@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.12. E15 - E15WDNRecoveryAndPerformanceAssessment &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>4.12. E16 - E16WDNRecoveryAndPerformanceAssessment &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -136,7 +136,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../E10SiteResponse/README.html">4.9. E10 - Site Response Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E12IstanbulRegionalSeismicRiskAnalysis/README.html">4.10. E12 - Istanbul Regional Seismic Risk Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E14BasicHAZUSTransportation/README.html">4.11. E14 - Basic HAZUS Transportation Infrastructure</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.12. E15 - E15WDNRecoveryAndPerformanceAssessment</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.12. E16 - E16WDNRecoveryAndPerformanceAssessment</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -212,7 +212,7 @@
         
           <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">4.12. </span>E15 - E15WDNRecoveryAndPerformanceAssessment</li>
+      <li><span class="section-number">4.12. </span>E16 - E16WDNRecoveryAndPerformanceAssessment</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -231,14 +231,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="e15-e15wdnrecoveryandperformanceassessment">
-<h1><span class="section-number">4.12. </span>E15 - E15WDNRecoveryAndPerformanceAssessment<a class="headerlink" href="#e15-e15wdnrecoveryandperformanceassessment" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="e16-e16wdnrecoveryandperformanceassessment">
+<h1><span class="section-number">4.12. </span>E16 - E16WDNRecoveryAndPerformanceAssessment<a class="headerlink" href="#e16-e16wdnrecoveryandperformanceassessment" title="Permalink to this heading">¶</a></h1>
 <p>This example demonstrates the performance assessment of water distribution systems using REWET. REWET is designed to evaluate the functionality of a water distribution system following catastrophic events that cause damage to the infrastructure. The method is outlined in the dissertation by Naeimi Dafchahi, S., &amp; Davidson, R. A. (2023), titled “Post-event restoration simulation of water distribution systems: a generally applicable approach.”</p>
 <p>For the purposes of this example, we will consider an earthquake as the baseline hazard type. REWET assesses the recovery and functionality of the system over the time. To achieve this, users must specify general rules (also known as restoration policy) for system recovery. While R2D’s flexible workflow handles hazard intensity measure calculations and damage estimation, users are responsible for providing other necessary inputs for the recovery process and simulation.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0015.png"><img alt="../../../../../_images/r2dt-0015.png" src="../../../../../_images/r2dt-0015.png" style="width: 400px;" /></a>
 </div>
-<p>In the following steps, we will guide you through each stage of the assessment. However, as outlined in the online user’s manual, these procedures can be serialized to and loaded immediately from a JSON file, which for this example may be found <a class="reference external" href="https://github.com/NHERI-SimCenter/R2DExamples/tree/master/E15WDNRecoveryAndPerformanceAssessment/input.json">here</a>. We can open the input.json file using R2D so that the following panels are set.</p>
+<p>In the following steps, we will guide you through each stage of the assessment. However, as outlined in the online user’s manual, these procedures can be serialized to and loaded immediately from a JSON file, which for this example may be found <a class="reference external" href="https://github.com/NHERI-SimCenter/R2DExamples/tree/master/E16WDNRecoveryAndPerformanceAssessment/input.json">here</a>. We can open the input.json file using R2D so that the following panels are set.</p>
 <ol class="arabic">
 <li><p><strong>VIZ</strong> The visualization panel in the following figure shows the location of the assets considered in this example.</p>
 <div class="figure align-center">
@@ -272,7 +272,7 @@
 <div><blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We enter <strong>1</strong> in the filter value for junction and reservoir since the damage of those is not being modeled for this example. Also, we enter <strong>1-200</strong> to limit the damage modeling to the first 200 pipes in our asset list, so that the damage modeling is kept short.</p>
+<p>We enter <strong>1</strong> in the filter value for junction and reservoir since the damage to those is not being modeled for this example. Also, we enter <strong>1-200</strong> to limit the damage modeling to the first 200 pipes in our asset list, so that the damage modeling is kept short.</p>
 </div>
 </div></blockquote>
 <div class="figure align-center">
@@ -322,7 +322,7 @@
 <blockquote>
 <div><p><strong>Hydraulic Solver Selection:</strong> We choose the Modified EPANET V2.2 is a customized version of EPANET V2.2 that handles flow from negative pressure scenarios.</p>
 <p><strong>Minimum Pressure Override and Required Pressure Override:</strong> These options allow users to override the minimum and required pressure values specified in the INP file. Since the minimum and required pressure values in the example are correct, we leave them unchanged (i.e., set as -1 so that they will be ignored).</p>
-<p><strong>Pipe Damage Modeling:</strong> In pipe damage modeling, the relationship between the pipe’s diameter and the equivalent orifice diameter - similar to the approach proposed by Shi and O’Rourke (2008) - for each pipe material (or damage type) is defined. The default value is set to Cast Iron, with average values derived from Shi and O’Rourke (2008). We have not provided material or the damage modeling based on the material, so so that R2D assumes the default value to be Cast Iron.</p>
+<p><strong>Pipe Damage Modeling:</strong> In pipe damage modeling, the relationship between the pipe’s diameter and the equivalent orifice diameter - similar to the approach proposed by Shi and O’Rourke (2008) - for each pipe material (or damage type) is defined. The default value is set to Cast Iron, with average values derived from Shi and O’Rourke (2008). We have not provided material or the damage modeling based on the material, so that R2D assumes the default value which is Cast Iron.</p>
 <blockquote>
 <div><div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0015-SP-Hyd.png"><img alt="../../../../../_images/r2dt-0015-SP-Hyd.png" src="../../../../../_images/r2dt-0015-SP-Hyd.png" style="width: 800px;" /></a>
@@ -335,7 +335,7 @@
 <div><p><strong>Restoration On:</strong> When checked, this indicates that REWET runs the restoration (recovery) simulation.</p>
 <p><strong>Policy Definition File:</strong> This file defines restoration policies according to REWET’s policy definition format.</p>
 <p><strong>Minimum Job Time:</strong> Specifies the time when a job is assigned to a restoration agent before their shift ends.</p>
-<p><strong>Pipe Discovery Rules for Damaged Assets:</strong> The user can define the discovery rules for each damaged asset. For a pipe, the discovery can be based on leaks or on a user-specified timeseries of the discovery ratio. Leak-based discovery helps the user mimic the discovery of buried pipes, in which the pipes are not discovered unless the damage location on the pipe is pressurized for enough time so that the water flows out to the surface of the ground. The user-specified method may also be beneficial to the user when other methods for discovery are used, or the user prefers such a model. Other possible damage discoveries are node-level damage discovery, tank, and pump damages. Based on the available REWET and R2D versions, damage modeling of these asset types (also known as elements) may be included or not. If such damage modeling is being performed, the user may define such an element’s discovery as well.</p>
+<p><strong>Pipe Discovery Rules for Damaged Assets:</strong> The user can define the discovery rules for each damaged asset. For a pipe, the discovery can be based on leaks or on a user-specified time series of the discovery ratio. Leak-based discovery helps the user mimic the discovery of buried pipes, in which the pipes are not discovered unless the damage location on the pipe is pressurized for enough time so that the water flows out to the surface of the ground. The user-specified method may also be beneficial to the user when other methods for discovery are used, or the user prefers such a model. Other possible damage discoveries are node-level damage discovery, tank, and pump damages. Based on the available REWET and R2D versions, damage modeling of these asset types (also known as elements) may be included or not. If such damage modeling is being performed, the user may define such an element’s discovery as well.</p>
 <blockquote>
 <div><div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0015-SP-Res.png"><img alt="../../../../../_images/r2dt-0015-SP-Res.png" src="../../../../../_images/r2dt-0015-SP-Res.png" style="width: 800px;" /></a>
@@ -356,7 +356,14 @@
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0015-RV.png"><img alt="../../../../../_images/r2dt-0015-RV.png" src="../../../../../_images/r2dt-0015-RV.png" style="width: 800px;" /></a>
 </div>
 </li>
+<li><p><strong>Result</strong> This tab is designed to provide general results to the user. A power user may utilize the raw data provided by R2DTool to produce the specific data they need. Results for a water distribution network performance assessment can be shown using metrics such as Basic Service Categories. Water Delivery and Water Quality are two metrics that can be selected, and the system’s performance at each time step will be displayed in the R2D results tab.</p></li>
 </ol>
+<p>Furthermore, the pipes and junction data, including the total amount of time each junction is out of service for each metric (i.e., the total amount of time a junction is either not delivering any water (Water Delivery) or not delivering the expected amount of water (Water Quality), are shown in a tabular format. The data is also available in the GIS gadget in central section of the map.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0015-SP-Result.png"><img alt="../../../../../_images/r2dt-0015-SP-Result.png" src="../../../../../_images/r2dt-0015-SP-Result.png" style="width: 800px;" /></a>
+</div>
+</div></blockquote>
 </div>
 
 

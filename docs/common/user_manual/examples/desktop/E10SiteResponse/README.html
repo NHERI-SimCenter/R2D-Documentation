@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -136,7 +136,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4.9. E10 - Site Response Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E12IstanbulRegionalSeismicRiskAnalysis/README.html">4.10. E12 - Istanbul Regional Seismic Risk Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E14BasicHAZUSTransportation/README.html">4.11. E14 - Basic HAZUS Transportation Infrastructure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../E16WDNRecoveryAndPerformanceAssessment/README.html">4.12. E15 - E15WDNRecoveryAndPerformanceAssessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../E16WDNRecoveryAndPerformanceAssessment/README.html">4.12. E16 - E16WDNRecoveryAndPerformanceAssessment</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -249,84 +249,84 @@
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010.png"><img alt="../../../../../_images/r2dt-0010.png" src="../../../../../_images/r2dt-0010.png" style="width: 400px;" /></a>
 </div>
 <ol class="arabic">
-<li><p>Set the <strong>Units</strong> in the <strong>GI</strong> panel as shown in <a class="reference internal" href="../E9Tsunami/README.html#r2d-gi"><span class="std std-numref">Fig. 4.8.1</span></a> and check interested output files.</p>
-<div class="align-center figure" id="r2d-gi">
+<li><p>Set the <strong>Units</strong> in the <strong>GI</strong> panel as shown in <a class="reference internal" href="#r2d-gi-e10"><span class="std std-numref">Fig. 4.9.1</span></a> and check interested output files.</p>
+<div class="align-center figure" id="r2d-gi-e10">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010-GI.png"><img alt="../../../../../_images/r2dt-0010-GI.png" src="../../../../../_images/r2dt-0010-GI.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.9.1 </span><span class="caption-text">R2D GI setup.</span><a class="headerlink" href="#r2d-gi" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.9.1 </span><span class="caption-text">R2D GI setup.</span><a class="headerlink" href="#r2d-gi-e10" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Select the <strong>Regional Site Response</strong> method in the <strong>HAZ</strong> panel.
-In the <code class="docutils literal notranslate"><span class="pre">Site</span></code> input widget, the <code class="docutils literal notranslate"><span class="pre">SiteModelData.csv</span></code> should be automatically loaded, which includes the basic site information and modelng parameter.
+In the <code class="docutils literal notranslate"><span class="pre">Site</span></code> input widget, the <code class="docutils literal notranslate"><span class="pre">SiteModelData.csv</span></code> should be automatically loaded, which includes the basic site information and modeling parameter.
 In the <code class="docutils literal notranslate"><span class="pre">Soil</span> <span class="pre">Properties/Site</span> <span class="pre">Response</span> <span class="pre">Script</span></code> widget, the modeling script should be automatically loaded which would create OpenSees tcl models for individual sites selected for analysis.
 In the <code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">Motions</span></code> widget, the <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code> file as well as the input motion directory should be automatically loaded, which includes the ground acceleration time history data files.
 In the <code class="docutils literal notranslate"><span class="pre">Units</span> <span class="pre">of</span> <span class="pre">Event</span> <span class="pre">Input</span> <span class="pre">File</span></code> widget, the time history file <code class="docutils literal notranslate"><span class="pre">TH_file</span></code> has a unit of gravity acceleration and the scaling <code class="docutils literal notranslate"><span class="pre">factor</span></code> is unitless (these two fields are automatically created from the column headers in <code class="docutils literal notranslate"><span class="pre">EventGrid.csv</span></code>).</p>
-<div class="align-center figure" id="r2d-haz">
+<div class="align-center figure" id="r2d-haz-e10">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010-HAZ.png"><img alt="../../../../../_images/r2dt-0010-HAZ.png" src="../../../../../_images/r2dt-0010-HAZ.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.9.2 </span><span class="caption-text">R2D HAZ setup.</span><a class="headerlink" href="#r2d-haz" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.9.2 </span><span class="caption-text">R2D HAZ setup.</span><a class="headerlink" href="#r2d-haz-e10" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p><strong>ASD</strong> In the asset definition panel, the path to the <code class="docutils literal notranslate"><span class="pre">all_bldgs.csv</span></code> file is specified. Once this file is loaded, the user can select which
 particular assets will be included in the analysis by entering a valid range in the form and clicking <strong>Select</strong>.</p>
-<div class="align-center figure" id="r2d-asd">
+<div class="align-center figure" id="r2d-asd-e10">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010-ASD.png"><img alt="../../../../../_images/r2dt-0010-ASD.png" src="../../../../../_images/r2dt-0010-ASD.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.9.3 </span><span class="caption-text">R2D ASD setup.</span><a class="headerlink" href="#r2d-asd" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.9.3 </span><span class="caption-text">R2D ASD setup.</span><a class="headerlink" href="#r2d-asd-e10" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbor</strong> method, which is configured as shown in the following figure with <strong>4</strong> samples in <strong>4</strong> neighbors.</p>
-<div class="align-center figure" id="r2d-hta">
+<div class="align-center figure" id="r2d-hta-e10">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010-HTA.png"><img alt="../../../../../_images/r2dt-0010-HTA.png" src="../../../../../_images/r2dt-0010-HTA.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.9.4 </span><span class="caption-text">R2D HTA setup.</span><a class="headerlink" href="#r2d-hta" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.9.4 </span><span class="caption-text">R2D HTA setup.</span><a class="headerlink" href="#r2d-hta-e10" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p><strong>MOD</strong> In the modeling panel, the <strong>MDOF-LU</strong> method is used to create Multi-Degree-Of-Freedom (MDOF) nonlinear shear building model from the input building file in <strong>ASD</strong>.
 Following the HAZUS EQ Technical Manual Chapter 5, a hysteretic nonlinear material is defined for each story with a story shear and displacement relationship with the initial stiffness,
 over-strength ratio, hardening ratio, and degradation factor. These parameters are stored in the <code class="docutils literal notranslate"><span class="pre">HazusData.txt</span></code> for different building design levels (e.g., high-, moderate-, or pre-code)
 which is now primarily based on the built year of the structure.</p>
-<div class="align-center figure" id="r2d-mod">
+<div class="align-center figure" id="r2d-mod-e10">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010-MOD.png"><img alt="../../../../../_images/r2dt-0010-MOD.png" src="../../../../../_images/r2dt-0010-MOD.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.9.5 </span><span class="caption-text">R2D MOD setup.</span><a class="headerlink" href="#r2d-mod" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.9.5 </span><span class="caption-text">R2D MOD setup.</span><a class="headerlink" href="#r2d-mod-e10" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Set the “Building Analysis Engine” in <strong>ANA</strong> panel to “OpenSees”.</p>
-<div class="align-center figure" id="r2d-ana">
+<div class="align-center figure" id="r2d-ana-e10">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010-ANA.png"><img alt="../../../../../_images/r2dt-0010-ANA.png" src="../../../../../_images/r2dt-0010-ANA.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.9.6 </span><span class="caption-text">R2D ANA setup.</span><a class="headerlink" href="#r2d-ana" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.9.6 </span><span class="caption-text">R2D ANA setup.</span><a class="headerlink" href="#r2d-ana-e10" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun3</strong> backend. The <strong>HAZUS MH EQ Story</strong> damage and loss method is selected and configured as shown in the following figure:</p>
-<div class="align-center figure" id="r2d-dl">
+<div class="align-center figure" id="r2d-dl-e10">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010-DL.png"><img alt="../../../../../_images/r2dt-0010-DL.png" src="../../../../../_images/r2dt-0010-DL.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.9.7 </span><span class="caption-text">R2D DL setup.</span><a class="headerlink" href="#r2d-dl" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.9.7 </span><span class="caption-text">R2D DL setup.</span><a class="headerlink" href="#r2d-dl-e10" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Set the “UQ Application” in <strong>UQ</strong> panel to “Dakota”.</p>
-<div class="align-center figure" id="r2d-uq">
+<div class="align-center figure" id="r2d-uq-e10">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010-UQ.png"><img alt="../../../../../_images/r2dt-0010-UQ.png" src="../../../../../_images/r2dt-0010-UQ.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.9.8 </span><span class="caption-text">R2D UQ setup.</span><a class="headerlink" href="#r2d-uq" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.9.8 </span><span class="caption-text">R2D UQ setup.</span><a class="headerlink" href="#r2d-uq-e10" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 </ol>
 <p>After setting up the simulation, please click the <strong>RUN</strong> to execute the analysis. Once the simulation completed,
-the app would direct you to the <strong>RES</strong> panel (<a class="reference internal" href="../E9Tsunami/README.html#r2d-res"><span class="std std-numref">Fig. 4.8.9</span></a>) where you could examine and export the results.</p>
-<div class="align-center figure" id="r2d-res">
+the app would direct you to the <strong>RES</strong> panel (<a class="reference internal" href="#r2d-res-e10"><span class="std std-numref">Fig. 4.9.9</span></a>) where you could examine and export the results.</p>
+<div class="align-center figure" id="r2d-res-e10">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010-RES.png"><img alt="../../../../../_images/r2dt-0010-RES.png" src="../../../../../_images/r2dt-0010-RES.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.9.9 </span><span class="caption-text">R2D RES panel.</span><a class="headerlink" href="#r2d-res" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.9.9 </span><span class="caption-text">R2D RES panel.</span><a class="headerlink" href="#r2d-res-e10" title="Permalink to this image">¶</a></p>
 </div>
 <p>For simulating the damage and loss for a large region of interest (please remember to reset the building IDs in <strong>ASD</strong>), it would be efficient to submit and run the job
 to <a class="reference external" href="https://www.designsafe-ci.org/">DesignSafe</a> on on <a class="reference external" href="https://tacc.utexas.edu/systems/frontera/">Frontera</a>.
 This can be done in R2D by clicking <strong>RUN at DesignSafe</strong> (one would need to have a valid
 <a class="reference external" href="https://www.designsafe-ci.org/account/register/">DesignSafe account</a> for login and access the computing resource).
-<a class="reference internal" href="../E9Tsunami/README.html#r2d-run-ds"><span class="std std-numref">Fig. 4.8.10</span></a> provides an example configuration to run the analysis (and please see <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/usage.html#figremjobpanel">R2D User Guide</a> for detailed descriptions).
+<a class="reference internal" href="#r2d-run-ds-e10"><span class="std std-numref">Fig. 4.9.10</span></a> provides an example configuration to run the analysis (and please see <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/usage.html#figremjobpanel">R2D User Guide</a> for detailed descriptions).
 The individual site response analysis and building damage and loss simulation are paralleled on Stampede2. It is suggested for this demoed example to use 60 minutes with 96 Skylake (SKX) cores (e.g., 2 nodes with 48 processors per node) to complete
 the simulation. One would receive a job failure message if the specified CPU hours are not sufficient to complete the run.
 Note that the product of node number, processor number per node, and buildings per task should be greater than the total number of sites/buildings in the inventory to be analyzed.</p>
-<div class="align-center figure" id="r2d-run-ds">
+<div class="align-center figure" id="r2d-run-ds-e10">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0010-RUN.png"><img alt="../../../../../_images/r2dt-0010-RUN.png" src="../../../../../_images/r2dt-0010-RUN.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.9.10 </span><span class="caption-text">R2D - Run at DesignSafe (configuration).</span><a class="headerlink" href="#r2d-run-ds" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.9.10 </span><span class="caption-text">R2D - Run at DesignSafe (configuration).</span><a class="headerlink" href="#r2d-run-ds-e10" title="Permalink to this image">¶</a></p>
 </div>
 <p>Users could monitor the job status and retrieve result data by <strong>GET from DesignSafe</strong> button (<a class="reference internal" href="../E9Tsunami/README.html#r2d-get-ds"><span class="std std-numref">Fig. 4.8.11</span></a>). The retrieved data include
 four major result files, i.e., <em>IM.hdf</em>, <em>BIM.hdf</em>, <em>EDP.hdf</em>, <em>DM.hdf</em>, and <em>DV.hdf</em>. R2D also automatically converts the hdf files to csv files that are easier to work with.
-While R2D provides basic visualization functionalities (<a class="reference internal" href="../E9Tsunami/README.html#r2d-res"><span class="std std-numref">Fig. 4.8.9</span></a>), users could access the data which are downloaded under the remote work directory, e.g.,
+While R2D provides basic visualization functionalities (<a class="reference internal" href="#r2d-res-e10"><span class="std std-numref">Fig. 4.9.9</span></a>), users could access the data which are downloaded under the remote work directory, e.g.,
 <em>/Documents/R2D/RemoteWorkDir</em> (this directory is machine specific and can be found in <strong>File-&gt;Preferences-&gt;Remote Jobs Directory</strong>).
 Once having these result files, users could extract and process interested information - the next section will use
 the results from this testbed as an example to discuss more details.</p>

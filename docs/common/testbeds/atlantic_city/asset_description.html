@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -611,48 +611,48 @@ convergence, the initial weights of the model were set to the model weights of t
 model that, at the time, achieved state-of-the-art performance on the
 <a class="reference external" href="https://cocodataset.org/#download">2017 COCO Detection set</a>. For this
 specific implementation, the peak model performance was achieved using the <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam optimizer</a> at a learning
-rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" href="../lake_charles/asset_description.html#num-stories-detection"><span class="std std-numref">Fig. 3.2.2.5</span></a> shows examples of the
+rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" href="#num-stories-detection-ac"><span class="std std-numref">Fig. 2.2.2.1</span></a> shows examples of the
 floor detections performed by the model.</p>
-<div class="align-center figure" id="num-stories-detection">
+<div class="align-center figure" id="num-stories-detection-ac">
 <a class="reference internal image-reference" href="../../../_images/NumOfStoriesDetection.png"><img alt="../../../_images/NumOfStoriesDetection.png" src="../../../_images/NumOfStoriesDetection.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.2.1 </span><span class="caption-text">Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates the model confidence level associated with that prediction.</span><a class="headerlink" href="#num-stories-detection" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.1 </span><span class="caption-text">Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates the model confidence level associated with that prediction.</span><a class="headerlink" href="#num-stories-detection-ac" title="Permalink to this image">¶</a></p>
 </div>
 <p>For an image, the described floor detection model generates the bounding box output for its
 detections and calculates the confidence level associated with each detection
-(see <a class="reference internal" href="../lake_charles/asset_description.html#num-stories-detection"><span class="std std-numref">Fig. 3.2.2.5</span></a>). A post-processor that converts stacks of neighboring
+(see <a class="reference internal" href="#num-stories-detection-ac"><span class="std std-numref">Fig. 2.2.2.1</span></a>). A post-processor that converts stacks of neighboring
 bounding boxes into floor counts was developed to convert this output into floor counts.
 Recognizing that an image may contain multiple buildings at a time, this post-processor was
 designed to perform counts at the individual building level.</p>
 <p>For a random image dataset of buildings captured using arbitrary camera orientations (also
 termed in the wild images), the developed floor detection model was determined to capture
 the number of floors information of buildings with an accuracy of 86%.
-<a class="reference internal" href="../lake_charles/asset_description.html#num-stories-vali"><span class="std std-numref">Fig. 3.2.2.6</span></a> (a) provides a breakdown of this accuracy measure for
+<a class="reference internal" href="#num-stories-vali-ac"><span class="std std-numref">Fig. 2.2.2.2</span></a> (a) provides a breakdown of this accuracy measure for
 different prediction classes (i.e., the confusion matrix of model classifications).
 It was also observed that if the image dataset is established such that building images
 are captured with minimal obstructions, the building is at the center of the image, and
 perspective distortions are limited, the number of floors detections were performed at an
-accuracy level of 94.7% by the model. <a class="reference internal" href="../lake_charles/asset_description.html#num-stories-vali"><span class="std std-numref">Fig. 3.2.2.6</span></a> (b)
+accuracy level of 94.7% by the model. <a class="reference internal" href="#num-stories-vali-ac"><span class="std std-numref">Fig. 2.2.2.2</span></a> (b)
 shows the confusion matrix for the model predicting on the “cleaned” image data.
 In quantifying both accuracy levels, a test set of 3,000 images randomly selected
 across all counties of a companion testbed in New Jersey, excluding Atlantic County (the site of that
 testbed), was utilized.</p>
-<div class="align-center figure" id="num-stories-vali">
+<div class="align-center figure" id="num-stories-vali-ac">
 <a class="reference internal image-reference" href="../../../_images/NumOfStoriesVali.png"><img alt="../../../_images/NumOfStoriesVali.png" src="../../../_images/NumOfStoriesVali.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.2.2 </span><span class="caption-text">Confusion matrices for the number of floors predictor used in this study.</span><a class="headerlink" href="#num-stories-vali" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.2 </span><span class="caption-text">Confusion matrices for the number of floors predictor used in this study.</span><a class="headerlink" href="#num-stories-vali-ac" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="attribute-meanroofht">
-<span id="lbl-testbed-lc-asset-description-meanroofht"></span><h4>Attribute: MeanRoofHt<a class="headerlink" href="#attribute-meanroofht" title="Permalink to this heading">¶</a></h4>
-<p>The elevation of the bottom plane of the roof (lowest edge of roof line) and the elevation of the roof
+<span id="lbl-testbed-lc-asset-description-meanroofht-ac"></span><h4>Attribute: MeanRoofHt<a class="headerlink" href="#attribute-meanroofht" title="Permalink to this heading">¶</a></h4>
+<p>The elevation of the bottom plane of the roof (lowest edge of roofline) and the elevation of the roof
 (peak of gable or apex of hip) are estimated with respect to grade (in feet) from street-level imagery.
 These geometric properties are defined visually for common residential coastal typologies in
-<a class="reference internal" href="../lake_charles/asset_description.html#building-elevation"><span class="std std-numref">Fig. 3.2.2.7</span></a>. The mean height of the roof system is then derived as
+<a class="reference internal" href="#building-elevation-ac"><span class="std std-numref">Fig. 2.2.2.3</span></a>. The mean height of the roof system is then derived as
 the average of these dimensions.</p>
-<div class="align-center figure" id="building-elevation">
+<div class="align-center figure" id="building-elevation-ac">
 <a class="reference internal image-reference" href="../../../_images/BldgElev.png"><img alt="../../../_images/BldgElev.png" src="../../../_images/BldgElev.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.2.3 </span><span class="caption-text">Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.</span><a class="headerlink" href="#building-elevation" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.3 </span><span class="caption-text">Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.</span><a class="headerlink" href="#building-elevation-ac" title="Permalink to this image">¶</a></p>
 </div>
-<p>The MeanRoofHt is based on the following AI technique. <a class="reference internal" href="../lake_charles/asset_description.html#mean-roof-ht-app"><span class="std std-numref">Fig. 3.2.2.8</span></a>
+<p>The MeanRoofHt is based on the following AI technique. <a class="reference internal" href="#mean-roof-ht-app-ac"><span class="std std-numref">Fig. 2.2.2.4</span></a>
 plots the predicted roof height versus the number of floors of the inventory.</p>
 <p>As in any single-image metrology application, extracting the building elevations from imagery requires:</p>
 <ol class="arabic simple">
@@ -685,12 +685,12 @@ facade segmentation dataset of 30,000 images supplemented with relevant portions
 dataset. The peak model performance was attained using the <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam optimizer</a> at a learning rate of 0.001
 (batch size: 4), after 40 epochs. The conversion between pixel dimensions and real-world dimensions was
 attained by the use of field of view and camera distance information collected for each street-level imagery.</p>
-<p><a class="reference internal" href="../lake_charles/asset_description.html#mean-roof-ht-app"><span class="std std-numref">Fig. 3.2.2.8</span></a> shows a scatter plot of the AI-predicted mean roof heights vs. AI-predicted number of floors.
+<p><a class="reference internal" href="#mean-roof-ht-app-ac"><span class="std std-numref">Fig. 2.2.2.4</span></a> shows a scatter plot of the AI-predicted mean roof heights vs. AI-predicted number of floors.
 A general trend observed in this plot is that the roof height increases with the number of floors,
 which is in line with general intuition.</p>
-<div class="align-center figure" id="mean-roof-ht-app">
+<div class="align-center figure" id="mean-roof-ht-app-ac">
 <a class="reference internal image-reference" href="../../../_images/MeanRoofHtApp.png"><img alt="../../../_images/MeanRoofHtApp.png" src="../../../_images/MeanRoofHtApp.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.2.4 </span><span class="caption-text">AI-predicted MeanRoofHt versus number of floors.</span><a class="headerlink" href="#mean-roof-ht-app" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.4 </span><span class="caption-text">AI-predicted MeanRoofHt versus number of floors.</span><a class="headerlink" href="#mean-roof-ht-app-ac" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="attribute-firstfloorelevation">
@@ -702,13 +702,13 @@ obtaining these masks follows the same approach used for calculating the mean ro
 <h4>Attribute: RoofSlope<a class="headerlink" href="#attribute-roofslope" title="Permalink to this heading">¶</a></h4>
 <p>RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained
 by determining the difference between the bottom plane and apex elevations of the roof as defined in the
-<a class="reference internal" href="../lake_charles/asset_description.html#lbl-testbed-lc-asset-description-meanroofht"><span class="std std-ref">Attribute: MeanRoofHt</span></a>
+<a class="reference internal" href="#lbl-testbed-lc-asset-description-meanroofht-ac"><span class="std std-ref">Attribute: MeanRoofHt</span></a>
 section. Roof run is determined as half the smaller dimension of the building, as determined from
-the dimensions of the building footprint. <a class="reference internal" href="../lake_charles/asset_description.html#mean-slope-app"><span class="std std-numref">Fig. 3.2.2.9</span></a> displays the AI-predicted mean roof height versus the
+the dimensions of the building footprint. <a class="reference internal" href="#mean-slope-app-ac"><span class="std std-numref">Fig. 2.2.2.5</span></a> displays the AI-predicted mean roof height versus the
 AI-predicted roof pitch ratios. As expected, very little correlation between these two parameters is observed.</p>
-<div class="align-center figure" id="mean-slope-app">
+<div class="align-center figure" id="mean-slope-app-ac">
 <a class="reference internal image-reference" href="../../../_images/RoofSlopeApp.png"><img alt="../../../_images/RoofSlopeApp.png" src="../../../_images/RoofSlopeApp.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.2.5 </span><span class="caption-text">AI-predicted RoofSlope versus mean roof height.</span><a class="headerlink" href="#mean-slope-app" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.5 </span><span class="caption-text">AI-predicted RoofSlope versus mean roof height.</span><a class="headerlink" href="#mean-slope-app-ac" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="attribute-roofshape">
@@ -718,16 +718,16 @@ determines roof shape based on a satellite image obtained for the building. The 
 learning, specifically, it utilizes a convolutional neural network that has been trained on satellite
 images. In AI/ML terminology, the Roof Shape module is an image classifier: it takes an image and
 classifies it into one of three categories used in HAZUS: gable, hip, or flat as shown in
-<a class="reference internal" href="../lake_charles/asset_description.html#roof-shape"><span class="std std-numref">Fig. 3.2.2.1</span></a>. The original training of the AI model utilized 6,000 images obtained from Google
+<a class="reference internal" href="#roof-shape-ac"><span class="std std-numref">Fig. 2.2.2.6</span></a>. The original training of the AI model utilized 6,000 images obtained from Google
 satellite imagery in conjunction with roof labels obtained from
 <a class="reference external" href="https://www.openstreetmap.org/">Open Street Maps</a>. As many roofs have more complex shapes, a
 similitude measure is used to determine which of these roof geometries is the best match to a given roof.
 More details of the classifier can be found
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/roofClassifier.html">here</a>.
 The trained classifier was employed here to classify the roof information for Atlantic County.</p>
-<div class="align-center figure" id="roof-shape">
+<div class="align-center figure" id="roof-shape-ac">
 <a class="reference internal image-reference" href="../../../_images/RoofShape.png"><img alt="../../../_images/RoofShape.png" src="../../../_images/RoofShape.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.2.6 </span><span class="caption-text">Roof type classification with examples of aerial images (a-f) and simplified archetypes (d-f) used by Hazus.</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.6 </span><span class="caption-text">Roof type classification with examples of aerial images (a-f) and simplified archetypes (d-f) used by Hazus.</span><a class="headerlink" href="#roof-shape-ac" title="Permalink to this image">¶</a></p>
 </div>
 <p>The performance of the roof shape classifier was validated against two ground truth datasets.
 The first is comprised of 125 manually labeled satellite images sampled from OpenStreetMap from
@@ -736,32 +736,19 @@ The second is 56 residences assessed by StEER for which roof types were one of t
 e.g., removing all roofs labeled as “Complex” according to StEER’s distinct image labeling standards.
 The validation process is documented
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html">here</a>.
-The confusion matrices are presented in <a class="reference internal" href="../lake_charles/asset_description.html#roof-shape-vali"><span class="std std-numref">Fig. 3.2.2.2</span></a>. These matrices visually present
+The confusion matrices are presented in <a class="reference internal" href="#roof-shape-vali-ac"><span class="std std-numref">Fig. 2.2.2.7</span></a>. These matrices visually present
 the comparison between the predictions and actual data and should have values of 1.0 along the diagonal
 if the classification is perfect, affirming the accuracy of the classification by the roof shape classifier.</p>
-<div class="align-center figure" id="roof-shape-vali">
+<div class="align-center figure" id="roof-shape-vali-ac">
 <a class="reference internal image-reference" href="../../../_images/RoofShapeVali.png"><img alt="../../../_images/RoofShapeVali.png" src="../../../_images/RoofShapeVali.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.2.7 </span><span class="caption-text">Validation of BRAILS predicted roof shapes to roof shapes from OpenStreetMap and StEER.</span><a class="headerlink" href="#roof-shape-vali" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="id3">
-<h4>Attribute: RoofSlope<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h4>
-<p>RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained
-by determining the difference between the bottom plane and apex elevations of the roof as defined in the
-<a class="reference internal" href="../lake_charles/asset_description.html#lbl-testbed-lc-asset-description-meanroofht"><span class="std std-ref">Attribute: MeanRoofHt</span></a>
-section. Roof run is determined as half the smaller dimension of the building, as determined from
-the dimensions of the building footprint. <a class="reference internal" href="../lake_charles/asset_description.html#mean-slope-app"><span class="std std-numref">Fig. 3.2.2.9</span></a> displays the AI-predicted mean roof height versus the
-AI-predicted roof pitch ratios. As expected, very little correlation between these two parameters is observed.</p>
-<div class="align-center figure" id="id4">
-<a class="reference internal image-reference" href="../../../_images/RoofSlopeApp.png"><img alt="../../../_images/RoofSlopeApp.png" src="../../../_images/RoofSlopeApp.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.2.8 </span><span class="caption-text">AI-predicted RoofSlope versus mean roof height.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.7 </span><span class="caption-text">Validation of BRAILS predicted roof shapes to roof shapes from OpenStreetMap and StEER.</span><a class="headerlink" href="#roof-shape-vali-ac" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="attribute-windowarea">
 <h4>Attribute: WindowArea<a class="headerlink" href="#attribute-windowarea" title="Permalink to this heading">¶</a></h4>
-<dl>
-<dt>The proportion of windows to the overall surface area is not available in inventory and</dt><dd><dl class="simple">
-<dt>assessor datasets, though it is required for wind loss modeling. Generally, window area can be</dt><dd><p>assumed based on the building occupancy class, using Department of Energy industry databases.
+<p>The proportion of windows to the overall surface area is not available in inventory and
+assessor datasets, though it is required for wind loss modeling. Generally, window area can be
+assumed based on the building occupancy class, using Department of Energy industry databases.
 This property can also be estimated from street-level imagery by utilizing the
 window masks generated during the segmentation process when determining building
 elevations. For this application, window area is defined as a percentage of the total
@@ -773,30 +760,19 @@ face of the building to be applied to the whole building. This assumption may ho
 single-family residential buildings, but possibly not for commercial construction where
 street fronts have higher proportions of glass. Instead of this computer vision approach,
 users may choose to adopt industry norms for their window areas (see note below).</p>
-</dd>
-</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<dl>
-<dt><strong>Industry Norms on Window Area</strong>: Engineered residential buildings can be assumed to have low window-to-wall</dt><dd><blockquote>
-<div><p>area ratios (WWR) based on the information for Reference Buildings in Baltimore, MD from the</p>
-</div></blockquote>
-<dl class="simple">
-<dt><a class="reference external" href="https://www.energy.gov/eere/downloads/reference-buildings-building-type-midrise-apartment">Office of Energy Efficiency and Renewable Energy</a>. Reference Buildings were created for select cities</dt><dd><p>based on climate profile; of the available cities, Baltimore is selected since its climate is most
+<p><strong>Industry Norms on Window Area</strong>: Engineered residential buildings can be assumed to have low window-to-wall
+area ratios (WWR) based on the information for Reference Buildings in Baltimore, MD from the <a class="reference external" href="https://www.energy.gov/eere/downloads/reference-buildings-building-type-midrise-apartment">Office of Energy Efficiency and Renewable Energy</a>. Reference Buildings were created for select cities
+based on climate profile; of the available cities, Baltimore is selected since its climate is most
 similar to Atlantic City, NJ. Office buildings (used as a test case for commercial) have WWR of
 33%, and apartments (used as a test case for residential) have WWR of 15%.</p>
-</dd>
-</dl>
-</dd>
-</dl>
 </div>
-</dd>
-</dl>
-<p>… note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The process of constructing the **Atlantic County Inventory** for footprints beyond those in the
-**Flood-Exposed Inventory** highlighted a number of tasks/issues that are commonly encountered when constructing an inventory
-in a location with sparse inventory data. Recommended best practices are summarized in :ref:`lbl-testbed_AC_best_practices`.
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The process of constructing the <strong>Atlantic County Inventory</strong> for footprints beyond those in the
+<strong>Flood-Exposed Inventory</strong> highlighted a number of tasks/issues that are commonly encountered when constructing an inventory
+in a location with sparse inventory data. Recommended best practices are summarized in <a class="reference internal" href="best_practices.html#lbl-testbed-ac-best-practices"><span class="std std-ref">Best Practices</span></a>.</p>
 </div>
 </div>
 </div>
@@ -808,9 +784,9 @@ Inventory data model. For the Flood-Exposed Inventory, NJDEP had already enriche
 attributes necessary to conduct standard FEMA risk assessments. Specifically, all footprints included a set of
 Basic Attributes (<a class="reference internal" href="#tab-basicattri"><span class="std std-numref">Table 2.2.3.1</span></a>). A subset of the data, including Atlantic County, had additional Advanced
 Attributes required by HAZUS User Defined Facilities (UDF) Module (<a class="reference internal" href="#tab-udfattri"><span class="std std-numref">Table 2.2.3.2</span></a>) and FEMA Substantial Damage
-Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span class="std std-numref">Table 2.2.3.3</span></a>).</p>
-<span id="tab-basicattri"></span><table class="docutils align-center" id="id11">
-<caption><span class="caption-number">Table 2.2.3.1 </span><span class="caption-text">NJDEP basic attributes available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+Estimator (SDE) Tool (<code class="xref std std-numref docutils literal notranslate"><span class="pre">tab-sdeAttri</span></code>).</p>
+<span id="tab-basicattri"></span><table class="docutils align-center" id="id9">
+<caption><span class="caption-number">Table 2.2.3.1 </span><span class="caption-text">NJDEP basic attributes available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -865,8 +841,8 @@ Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span c
 </tr>
 </tbody>
 </table>
-<span id="tab-udfattri"></span><table class="colwidths-given docutils align-center" id="id12">
-<caption><span class="caption-number">Table 2.2.3.2 </span><span class="caption-text">Advanced attributes for HAZUS User Defined Facilities (UDF), available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<span id="tab-udfattri"></span><table class="colwidths-given docutils align-center" id="id10">
+<caption><span class="caption-number">Table 2.2.3.2 </span><span class="caption-text">Advanced attributes for HAZUS User Defined Facilities (UDF), available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 85%" />
@@ -972,7 +948,7 @@ Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span c
 </tr>
 </tbody>
 </table>
-<span id="tab-sdeattri"></span><table class="docutils align-center" id="sde-attri">
+<table class="docutils align-center" id="sde-attri">
 <caption><span class="caption-number">Table 2.2.3.3 </span><span class="caption-text">Advanced attributes for FEMA Substantial Damage Estimator (SDE) Tool, available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#sde-attri" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
@@ -1041,8 +1017,8 @@ Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span c
 </tbody>
 </table>
 <p>For the Atlantic County Inventory, any building not included in the NJDEP footprints had attributes encompassed
-by NJDEP Basic, UDF or SDE fields assigned by parsing New Jersey Tax Assessor Data (referred to as <strong>MODIV</strong>) (<a class="reference internal" href="#modiv" id="id5"><span>[MODIV]</span></a>)
-as defined in the MODIV User Manual (<a class="reference internal" href="#modiv18" id="id6"><span>[MODIV18]</span></a>). This notably affected attributes such as OccupancyClass, BuildingType, and FoundationType,
+by NJDEP Basic, UDF or SDE fields assigned by parsing New Jersey Tax Assessor Data (referred to as <strong>MODIV</strong>) (<a class="reference internal" href="#modiv" id="id3"><span>[MODIV]</span></a>)
+as defined in the MODIV User Manual (<a class="reference internal" href="#modiv18" id="id4"><span>[MODIV18]</span></a>). This notably affected attributes such as OccupancyClass, BuildingType, and FoundationType,
 whose rulesets (PDFs and Python scripts) are cross-referenced in <a class="reference internal" href="#addinfo-ruleset-njdep"><span class="std std-numref">Table 2.2.3.4</span></a>.
 In all cases where attributes were derived from MODIV data, which can be sparsely populated, default
 values were initially assigned to ensure that every footprint would have the attributes required to execute
@@ -1083,10 +1059,10 @@ vulnerable attribute option). These initial assignments were then updated if add
 <p>Some attributes in the Building Inventory Data Model were not encompassed by NJDEP Basic, UDF, or SDE fields. Thus,
 remaining attributes in both the Flood-Exposed and Atlantic County Inventories were assigned using data
 from the following third-party sources:
-1. <strong>Locations of essential facilities</strong> were sourced from the NJ Office of Information Technology (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id7"><span>[NJGIN20]</span></a>).
-2. <strong>ATC Hazards</strong> by Location API (<a class="reference internal" href="../lake_charles/asset_description.html#atc20" id="id8"><span>[ATC20]</span></a>) was used to query Design Wind Speeds as defined in ASCE 7.
-3. <strong>Terrain features</strong> (roughness length associated with different exposure classes) were derived from Land Use Land Cover data (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id9"><span>[NJGIN20]</span></a>).</p>
-<p>See the Transformation and Detail columns in the PDFs listed in <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab-bldgInventory</span></code> for specifics of how each attribute
+1. <strong>Locations of essential facilities</strong> were sourced from the NJ Office of Information Technology (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id5"><span>[NJGIN20]</span></a>).
+2. <strong>ATC Hazards</strong> by Location API (<a class="reference internal" href="../lake_charles/asset_description.html#atc20" id="id6"><span>[ATC20]</span></a>) was used to query Design Wind Speeds as defined in ASCE 7.
+3. <strong>Terrain features</strong> (roughness length associated with different exposure classes) were derived from Land Use Land Cover data (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id7"><span>[NJGIN20]</span></a>).</p>
+<p>See the Transformation and Detail columns in the PDFs listed in <a class="reference internal" href="#tab-bldg-inv-data-model-ac"><span class="std std-numref">Table 2.2.1.1</span></a> for specifics of how each attribute
 was assigned using these various third-party data sources.</p>
 </div>
 </div>
@@ -2035,7 +2011,7 @@ The Flood-Exposed Inventory was then used to extract the subset of buildings def
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Atlantic County Inventory</p></td>
-<td><p>Atlantic County Inventory</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/AtlanticCountyInventory.csv">Atlantic County Inventory</a></p></td>
 <td><p>100,721</p></td>
 <td><p>~ 1,500 CPU-Hour</p></td>
 </tr>
@@ -2052,10 +2028,10 @@ The Flood-Exposed Inventory was then used to extract the subset of buildings def
 </tbody>
 </table>
 <dl class="citation">
-<dt class="label" id="atc20"><span class="brackets"><a class="fn-backref" href="#id8">ATC20</a></span></dt>
+<dt class="label" id="atc20"><span class="brackets"><a class="fn-backref" href="#id6">ATC20</a></span></dt>
 <dd><p>ATC (2020b), ATC Hazards By Location, <a class="reference external" href="https://hazards.atcouncil.org/">https://hazards.atcouncil.org/</a>, Applied Technology Council, Redwood City, CA.</p>
 </dd>
-<dt class="label" id="njgin20"><span class="brackets">NJGIN20</span><span class="fn-backref">(<a href="#id7">1</a>,<a href="#id9">2</a>)</span></dt>
+<dt class="label" id="njgin20"><span class="brackets">NJGIN20</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id7">2</a>)</span></dt>
 <dd><p>NJ Geographic Information Network, State of New Jersey, <a class="reference external" href="https://njgin.nj.gov/njgin/#!/">https://njgin.nj.gov/njgin/#!/</a></p>
 </dd>
 <dt class="label" id="wang19"><span class="brackets">Wang19</span></dt>
@@ -2064,10 +2040,10 @@ The Flood-Exposed Inventory was then used to extract the subset of buildings def
 <dt class="label" id="microsoft2018"><span class="brackets">Microsoft2018</span></dt>
 <dd><p>Microsoft (2018) US Building Footprints. <a class="reference external" href="https://github.com/Microsoft/USBuildingFootprints">https://github.com/Microsoft/USBuildingFootprints</a></p>
 </dd>
-<dt class="label" id="modiv"><span class="brackets"><a class="fn-backref" href="#id5">MODIV</a></span></dt>
+<dt class="label" id="modiv"><span class="brackets"><a class="fn-backref" href="#id3">MODIV</a></span></dt>
 <dd><p>Parcels and MOD-IV of Atlantic County, NJ. NJGIN Open Data, <a class="reference external" href="https://njogis-newjersey.opendata.arcgis.com/datasets/680b02ff9b4348409a2f4ccd4c238215">https://njogis-newjersey.opendata.arcgis.com/datasets/680b02ff9b4348409a2f4ccd4c238215</a>.</p>
 </dd>
-<dt class="label" id="modiv18"><span class="brackets"><a class="fn-backref" href="#id6">MODIV18</a></span></dt>
+<dt class="label" id="modiv18"><span class="brackets"><a class="fn-backref" href="#id4">MODIV18</a></span></dt>
 <dd><p>Department of the Treasury, State of New Jersey (2018), MOD IV User Manual. <a class="reference external" href="https://www.state.nj.us/treasury/taxation/pdf/lpt/modIVmanual.pdf">https://www.state.nj.us/treasury/taxation/pdf/lpt/modIVmanual.pdf</a></p>
 </dd>
 </dl>

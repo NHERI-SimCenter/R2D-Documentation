@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -144,8 +144,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#historical-storm-scenario">2.3.2. Historical Storm Scenario</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id10">Wind Modeling</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id11">Storm Surge Modeling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">Wind Modeling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Storm Surge Modeling</a></li>
 </ul>
 </li>
 </ul>
@@ -261,7 +261,7 @@ ASCE 7 are already included for each building footprint for reference.</p>
 <div class="section" id="synthetic-storm-scenario">
 <span id="lbl-testbed-ac-hazard-characterization-synthetic"></span><h2><span class="section-number">2.3.1. </span>Synthetic Storm Scenario<a class="headerlink" href="#synthetic-storm-scenario" title="Permalink to this heading">¶</a></h2>
 <p>A landfall scenario for Atlantic City was generated using the Storm Hazard Projection Tool developed in the
-NJcoast project ([<a class="reference internal" href="#njcoast20">NJCoast20</a>]). The constructed hazard scenario uses NJcoast’s basic simulation option,
+NJcoast project (<a class="reference internal" href="overview.html#njcoast20" id="id1"><span>[NJCoast20]</span></a>). The constructed hazard scenario uses NJcoast’s basic simulation option,
 which identifies the 25 hurricane tracks from the SHP tool’s surrogate model that match the targeted
 storm scenario, in this case: a Category 5 intensity hurricane (central pressure differential
 of 75-100 mbar, radius of maximum winds of 15.4 to 98 mi) making landfall near the Atlantic City
@@ -271,7 +271,7 @@ locales. The SHP Tool generates these through the following underlying computati
 <div class="section" id="wind-modeling">
 <h3>Wind Modeling<a class="headerlink" href="#wind-modeling" title="Permalink to this heading">¶</a></h3>
 <p>The SHP Tool generates its wind fields using a highly efficient, linear analytical model for the boundary
-layer winds of a moving hurricane developed by Snaiki and Wu ([<a class="reference internal" href="#snaiki17a">Snaiki17a</a>], [<a class="reference internal" href="#snaiki17b">Snaiki17b</a>]).
+layer winds of a moving hurricane developed by Snaiki and Wu (<a class="reference internal" href="#snaiki17a" id="id2"><span>[Snaiki17a]</span></a>, <a class="reference internal" href="#snaiki17b" id="id3"><span>[Snaiki17b]</span></a>).
 To account for the exposure in each New Jersey county, an effective roughness length (weighted average)
 of the upwind terrain is used based on the Land Use/Land Cover data reported by the state’s Bureau of
 GIS. To generate a wind field, this model requires the time-evolving hurricane track,
@@ -287,12 +287,11 @@ a number of standard conversions (see <a class="reference internal" href="pws_co
 parse the wind speed to the 3-second and open-terrain PWS
 (i.e., <span class="math notranslate nohighlight">\(V(3s, 10m, Exposure C)\)</span>).</p>
 <p>As the initial developer of this model has made the underlying code available for this testbed,
-users have two ways to engage this model to generate wind fields for this testbed:
-1. Users can adopt the aforementioned default synthetic Category 5 scenario striking Atlantic City.
-2. Users can generate a custom storm scenario by providing the required inputs into this linear</p>
-<blockquote>
-<div><p>analytical model to generate a customized wind field for use with this testbed.</p>
-</div></blockquote>
+users have two ways to engage this model to generate wind fields for this testbed:</p>
+<ol class="arabic simple">
+<li><p>Users can adopt the aforementioned default synthetic Category 5 scenario striking Atlantic City.</p></li>
+<li><p>Users can generate a custom storm scenario by providing the required inputs into this linear analytical model to generate a customized wind field for use with this testbed.</p></li>
+</ol>
 <p>Wind fields described by either approach are then locally interpolated to the coordinates associated with each
 footprint. The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated
 Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.3.1.2</span></a>). Because the SPH model tracks the maximum wind speed over the
@@ -307,11 +306,11 @@ the coastal cities.</p>
 <span id="lbl-testbed-ac-hazard-characterization-storm"></span><h3>Storm Surge Modeling<a class="headerlink" href="#storm-surge-modeling" title="Permalink to this heading">¶</a></h3>
 <p>Coastal hazard descriptions use the outputs of the aforementioned SHP Tool, which estimates storm
 surge and total run up due to the breaking of near-shore waves for an arbitrary hurricane scenario
-using surrogate modeling techniques (<a class="reference internal" href="#jia13" id="id1"><span>[Jia13]</span></a>, <a class="reference internal" href="#jia15" id="id2"><span>[Jia15]</span></a>). The SHP Tool
+using surrogate modeling techniques (<a class="reference internal" href="#jia13" id="id4"><span>[Jia13]</span></a>, <a class="reference internal" href="#jia15" id="id5"><span>[Jia15]</span></a>). The SHP Tool
 leverages the US Army Corps of Engineers (USACE) NACCS: North Atlantic Coastal
-Comprehensive Study (<a class="reference internal" href="#nadalcaraballo15" id="id3"><span>[NadalCaraballo15]</span></a>), which contains over 1000 high-fidelity
-numerical simulations of hurricanes using the ADCIRC (<a class="reference internal" href="#luettich92" id="id4"><span>[Luettich92]</span></a>) storm surge model,
-coupled with STWAVE (<a class="reference internal" href="#smith01" id="id5"><span>[Smith01]</span></a>) to capture the additional effects of waves offshore.
+Comprehensive Study (<a class="reference internal" href="#nadalcaraballo15" id="id6"><span>[NadalCaraballo15]</span></a>), which contains over 1000 high-fidelity
+numerical simulations of hurricanes using the ADCIRC (<a class="reference internal" href="#luettich92" id="id7"><span>[Luettich92]</span></a>) storm surge model,
+coupled with STWAVE (<a class="reference internal" href="#smith01" id="id8"><span>[Smith01]</span></a>) to capture the additional effects of waves offshore.
 It is important to note that the grid adopted for the NACCS execution of ADCIRC does extend
 into the riverine systems to capture the storm surge influx; however, the grid extensions
 up-river have limited extent and there was no explicit modeling of the riverine systems
@@ -337,7 +336,7 @@ Flood Damage and Loss Assessment.</p>
 <div class="section" id="multiple-category-analysis-mca">
 <h3>Multiple Category Analysis (MCA)<a class="headerlink" href="#multiple-category-analysis-mca" title="Permalink to this heading">¶</a></h3>
 <p>Note that the resulting 3s-gust PWS values from this Category-5 hurricane are much higher than
-the design wind speed specified by ASCE 7-16 (<a class="reference internal" href="../lake_charles/overview.html#asce16" id="id6"><span>[ASCE16]</span></a>) for Atlantic County, which ranges
+the design wind speed specified by ASCE 7-16 (<a class="reference internal" href="../lake_charles/overview.html#asce16" id="id9"><span>[ASCE16]</span></a>) for Atlantic County, which ranges
 from 105 mph to 115 mph. Since this extreme scenario has a small likelihood, this testbed
 also scales the wind and flood water fields down to lower categories to conduct the so-called
 Multiple Category Analysis to examine the building performance under different intensity scenarios
@@ -401,15 +400,15 @@ created for the MCA (<a class="reference internal" href="#synthetic-data"><span 
 <p>Hindcast simulations of historical storm events are equally valuable, particularly when they are coupled
 with observations of damage and loss across an inventory. As such, this testbed includes the option to use
 existing hindcast data from established community providers as input to the loss estimation workflow.
-New Jersey’s most notable storm event in recent history was Superstorm Sandy (2012). According to <a class="reference internal" href="#njdep15" id="id7"><span>[NJDEP15]</span></a>
-and <a class="reference internal" href="#usdoc13" id="id8"><span>[USDOC13]</span></a>, Sandy’s devastation included damage to 346,000 homes. The New Jersey State Hazard Mitigation
-Plan <a class="reference internal" href="#njshmp" id="id9"><span>[NJSHMP]</span></a> further notes that storm surge accounts for 90% of the deaths and property damage during
+New Jersey’s most notable storm event in recent history was Superstorm Sandy (2012). According to <a class="reference internal" href="#njdep15" id="id10"><span>[NJDEP15]</span></a>
+and <a class="reference internal" href="#usdoc13" id="id11"><span>[USDOC13]</span></a>, Sandy’s devastation included damage to 346,000 homes. The New Jersey State Hazard Mitigation
+Plan <a class="reference internal" href="#njshmp" id="id12"><span>[NJSHMP]</span></a> further notes that storm surge accounts for 90% of the deaths and property damage during
 hurricanes in this region. While Atlantic County was designated as a “Sandy-Affected Community”
 by FEMA and the State of New Jersey, the wind and storm surge intensities in the county were significantly
 less than those observed in the more northern counties. Nonetheless, these historical inputs are provided
 to demonstrate the workflow’s ability to support hindcast evaluations of damage and loss in actual storm events.</p>
-<div class="section" id="id10">
-<h3>Wind Modeling<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="id13">
+<h3>Wind Modeling<a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h3>
 <p>Hindcast wind fields for this event were made available by Peter Vickery and Applied Research Associates (ARA).
 Their hurricane model derives wind speeds based on numerically solving the differential equations of a
 translating storm and iteratively calibrating based on field observations over the weeks following an event.
@@ -425,8 +424,8 @@ historical hurricane events including <a class="reference external" href="https:
 Similar to the ARA peak wind speed field, in order to run the workflow, users
 would first convert the data from other resources to the format as shown in <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/ARA_Example.zip">ARA_Example.zip</a>.</p>
 </div>
-<div class="section" id="id11">
-<h3>Storm Surge Modeling<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="id14">
+<h3>Storm Surge Modeling<a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h3>
 <p>ADCIRC hindcast of Superstorm Sandy was generated by the Westerink Group at the University of Notre Dame and
 made available to the SimCenter. <a class="reference internal" href="#adcirc-pwd"><span class="std std-numref">Fig. 2.3.2.3</span></a> shows the peak storm surge from the hindcast. Note that
 the scope of the hindcast focused on the heavier-impacted regions of New York and Northern New Jersey,
@@ -469,21 +468,21 @@ the presented hurricane workflow.</p>
 </tbody>
 </table>
 <dl class="citation">
-<dt class="label" id="snaiki17a"><span class="brackets">Snaiki17a</span></dt>
+<dt class="label" id="snaiki17a"><span class="brackets"><a class="fn-backref" href="#id2">Snaiki17a</a></span></dt>
 <dd><p>Snaiki, R. and Wu, T. (2017a) “Modeling tropical cyclone boundary layer: Height-resolving
 pressure and wind fields,” Journal of Wind Engineering and Industrial Aerodynamics, 170, 18-27.</p>
 </dd>
-<dt class="label" id="snaiki17b"><span class="brackets">Snaiki17b</span></dt>
+<dt class="label" id="snaiki17b"><span class="brackets"><a class="fn-backref" href="#id3">Snaiki17b</a></span></dt>
 <dd><p>Snaiki, R. and Wu, T. (2017b) “A linear height-resolving wind field model for tropical
 cyclone boundary layer,” Journal of Wind Engineering and Industrial Aerodynamics, 171, 248-260.</p>
 </dd>
 <dt class="label" id="atc20"><span class="brackets">ATC20</span></dt>
 <dd><p>ATC (2020b), ATC Hazards By Location, <a class="reference external" href="https://hazards.atcouncil.org/">https://hazards.atcouncil.org/</a>, Applied Technology Council, Redwood City, CA.</p>
 </dd>
-<dt class="label" id="njcoast20"><span class="brackets">NJCoast20</span></dt>
+<dt class="label" id="njcoast20"><span class="brackets"><a class="fn-backref" href="#id1">NJCoast20</a></span></dt>
 <dd><p>NJ Coast (2020), Storm Hazard Projection Tool, NJ Coast, <a class="reference external" href="https://njcoast.us/resources-shp/">https://njcoast.us/resources-shp/</a></p>
 </dd>
-<dt class="label" id="asce16"><span class="brackets"><a class="fn-backref" href="#id6">ASCE16</a></span></dt>
+<dt class="label" id="asce16"><span class="brackets"><a class="fn-backref" href="#id9">ASCE16</a></span></dt>
 <dd><p>ASCE (2016), Minimum Design Loads for Buildings and Other Structures, ASCE 7-16,
 American Society of Civil Engineers.</p>
 </dd>
@@ -491,41 +490,41 @@ American Society of Civil Engineers.</p>
 <dd><p>Engineering Sciences Data Unit (ESDU). (2002). “Strong winds in the atmospheric boundary
 layer—Part 2: Discrete gust speeds.” ESDU International plc, London, U.K.</p>
 </dd>
-<dt class="label" id="jia13"><span class="brackets"><a class="fn-backref" href="#id1">Jia13</a></span></dt>
+<dt class="label" id="jia13"><span class="brackets"><a class="fn-backref" href="#id4">Jia13</a></span></dt>
 <dd><p>Jia G. and A. A. Taflanidis (2013) “Kriging metamodeling for approximation of high-dimensional
 wave and surge responses in real-time storm/hurricane risk assessment,” Computer Methods in
 Applied Mechanics and Engineering, V(261-262), 24-38.</p>
 </dd>
-<dt class="label" id="jia15"><span class="brackets"><a class="fn-backref" href="#id2">Jia15</a></span></dt>
+<dt class="label" id="jia15"><span class="brackets"><a class="fn-backref" href="#id5">Jia15</a></span></dt>
 <dd><p>Jia G., A. A. Taflanidis, N. C. Nadal-Caraballo, J. Melby, A. Kennedy, and J. Smith (2015) “Surrogate
 modeling for peak and time dependent storm surge prediction over an extended coastal region using
 an existing database of synthetic storms,” Natural Hazards, V81, 909-938</p>
 </dd>
-<dt class="label" id="nadalcaraballo15"><span class="brackets"><a class="fn-backref" href="#id3">NadalCaraballo15</a></span></dt>
+<dt class="label" id="nadalcaraballo15"><span class="brackets"><a class="fn-backref" href="#id6">NadalCaraballo15</a></span></dt>
 <dd><p>Nadal‐Caraballo N.C, J. A. Melby, V. M. Gonzalez, and A. T. Cox (2015), North Atlantic Coast
 Comprehensive Study – Coastal Storm Hazards from Virginia to Maine, ERDC/CHL TR-15-5, U.S.
 Army Engineer Research and Development Center, Vicksburg, MS.</p>
 </dd>
-<dt class="label" id="luettich92"><span class="brackets"><a class="fn-backref" href="#id4">Luettich92</a></span></dt>
+<dt class="label" id="luettich92"><span class="brackets"><a class="fn-backref" href="#id7">Luettich92</a></span></dt>
 <dd><p>Luettich R.A, J. J. Westerink, and N. W. Scheffner (1992), ADCIRC: An advanced three-dimensional
 circulation model for shelves, coasts, and estuaries. Report 1. Theory and methodology of ADCIRC-
 2DDI and ADCIRC-3DL, Dredging Research Program Technical Report DRP-92-6, U.S Army
 Engineers Waterways Experiment Station, Vicksburg, MS.</p>
 </dd>
-<dt class="label" id="smith01"><span class="brackets"><a class="fn-backref" href="#id5">Smith01</a></span></dt>
+<dt class="label" id="smith01"><span class="brackets"><a class="fn-backref" href="#id8">Smith01</a></span></dt>
 <dd><p>Smith J.M, A. R. Sherlock, and D. T. Resio (2001) “STWAVE: Steady-state spectral wave model user’s
 manual for STWAVE, Version 3.0,” Defense Technical Information Center, US Army Corps of
 Engineering, Vicksburg, MS.</p>
 </dd>
-<dt class="label" id="usdoc13"><span class="brackets"><a class="fn-backref" href="#id8">USDOC13</a></span></dt>
+<dt class="label" id="usdoc13"><span class="brackets"><a class="fn-backref" href="#id11">USDOC13</a></span></dt>
 <dd><p>U.S. Department of Commerce (2013), Hurricne Sandy: Potential Economic Activity Lost and Gained in New
 Jersey and New York.</p>
 </dd>
-<dt class="label" id="njdep15"><span class="brackets"><a class="fn-backref" href="#id7">NJDEP15</a></span></dt>
+<dt class="label" id="njdep15"><span class="brackets"><a class="fn-backref" href="#id10">NJDEP15</a></span></dt>
 <dd><p>New Jersey Department of Environmental Protection (NJDEP) (2015), Damage Assessment
 Report on the Effects of Hurricane Sandy on the State of New Jersey’s Natural Resources.</p>
 </dd>
-<dt class="label" id="njshmp"><span class="brackets"><a class="fn-backref" href="#id9">NJSHMP</a></span></dt>
+<dt class="label" id="njshmp"><span class="brackets"><a class="fn-backref" href="#id12">NJSHMP</a></span></dt>
 <dd><p>State of New Jersey Office of Emergency Management (2012), The State of New Jersey’s Hazard Mitigation Plan, <a class="reference external" href="http://ready.nj.gov/mitigation/2012-mitigation-plan.shtml">http://ready.nj.gov/mitigation/2012-mitigation-plan.shtml</a>.</p>
 </dd>
 </dl>
