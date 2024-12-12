@@ -49,7 +49,7 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.12. E16 - E16WDNRecoveryAndPerformanceAssessment" href="../E16WDNRecoveryAndPerformanceAssessment/README.html" />
+    <link rel="next" title="4.12. E16 - Water Distribution Network and Performance Assessment" href="../E16WDNRecoveryAndPerformanceAssessment/README.html" />
     <link rel="prev" title="4.10. E12 - Istanbul Regional Seismic Risk Analysis" href="../E12IstanbulRegionalSeismicRiskAnalysis/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -121,7 +121,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/R2DTool/tools.html">3. Tools</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
@@ -136,7 +136,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../E10SiteResponse/README.html">4.9. E10 - Site Response Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../E12IstanbulRegionalSeismicRiskAnalysis/README.html">4.10. E12 - Istanbul Regional Seismic Risk Analysis</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4.11. E14 - Basic HAZUS Transportation Infrastructure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../E16WDNRecoveryAndPerformanceAssessment/README.html">4.12. E16 - E16WDNRecoveryAndPerformanceAssessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../E16WDNRecoveryAndPerformanceAssessment/README.html">4.12. E16 - Water Distribution Network and Performance Assessment</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -244,7 +244,7 @@
 </tr>
 </tbody>
 </table>
-<p>This earthquake example demonstrates rapid analysis capabilities with the HAZUS earthquake damage and loss assessment methodology for transportation infrastructure. Asset-level Damage and Losses (D&amp;L) are calculated directly from Intensity Measures (IM) for buildings, highway bridges, highway tunnels, and roadways. The IM field that represents ground shaking intensity measures in Alameda Island, CA, from a Mw7.05 event on the Hayward fault was obtained from Probabilistic Seismic Hazard Analysis (PSHA). The liquefaction-induced ground failure intensity measures (Permanent Ground Deformation) are calculated following the method proposed by Wang, C., Wang, D., &amp; Chen, Q. (2021). Regional Evaluation of Liquefaction-Induced Lateral Ground Deformation for City-Scale Transportation Resilience Analysis. Journal of Infrastructure Systems, 27(2), 04021008.</p>
+<p>This earthquake example demonstrates rapid analysis capabilities with the HAZUS earthquake damage and loss assessment methodology for transportation infrastructure, as well as evaluating the distruance to the transportation network using traffic flow simulations. Asset-level Damage and Losses (D&amp;L) are calculated directly from Intensity Measures (IM) for buildings, highway bridges, highway tunnels, and roadways. The IM field that represents ground shaking intensity measures in Alameda Island, CA, from a Mw7.05 event on the Hayward fault was obtained from Probabilistic Seismic Hazard Analysis (PSHA). The liquefaction-induced ground failure intensity measures (Permanent Ground Deformation) are calculated following the method proposed by Wang, C., Wang, D., &amp; Chen, Q. (2021). Regional Evaluation of Liquefaction-Induced Lateral Ground Deformation for City-Scale Transportation Resilience Analysis. Journal of Infrastructure Systems, 27(2), 04021008. The traffic flow simulation is performed using the Residual Demand Model that is originally developed in Zhao, B., Kumar, K., Casey, G., &amp; Soga, K. (2019). Agent-based model (ABM) for city-scale traffic simulation: A case study on San Francisco. In International Conference on Smart Infrastructure and Construction 2019 (ICSIC) Driving data-informed decision-making (pp. 203-212). ICE Publishing.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0014.png"><img alt="../../../../../_images/r2dt-0014.png" src="../../../../../_images/r2dt-0014.png" style="width: 400px;" /></a>
 </div>
@@ -306,6 +306,11 @@ for both Buildings and Transportation Network.</p>
 </div>
 </div></blockquote>
 <ol class="arabic">
+<li><p><strong>SP</strong> The damage and loss panel is used to configure the <strong>Residual Demand Traffic Simulation</strong>. The details of the input fields are described at <a class="reference internal" href="../../../usage/desktop/R2DTool/SP.html#lbl-spresidualdemand"><span class="std std-ref">SP: Residual Demand Traffic Simulator</span></a>. The roadway edges and nodes geojson files are produced using SimCenter’s BRAILS tool. The pre-event traffic demand is extracted from the travel demand estimated by the SF Bay Area MTC, which is openly available at <a class="reference external" href="https://data.mtc.ca.gov/data-repository/">here</a>. The post-event traffic demand is estimated by randomly sampling 80% of the pre-event traffic demand. The traffic simulation is performed for the morning rush hour (7:00-9:00 AM).</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../../../_images/r2dt-0014-SP.png"><img alt="../../../../../_images/r2dt-0014-SP.png" src="../../../../../_images/r2dt-0014-SP.png" style="width: 600px;" /></a>
+</div>
+</li>
 <li><p><strong>UQ</strong> For this example the <strong>UQ</strong> dropdown box should be set to <strong>None</strong>.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0014-UQ.png"><img alt="../../../../../_images/r2dt-0014-UQ.png" src="../../../../../_images/r2dt-0014-UQ.png" style="width: 600px;" /></a>
