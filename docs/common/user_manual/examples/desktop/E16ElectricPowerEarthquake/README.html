@@ -254,11 +254,7 @@ to and loaded immediately from a JSON file, which for this example may be found 
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0016-GI.png"><img alt="../../../../../_images/r2dt-0016-GI.png" src="../../../../../_images/r2dt-0016-GI.png" style="width: 800px;" /></a>
 </div>
 </li>
-</ol>
-<p>#. <strong>HAZ</strong> In our assessment of electrical power network, we utilize the <strong>Regional Earthquake Event Generation tool</strong> from the Regional Resilience Determination (R2D) Tool.
-This specific tool allows us to generate intensity measures (IMs) for earthquake events (e.g., PGA, PGD due to liquifaction, etc.).
-The usage of the tool is explained <a class="reference internal" href="../../../usage/desktop/R2DTool/tools.html#ground-motion-tool"><span class="std std-ref">here</span></a>, so we won’t go into explaining the details.
-Once we have created these IM values using the tool, we can employ them for damage estimation within the R2D framework.</p>
+<li><p><strong>HAZ</strong> In our assessment of electrical power network, we utilize the <strong>Regional Earthquake Event Generation tool</strong> from the Regional Resilience Determination (R2D) Tool. This specific tool allows us to generate intensity measures (IMs) for earthquake events (e.g., PGA, PGD due to liquifaction, etc.). The usage of the tool is explained <a class="reference internal" href="../../../usage/desktop/R2DTool/tools.html#ground-motion-tool"><span class="std std-ref">here</span></a>, so we won’t go into explaining the details. Once we have created these IM values using the tool, we can employ them for damage estimation within the R2D framework.</p>
 <blockquote>
 <div><blockquote>
 <div><div class="admonition note">
@@ -274,29 +270,24 @@ Once we have created these IM values using the tool, we can employ them for dama
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0016-HAZ.png"><img alt="../../../../../_images/r2dt-0016-HAZ.png" src="../../../../../_images/r2dt-0016-HAZ.png" style="width: 800px;" /></a>
 </div>
 </div></blockquote>
-<p>#. <strong>ASD</strong> An electrical power network consists of generation, subtations, distribution/transfer towers in teh HAZUS methodology.
-Consequently, GEOJSON to Asset tool is selected to translate such information, provided by BRAILS, to assets for R2D tool in its backend.</p>
+</li>
+<li><p><strong>ASD</strong> An electrical power network consists of generation, subtations, distribution/transfer towers in teh HAZUS methodology. Consequently, GEOJSON to Asset tool is selected to translate such information, provided by BRAILS, to assets for R2D tool in its backend.</p>
 <blockquote>
 <div><div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0016-ASD.png"><img alt="../../../../../_images/r2dt-0016-ASD.png" src="../../../../../_images/r2dt-0016-ASD.png" style="width: 800px;" /></a>
 </div>
 </div></blockquote>
-<p>#. <strong>HTA</strong> In the ‘Hazard to Asset’ tab, the user specifies the method for hazard mapping.
-We select the <strong>Nearest Neighbor</strong> method. Next, we provide the number of IM samples, and the number of neighbors from which
-the values are assessed at each asset’s location, as shown in the following figure. We leave the random seed as it is.</p>
-<blockquote>
-<div><div class="figure align-center">
+</li>
+<li><p><strong>HTA</strong> In the ‘Hazard to Asset’ tab, the user specifies the method for hazard mapping. We select the <strong>Nearest Neighbor</strong> method. Next, we provide the number of IM samples, and the number of neighbors from which the values are assessed at each asset’s location, as shown in the following figure. We leave the random seed as it is.</p>
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0016-HTA.png"><img alt="../../../../../_images/r2dt-0016-HTA.png" src="../../../../../_images/r2dt-0016-HTA.png" style="width: 800px;" /></a>
 </div>
-</div></blockquote>
-<p>#. <strong>MOD</strong> We do not modle teh response of any of teh asset elements in electrical power network damage assesment due to earthquake.
-Thus, we select <strong>None</strong> from the dropdown menu on <strong>Power Network Modeling</strong>.</p>
-<blockquote>
-<div><div class="figure align-center">
+</li>
+<li><p><strong>MOD</strong> We do not modle teh response of any of teh asset elements in electrical power network damage assesment due to earthquake. Thus, we select <strong>None</strong> from the dropdown menu on <strong>Power Network Modeling</strong>.</p>
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0016-MOD.png"><img alt="../../../../../_images/r2dt-0016-MOD.png" src="../../../../../_images/r2dt-0016-MOD.png" style="width: 800px;" /></a>
 </div>
-</div></blockquote>
-<ol class="arabic">
+</li>
 <li><p><strong>ANA</strong> In the analysis panel, <strong>IMasEDP</strong> is selected from the primary dropdown for the Water Distribution Network.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="common/user_manual/examples/desktop/E16ElectricPowerEarthquake/figures/r2dt-0015-ANA.png"><img alt="common/user_manual/examples/desktop/E16ElectricPowerEarthquake/figures/r2dt-0015-ANA.png" src="common/user_manual/examples/desktop/E16ElectricPowerEarthquake/figures/r2dt-0015-ANA.png" style="width: 600px;" /></a>
@@ -334,14 +325,12 @@ Thus, we select <strong>None</strong> from the dropdown menu on <strong>Power Ne
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0016-RV.png"><img alt="../../../../../_images/r2dt-0016-RV.png" src="../../../../../_images/r2dt-0016-RV.png" style="width: 800px;" /></a>
 </div>
 </li>
-</ol>
-<p>#. <strong>Result</strong> This tab is designed to provide general results to the user. A power user may utilize the raw data provided by R2DTool to produce the specific data they need.
-Results for electrical power damage assessemnt due to mean state of the assets.</p>
-<blockquote>
-<div><div class="figure align-center">
+<li><p><strong>Result</strong> This tab is designed to provide general results to the user. A power user may utilize the raw data provided by R2DTool to produce the specific data they need. Results for electrical power damage assessemnt due to mean state of the assets.</p>
+<div class="figure align-center">
 <a class="reference internal image-reference" href="common/user_manual/examples/desktop/E16ElectricPowerEarthquake/figures/r2dt-0016-Result.png"><img alt="common/user_manual/examples/desktop/E16ElectricPowerEarthquake/figures/r2dt-0016-Result.png" src="common/user_manual/examples/desktop/E16ElectricPowerEarthquake/figures/r2dt-0016-Result.png" style="width: 800px;" /></a>
 </div>
-</div></blockquote>
+</li>
+</ol>
 </div>
 
 

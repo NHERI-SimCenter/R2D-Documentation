@@ -241,21 +241,21 @@
 <li><p>ParcelId - assessor’s parcel id.</p></li>
 </ol>
 <p>The data was collected by a Python program utilizing <a class="reference external" href="https://www.selenium.dev/">selenium</a>, which provides a set of tools for automating web browsers. The program used to generate the data is as shown in the figure below:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">geocoder</span>
-<span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
-<span class="kn">from</span> <span class="nn">selenium.webdriver.support.ui</span> <span class="kn">import</span> <span class="n">WebDriverWait</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">csv</span>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geocoder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">selenium</span><span class="w"> </span><span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">selenium.webdriver.support.ui</span><span class="w"> </span><span class="kn">import</span> <span class="n">WebDriverWait</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
 
 <span class="c1">#</span>
 <span class="c1"># mapping function for occupancy</span>
 <span class="c1">#</span>
 
-<span class="k">def</span> <span class="nf">MapOccupancy</span><span class="p">(</span><span class="n">parcelHeader</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">MapOccupancy</span><span class="p">(</span><span class="n">parcelHeader</span><span class="p">):</span>
     <span class="k">if</span> <span class="s1">&#39;Residential&#39;</span> <span class="ow">in</span> <span class="n">parcelHeader</span><span class="p">:</span>
         <span class="k">if</span> <span class="s1">&#39;1-Family&#39;</span> <span class="ow">in</span> <span class="n">parcelHeader</span> <span class="ow">or</span> <span class="s1">&#39;Sfr&#39;</span> <span class="ow">in</span> <span class="n">parcelHeader</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Residential Single Family&#39;</span><span class="p">]</span>

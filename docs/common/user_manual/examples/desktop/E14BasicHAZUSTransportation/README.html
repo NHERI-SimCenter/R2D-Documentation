@@ -267,47 +267,34 @@
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0014-HAZ.png"><img alt="../../../../../_images/r2dt-0014-HAZ.png" src="../../../../../_images/r2dt-0014-HAZ.png" style="width: 600px;" /></a>
 </div>
 </li>
-</ol>
-<p>#. <strong>ASD</strong> In the asset definition panel, the path to the <a class="reference external" href="https://github.com/NHERI-SimCenter/R2DExamples/tree/master/E14BasicHAZUSTransportation/input_data/all_bldgs.csv">all_bldgs.csv</a> file is specified for buildings.
-For transportation infrastructure, the path to the <a class="reference external" href="https://github.com/NHERI-SimCenter/R2DExamples/tree/master/E14BasicHAZUSTransportation/input_data/AI_hwy_inventory.geojson">AI_hwy_inventory.geojson</a> file is specified.
-Once this file is loaded, the user can select which particular assets to include in the analysis by entering a valid range (e.g., 1-50) in the form and clicking <strong>Select</strong>. The <code class="docutils literal notranslate"><span class="pre">all_bldgs.csv</span></code> and <a href="#id1"><span class="problematic" id="id2">``</span></a>AI_hwy_inventory.geojson``files include parameters for the damage and loss assessment (e.g., number of stories, year of built, occupancy class, structure type, and plan area) for the buildings and transportation infrastructure in the community.</p>
-<blockquote>
-<div><div class="figure align-center">
+<li><p><strong>ASD</strong> In the asset definition panel, the path to the <a class="reference external" href="https://github.com/NHERI-SimCenter/R2DExamples/tree/master/E14BasicHAZUSTransportation/input_data/all_bldgs.csv">all_bldgs.csv</a> file is specified for buildings. For transportation infrastructure, the path to the <a class="reference external" href="https://github.com/NHERI-SimCenter/R2DExamples/tree/master/E14BasicHAZUSTransportation/input_data/AI_hwy_inventory.geojson">AI_hwy_inventory.geojson</a> file is specified. Once this file is loaded, the user can select which particular assets to include in the analysis by entering a valid range (e.g., 1-50) in the form and clicking <strong>Select</strong>. The <code class="docutils literal notranslate"><span class="pre">all_bldgs.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">AI_hwy_inventory.geojson</span></code> files include parameters for the damage and loss assessment (e.g., number of stories, year of built, occupancy class, structure type, and plan area) for the buildings and transportation infrastructure in the community.</p>
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0014-ASD-building.png"><img alt="../../../../../_images/r2dt-0014-ASD-building.png" src="../../../../../_images/r2dt-0014-ASD-building.png" style="width: 600px;" /></a>
 </div>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0014-ASD-transport.png"><img alt="../../../../../_images/r2dt-0014-ASD-transport.png" src="../../../../../_images/r2dt-0014-ASD-transport.png" style="width: 600px;" /></a>
 </div>
-</div></blockquote>
-<ol class="arabic">
+</li>
 <li><p><strong>HTA</strong> Next, a hazard mapping algorithm is specified using the <strong>Nearest Neighbor</strong> method, which is configured as shown in the following figure with <strong>100</strong> samples in <strong>4</strong> neighbors, i.e., randomly sampling 100 ground motions from the nearest Ground Motion Grid points(each grid point has 1000 intensity measure realizations as specified in the <strong>HAZ</strong>).</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0014-HTA.png"><img alt="../../../../../_images/r2dt-0014-HTA.png" src="../../../../../_images/r2dt-0014-HTA.png" style="width: 600px;" /></a>
 </div>
 </li>
-</ol>
-<p>#. <strong>MOD</strong> panel is not used for this procedure. The <strong>Building Modeling</strong> dropdown
-and <strong>Transportation Components Modelling**should be left set to **None</strong>.</p>
-<blockquote>
-<div><div class="figure align-center">
+<li><p><strong>MOD</strong> panel is not used for this procedure. The <strong>Building Modeling</strong> dropdown and <strong>Transportation Components Modelling**should be left set to **None</strong>.</p>
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0014-MOD.png"><img alt="../../../../../_images/r2dt-0014-MOD.png" src="../../../../../_images/r2dt-0014-MOD.png" style="width: 600px;" /></a>
 </div>
-</div></blockquote>
-<ol class="arabic">
+</li>
 <li><p><strong>ANA</strong> In the analysis panel, <strong>IMasEDP</strong> is selected from the primary dropdown for both Buildings and Transportation Network.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0014-ANA.png"><img alt="../../../../../_images/r2dt-0014-ANA.png" src="../../../../../_images/r2dt-0014-ANA.png" style="width: 600px;" /></a>
 </div>
 </li>
-</ol>
-<p>#. <strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun</strong> backend. The <strong>HAZUS MH EQ IM</strong> damage and loss method is selected and configured as shown in the following figure
-for both Buildings and Transportation Network.</p>
-<blockquote>
-<div><div class="figure align-center">
+<li><p><strong>DL</strong> The damage and loss panel is now used to configure the <strong>Pelicun</strong> backend. The <strong>HAZUS MH EQ IM</strong> damage and loss method is selected and configured as shown in the following figure for both Buildings and Transportation Network.</p>
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0014-DL.png"><img alt="../../../../../_images/r2dt-0014-DL.png" src="../../../../../_images/r2dt-0014-DL.png" style="width: 600px;" /></a>
 </div>
-</div></blockquote>
-<ol class="arabic">
+</li>
 <li><p><strong>SP</strong> The damage and loss panel is used to configure the <strong>Residual Demand Traffic Simulation</strong>. The details of the input fields are described at <a class="reference internal" href="../../../usage/desktop/R2DTool/SP.html#lbl-spresidualdemand"><span class="std std-ref">SP: Residual Demand Traffic Simulator</span></a>. The roadway edges and nodes geojson files are produced using SimCenter’s BRAILS tool. The pre-event traffic demand is extracted from the travel demand estimated by the SF Bay Area MTC, which is openly available at <a class="reference external" href="https://data.mtc.ca.gov/data-repository/">here</a>. The post-event traffic demand is estimated by randomly sampling 80% of the pre-event traffic demand. The traffic simulation is performed for the morning rush hour (7:00-9:00 AM).</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../../../../_images/r2dt-0014-SP.png"><img alt="../../../../../_images/r2dt-0014-SP.png" src="../../../../../_images/r2dt-0014-SP.png" style="width: 600px;" /></a>

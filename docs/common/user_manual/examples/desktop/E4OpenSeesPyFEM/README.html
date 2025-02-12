@@ -256,44 +256,9 @@
 </div>
 <div class="section" id="required-files">
 <h2><span class="section-number">4.4.1. </span>Required Files<a class="headerlink" href="#required-files" title="Permalink to this heading">¶</a></h2>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/R2DExamples/tree/master/E4OpenSeesPyFEM/input_data/model/cantilever_light.py">cantilever_light.py</a>
-This Python script defines the following functions which use OpenSeesPy to construct a structural model.</p>
-<span class="target" id="module-cantilever_light"></span><dl class="py function">
-<dt class="sig sig-object py" id="cantilever_light.build_model">
-<span class="sig-prename descclassname"><span class="pre">cantilever_light.</span></span><span class="sig-name descname"><span class="pre">build_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cantilever_light.build_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generates OpenSeesPy model of an elastic-perfectly plastic SDOF system and
-runs gravity analysis.</p>
-<p>Assumes that length is measured in inches and acceleration in in/s2</p>
-<dl class="simple">
-<dt>W: float</dt><dd><p>Weight of the structure</p>
-</dd>
-<dt>f_yield: float</dt><dd><p>Yield stress of the material</p>
-</dd>
-<dt>T1: float</dt><dd><p>Fundamental period of the structure</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="cantilever_light.run_analysis">
-<span class="sig-prename descclassname"><span class="pre">cantilever_light.</span></span><span class="sig-name descname"><span class="pre">run_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GM_dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GM_npts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TS_List</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">EDP_specs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cantilever_light.run_analysis" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run dynamic analysis for a time history and return a dictionary of envelope EDPs.</p>
-<p>Assumes that length is measured in inches and acceleration in in/s2</p>
-<dl class="simple">
-<dt>GM_dt: float</dt><dd><p>Time step of time series</p>
-</dd>
-<dt>GM_npts: float</dt><dd><p>Number of points in time series</p>
-</dd>
-<dt>TS_List: float</dt><dd><p>1x2 list where first component is a list of accelerations in the X
-direction, the second component is a list of accelerations in the Y
-direction.</p>
-</dd>
-</dl>
-<p>EDP_specs: dict</p>
-</dd></dl>
-
-</li>
+This Python script defines the following functions which use OpenSeesPy to construct a structural model.</p></li>
 </ol>
 </div>
 <div class="section" id="modeling-procedure">

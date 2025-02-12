@@ -471,7 +471,7 @@ specific tasks. The user creates a Python script importing City Builder, constru
 object, and then asks that object to build the inventory. The example script shown below, albeit
 with our GoogleMapAPIKey removed, will create a building inventory file for use in the workflow.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module from BRAILS</span>
-<span class="kn">from</span> <span class="nn">brails.CityBuilder</span> <span class="kn">import</span> <span class="n">CityBuilder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">brails.CityBuilder</span><span class="w"> </span><span class="kn">import</span> <span class="n">CityBuilder</span>
 <span class="c1"># Initialize the CityBuilder</span>
 <span class="n">cityBuilder</span> <span class="o">=</span> <span class="n">CityBuilder</span><span class="p">(</span><span class="n">attributes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;occupancy&#39;</span><span class="p">,</span> <span class="s1">&#39;roofshape&#39;</span><span class="p">],</span>
                         <span class="n">numBldg</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">place</span><span class="o">=</span><span class="s1">&#39;Lake Charles, Louisiana&#39;</span><span class="p">,</span>

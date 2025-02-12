@@ -370,7 +370,7 @@ remove<span class="w"> </span>recorders<span class="w"> </span>
 <ul>
 <li><p><strong>Filter script</strong>: A Python script provided by the user to assign surrogate models to buildings when multiple surrogate models representing different building types are provided. The script should contain a function named <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">distributor</span></code> that processes dictionary inputs for general information (<code class="docutils literal notranslate"><span class="pre">GI</span></code>) and structural analysis model parameters (<code class="docutils literal notranslate"><span class="pre">SAM</span></code>), returning the surrogate model name or “Default”. Below is an example of the filter script.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="k">def</span> <span class="nf">model_distributor</span><span class="p">(</span><span class="n">GI</span><span class="p">,</span><span class="n">SAM</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">model_distributor</span><span class="p">(</span><span class="n">GI</span><span class="p">,</span><span class="n">SAM</span><span class="p">):</span>
 
 
 	<span class="k">if</span> <span class="n">GI</span><span class="p">[</span><span class="s2">&quot;NumberOfStories&quot;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">GI</span><span class="p">[</span><span class="s2">&quot;StructureType&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;W1&quot;</span><span class="p">:</span>
