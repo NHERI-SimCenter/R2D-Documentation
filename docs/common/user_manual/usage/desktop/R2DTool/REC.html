@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.10. REC: Recovery &mdash; Regional Resilience Determination Tool  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/custom.css?v=4b5bf716" />
+
+  
+      <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../../../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+      <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.11. UQ: Uncertainty Quantification" href="../UQ.html" />
+    <link rel="prev" title="2.9. SP: System Performance" href="SP.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html" class="icon icon-home"> Regional Resilience Determination Tool
+
+
+
+</a>
+
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dPlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dReleaseNotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="VIZ.html">2.1. VIZ: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HAZ.html">2.3. HAZ: Hazards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ASD.html">2.4. ASD: Asset Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HTA.html">2.5. HTA: Hazard to Asset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOD.html">2.6. MOD: Asset Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ANA.html">2.7. ANA: Asset Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DL.html">2.8. DL: Damage and Loss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SP.html">2.9. SP: System Performance</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.10. REC: Recovery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pyrecodes">2.10.1. Pyrecodes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.11. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.12. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RES.html">2.13. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/R2D.html">6. R2D Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/lake_charles/index.html">3. Lake Charles, LA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/fort_myers/index.html">4. Fort Myers, Florida</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">4. Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #F2F2F2" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Regional Resilience Determination Tool</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../usage.html"><span class="section-number">2. </span>User Interface</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.10. </span>REC: Recovery</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/R2DTool/REC.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rec-recovery">
+<h1><span class="section-number">2.10. </span>REC: Recovery<a class="headerlink" href="#rec-recovery" title="Link to this heading"></a></h1>
+<p>The <strong>Recovery</strong> panel is where the user selects a methodology to perform a regional recovery (i.e., network) performance functionality assessment. The following regional recovery applications are availabl:</p>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#pyrecodes" id="id4">Pyrecodes</a></p></li>
+</ul>
+</nav>
+<section id="pyrecodes">
+<span id="lbl-pyrecodes"></span><h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">2.10.1. </span>Pyrecodes</a><a class="headerlink" href="#pyrecodes" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://nikolablagojevic.github.io/pyrecodes/html/index.html">pyrecodes</a> is an open-source Python library for regional disaster recovery simulation and disaster resilience assessment of the built environment. pyrecodes is based on the iRe-CoDeS, a framework for disaster resilience quantification discretizes a system into components and simulates the change in components’ supply and demand for various resources over the post-disaster recovery period. Components’ interactions are captured by simulating the flow of operation and recovery resources among components and conditioning their ability to operate and recover on their resource demand fulfillment. System’s resilience is then assessed by contrasting the post-disaster system-level evolution of supply, demand and consumption of various resources and identifying the magnitude and duration of unmet resource demands in the system.</p>
+<p>To perform system resilience in pyrecodes, as shown in <a class="reference internal" href="#fig-pyrecodesbasicpanel"><span class="std std-numref">Fig. 2.10.1.1</span></a>, the  user needs to provide three JSON files:</p>
+<ol class="arabic">
+<li><p><strong>main file</strong> which specifies the class of the system configuration and component library objects and is used to run the system resilience assessment.</p></li>
+<li><p><strong>component library file</strong> which defines templates for component objects to be instantiated in the system.</p></li>
+<li><p><strong>system configuration file</strong> which defines the system by specifying the spatial distribution of components, damage input model, resource parameters, resilience calculators, and temporal discretization of the system.</p>
+<p>The contents of these files is as <a class="reference external" href="https://nikolablagojevic.github.io/pyrecodes/html/usage/user_guide.html">specified on the pyrecodes website</a> . The user also needs to identify which of the sample runs of the previous workflow to calcuilate recovery for. Not all runs aree included for performence reasons.</p>
+</li>
+</ol>
+<figure class="align-center" id="id3">
+<span id="fig-pyrecodesbasicpanel"></span><img alt="../../../../../_images/PyrecodesBasic.png" src="../../../../../_images/PyrecodesBasic.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.10.1.1 </span><span class="caption-text">Pyrecodes Base Input Panel.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Additional information on Pyrecodes and descriptions of its output are available at the <a class="reference external" href="https://nikolablagojevic.github.io/pyrecodes/html/index.html">pyrecodes website</a> and <a class="reference internal" href="#blagojevic25" id="id2"><span>[Blagojevic25]</span></a>.</p>
+<div role="list" class="citation-list">
+<div class="citation" id="blagojevic25" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">Blagojevic25</a><span class="fn-bracket">]</span></span>
+<p>Blagojević, Nikola, and Stojadinović, Božidar. (2025). pyrecodes: an open-source library for regional recovery simulation and disaster resilience assessment of the built environment (v0.2.0). Zenodo. <a class="reference external" href="https://doi.org/10.5281/zenodo.14774265">https://doi.org/10.5281/zenodo.14774265</a></p>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As can be discerned in the figure, pyrecodes can also be run independently of the workflow by providing the location of a previously executed workflow. This is useful when the user wishes to run additional samples.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, The Regents of the University of California.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=..."></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '...', {
+          'anonymize_ip': false,
+      });
+    </script>  
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>
