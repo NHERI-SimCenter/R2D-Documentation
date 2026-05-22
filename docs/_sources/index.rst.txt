@@ -78,7 +78,7 @@
 
    :EEUQ:common/user_manual/releases/eeCapabilities   
    :EEUQ:common/user_manual/releases/eeReleaseNotes
-   :EEUQ:common/user_manual/releases/eePlans	   
+   .. :EEUQ:common/user_manual/releases/eePlans
 
    :WEUQ:common/user_manual/releases/weCapabilities
    :WEUQ:common/user_manual/releases/weReleaseNotes
@@ -90,7 +90,7 @@
 
    :PBE:common/user_manual/releases/pbeCapabilities
    :PBE:common/user_manual/releases/pbeReleaseNotes
-   :PBE:common/user_manual/releases/pbePlans
+   .. :PBE:common/user_manual/releases/pbePlans
       
    :R2D:common/user_manual/releases/r2dCapabilities 	 
    :R2D:common/user_manual/releases/r2dPlans 
@@ -140,6 +140,13 @@
    :R2D:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
    
+   :EEUQ:common/user_manual/usage/desktop/jobs
+   :WEUQ:common/user_manual/usage/desktop/jobs
+   :PBE:common/user_manual/usage/desktop/jobs
+   :Hydro:common/user_manual/usage/desktop/jobs	
+   :quoFEM:common/user_manual/usage/desktop/jobs
+   :R2D:common/user_manual/usage/desktop/jobs
+   
    :Hydro:common/user_manual/usage/desktop/hydro/bestpractices
 
    :EEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
@@ -164,6 +171,8 @@
    :quoFEM:common/user_manual/usage/desktop/quoFEM/usage_video
 
    :Hydro:common/user_manual/usage/desktop/hydro/helpvideo
+
+   common/user_manual/usage/desktop/Misc
 
    .. :Hydro:common/user_manual/user_inputs_documentation/User_Input_Documentation_Tables
 
@@ -245,3 +254,5 @@ References
 ==========
 
 .. bibliography:: common/references.bib
+
+		  

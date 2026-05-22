@@ -5,16 +5,27 @@ Install on Windows 10
 
 .. only:: R2D_app
 
-   **Install Java**
-   ^^^^^^^^^^^^^^^^
+   **Install Java (JDK 17)**
+   ^^^^^^^^^^^^^^^^^^^^^^^^^
 
    .. note::
-      Java is required for utilizing OpenSHA for regional seismic hazard characterization (:ref:`ground_motion_tool`). Skip this step if you do not intend to use this feature.
+      Java is required only if you plan to use the OpenSHA-based regional seismic hazard feature in |app| (:ref:`ground_motion_tool`). If you do not need this feature, you can skip this section.
 
-   Download and install Java from the official Java website. Version `16.0.2 <https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html>`_ is confirmed compatible with the latest |app|. Follow the installation prompts. If a JVM error appears, suggesting the JAVA_HOME environment variable needs setting, refer to this `guide <https://docs.oracle.com/cd/E19182-01/821-0917/inst_jdk_javahome_t/index.html>`_.
- 
+   |app| is tested with **Eclipse Temurin JDK 17**, the long-term-support (LTS) build of Java. We recommend this exact version: it matches what our Python-to-Java bridge (JPype) is officially tested against, so installing it gives you the smoothest experience.
+
+   **Which installer should I download?**
+
+   For virtually every Windows PC sold since the mid-2010s, the answer is the **Windows x64** installer. If you are unsure whether your machine is 64-bit, open **Settings → System → About** and look for **System type**. "64-bit operating system, x64-based processor" means you want the Windows x64 installer below.
+
+   1. Click this link to open the Adoptium download page, pre-filtered to the right installer: `Temurin JDK 17 — Windows x64 <https://adoptium.net/temurin/releases/?version=17&package=jdk&os=windows&arch=x64>`_.
+   2. On that page, click the large download icon next to the MSI option. Your browser will download a file named something like ``OpenJDK17U-jdk_x64_windows_hotspot_17.0.X_Y.msi``.
+   3. Once the download finishes, double-click the ``.msi`` file. The Windows installer will open. Accept the defaults on each screen and click **Install**. You may see a User Account Control prompt asking for permission — click **Yes**.
+
+   .. tip::
+      If you have already installed a different Java version, you do not need to remove it. Multiple Java versions coexist without conflict on Windows.
+
    .. note::
-      The Java website should automatically detect and suggest the appropriate installer for your operating system. Ensure "64-bit Java for Windows" is indicated before downloading the Java installer.
+
 
 
 .. only:: WEUQ_app
@@ -40,7 +51,7 @@ Install on Windows 10
 
       Installing WSL(Ubuntu) Subsystem.
 
-   This will install Ubuntu distribution and launch a new linux terminal to configure the installation. Then, input your user name and password to setup the system as shown bellow.
+   This will install Ubuntu distribution and launch a new linux terminal to configure the installation. Then, input your username and password to set up the system as shown below.
 
       .. figure:: figures/weuq_wsl_configuration.png
          :align: center
@@ -65,8 +76,29 @@ Install on Windows 10
       Installing OpenFOAM-10 on WSL.
 
       
+   .. note::
 
+      To verify that **OpenFOAM** has been installed correctly for **WE-UQ**, follow these steps:
 
+      Once WE-UQ is installed, open the application. From the **Examples** pull-down menu, select **Example E5**. When this example loads, WE-UQ calls OpenFOAM in the background to create a mesh of the model. If the mesh does not display, OpenFOAM is not functioning correctly for your setup.
+
+      There are a few possible causes:
+
+      1. **Missing .bashrc entry**  
+	 During OpenFOAM installation, you are instructed to edit your ``.bashrc`` file.  
+	 If you have not done so, add the following line to the file:
+
+	 ``. /opt/openfoam10/etc/bashrc``
+
+	 You can edit the file using a text editor such as **nano** or **vi**.
+
+      2. **Different default shell**  
+	 If you have already added the above line, your Ubuntu system may be configured to use a shell other than the default **bash** shell.  In that case, try replacing the previous line with:
+
+	 ``source /opt/openfoam10/etc/bashrc``
+
+      3. WE-UQ sets the path to it's backend applications the first time the application starts. If you move the application subsequent to this or download the application again, you need to **reset** these paths. To do this go to **File**, **Preferences** and press the **Reset** and **Save** buttons.
+      
 .. only:: HydroUQ_app
 
    This version of the |app| uses *OpenFOAM* for pre-processing the CFD model. Backend mesh generation and visualization, which the GUI relies on, are powered by *OpenFOAM-10* and *OpenFOAM-7*'s built-in meshing tools.  
@@ -177,7 +209,7 @@ After installation, perform basic checks by running the |short tool id|.exe from
 
 .. note::
 
-   Since the SimCenter is not registered as a Windows vendor, our applications may trigger a warning about unsigned applications from unknown sources when you start the |short tool name| application for the first time. It is safe to bypass this warning for SimCenter applications.
+   Since the SimCenter is not registered as a Windows vendor, our applications may trigger a warning about unsigned applications from unknown sources when you start the |short tool name| for the first time. It is safe to bypass this warning for SimCenter applications.
 
 
 Launch the application to view the user interface as shown in |figWinUI|. It's recommended to run the |test example| to ensure proper operation.
@@ -255,4 +287,4 @@ If the test example fails, refer to :ref:`troubleshooting<lblTroubleshooting>`.
 
    - Avoid setting the local working directory under cloud-synced folders like OneDrive or Box, which may cause file-not-found errors.
    - Avoid including non-alphabetic characters or spaces in the path, which may potentially lead to encoding or file-not-found errors.
-   - Avoid setting the local working directory on a different drive than the app executable (.exe), which may result in permission errors , e.g. the executable is under the C drive, and the working directory is under the E drive.
+   - Avoid setting the local working directory on a different drive than the app executable (.exe), which may result in permission errors, e.g. the executable is under the C drive, and the working directory is under the E drive.
