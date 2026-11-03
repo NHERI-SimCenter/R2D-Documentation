@@ -10,7 +10,7 @@ Capabilities
 Major updates from the previous version is related to changes made to incorporate the latest release of Pelicun and the DL models. Also changes have been made to how and when the autopopulation scripts run in the workflow.
 
 
-**Release date:** May, 2025
+**Release date:** Oct, 2026
 
 #. **Hazard Types**:
 

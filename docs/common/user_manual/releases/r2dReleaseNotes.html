@@ -120,19 +120,21 @@
 <li class="toctree-l1"><a class="reference internal" href="r2dCapabilities.html">5. Capabilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="r2dPlans.html">6. Release Plans</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">7. Release Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#version-5-5-0">7.1. Version 5.5.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-5-4-0">7.2. Version 5.4.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-5-3-0">7.3. Version 5.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-5-2-0">7.4. Version 5.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-5-1-0">7.5. Version 5.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-5-0-0">7.6. Version 5.0.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-4-1-0">7.7. Version 4.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-4-0-1">7.8. Version 4.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-3-0-0">7.9. Version 3.0.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-2-2-0">7.10. Version 2.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-2-1-0">7.11. Version 2.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-2-0-0">7.12. Version 2.0.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-1-0-0">7.13. Version 1.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-5-7-0">7.1. Version 5.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-5-5-0">7.2. Version 5.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">7.3. Version 5.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-5-4-0">7.4. Version 5.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-5-3-0">7.5. Version 5.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-5-2-0">7.6. Version 5.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-5-1-0">7.7. Version 5.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-5-0-0">7.8. Version 5.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-4-1-0">7.9. Version 4.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-4-0-1">7.10. Version 4.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-3-0-0">7.11. Version 3.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-2-2-0">7.12. Version 2.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-2-1-0">7.13. Version 2.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-2-0-0">7.14. Version 2.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-0-0">7.15. Version 1.0.0</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">8. Glossary</a></li>
@@ -239,8 +241,31 @@
             
   <div class="section" id="release-notes">
 <span id="lbl-release"></span><h1><span class="section-number">7. </span>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="version-5-7-0">
+<h2><span class="section-number">7.1. </span>Version 5.7.0<a class="headerlink" href="#version-5-7-0" title="Permalink to this heading">¶</a></h2>
+<p><strong>Release date:</strong> October 2026</p>
+<p><strong>Highlights</strong></p>
+<ol class="arabic simple">
+<li><p>Support for multiple possible worlds in GeoJSON inventories: Asset tables now display these columns, with multi-valued entries shown in [] brackets. The backend also handles them when creating AIM files and in damage and loss calculations. See new Examples 19 and 20.</p></li>
+<li><p>Summary statistics in tables: Clicking a column header in the asset tables now shows summary statistics for that column. The damage and loss results table was changed to work the same way, with statistics shown on a header click rather than an entry click.</p></li>
+<li><p>Multiple ground motions per site in FEM simulations: Global random variable treatment was corrected for site files containing multiple ground motions.</p></li>
+</ol>
+</div>
 <div class="section" id="version-5-5-0">
-<h2><span class="section-number">7.1. </span>Version 5.5.0<a class="headerlink" href="#version-5-5-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.2. </span>Version 5.5.0<a class="headerlink" href="#version-5-5-0" title="Permalink to this heading">¶</a></h2>
+<p><strong>Release date:</strong> May 2026</p>
+<p><strong>Highlights</strong></p>
+<ol class="arabic simple">
+<li><p>Migration to Qt6 and QGIS 4: The application was updated for Qt6 and QGIS 4, and the QGIS interface code moved to SimCenterCommon. The build system moved from qmake to CMake with conan2, including updated Mac and Windows build scripts.</p></li>
+<li><p>Python updates: Windows: Python version upgraded to 3.12. Mac: The Python path is now specific to each application rather than shared across SimCenter applications. The application looks for Python 3.12 first, followed by 3.9 and then 3.13.</p></li>
+<li><p>OpenSHA upgrade and new site models: The backend moved to OpenSHA v26.1.1, and all OpenSHA Vs30 and basin-depth (Z1.0, Z2.5) models are now available in the Site widgets, allowing users to pin a specific provider. Thompson 2022 is the new Vs30 default. Heath et al. (2020) was removed and replaced by the higher-resolution global model provided by OpenSHA.</p></li>
+<li><p>Upgrade to pyrecodes 0.3: Recovery simulations and the results display were updated for pyrecodes 0.3, including the new result filenames that restore the Supply Curves and Supply-Demand Curves tabs.</p></li>
+<li><p>Analytics opt out: Users are now told analytics data is being collected and can opt out, and identifiable information is no longer sent.</p></li>
+<li><p>Remote job improvements: The jobs table can now be sorted, with resizable and reorderable columns. Jobs can be shared with a comma-separated list of people, and Delete Job now asks for confirmation.</p></li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2><span class="section-number">7.3. </span>Version 5.5.0<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> August 2025</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -249,7 +274,7 @@
 </ol>
 </div>
 <div class="section" id="version-5-4-0">
-<h2><span class="section-number">7.2. </span>Version 5.4.0<a class="headerlink" href="#version-5-4-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.4. </span>Version 5.4.0<a class="headerlink" href="#version-5-4-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> May 2025</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -258,7 +283,7 @@
 </ol>
 </div>
 <div class="section" id="version-5-3-0">
-<h2><span class="section-number">7.3. </span>Version 5.3.0<a class="headerlink" href="#version-5-3-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.5. </span>Version 5.3.0<a class="headerlink" href="#version-5-3-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> Feb 2025</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -267,7 +292,7 @@
 </ol>
 </div>
 <div class="section" id="version-5-2-0">
-<h2><span class="section-number">7.4. </span>Version 5.2.0<a class="headerlink" href="#version-5-2-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.6. </span>Version 5.2.0<a class="headerlink" href="#version-5-2-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> December 2025</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -276,7 +301,7 @@
 </ol>
 </div>
 <div class="section" id="version-5-1-0">
-<h2><span class="section-number">7.5. </span>Version 5.1.0<a class="headerlink" href="#version-5-1-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.7. </span>Version 5.1.0<a class="headerlink" href="#version-5-1-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> September 2024</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -288,7 +313,7 @@
 </ol>
 </div>
 <div class="section" id="version-5-0-0">
-<h2><span class="section-number">7.6. </span>Version 5.0.0<a class="headerlink" href="#version-5-0-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.8. </span>Version 5.0.0<a class="headerlink" href="#version-5-0-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> August 2024</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -298,7 +323,7 @@
 </ol>
 </div>
 <div class="section" id="version-4-1-0">
-<h2><span class="section-number">7.7. </span>Version 4.1.0<a class="headerlink" href="#version-4-1-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.9. </span>Version 4.1.0<a class="headerlink" href="#version-4-1-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> April 2024</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -314,7 +339,7 @@
 </ol>
 </div>
 <div class="section" id="version-4-0-1">
-<h2><span class="section-number">7.8. </span>Version 4.0.1<a class="headerlink" href="#version-4-0-1" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.10. </span>Version 4.0.1<a class="headerlink" href="#version-4-0-1" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> January 2024</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -325,7 +350,7 @@
 </ol>
 </div>
 <div class="section" id="version-3-0-0">
-<h2><span class="section-number">7.9. </span>Version 3.0.0<a class="headerlink" href="#version-3-0-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.11. </span>Version 3.0.0<a class="headerlink" href="#version-3-0-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> May 2023</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -335,7 +360,7 @@
 </ol>
 </div>
 <div class="section" id="version-2-2-0">
-<h2><span class="section-number">7.10. </span>Version 2.2.0<a class="headerlink" href="#version-2-2-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.12. </span>Version 2.2.0<a class="headerlink" href="#version-2-2-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> September 2022</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -344,7 +369,7 @@
 </ol>
 </div>
 <div class="section" id="version-2-1-0">
-<h2><span class="section-number">7.11. </span>Version 2.1.0<a class="headerlink" href="#version-2-1-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.13. </span>Version 2.1.0<a class="headerlink" href="#version-2-1-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> March 2022</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -356,7 +381,7 @@
 </ol>
 </div>
 <div class="section" id="version-2-0-0">
-<h2><span class="section-number">7.12. </span>Version 2.0.0<a class="headerlink" href="#version-2-0-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.14. </span>Version 2.0.0<a class="headerlink" href="#version-2-0-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> December 2021</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -379,7 +404,7 @@
 <p>Note: Version updates to 2.0.0 are critical as older versions will not run on design-safe due to backend changes.</p>
 </div>
 <div class="section" id="version-1-0-0">
-<h2><span class="section-number">7.13. </span>Version 1.0.0<a class="headerlink" href="#version-1-0-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.15. </span>Version 1.0.0<a class="headerlink" href="#version-1-0-0" title="Permalink to this heading">¶</a></h2>
 <p>Initial Release for earthquake impact assessment on regions:</p>
 <ol class="arabic simple">
 <li><p>Earthquake Scenario application for ground motion selection based on PEER NGA &amp; user-defined inputs.</p></li>
@@ -388,7 +413,7 @@
 <li><p>Building loss estimation utilizing Pelicun and Hazus fragilities and consequence functions.</p></li>
 </ol>
 <p>#. ArcGIS integrated interface.
-<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a></p>
+<a href="#id2"><span class="problematic" id="id3">``</span></a><a href="#id4"><span class="problematic" id="id5">`</span></a></p>
 </div>
 </div>
 

@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="6. Troubleshooting" href="../../troubleshooting/desktop/troubleshooting.html" />
-    <link rel="prev" title="4.14. E17 - Earthquake Recovery using Pyrecodes" href="../../examples/desktop/E17EarthquakeRecovery/README.html" />
+    <link rel="prev" title="4.16. E20 - MDOF Building Response with Possible Worlds" href="../../examples/desktop/E20PossibleWorldsMDOFBuildingResponse/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -332,14 +332,22 @@ artifacts (can be large).</p></td>
 </div>
 <div class="section" id="how-to-run-on-designsafe">
 <h3><span class="section-number">5.3.2. </span>How to Run on DesignSafe<a class="headerlink" href="#how-to-run-on-designsafe" title="Permalink to this heading">¶</a></h3>
+<div class="align-center figure">
+<img alt="../../../../_images/RunAtDesignSafe.png" src="../../../../_images/RunAtDesignSafe.png" />
+</div>
 <ol class="arabic simple">
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">RUN</span> <span class="pre">at</span> <span class="pre">DesignSafe</span></code>.</p></li>
+<li><p>A Window will put up as shown below. You need to provide the following information:</p></li>
+</ol>
+<ol class="arabic simple">
 <li><p>Set a unique <code class="docutils literal notranslate"><span class="pre">Job</span> <span class="pre">Name</span></code> to find it easily later.</p></li>
 <li><p>Configure reservation parameters:
 - <code class="docutils literal notranslate"><span class="pre">Num</span> <span class="pre">Node</span></code>, <code class="docutils literal notranslate"><span class="pre">Num</span> <span class="pre">Processors</span> <span class="pre">Per</span> <span class="pre">Node</span></code>, <code class="docutils literal notranslate"><span class="pre">Max</span> <span class="pre">Run</span> <span class="pre">Time</span></code>
 - Consult the <strong>TACC Stampede3 user guide</strong> for limits and best practices.</p></li>
-<li><p>Set a valid <code class="docutils literal notranslate"><span class="pre">TACC</span> <span class="pre">Allocation</span></code>. Common value today: <code class="docutils literal notranslate"><span class="pre">DesignSafe-SimCenter</span></code>:
-- This may change; users may need their <strong>own</strong> allocation in the future.</p></li>
+<li><p>A queue name
+- Default is skx.</p></li>
+<li><p>Set a valid <code class="docutils literal notranslate"><span class="pre">TACC</span> <span class="pre">Allocation</span></code>.
+- Users need their <strong>own</strong> allocation.</p></li>
 <li><p>Choose an <code class="docutils literal notranslate"><span class="pre">Archive</span> <span class="pre">System</span> <span class="pre">ID</span></code> (DesignSafe project where outputs are saved):
 - Default is <code class="docutils literal notranslate"><span class="pre">designsafe.storage.default</span></code> (your personal space).
 - To use a <strong>project</strong>, click <code class="docutils literal notranslate"><span class="pre">Refresh</span> <span class="pre">Projects</span></code> and select one you belong to.</p></li>

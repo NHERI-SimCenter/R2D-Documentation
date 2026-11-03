@@ -240,15 +240,15 @@
   <div class="section" id="user-interface">
 <span id="lbl-usage"></span><h1><span class="section-number">2. </span>User Interface<a class="headerlink" href="#user-interface" title="Permalink to this heading">¶</a></h1>
 <p>The R2D app is a scientific workflow application that creates workflows and runs them in the background. These workflows can integrate multiple applications, as detailed in the backend and workflows section (<a class="reference internal" href="../../../developer_manual/architecture/desktop/overview.html#lblarchitecture"><span class="std std-ref">Software Architecture</span></a>). Upon launching R2D app, users are presented with the user interface (UI) shown in <a class="reference internal" href="#figgenericui-r2d"><span class="std std-numref">Fig. 2.7</span></a>. This UI facilitates the selection of workflow applications, configuration of application parameters, initiation of workflows either locally or remotely, and visualization of simulation outcomes.</p>
-<div class="align-center figure" id="id10">
+<div class="align-center figure" id="id12">
 <span id="figgenericui-r2d"></span><img alt="../../../../_images/R2DPanel.png" src="../../../../_images/R2DPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.7 </span><span class="caption-text">The R2D app user interface.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.7 </span><span class="caption-text">The R2D app user interface.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>The main window of the UI comprises the following key components:</p>
 <ol class="arabic">
 <li><p><strong>Login Button</strong></p>
 <div class="line-block">
-<div class="line">The <strong>Login</strong> button, at the top right of the user interface, is used to log in to DesignSafe. You can launch jobs on DesignSafe after logging in. <strong>You don’t need to log in to DesignSafe to run the analyses on your local computer</strong>. You can register for an account on the <a class="reference external" href="https://www.designsafe-ci.org/account/register">DesignSafe-CI</a> website <a class="footnote-reference brackets" href="#id3" id="id1">1</a>.</div>
+<div class="line">The <strong>Login</strong> button, at the top right of the user interface, is used to log in to DesignSafe. You can launch jobs on DesignSafe after logging in. <strong>You don’t need to log in to DesignSafe to run the analyses on your local computer</strong>. You can register for an account on the <a class="reference external" href="https://www.designsafe-ci.org/account/register">DesignSafe-CI</a> website <a class="footnote-reference brackets" href="#id5" id="id1">1</a>.</div>
 </div>
 </li>
 <li><p><strong>Message Area</strong></p>
@@ -299,10 +299,11 @@
 <p class="admonition-title">Warning</p>
 <p>Before you can run a job at DesignSafe, you need a current TACC HPC allocation. To obtain such you need to submit a <a class="reference external" href="https://www.designsafe-ci.org/help/tickets/">ticket to TACC</a> with words similar to “Hello, I would like an initial HPC allocation to explore the SimCenter applications”. For users of previous versions of the tools, this is a new requirement required due to changes to the revised software used to communicate with these HPC machines.</p>
 </div>
-<p>Clicking on the <strong>RUN at DesignSafe</strong> button will show the remote job submission dialog shown below (<a class="reference internal" href="#figremjobpanel-r2d"><span class="std std-numref">Fig. 2.9</span></a>)</p>
-<div class="align-center figure" id="id12">
-<span id="figremjobpanel-r2d"></span><img alt="../../../../_images/RemoteJobPanel_rWHALE.png" src="../../../../_images/RemoteJobPanel_rWHALE.png" />
-<p class="caption"><span class="caption-number">Fig. 2.9 </span><span class="caption-text">Remote job submission dialog.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p>Clicking on the <strong>RUN at DesignSafe</strong> button will show the remote job submission dialog shown below (<a class="reference internal" href="#figremjobpanel-notr2d"><span class="std std-numref">Fig. 2.8</span></a>)</p>
+<blockquote>
+<div><div class="align-center figure" id="id13">
+<span id="figremjobpanel-notr2d"></span><a class="reference internal image-reference" href="../../../../_images/RunAtDesignSafe.png"><img alt="../../../../_images/RunAtDesignSafe.png" src="../../../../_images/RunAtDesignSafe.png" style="width: 399.0px; height: 204.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.8 </span><span class="caption-text">Remote job submission dialog.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>Descriptions and guidelines for each input are given below:</p>
 <ul>
@@ -314,23 +315,14 @@
 </div>
 </li>
 <li><p><strong>Number of processes per Node</strong>: Number of processors that will be utilized on each node. It is advantageous to use all available processors of a node when the memory demand of a job is small. When a job is memory intensive, e.g., large finite element models, utilizing all available processors may overwhelm the memory cache of a core and the computation will slow down. Currently, the maximum number of processors is 48 and the minimum is 1.</p></li>
-</ul>
-<ul>
-<li><p><strong>Number of Buildings per Task</strong>: Number of buildings per task.</p>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Tasks will run in parallel on their own processors. The number of tasks is equal to the number of nodes multiplied by the number of processes per node. Since it takes time to assign buildings to a task and spool up the computation, it may be advantageous to assign a batch of buildings to a task when the individual building analyses are expected to have a short runtime. A good approach is to estimate the total number of buildings to be analyzed and then select the <strong>Number of Nodes</strong>, <strong>Number of processors per Node</strong>, and <strong>Number of Buildings per Task</strong> so that the buildings can be strategically distributed across all processors. This is so that all processors are effectively utilized and do not sit idle.</p>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>Save Intermediate Results</strong>: Save intermediate results to a compressed folder. This is only recommended for debugging purposes because intermediate results will use a substantial amount of disk space.</p></li>
 <li><p><strong>Max Run Time</strong>: The maximum time a job will run on the DesignSafe computer, in the format of Hours:Min:Sec. The job will be terminated, and the intermediate results will be lost if the run time exceeds this threshold. The maximum runtime allowed for a job on DesignSafe is 48 hours.</p></li>
+<li><p>** Queue <a href="#id2"><span class="problematic" id="id3">**</span></a>: The queue to submit the job too. Each TACC machine has a number of valid queues to submit a job to. They differ in</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can check the status of a remote run by clicking on the <strong>GET from DesignSafe</strong> button. If the analysis status shows FAILED,  log into your DesignSafe account to view the detailed output of the run. First, log in with your credentials on the <a class="reference external" href="https://www.designsafe-ci.org/help/new-ticket/">DesignSafe</a> webpage. Next, use the menu to navigate to <strong>Workspace</strong> -&gt; <strong>Tools &amp; Applications</strong> -&gt; <strong>Job Status</strong> and then select a job and click on <strong>More info</strong> to view the status of that job.</p>
 </div>
+</div></blockquote>
 </li>
 </ol>
 <ol class="arabic" start="6">
@@ -342,7 +334,7 @@
 </li>
 </ol>
 <dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>For more help on external services provided by DesignSafe-CI, such as creating an account, we encourage users to explore their <a class="reference external" href="https://www.designsafe-ci.org/rw/user-guides/">documentation</a> or consider <a class="reference external" href="https://www.designsafe-ci.org/help/new-ticket/">submitting a ticket</a>.</p>
 </dd>
 </dl>

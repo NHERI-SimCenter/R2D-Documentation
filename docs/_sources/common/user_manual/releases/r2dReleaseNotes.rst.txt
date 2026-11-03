@@ -6,6 +6,38 @@
 Release Notes
 ***************************
 
+Version 5.7.0
+-------------
+
+**Release date:** October 2026
+
+**Highlights**
+
+#. Support for multiple possible worlds in GeoJSON inventories: Asset tables now display these columns, with multi-valued entries shown in [] brackets. The backend also handles them when creating AIM files and in damage and loss calculations. See new Examples 19 and 20.
+
+#. Summary statistics in tables: Clicking a column header in the asset tables now shows summary statistics for that column. The damage and loss results table was changed to work the same way, with statistics shown on a header click rather than an entry click.
+
+#. Multiple ground motions per site in FEM simulations: Global random variable treatment was corrected for site files containing multiple ground motions.
+
+
+Version 5.5.0
+-------------
+
+**Release date:** May 2026
+
+**Highlights**
+
+#. Migration to Qt6 and QGIS 4: The application was updated for Qt6 and QGIS 4, and the QGIS interface code moved to SimCenterCommon. The build system moved from qmake to CMake with conan2, including updated Mac and Windows build scripts.
+
+#. Python updates: Windows: Python version upgraded to 3.12. Mac: The Python path is now specific to each application rather than shared across SimCenter applications. The application looks for Python 3.12 first, followed by 3.9 and then 3.13.
+
+#. OpenSHA upgrade and new site models: The backend moved to OpenSHA v26.1.1, and all OpenSHA Vs30 and basin-depth (Z1.0, Z2.5) models are now available in the Site widgets, allowing users to pin a specific provider. Thompson 2022 is the new Vs30 default. Heath et al. (2020) was removed and replaced by the higher-resolution global model provided by OpenSHA.
+
+#. Upgrade to pyrecodes 0.3: Recovery simulations and the results display were updated for pyrecodes 0.3, including the new result filenames that restore the Supply Curves and Supply-Demand Curves tabs.
+
+#. Analytics opt out: Users are now told analytics data is being collected and can opt out, and identifiable information is no longer sent.
+
+#. Remote job improvements: The jobs table can now be sorted, with resizable and reorderable columns. Jobs can be shared with a comma-separated list of people, and Delete Job now asks for confirmation.
 
 Version 5.5.0
 -------------

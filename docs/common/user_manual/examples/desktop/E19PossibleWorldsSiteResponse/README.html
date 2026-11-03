@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>E19 - Basic HAZUS with Possible Worlds &mdash; Regional Resilience Determination Tool  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../../_static/copybutton.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dPlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/r2dReleaseNotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/R2DTool/tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/R2D.html">7. R2D Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/Misc.html">9. Misc</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/lake_charles/index.html">3. Lake Charles, LA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/fort_myers/index.html">4. Fort Myers, Florida</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/HazardSimulationTool_useCase.html">2. Regional Earthquake Hazard Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">3. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hazard_occurrence.html">4. Hazard Occurrence</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">4. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Regional Resilience Determination Tool</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>E19 - Basic HAZUS with Possible Worlds</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/examples/desktop/E19PossibleWorldsSiteResponse/README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="e19-basic-hazus-with-possible-worlds">
+<h1>E19 - Basic HAZUS with Possible Worlds<a class="headerlink" href="#e19-basic-hazus-with-possible-worlds" title="Permalink to this heading">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Download files</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/R2DExamples/tree/master/E19PossibleWorldsBasicHAZUS/">Download</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>This earthquake example demonstrates how to include uncertainty related to asset attributes in the workflows.</p>
+<p>In the GeoJSON form of an asset input, the properties of each asset are specified in the <strong>properties</strong> section. In an asset inventory with no uncertainty, each individual property has a single value. To express uncertainty in this property, the values are instead placed in a list. As an example, the following text is extracted from the SanFranciscoBuildings.json file. It shows the properties information for buildings <strong>1</strong> and <strong>2</strong>. Building <strong>1</strong> has no uncertain properties, building <strong>2</strong> has two uncertain properties (number of floors, and structure type) each with three possible values.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">37.796739</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.403859</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;HeightClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Low-Rise&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;DesignLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pre-Code&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;PlanArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7752</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;NumberOfStories&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;YearBuilt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1906</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ReplacementCost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1022488.8</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;StructureType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;OccupancyClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COM4&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Building&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">37.7996</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.419356</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;HeightClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;DesignLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pre-Code&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;PlanArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;NumberOfStories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;YearBuilt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1931</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ReplacementCost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">6843570.3</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;StructureType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;W2&quot;</span><span class="p">,</span><span class="s2">&quot;W1&quot;</span><span class="p">,</span><span class="s2">&quot;W1&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;OccupancyClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RES3&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Building&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>The current workflow assumes that if any asset has more than one uncertain quantitaties in lists, that the length of these lists is the same for that asset.</p></li>
+<li><p>BRAILS++ will generate such inputs when num_possible worlds is set to &gt; 1 for properties of assets for which inputation is required or for properties of assets for which validators have been used and these validators have worked with imputed data.</p></li>
+</ol>
+</div>
+<p>The difference in inputs provided to R2D between this example and E1 are in the Asset Description Panel, <strong>ASD</strong>. The user is referred to E1 for discussion on all other inputs.</p>
+<ol class="arabic">
+<li><p><strong>ASD</strong> In the asset definition panel, the <strong>GeoJSON to Asset</strong> option is used to provide information on the assets as opposed to the <strong>CSV. Two inputs are required: 1) The path to the csv file, :examplesgithub:`SanFranciscoBuildings.json &lt;E19PossibleWorldsBasicHAZUS/input_data/SanFrancisco_buildings.json&gt;`. The files contains **id,Latitude,Longitude,PlanArea,NumberOfStories,YearBuilt,ReplacementCost,StructureType,OccupancyClass,Footprint</strong> and 2) the range of assets to be analyzed. In the figure only buildings <strong>8000-8024</strong> have only been selected.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>The range of assets uses the id’s of the buildings provided in the asset inventory file.</p></li>
+<li><p>By defauult <strong>NO ASSETS</strong> will be analyzed unless the range is filled in.</p></li>
+</ol>
+<p>3. The user can provide a comma seperated list of assets that includes ranges, e.g. 1,2,3,5-10,100-1000.
+2. Once the range has been filled in, the user can view the selected buildings by going to the <strong>VIZ</strong> panel, looking at the buildings layer and selecting the <strong>Selected Buildings</strong>, and de-selecting <strong>All Buildings</strong>.
+3. If user does not like the selections, the <strong>Clear Selections</strong> button in the ASD panel can be pressed.</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="common/user_manual/examples/desktop/E19PossibleWorldsSiteResponse/figures/r2dt-0001-ASD.png"><img alt="common/user_manual/examples/desktop/E19PossibleWorldsSiteResponse/figures/r2dt-0001-ASD.png" src="common/user_manual/examples/desktop/E19PossibleWorldsSiteResponse/figures/r2dt-0001-ASD.png" style="width: 600px;" /></a>
+</div>
+</li>
+<li><p><strong>RES</strong></p>
+<p>Once the user has run the example, by using the <strong>RUN</strong> button, or the <strong>RUN at DesignSafe</strong> and <strong>Get from DesignSafe</strong> buttons, the results panel will be automatically shown. In the <strong>Buildings</strong> tab are two windows, which can both be seperated from the main application. The first displays the QGIS window now showing should the <strong>VIZ</strong> panel be selected, to which a new <strong>layer</strong> has been added, the <strong>Resulta</strong> layer and by delselecting the other layers in this QGIS window, the most likely damage state for the 25 buildings (buildings 8000-8024 in the <strong>ASD</strong> panel) selected to be analyzed can be reviewed. The second window shows, in tabular form, the results for each building. By left or right clicking in any of the columns of the table, statistical data for the entries, e.g. min, max, mean, mode and histograms, may be obtained.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="common/user_manual/examples/desktop/E19PossibleWorldsSiteResponse/figures/r2dt-0001-RES.png"><img alt="common/user_manual/examples/desktop/E19PossibleWorldsSiteResponse/figures/r2dt-0001-RES.png" src="common/user_manual/examples/desktop/E19PossibleWorldsSiteResponse/figures/r2dt-0001-RES.png" style="width: 600px;" /></a>
+</div>
+</li>
+</ol>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2026, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>
